@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Open spread cat paw for grab -->
+  <path d="M7.5 15c0-4.8 3.6-8.5 8.5-8.5s8.5 3.7 8.5 8.5v5.5c0 3.6-2.9 6.5-6.5 6.5h-4c-3.6 0-6.5-2.9-6.5-6.5V15z" fill="#fff5f9" stroke="#211713" stroke-width="1.8" stroke-linejoin="round"/>
+  <ellipse cx="9.8" cy="10.8" rx="1.9" ry="2.5" transform="rotate(-22 9.8 10.8)" fill="#f59ac4" stroke="#211713" stroke-width="1.1"/>
+  <ellipse cx="13.8" cy="8.5" rx="1.95" ry="2.6" transform="rotate(-7 13.8 8.5)" fill="#f59ac4" stroke="#211713" stroke-width="1.1"/>
+  <ellipse cx="18.2" cy="8.5" rx="1.95" ry="2.6" transform="rotate(7 18.2 8.5)" fill="#f59ac4" stroke="#211713" stroke-width="1.1"/>
+  <ellipse cx="22.2" cy="10.8" rx="1.9" ry="2.5" transform="rotate(22 22.2 10.8)" fill="#f59ac4" stroke="#211713" stroke-width="1.1"/>
+  <path d="M12.3 17.6c0-2 1.6-3.5 3.7-3.5s3.7 1.5 3.7 3.5c1.2 0.5 1.9 1.6 1.9 2.7 0 1.6-1.4 2.8-3.2 2.8h-4.8c-1.8 0-3.2-1.2-3.2-2.8 0-1.1 0.7-2.2 1.9-2.7z" fill="#f284b6" stroke="#211713" stroke-width="1.15"/>
+</svg>

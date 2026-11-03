@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Text I-beam cursor with tiny pink cat-paw cap -->
+  <path d="M12 6h8M12 26h8M16 6v20" stroke="#211713" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M12 6h8M12 26h8M16 6v20" stroke="#f59ac4" stroke-width="1.6" stroke-linecap="round"/>
+  <circle cx="16" cy="6" r="2.2" fill="#f59ac4" stroke="#211713" stroke-width="1"/>
+</svg>
