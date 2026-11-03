@@ -17,6 +17,7 @@ description:
 proven: {}
 planned: {}
 sources:
+  - { label: "Formulário de Orçamento", icon: "email", detail: "Proposta e escopo online", url: "https://usami.ia.br/contato" }
   - { label: "E-mail", icon: "email", detail: "devreskyume@gmail.com", url: "mailto:devreskyume@gmail.com" }
   - { label: "WhatsApp", icon: "whatsapp", detail: "+55 11 98182-6659", url: "https://wa.me/5511981826659" }
   - { label: "LinkedIn", icon: "linkedin", detail: "linkedin.com/in/rukafuu", url: "https://linkedin.com/in/rukafuu" }

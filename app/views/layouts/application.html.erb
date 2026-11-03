@@ -50,6 +50,7 @@
         <% end %>
         <%= link_to t("nav.evidence"), evidence_path, aria: { current: (controller_name == "evidence" ? "page" : nil) } %>
         <%= link_to t("apps.gallery"), gallery_path, aria: { current: (controller_name == "gallery" ? "page" : nil) } %>
+        <%= link_to t("nav.contact"), contact_path, aria: { current: (controller_name == "contact" ? "page" : nil) } %>
       </nav>
       <nav class="langs" aria-label="<%= t("site.language") %>">
         <% I18n.available_locales.each do |locale| %>
@@ -77,8 +78,8 @@
 
     <%# Fixed on phones so the way to talk to us follows the visitor. %>
     <nav class="cta-bar" aria-label="<%= t("contact.label") %>">
-      <a class="button button--primary" href="<%= whatsapp_url %>" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="button" href="mailto:<%= contact["email"] %>"><%= t("contact.email") %></a>
+      <a class="button button--primary" href="<%= contact_path %>"><%= t("home.quote_cta") %></a>
+      <a class="button" href="<%= whatsapp_url %>" target="_blank" rel="noopener">WhatsApp</a>
     </nav>
 
     <%# Progressive enhancement: the page above is complete without JavaScript; the shell layers Fuwarch Linux on top. %>

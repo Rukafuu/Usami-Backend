@@ -1,351 +1,398 @@
 ja:
   site:
-    name: "Usami"
-    company: "Usami"
-    skip: "本文へスキップ"
-    language: "言語"
-    footer: "ロゴとアートは仮のものです。サイト上のすべての主張には、エビデンスのページで出典と日付が付いています。"
+    name: Usami
+    company: Usami
+    skip: 本文へスキップ
+    language: 言語
+    footer: ロゴとアートは仮のものです。サイト上のすべての主張には、エビデンスのページで出典と日付が付いています。
   contact:
-    label: "連絡先"
-    email: "メールで連絡"
-    whatsapp: "WhatsAppで連絡"
-    response: "72時間以内に返信します — またはモンスターを1缶開けたあとに ⚡"
+    label: 連絡先
+    email: メールで連絡
+    whatsapp: WhatsAppで連絡
+    response: 72時間以内に返信します — またはモンスターを1缶開けたあとに ⚡
   consent:
-    banner_title: "Cookieとプライバシー"
-    banner_text: "サイトの動作に必要なものだけを使用しています。許可いただいた場合に限り、外部コンテンツ(SoundCloudプレーヤー)を読み込みます。現在、広告や追跡は行っていません。"
-    essential: "必須のみ"
-    all: "すべて許可"
-    privacy: "プライバシーポリシー"
-    cookies: "Cookieポリシー"
-    current_essential: "現在の選択:必須のみ。"
-    current_all: "現在の選択:すべて許可。"
-    current_none: "まだ選択していません。現在は必須のみ有効です。"
-    music_blocked: "SoundCloudプレーヤーはサードパーティCookieを使用します。すべてのCookieを許可した場合のみ読み込まれます。"
-    music_allow: "すべて許可して読み込む"
-    music_open: "SoundCloudで開く"
-    assistant_note: "Usamiへの質問は、回答の生成のためNVIDIAが処理します。"
-    about_title: "プライバシー"
-    updated: "更新日:%{date}"
+    banner_title: Cookieとプライバシー
+    banner_text: サイトの動作に必要なものだけを使用しています。許可いただいた場合に限り、外部コンテンツ(SoundCloudプレーヤー)を読み込みます。現在、広告や追跡は行っていません。
+    essential: 必須のみ
+    all: すべて許可
+    privacy: プライバシーポリシー
+    cookies: Cookieポリシー
+    current_essential: 現在の選択:必須のみ。
+    current_all: 現在の選択:すべて許可。
+    current_none: まだ選択していません。現在は必須のみ有効です。
+    music_blocked: SoundCloudプレーヤーはサードパーティCookieを使用します。すべてのCookieを許可した場合のみ読み込まれます。
+    music_allow: すべて許可して読み込む
+    music_open: SoundCloudで開く
+    assistant_note: Usamiへの質問は、回答の生成のためNVIDIAが処理します。
+    about_title: プライバシー
+    updated: 更新日:%{date}
   nav:
-    home: "ホーム"
-    evidence: "エビデンス"
-    main: "メイン"
-    breadcrumbs: "パンくずリスト"
+    home: ホーム
+    evidence: エビデンス
+    main: メイン
+    breadcrumbs: パンくずリスト
+    contact: お問い合わせ
   faq:
-    title: "よくある質問"
-    intro: "Usami、Fuwarch Linux、エビデンス、プライバシーに関するよくある質問への回答です。"
+    title: よくある質問
+    intro: Usami、Fuwarch Linux、エビデンス、プライバシーに関するよくある質問への回答です。
   folders:
-    sistemas: "システム"
-    contribuicoes: "コントリビューション"
-    laboratorio: "ラボ"
-    empresa: "会社"
+    sistemas: システム
+    contribuicoes: コントリビューション
+    laboratorio: ラボ
+    empresa: 会社
   folder_intro:
-    sistemas: "私たちが作る製品とプラットフォーム。"
-    contribuicoes: "第三者のプロジェクトに送り、受け入れられたコード。"
-    laboratorio: "実験。製品になるものもあれば、研究のままのものもあります。"
-    empresa: "私たちについて、連絡方法、そして主張を裏付ける方法。"
+    sistemas: 私たちが作る製品とプラットフォーム。
+    contribuicoes: 第三者のプロジェクトに送り、受け入れられたコード。
+    laboratorio: 実験。製品になるものもあれば、研究のままのものもあります。
+    empresa: 私たちについて、連絡方法、そして主張を裏付ける方法。
   status:
-    live: "公開中"
-    in_development: "開発中"
-    experimental: "実験的"
-    info: "情報"
-    tbd: "未定"
+    live: 公開中
+    in_development: 開発中
+    experimental: 実験的
+    info: 情報
+    tbd: 未定
   entry:
-    proven: "リポジトリで確認済み"
-    planned: "計画中 — まだ存在しません"
-    stack: "スタック"
-    sources: "出典"
-    translation_pending: "この項目の一覧は英語です(翻訳を確認中)。"
-    back: "%{folder}に戻る"
-    open: "開く"
+    proven: リポジトリで確認済み
+    planned: 計画中 — まだ存在しません
+    stack: スタック
+    sources: 出典
+    translation_pending: この項目の一覧は英語です(翻訳を確認中)。
+    back: '%{folder}に戻る'
+    open: 開く
   home:
-    kicker: "テクノロジー企業"
-    explore: "見てみる"
-    pillars: "プロジェクトをつなぐもの"
+    kicker: テクノロジー企業
+    explore: 見てみる
+    pillars: プロジェクトをつなぐもの
+    quote_cta: お見積り依頼
   evidence:
-    title: "エビデンス"
-    intro: "サイト上のすべての主張を、出典と確認日に結び付けています。ここにないものは、主張しません。"
-    claim: "主張"
-    source: "出典"
-    verified: "確認日"
+    title: エビデンス
+    intro: サイト上のすべての主張を、出典と確認日に結び付けています。ここにないものは、主張しません。
+    claim: 主張
+    source: 出典
+    verified: 確認日
   errors:
-    badge: "HTTPエラー %{code}"
-    home_btn: "ホームに戻る"
-    shell_btn: "Fuwarch Linuxを開く"
-    evidence_btn: "エビデンスを見る"
+    badge: HTTPエラー %{code}
+    home_btn: ホームに戻る
+    shell_btn: Fuwarch Linuxを開く
+    evidence_btn: エビデンスを見る
     status_404:
-      title: "ページが見つかりません"
-      body: "星空の天文台を探してみましたが、このページが存在する証拠は見つかりませんでした。"
-      scene: "望遠鏡と天体図を持つ天文台のUsami"
+      title: ページが見つかりません
+      body: 星空の天文台を探してみましたが、このページが存在する証拠は見つかりませんでした。
+      scene: 望遠鏡と天体図を持つ天文台のUsami
     status_403:
-      title: "アクセスが制限されています"
-      body: "チェックメイト！ この領域には、現在のセッションでは許可されていない特権が必要です。"
-      scene: "チェス盤を見つめるUsamiとFuwarch"
+      title: アクセスが制限されています
+      body: チェックメイト！ この領域には、現在のセッションでは許可されていない特権が必要です。
+      scene: チェス盤を見つめるUsamiとFuwarch
     status_402:
-      title: "支払いや認証が必要です"
-      body: "この操作を進めるには、クレジットやサブスクリプションの確認が必要です。"
-      scene: "ヘッドフォンをつけてスタジオにいるUsami"
+      title: 支払いや認証が必要です
+      body: この操作を進めるには、クレジットやサブスクリプションの確認が必要です。
+      scene: ヘッドフォンをつけてスタジオにいるUsami
     status_500:
-      title: "サーバー内部エラー"
-      body: "おっと、サーバーにコーヒーをこぼしてしまったようです！ 復旧に向けてログを確認しています。"
-      scene: "深夜のデスクで温かいコーヒーを飲むUsami"
-    not_found_title: "ページが見つかりません"
-    not_found_body: "このページが存在する根拠はありません。ホームに戻ってください。"
+      title: サーバー内部エラー
+      body: おっと、サーバーにコーヒーをこぼしてしまったようです！ 復旧に向けてログを確認しています。
+      scene: 深夜のデスクで温かいコーヒーを飲むUsami
+    not_found_title: ページが見つかりません
+    not_found_body: このページが存在する根拠はありません。ホームに戻ってください。
   shell:
-    apps: "アプリ"
-    files: "ファイル"
-    folders_label: "フォルダ"
-    close: "ウィンドウを閉じる"
-    classic: "クラシック表示"
-    open_shell: "Fuwarch Linuxを開く"
-    theme: "ライト/ダークの切り替え"
-    language: "言語"
-    sub: "システム · コントリビューション · エビデンス"
-    boot_skip: "タップまたはキーで開始"
+    apps: アプリ
+    files: ファイル
+    folders_label: フォルダ
+    close: ウィンドウを閉じる
+    classic: クラシック表示
+    open_shell: Fuwarch Linuxを開く
+    theme: ライト/ダークの切り替え
+    language: 言語
+    sub: システム · コントリビューション · エビデンス
+    boot_skip: タップまたはキーで開始
     boot:
-      - "Fuwarch Linux boot 0.1"
-      - "エミュレートされたカーネルを起動"
-      - "ファイルシステムをマウント"
-      - "プロジェクトをファイルとして読み込み"
-      - "仮想サービスを起動"
-      - "ごっこネットワークを有効化"
-      - "グラフィカル環境を呼び出し"
-      - "準備完了。"
-    login_user: "ゲスト"
-    login_note: "ゲストアカウント：本物のパスワードは使いません。"
-    login_action: "サインイン"
-    init_title: "デスクトップを準備中…"
+    - Fuwarch Linux boot 0.1
+    - エミュレートされたカーネルを起動
+    - ファイルシステムをマウント
+    - プロジェクトをファイルとして読み込み
+    - 仮想サービスを起動
+    - ごっこネットワークを有効化
+    - グラフィカル環境を呼び出し
+    - 準備完了。
+    login_user: ゲスト
+    login_note: ゲストアカウント：本物のパスワードは使いません。
+    login_action: サインイン
+    init_title: デスクトップを準備中…
     init:
-      - "テーマと壁紙を読み込み"
-      - "ショートカットを復元"
-      - "タスクバーを開く"
-    start: "スタート"
-    start_menu: "スタートメニュー"
-    minimize: "最小化"
-    maximize: "最大化"
-    restore: "元に戻す"
-    home: "ホーム画面"
-    back: "戻る"
-    running: "起動中のアプリ"
-    desktop_icons: "デスクトップのショートカット"
+    - テーマと壁紙を読み込み
+    - ショートカットを復元
+    - タスクバーを開く
+    start: スタート
+    start_menu: スタートメニュー
+    minimize: 最小化
+    maximize: 最大化
+    restore: 元に戻す
+    home: ホーム画面
+    back: 戻る
+    running: 起動中のアプリ
+    desktop_icons: デスクトップのショートカット
   apps:
-    browser: "ブラウザ"
-    files: "ファイル"
-    files_open_code: "Code Studioで開く"
-    code: "Usami Code Studio"
-    code_repo: "リポジトリ"
-    code_files: "リポジトリのファイル"
-    code_tab_editor: "コード"
-    code_tab_commits: "コミットとPR"
-    code_tab_arch: "アーキテクチャ"
-    code_blank: "空のプロジェクト"
-    code_new_file: "新規ファイル"
-    code_fork_scratch: "下書きでコピーを編集"
-    messenger: "Usami Messenger"
-    music: "Usami Music"
-    achievements: "実績"
-    gallery: "ギャラリー"
-    settings: "設定"
-    about: "このシステムについて"
+    browser: ブラウザ
+    files: ファイル
+    files_open_code: Code Studioで開く
+    code: Usami Code Studio
+    code_repo: リポジトリ
+    code_files: リポジトリのファイル
+    code_tab_editor: コード
+    code_tab_commits: コミットとPR
+    code_tab_arch: アーキテクチャ
+    code_blank: 空のプロジェクト
+    code_new_file: 新規ファイル
+    code_fork_scratch: 下書きでコピーを編集
+    messenger: Usami Messenger
+    music: Usami Music
+    achievements: 実績
+    gallery: ギャラリー
+    settings: 設定
+    about: このシステムについて
     browser_pages:
-      company: "会社"
-      projects: "プロジェクト"
-      services: "サービス"
-      about_me: "私について"
-    browser_open_files: "エクスプローラーで開く"
-    gallery_empty: "公開されたメディアはまだありません。各プロジェクトの実際の素材がそろい次第、画像・デモ動画・図をここに掲載します。"
-    theme: "テーマ"
-    theme_system: "システムに合わせる"
-    theme_light: "クリーム(ライト)"
-    theme_dark: "コーヒー(ダーク)"
-    wallpaper: "壁紙"
+      company: 会社
+      projects: プロジェクト
+      services: サービス
+      about_me: 私について
+    browser_open_files: エクスプローラーで開く
+    gallery_empty: 公開されたメディアはまだありません。各プロジェクトの実際の素材がそろい次第、画像・デモ動画・図をここに掲載します。
+    theme: テーマ
+    theme_system: システムに合わせる
+    theme_light: クリーム(ライト)
+    theme_dark: コーヒー(ダーク)
+    wallpaper: 壁紙
     wallpapers:
-      fuwarch: "Fuwarchをぎゅっと"
-      chess: "チェスの対局"
-      cafe: "深夜のコーヒー"
-      melody: "音楽スタジオ"
-      stargaze: "星空の天文台"
-      auto: "自動(テーマに合わせる)"
-      coffee: "夜のコーヒー"
-      cream: "クリーム紙"
-      caramel: "キャラメル"
-    about_built_with: "使用技術"
-    about_models: "使用したAIモデル"
-    about_prompts: "送信したプロンプト数"
-    about_context: "現在のセッションのコンテキスト(トークン)"
-    about_total: "総消費トークン"
-    about_time: "開始からの経過時間"
-    about_libraries: "ライブラリ"
-    not_measured: "未計測"
-    about_note: "出典のある数値のみ。計測していないものは未計測と表示します。"
-    about_emulated: "現時点でFuwarch Linuxはブラウザ上でエミュレートされたシステムであり、Linuxディストリビューションではありません。実現は計画中です。"
-
-    terminal: "ターミナル"
-    calendar: "カレンダー"
-    calendar_today: "今日"
-    calendar_prev: "前の月"
-    calendar_next: "次の月"
-    calendar_milestones: "確認済みマイルストーン"
-    calendar_selected: "この日のイベント"
-    calendar_empty_day: "この日に記録されたマイルストーンはありません。"
-    calendar_egg_badge: "イースターエッグ"
-    calendar_egg_1103: "Fuwarch Linux 記念日 — 淹れたてのコーヒーとともに。"
-    calendar_egg_1031: "Fuwarchのハロウィン — 幽霊バグは監査を生き延びられませんでした。"
-    calendar_egg_0913: "プログラマーの日(256日目) — Usamiがコーヒーをもう一杯用意しました。"
-    calendar_egg_0101: "Fuwarchの新年 — 新しいコミット、変わらないエンジニアリング規律。"
-    calendar_egg_0307: "Lucas(Reskyume)の誕生日 — 今日で%{age}歳。ケーキもインフラの一部です。"
-    calendar_candle: "ろうそくを吹き消す"
-    calendar_candle_done: "願いごと完了! お誕生日おめでとう、Lucas — Usamiが最初の一切れを取っておきました ☕🎂"
-    about_mascot_title: "マスコット＆コンパニオン"
-    about_mascot_text: "Usamiはブランドの中心キャラクターでありFuwarch Linuxのガイドです。開発中の3D AIコンパニオン(React 19、Three.js/VRM、ストリーミング音声、検証済みアニメーション・ディレクター)。"
-    about_env_title: "実行環境"
-    about_env_host: "インターフェース・ホスト"
-    about_env_storage: "ローカル永続化"
-    about_env_files: "マウント済み仮想ファイル"
-    taskmgr: "タスクマネージャー"
-    taskmgr_session: "セッションと環境(実測)"
-    taskmgr_uptime: "セッション時間"
-    taskmgr_open_count: "開いているウィンドウ"
-    taskmgr_viewport: "ビューポート"
-    taskmgr_dom_nodes: "DOMノード数"
-    taskmgr_windows: "起動中のアプリケーション"
-    taskmgr_no_windows: "現在開いているウィンドウはありません。"
-    taskmgr_col_app: "アプリ"
-    taskmgr_col_state: "状態"
-    taskmgr_col_layer: "レイヤー"
-    taskmgr_col_actions: "操作"
-    taskmgr_state_focused: "フォーカス中"
-    taskmgr_state_normal: "表示中"
-    taskmgr_state_minimized: "最小化"
-    taskmgr_state_maximized: "最大化"
-    taskmgr_focus: "前面へ"
-    taskmgr_end: "終了"
-    taskmgr_daemons: "Fuwarch 仮想プロセス"
-    taskmgr_daemons_note: "ブラウザ上でエミュレートされた環境の概念的なプロセスです。お使いのPCの実際のプロセスやハードウェア使用率ではありません。"
-    gallery_soon: "近日公開"
-    gallery_close: "ビューアを閉じる"
-    cat_appearance: "外観"
-    cat_wallpaper: "壁紙"
-    cat_apps: "アプリ"
-    slot_group_pc: "パソコン"
-    slot_group_phone: "スマートフォン"
-    slot_desktop: "デスクトップ"
-    slot_taskbar: "タスクバー"
-    slot_home: "ホーム画面"
-    slot_dock: "ドック"
-    apps_note: "各アプリを表示する場所を選べます。どれも使えなくなることはありません。パソコンではスタートメニュー、スマートフォンではアプリライブラリから開けます。"
-    apps_locked: "このアプリはここから外せません。外すと設定を開く手段がなくなるためです。"
-    apps_reset: "既定の配置に戻す"
-    app_library: "アプリライブラリ"
-    ctx_open: "開く"
-    ctx_add_desktop: "デスクトップに追加"
-    ctx_remove_desktop: "デスクトップから削除"
-    ctx_add_taskbar: "タスクバーにピン留め"
-    ctx_remove_taskbar: "タスクバーからピン留め解除"
-    ctx_add_home: "ホーム画面に追加"
-    ctx_remove_home: "ホーム画面から削除"
-    ctx_add_dock: "ドックに追加"
-    ctx_remove_dock: "ドックから削除"
-    ctx_uninstall: "アンインストール"
-    ctx_essential: "このアプリは必須のため、アンインストールできません。"
-    ctx_add_to_group: "グループ「%{name}」に追加"
-    ctx_leave_group: "グループ「%{name}」から外す"
-    uninstall_title: "私、本当にお役に立てませんでしたか?"
-    uninstall_body: "%{app}はシステムから去ります。落ち込まないと約束します… ちょっとだけ。気が変わったら、設定 → アプリ から再インストールしてください。"
-    uninstall_keep: "そばに置く"
-    uninstall_confirm: "それでもアンインストール"
-    app_install: "インストール"
-    app_uninstall: "アンインストール"
-    app_reinstall: "再インストール"
-    app_essential: "必須"
-    app_uninstalled: "アンインストール済み"
-    group_default: "グループ"
-    group_open: "グループ「%{name}」を開く"
-    group_close: "グループを閉じる"
-    group_rename: "グループ名を変更"
-    cat_layout: "配置"
-    layout_note: "矢印またはアイコンのドラッグで並べ替えできます。アプリを別のアプリの上にドラッグするとグループになり、グループの外へドラッグすると解除されます。デスクトップでは空いている場所にアイコンを置けます。グループは作成した場所でのみ有効です。"
-    layout_order: "順序"
-    layout_move_up: "前へ移動"
-    layout_move_down: "後ろへ移動"
-    layout_group_select: "グループ"
-    layout_no_group: "グループなし"
-    layout_new_group: "新しいグループ"
-    layout_group_with: "グループ化:"
-    layout_groups: "グループ"
-    layout_group_name: "グループ名"
-    layout_delete_group: "グループを解除"
-    layout_empty: "ここに整理するものはありません。"
-    layout_group_empty: "空のグループ"
-    cat_display: "画面とモーション"
-    cat_language: "言語"
-    cat_system: "システム"
-    vision: "色覚とコントラスト"
-    vision_none: "標準"
-    vision_redgreen: "色覚特性:赤緑(1型・2型色覚)"
-    vision_blueyellow: "色覚特性:青黄(3型色覚)"
-    vision_contrast: "ハイコントラスト"
-    vision_note: "色覚モードでは、アクセントカラーをその見え方に適したパレットに切り替え、リンクに下線を付けます。色だけに頼らない表示にするためです。"
-    accent: "アクセントカラー"
-    accent_locked: "この色覚モードでは、アクセントカラーはモードによって決まります。"
+      fuwarch: Fuwarchをぎゅっと
+      chess: チェスの対局
+      cafe: 深夜のコーヒー
+      melody: 音楽スタジオ
+      stargaze: 星空の天文台
+      auto: 自動(テーマに合わせる)
+      coffee: 夜のコーヒー
+      cream: クリーム紙
+      caramel: キャラメル
+    about_built_with: 使用技術
+    about_models: 使用したAIモデル
+    about_prompts: 送信したプロンプト数
+    about_context: 現在のセッションのコンテキスト(トークン)
+    about_total: 総消費トークン
+    about_time: 開始からの経過時間
+    about_libraries: ライブラリ
+    not_measured: 未計測
+    about_note: 出典のある数値のみ。計測していないものは未計測と表示します。
+    about_emulated: 現時点でFuwarch Linuxはブラウザ上でエミュレートされたシステムであり、Linuxディストリビューションではありません。実現は計画中です。
+    terminal: ターミナル
+    calendar: カレンダー
+    calendar_today: 今日
+    calendar_prev: 前の月
+    calendar_next: 次の月
+    calendar_milestones: 確認済みマイルストーン
+    calendar_selected: この日のイベント
+    calendar_empty_day: この日に記録されたマイルストーンはありません。
+    calendar_egg_badge: イースターエッグ
+    calendar_egg_1103: Fuwarch Linux 記念日 — 淹れたてのコーヒーとともに。
+    calendar_egg_1031: Fuwarchのハロウィン — 幽霊バグは監査を生き延びられませんでした。
+    calendar_egg_0913: プログラマーの日(256日目) — Usamiがコーヒーをもう一杯用意しました。
+    calendar_egg_0101: Fuwarchの新年 — 新しいコミット、変わらないエンジニアリング規律。
+    calendar_egg_0307: Lucas(Reskyume)の誕生日 — 今日で%{age}歳。ケーキもインフラの一部です。
+    calendar_candle: ろうそくを吹き消す
+    calendar_candle_done: 願いごと完了! お誕生日おめでとう、Lucas — Usamiが最初の一切れを取っておきました ☕🎂
+    about_mascot_title: マスコット＆コンパニオン
+    about_mascot_text: Usamiはブランドの中心キャラクターでありFuwarch Linuxのガイドです。開発中の3D AIコンパニオン(React 19、Three.js/VRM、ストリーミング音声、検証済みアニメーション・ディレクター)。
+    about_env_title: 実行環境
+    about_env_host: インターフェース・ホスト
+    about_env_storage: ローカル永続化
+    about_env_files: マウント済み仮想ファイル
+    taskmgr: タスクマネージャー
+    taskmgr_session: セッションと環境(実測)
+    taskmgr_uptime: セッション時間
+    taskmgr_open_count: 開いているウィンドウ
+    taskmgr_viewport: ビューポート
+    taskmgr_dom_nodes: DOMノード数
+    taskmgr_windows: 起動中のアプリケーション
+    taskmgr_no_windows: 現在開いているウィンドウはありません。
+    taskmgr_col_app: アプリ
+    taskmgr_col_state: 状態
+    taskmgr_col_layer: レイヤー
+    taskmgr_col_actions: 操作
+    taskmgr_state_focused: フォーカス中
+    taskmgr_state_normal: 表示中
+    taskmgr_state_minimized: 最小化
+    taskmgr_state_maximized: 最大化
+    taskmgr_focus: 前面へ
+    taskmgr_end: 終了
+    taskmgr_daemons: Fuwarch 仮想プロセス
+    taskmgr_daemons_note: ブラウザ上でエミュレートされた環境の概念的なプロセスです。お使いのPCの実際のプロセスやハードウェア使用率ではありません。
+    gallery_soon: 近日公開
+    gallery_close: ビューアを閉じる
+    cat_appearance: 外観
+    cat_wallpaper: 壁紙
+    cat_apps: アプリ
+    slot_group_pc: パソコン
+    slot_group_phone: スマートフォン
+    slot_desktop: デスクトップ
+    slot_taskbar: タスクバー
+    slot_home: ホーム画面
+    slot_dock: ドック
+    apps_note: 各アプリを表示する場所を選べます。どれも使えなくなることはありません。パソコンではスタートメニュー、スマートフォンではアプリライブラリから開けます。
+    apps_locked: このアプリはここから外せません。外すと設定を開く手段がなくなるためです。
+    apps_reset: 既定の配置に戻す
+    app_library: アプリライブラリ
+    ctx_open: 開く
+    ctx_add_desktop: デスクトップに追加
+    ctx_remove_desktop: デスクトップから削除
+    ctx_add_taskbar: タスクバーにピン留め
+    ctx_remove_taskbar: タスクバーからピン留め解除
+    ctx_add_home: ホーム画面に追加
+    ctx_remove_home: ホーム画面から削除
+    ctx_add_dock: ドックに追加
+    ctx_remove_dock: ドックから削除
+    ctx_uninstall: アンインストール
+    ctx_essential: このアプリは必須のため、アンインストールできません。
+    ctx_add_to_group: グループ「%{name}」に追加
+    ctx_leave_group: グループ「%{name}」から外す
+    uninstall_title: 私、本当にお役に立てませんでしたか?
+    uninstall_body: '%{app}はシステムから去ります。落ち込まないと約束します… ちょっとだけ。気が変わったら、設定 → アプリ から再インストールしてください。'
+    uninstall_keep: そばに置く
+    uninstall_confirm: それでもアンインストール
+    app_install: インストール
+    app_uninstall: アンインストール
+    app_reinstall: 再インストール
+    app_essential: 必須
+    app_uninstalled: アンインストール済み
+    group_default: グループ
+    group_open: グループ「%{name}」を開く
+    group_close: グループを閉じる
+    group_rename: グループ名を変更
+    cat_layout: 配置
+    layout_note: 矢印またはアイコンのドラッグで並べ替えできます。アプリを別のアプリの上にドラッグするとグループになり、グループの外へドラッグすると解除されます。デスクトップでは空いている場所にアイコンを置けます。グループは作成した場所でのみ有効です。
+    layout_order: 順序
+    layout_move_up: 前へ移動
+    layout_move_down: 後ろへ移動
+    layout_group_select: グループ
+    layout_no_group: グループなし
+    layout_new_group: 新しいグループ
+    layout_group_with: 'グループ化:'
+    layout_groups: グループ
+    layout_group_name: グループ名
+    layout_delete_group: グループを解除
+    layout_empty: ここに整理するものはありません。
+    layout_group_empty: 空のグループ
+    cat_display: 画面とモーション
+    cat_language: 言語
+    cat_system: システム
+    vision: 色覚とコントラスト
+    vision_none: 標準
+    vision_redgreen: 色覚特性:赤緑(1型・2型色覚)
+    vision_blueyellow: 色覚特性:青黄(3型色覚)
+    vision_contrast: ハイコントラスト
+    vision_note: 色覚モードでは、アクセントカラーをその見え方に適したパレットに切り替え、リンクに下線を付けます。色だけに頼らない表示にするためです。
+    accent: アクセントカラー
+    accent_locked: この色覚モードでは、アクセントカラーはモードによって決まります。
     accents:
-      caramel: "キャラメル"
-      rose: "Fuwarchローズ"
-      sage: "セージ"
-      slate: "スレートブルー"
-    text_size: "文字サイズ"
-    size_small: "小"
-    size_default: "標準"
-    size_large: "大"
-    size_xl: "特大"
-    icon_size: "デスクトップアイコンの大きさ"
-    motion: "アニメーション"
-    motion_system: "システムに合わせる"
-    motion_reduce: "常に減らす"
-    transparency: "ガラス効果(透明とぼかし)"
-    reset: "初期設定に戻す"
-    about_tokens_out: "モデルが生成したトークン(出力)"
-    about_tokens_in: "新規入力(キャッシュ書き込みを含む)"
-    about_tokens_cache: "キャッシュの再読み込み(同じコンテキストを毎ターン)"
-    about_total_note: "合計=新規入力+出力。同じコンテキストを何度も数えないよう、キャッシュの再読み込みは含めていません。"
-    about_responses: "モデルの応答数"
-    about_measured: "計測日"
+      caramel: キャラメル
+      rose: Fuwarchローズ
+      sage: セージ
+      slate: スレートブルー
+    text_size: 文字サイズ
+    size_small: 小
+    size_default: 標準
+    size_large: 大
+    size_xl: 特大
+    icon_size: デスクトップアイコンの大きさ
+    motion: アニメーション
+    motion_system: システムに合わせる
+    motion_reduce: 常に減らす
+    transparency: ガラス効果(透明とぼかし)
+    reset: 初期設定に戻す
+    about_tokens_out: モデルが生成したトークン(出力)
+    about_tokens_in: 新規入力(キャッシュ書き込みを含む)
+    about_tokens_cache: キャッシュの再読み込み(同じコンテキストを毎ターン)
+    about_total_note: 合計=新規入力+出力。同じコンテキストを何度も数えないよう、キャッシュの再読み込みは含めていません。
+    about_responses: モデルの応答数
+    about_measured: 計測日
   gallery:
-    intro: "各プロジェクトのインターフェースのスクリーンショット(リポジトリより)。デモ動画は準備でき次第追加します。"
-    soon: "近日公開"
+    intro: 各プロジェクトのインターフェースのスクリーンショット(リポジトリより)。デモ動画は準備でき次第追加します。
+    soon: 近日公開
   terminal:
-    welcome: "Fuwarch shell 0.1 — 'help' と入力。(模擬:実際のコマンドは実行されません)"
-    help: |-
-      コマンド:
-        help             このヘルプ
-        about            会社とFuwarchについて
-        projects         プロジェクト一覧とステータス
-        skills           技術スタックと専門分野
-        contact          創設者への連絡方法
-        usami --about    コンパニオン・マスコットのUsamiについて
-        ls [フォルダ]    フォルダとファイルを一覧
-        cd <フォルダ>    フォルダに入る(cd .. で戻る)
-        pwd              現在地を表示
-        cat <ファイル>   ファイルを読む
-        open <ファイル>  ファイルエクスプローラーで開く
-        evidence         エビデンスのページを開く
-        ps               仮想プロセスを一覧
-        top              タスクマネージャーを開く
-        neofetch         システム情報
-        whoami           あなたは誰
-        clear            画面をクリア
-        exit             ターミナルを閉じる
-    not_found: "%{cmd}: コマンドが見つかりません。'help' を試してください。"
-    no_such: "%{path}: ファイルまたはフォルダが見つかりません"
-    usage: "使い方: %{usage}"
-    whoami: "訪問者(sudoなし)"
-    sudo: "訪問者はsudoersファイルに含まれていません。この件はFuwarchに報告されます。"
-    rm_root: "rm: '/' を削除中… 待って。このターミナルは見せかけで、被害が出る前にFuwarchがコマンドをかじりました。何も消えていません。システムも、あなたの評判も。(ギリギリ)"
-    neofetch_note: "ブラウザ上でエミュレート — まだLinuxディストリビューションではありません"
-    read_only: "このターミナルは読み取り専用です"
+    welcome: Fuwarch shell 0.1 — 'help' と入力。(模擬:実際のコマンドは実行されません)
+    help: "コマンド:\n  help             このヘルプ\n  about            会社とFuwarchについて\n  projects         プロジェクト一覧とステータス\n  skills           技術スタックと専門分野\n  contact          創設者への連絡方法\n  usami --about    コンパニオン・マスコットのUsamiについて\n  ls [フォルダ]    フォルダとファイルを一覧\n  cd <フォルダ>    フォルダに入る(cd .. で戻る)\n  pwd              現在地を表示\n  cat <ファイル>   ファイルを読む\n  open <ファイル>  ファイルエクスプローラーで開く\n  evidence         エビデンスのページを開く\n  ps               仮想プロセスを一覧\n  top              タスクマネージャーを開く\n  neofetch         システム情報\n  whoami           あなたは誰\n  clear            画面をクリア\n  exit             ターミナルを閉じる"
+    not_found: '%{cmd}: コマンドが見つかりません。''help'' を試してください。'
+    no_such: '%{path}: ファイルまたはフォルダが見つかりません'
+    usage: '使い方: %{usage}'
+    whoami: 訪問者(sudoなし)
+    sudo: 訪問者はsudoersファイルに含まれていません。この件はFuwarchに報告されます。
+    rm_root: 'rm: ''/'' を削除中… 待って。このターミナルは見せかけで、被害が出る前にFuwarchがコマンドをかじりました。何も消えていません。システムも、あなたの評判も。(ギリギリ)'
+    neofetch_note: ブラウザ上でエミュレート — まだLinuxディストリビューションではありません
+    read_only: このターミナルは読み取り専用です
   eggs:
-    konami_title: "コナミコマンド発動!"
-    konami_text: "残機+30とFuwarchのなでなで。"
-    start_label: "Fuwarchをなでる"
-    console_intro: "こんにちは、好奇心旺盛なあなた!コンソールを開いたということは、探索のコツをご存じですね。"
-    console_contact: "コードが気に入ったら、声をかけてください: %{url} — Fuwarchが 'sudo rm -rf /' を消し去るより早く返信すると約束します。"
+    konami_title: コナミコマンド発動!
+    konami_text: 残機+30とFuwarchのなでなで。
+    start_label: Fuwarchをなでる
+    console_intro: こんにちは、好奇心旺盛なあなた!コンソールを開いたということは、探索のコツをご存じですね。
+    console_contact: 'コードが気に入ったら、声をかけてください: %{url} — Fuwarchが ''sudo rm -rf /'' を消し去るより早く返信すると約束します。'
+  contact_form:
+    title: お見積り・お問い合わせ
+    meta_title: お見積り依頼 · Usami
+    meta_description: ソフトウェア、デザインシステム、AIエージェントの開発依頼。24〜48営業時間以内に返信します。
+    heading: 一緒に新しいプロジェクトを創りませんか？
+    lead: アイデアや技術的なご要望をお聞かせください。Lucasが一件ずつ確認し、透明性のあるご提案をお届けします。
+    errors_header: '入力内容をご確認ください:'
+    fields:
+      name: お名前または企業名
+      email: ご連絡先メールアドレス
+      contact_handle: WhatsApp・Discord・Telegram (任意)
+      services: ご希望の支援分野
+      budget: 想定のご予算
+      timeline: ご希望の納期
+      details: プロジェクトの概要やご相談内容
+    placeholders:
+      name: '例: 山田 太郎 / 会社名'
+      email: your.email@example.com
+      contact_handle: '例: @username'
+      details: アイデア、現在の進捗状況、参考リンク、ご希望の技術スタックなど...
+    hints:
+      contact_handle: チャットツールでの迅速な連絡をご希望の場合。
+      services: 複数選択可能です。
+      budget: 最適なアーキテクチャと範囲の検討に役立ちます。
+      details: 10文字以上でご記入ください。
+    services:
+      design_engineering: デザインエンジニアリング & Webアプリ
+      design_system: デザインシステム & UIキット
+      ai_agents: AIエージェント & LLM連携
+      fullstack: フルスタックWebアプリケーション
+      consulting: 技術コンサルティング & 監査
+      none: その他・全般
+    budgets:
+      under_5k: 50万円未満
+      5k_to_15k: 50万〜150万円
+      15k_to_30k: 150万〜300万円
+      over_30k: 300万円以上
+      international_usd: 海外契約 (USD)
+    timelines:
+      urgent: 至急 (1〜2週間)
+      standard: 標準 (1〜2ヶ月)
+      flexible: 柔軟 / 急ぎではない
+    submit: お見積り・相談を送信する →
+    privacy_note: 🔒 ご入力いただいた情報はご連絡のみに使用し、厳重に保護されます。スパムはありません。
+    direct_title: 直接のご連絡
+    direct_intro: '以下の認証済みチャンネルから直接メッセージを送信することもできます:'
+    promise_badge: 返答コミットメント
+    promise_text: すべての有効なご相談に24〜48営業時間以内に返信いたします。
+    mobile_cta_aria: クイック連絡バー
+    mobile_cta_text: プロジェクトのご相談はこちら
+    mobile_cta_btn: お見積り依頼
+  thanks_page:
+    meta_title: 送信完了 · Usami
+    breadcrumb: 送信完了
+    badge: 正常に送信されました
+    scene_desc: Usami & Fuwarch · 感謝
+    heading: メッセージを受け付けました！
+    lead: Usamiへのご関心をいただき誠にありがとうございます。内容が記録され、Lucasに通知が届きました。
+    steps_title: 今後の流れ
+    step1_title: 技術的な要件・範囲の確認
+    step1_desc: 必要な技術構成、アーキテクチャ、納期の実現可能性を検証します。
+    step2_title: 24〜48営業時間以内にご連絡
+    step2_desc: メールまたはチャットにて、詳細な提案やお打ち合わせのご案内をお送りします。
+    step3_title: 初回相談無料
+    step3_desc: 事前の相談・お見積りは一切無料です。安心してお話しいただけます。

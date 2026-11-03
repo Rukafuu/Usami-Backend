@@ -6,9 +6,9 @@
   <h1><%= localized_site("headline") %></h1>
   <p class="lead"><%= localized_site("description") %></p>
   <p class="cta">
-    <a class="button button--primary" href="mailto:<%= contact["email"] %>"><%= t("contact.email") %></a>
+    <a class="button button--primary" href="<%= contact_path %>"><%= t("home.quote_cta") %></a>
     <a class="button" href="<%= whatsapp_url %>" target="_blank" rel="noopener"><%= t("contact.whatsapp") %></a>
-    <a class="button" href="<%= contact["linkedin"] %>" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="button" href="mailto:<%= contact["email"] %>"><%= t("contact.email") %></a>
   </p>
   <p class="cta-note mono"><%= t("contact.response") %></p>
 </section>

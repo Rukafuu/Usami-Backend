@@ -343,3 +343,299 @@ button.button { font: inherit; font-weight: 500; cursor: pointer; }
     aspect-ratio: 16 / 9;
   }
 }
+
+/* ==========================================================================
+   Contact / Quote Request & Thanks Page
+   ========================================================================== */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: clamp(20px, 3.5vw, 36px);
+  box-shadow: 0 16px 36px -16px rgba(0, 0, 0, 0.4);
+}
+
+.form-alert {
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 0.875rem;
+}
+
+.form-alert--error {
+  background: color-mix(in srgb, #e05252 14%, var(--surface));
+  border: 1px solid #e05252;
+  color: #ff9999;
+}
+
+.form-alert ul {
+  margin: 6px 0 0 18px;
+  padding: 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--fg);
+}
+
+.form-hint {
+  font-size: 0.75rem;
+  color: var(--mute);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line-2);
+  background: var(--surface-2);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.form-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.form-chip {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.form-chip__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.form-chip__label {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: var(--surface-2);
+  color: var(--fg);
+  font-size: 0.8125rem;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.form-chip:hover .form-chip__label {
+  border-color: var(--accent);
+}
+
+.form-chip__input:checked + .form-chip__label {
+  background: color-mix(in srgb, var(--accent) 20%, var(--surface-2));
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.form-chip__input:focus-visible + .form-chip__label {
+  outline: 2px solid var(--accent);
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.button--lg {
+  padding: 12px 28px;
+  font-size: 1rem;
+  justify-content: center;
+}
+
+.button--sm {
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+}
+
+.form-privacy {
+  font-size: 0.75rem;
+  color: var(--mute);
+  margin: 0;
+}
+
+/* Contact aside / direct channels */
+.contact-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.contact-card h3 {
+  margin: 0 0 8px;
+  font-size: 0.9375rem;
+  color: var(--accent);
+}
+
+.contact-card > p {
+  margin: 0 0 16px;
+  font-size: 0.875rem;
+}
+
+.contact-promise {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-2);
+}
+
+.contact-promise__badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.contact-promise p {
+  margin: 0;
+  font-size: 0.8125rem;
+}
+
+/* Thanks page */
+.thanks-badge {
+  color: #55c777;
+}
+
+.thanks-steps {
+  margin: 20px 0;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--line-2);
+}
+
+.thanks-steps h3 {
+  margin: 0 0 12px;
+  font-size: 0.875rem;
+  color: var(--accent);
+}
+
+.thanks-steps-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.thanks-steps-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.875rem;
+}
+
+.thanks-steps-list li strong {
+  color: var(--fg);
+}
+
+.thanks-steps-list li span {
+  color: var(--mute);
+  font-size: 0.8125rem;
+}
+
+/* Mobile Sticky CTA bar */
+.mobile-cta-bar {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .mobile-cta-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    border-top: 1px solid var(--line-2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.35);
+  }
+
+  .mobile-cta-bar__text {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--fg);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* Gallery page: a small index of project folders, then one section per project. */
+.gallery-folders ul { display: flex; flex-wrap: wrap; gap: 8px 12px; margin: 0; padding: 0; list-style: none; }
+.gallery-folders a { display: inline-flex; gap: 6px; align-items: center; padding: 8px 14px; border: 1px solid var(--line-2); border-radius: 99px; background: var(--surface); text-decoration: none; }
+.gallery-folders a:hover { border-color: var(--accent); }
+.gallery-folder h2 a { color: var(--fg); text-decoration: none; }
+.gallery-folder h2 .mono { font-size: 0.75rem; text-transform: none; letter-spacing: normal; }
+.gallery a:has(> img) { display: block; cursor: zoom-in; }

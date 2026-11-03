@@ -46,9 +46,12 @@ describe("desktop", () => {
     screen.getByRole("button", { name: "Galeria" }).focus()
     await userEvent.keyboard("{Enter}")
     expect(screen.getByRole("dialog", { name: "Galeria" })).toBeInTheDocument()
-    expect(screen.getByText("Hane · onboarding.")).toBeInTheDocument()
+    // The gallery starts on the project folders; open one to see its media.
+        const gallery = within(screen.getByRole("dialog", { name: "Galeria" }))
+    await userEvent.click(gallery.getByRole("button", { name: /hane\.core/ }))
+    expect(gallery.getByText("Hane · onboarding.")).toBeInTheDocument()
     // Videos without a file are honest placeholders, not broken players.
-    const soon = screen.getByRole("img", { name: "Hane · vídeo de demonstração (em breve)." })
+    const soon = screen.getByRole("img", { name: /Hane · vídeo de demonstração/ })
     expect(within(soon).getByText("em breve")).toBeInTheDocument()
     expect(document.querySelector("video")).toBeNull()
   })
@@ -269,6 +272,45 @@ describe("desktop", () => {
     await userEvent.click(within(browserRow).getByRole("button", { name: "Encerrar" }))
     expect(screen.queryByRole("dialog", { name: "Navegador" })).not.toBeInTheDocument()
     expect(within(tm).getByText(`1 / ${APP_IDS.length}`)).toBeInTheDocument()
+  })
+
+  it("the gallery has one folder per project and opens images in a viewer with next/previous, Escape and the original link", async () => {
+    renderOS()
+    act(() => useWindows.getState().open("gallery", { width: 1280, height: 800 }))
+    const win = screen.getByRole("dialog", { name: "Galeria" })
+
+    // folders, in project order, with the number of items
+    const folders = within(win).getAllByRole("button").filter((b) => b.getAttribute("aria-label")?.includes(" itens"))
+    expect(folders.map((b) => b.getAttribute("aria-label"))).toEqual(["hane.core · 3 itens", "usami.companion · 1 itens"])
+
+    // open a folder: its images (and the "coming soon" video) are listed
+    await userEvent.click(within(win).getByRole("button", { name: /hane\.core/ }))
+    expect(within(win).getByRole("heading", { name: "hane.core" })).toBeInTheDocument()
+    expect(within(win).getByText("em breve")).toBeInTheDocument()
+    expect(within(win).queryByText("Usami · a companion.")).not.toBeInTheDocument()
+
+    // open the first image
+    await userEvent.click(within(win).getByRole("button", { name: /Hane · onboarding/ }))
+    expect(within(win).getByRole("img", { name: "Hane · onboarding." })).toHaveAttribute("src", "/media/hane-onboarding.jpg")
+    expect(within(win).getByText("hane.core · 1 de 2")).toBeInTheDocument()
+    expect(within(win).getByRole("link", { name: /Abrir original/ })).toHaveAttribute("href", "/media/hane-onboarding.jpg")
+
+    // next / previous, with the buttons and the arrow keys (it wraps around)
+    await userEvent.click(within(win).getByRole("button", { name: "Próxima imagem" }))
+    expect(within(win).getByRole("img", { name: "Hane · uma missão real." })).toBeInTheDocument()
+    await userEvent.keyboard("{ArrowRight}")
+    expect(within(win).getByText("hane.core · 1 de 2")).toBeInTheDocument()
+    await userEvent.keyboard("{ArrowLeft}")
+    expect(within(win).getByText("hane.core · 2 de 2")).toBeInTheDocument()
+
+    // Escape closes the viewer only; the window and the folder stay
+    await userEvent.keyboard("{Escape}")
+    expect(within(win).getByRole("heading", { name: "hane.core" })).toBeInTheDocument()
+    expect(screen.getByRole("dialog", { name: "Galeria" })).toBeInTheDocument()
+
+    // back to the folders
+    await userEvent.click(within(win).getByRole("button", { name: /Voltar às pastas/ }))
+    expect(within(win).getByRole("heading", { name: "Pastas de projetos" })).toBeInTheDocument()
   })
 
   it("shows the founder's portrait and his own about-me text in the file explorer", () => {

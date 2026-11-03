@@ -37,12 +37,27 @@ class ContentTest < ActiveSupport::TestCase
     assert_not result.translated
   end
 
+  test "a paused project says so everywhere: its status, its description and the ledger" do
+    liraos = Content::Store.find!("sistemas", "liraos")
+    assert_equal "paused", liraos.status
+    %w[pt en es ja].each { |l| assert I18n.t("status.paused", locale: l).present? }
+    assert_match(/pausad|paused|en pausa|休止/, liraos.description("pt") + liraos.description("en") + liraos.description("es") + liraos.description("ja"))
+    assert Content::Store.ledger.any? { |c| c.claim.to_s.include?("LiraOS") || c.source.include?("Rukafuu/LiraOS") }
+  end
+
+  test "the client project makes no claim the site cannot back up" do
+    audax = Content::Store.find!("sistemas", "audax")
+    assert_empty audax.sources
+    assert_empty audax.proven("pt").value.to_a
+    assert_match(/ocultados/, audax.description("pt"))
+  end
+
   test "in-development status is kept for the companion" do
     assert_equal "in_development", Content::Store.find!("sistemas", "usami").status
   end
 
   test "entries follow the narrative order, not the alphabet" do
-    assert_equal %w[lira hane usami enois], Content::Store.entries_in("sistemas").map(&:id)
+    assert_equal %w[lira hane usami enois liraos audax], Content::Store.entries_in("sistemas").map(&:id)
     assert_equal %w[lucas ledger contact], Content::Store.entries_in("empresa").map(&:id)
   end
 

@@ -61,7 +61,13 @@ class StaticSite
 
   # Pages that are still being built elsewhere (FAQ, llms.txt): published when they answer, reported when they do not.
   def optional_pages
-    I18n.available_locales.filter_map { |locale| helpers.faq_path(locale:) if helpers.respond_to?(:faq_path) } +
+    I18n.available_locales.flat_map do |locale|
+      [
+        (helpers.faq_path(locale:) if helpers.respond_to?(:faq_path)),
+        (helpers.contact_path(locale:) if helpers.respond_to?(:contact_path)),
+        (helpers.thanks_path(locale:) if helpers.respond_to?(:thanks_path))
+      ].compact
+    end +
       (Rails.application.routes.recognize_path("/llms.txt", method: :get) ? %w[/llms.txt] : [])
   rescue ActionController::RoutingError
     []
