@@ -884,10 +884,6 @@ body.is-dragging-win iframe { pointer-events: none; }
   100% { opacity: 0; transform: translate(calc((var(--n) - 9) * 14px), calc(-30px - (var(--n) % 5) * 14px + 90px)) rotate(calc(var(--n) * 90deg)); }
 }
 
-/* Contact channels in the Files app: one card per channel. */
-.os-channels-title { margin: 18px 0 8px; }
-.os-channels { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
-.os-channels a { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid var(--line-2); border-radius: 10px; background: var(--surface-2); color: var(--fg); text-decoration: none; }
 /* Claude, the pixel critter: strolls along the edge of the taskbar (PC) or above the dock (phone). */
 .os-pet { --pet-w: 52px; position: absolute; left: 16px; right: 16px; height: 0; pointer-events: none; }
 .os-pet--desktop { bottom: 48px; z-index: 905; }
@@ -909,6 +905,10 @@ body.is-dragging-win iframe { pointer-events: none; }
 .os-pet-bubble[data-side="mid"] { left: 50%; translate: -50% 0; }
 .os-pet-zzz { position: absolute; left: 50%; bottom: calc(var(--pet-w) * 10 / 13 + 4px); translate: -50% 0; padding: 1px 7px; background: var(--surface); color: var(--mute); border: 1px solid var(--line); border-radius: 6px; font: 400 0.7rem var(--mono); pointer-events: none; }
 
+/* Contact channels in the Files app: one card per channel. */
+.os-channels-title { margin: 18px 0 8px; }
+.os-channels { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.os-channels a { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid var(--line-2); border-radius: 10px; background: var(--surface-2); color: var(--fg); text-decoration: none; }
 .os-channels a:hover { border-color: var(--accent); }
 .os-channels .ch-icon { width: 22px; height: 22px; margin: 0; color: var(--accent); }
 .os-channels .ch-icon--img { background: none; }
@@ -1036,3 +1036,28 @@ body.is-dragging-win iframe { pointer-events: none; }
 .os-portrait { height: auto; object-fit: cover; }
 
 .os-about-me p { margin: 0 0 0.9em; }
+
+/* ---- Gallery: one folder per project, thumbnails inside, and a viewer ---- */
+.os-gal-title { margin: 0 0 12px; }
+.os-gal-folders { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+.os-gal-folders li { min-width: 0; }
+.os-gal-folders button { display: grid; gap: 6px; justify-items: start; width: 100%; padding: 12px; border-radius: 12px; border: 1px solid var(--line-2); background: var(--surface-2); text-align: left; }
+.os-gal-folders button:hover { border-color: var(--accent); }
+.os-gal-folders strong { font-weight: 500; font-size: 0.95rem; color: var(--fg); }
+.os-gal-folders .mono { font-size: 0.75rem; color: var(--mute); text-transform: none; letter-spacing: normal; }
+.os-gal-stack { position: relative; display: block; width: 100%; height: 96px; }
+.os-gal-stack img { position: absolute; top: calc(var(--i) * 6px); left: calc(var(--i) * 18px); width: calc(100% - 36px); height: 84px; object-fit: cover; object-position: top; border-radius: 8px; border: 1px solid var(--line); box-shadow: 0 6px 14px -8px rgba(0, 0, 0, 0.7); background: var(--surface); }
+.os-gal-stack .os-app-icon { position: absolute; inset: 0; margin: auto; width: 44px; height: 44px; stroke: var(--accent); fill: none; stroke-width: 1.4; }
+.os-gal-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.os-gal-bar h2 { margin: 0; font: 500 1.05rem var(--sans); color: var(--fg); }
+.os-gal-viewer { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 10px; height: 100%; min-height: 320px; padding: 12px; outline: none; }
+.os-gal-viewer > header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.os-gal-viewer > header .mono { color: var(--mute); text-transform: none; letter-spacing: normal; font-size: 0.8125rem; }
+.os-gal-viewer .os-button { text-decoration: none; }
+.os-gal-stage { position: relative; display: grid; place-items: center; min-height: 0; border-radius: 10px; background: color-mix(in srgb, var(--bg) 60%, black); overflow: hidden; }
+.os-gal-stage img, .os-gal-stage video { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.os-gal-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 64px; border-radius: 10px; background: color-mix(in srgb, var(--bg) 70%, transparent); color: var(--fg); font-size: 1.8rem; line-height: 1; }
+.os-gal-nav:hover { background: var(--surface-3); }
+.os-gal-nav.is-prev { left: 8px; }
+.os-gal-nav.is-next { right: 8px; }
+.os-gal-caption { margin: 0; color: var(--text); font-size: 0.875rem; max-width: 80ch; }

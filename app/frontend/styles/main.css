@@ -395,6 +395,14 @@ button.button { font: inherit; font-weight: 500; cursor: pointer; }
   gap: 16px;
 }
 
+.form-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
