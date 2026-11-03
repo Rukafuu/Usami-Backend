@@ -1,0 +1,17 @@
+id: jaeger
+folder: contribuicoes
+order: 2
+filename: jaeger-genai.pr
+status: live
+stack: [Jaeger UI, TypeScript]
+description:
+  pt: "PR aceita no Jaeger UI (#4419): expande automaticamente os atributos de GenAI quando são a única seção disponível no span."
+  en: "A merged PR on Jaeger UI (#4419): it automatically expands GenAI attributes when they are the only section available."
+  es: "PR aceptada en Jaeger UI (#4419): expande automáticamente los atributos de GenAI cuando son la única sección disponible."
+  ja: "Jaeger UIでマージされたPR(#4419):GenAI属性が唯一の表示可能なセクションである場合に、自動的に展開します。"
+proven:
+  pt: ["Mesclada no repositório upstream jaegertracing/jaeger-ui"]
+  en: ["Merged upstream into jaegertracing/jaeger-ui"]
+planned: {}
+sources:
+  - { label: "Jaeger UI PR #4419", url: "https://github.com/jaegertracing/jaeger-ui/pull/4419" }

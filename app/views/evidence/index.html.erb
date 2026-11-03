@@ -1,0 +1,35 @@
+<% content_for :title, t("evidence.title") %>
+<% content_for :description, t("evidence.intro") %>
+
+<section class="hero hero--small">
+  <p class="mono"><a href="<%= home_path %>"><%= t("nav.home") %></a> / <%= t("evidence.title") %></p>
+  <h1><%= t("evidence.title") %></h1>
+  <p class="lead"><%= t("evidence.intro") %></p>
+</section>
+
+<div class="table-wrap block">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><%= t("evidence.claim") %></th>
+        <th scope="col"><%= t("evidence.source") %></th>
+        <th scope="col"><%= t("evidence.verified") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= localized(item.claim) %></td>
+          <td>
+            <% if item.url %>
+              <a href="<%= item.url %>" target="_blank" rel="noopener"><%= item.source %> <span aria-hidden="true">↗</span></a>
+            <% else %>
+              <%= item.source %>
+            <% end %>
+          </td>
+          <td class="mono"><time datetime="<%= item.verified_on.iso8601 %>"><%= l(item.verified_on, format: :long) %></time></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

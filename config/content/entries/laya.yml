@@ -1,0 +1,26 @@
+id: laya
+folder: contribuicoes
+order: 1
+filename: laya-eval.pr
+status: live
+stack: [Python, research/eval, Apache-2.0 (upstream)]
+description:
+  pt: "Laya é um motor de decisão não autoregressivo de terceiros (NandhaKishorM). Lucas enviou duas PRs de avaliação aceitas: robustez à ordem das opções (#269) e diagnóstico de confusão por orçamento de tokens (#706). Nenhuma altera o runtime do modelo."
+  en: "Laya is a third-party non-autoregressive decision engine (NandhaKishorM). Lucas sent two accepted evaluation PRs: robustness to option order (#269) and token-budget confounding diagnostics (#706). Neither touches the model runtime."
+  es: "Laya es un motor de decisión no autorregresivo de terceros (NandhaKishorM). Lucas envió dos PRs de evaluación aceptadas: robustez al orden de las opciones (#269) y diagnóstico de confusión por presupuesto de tokens (#706). Ninguna toca el runtime del modelo."
+  ja: "Layaは第三者(NandhaKishorM)による非自己回帰型の意思決定エンジンです。Lucasは評価に関する2件のPRがマージされました:選択肢の順序に対する頑健性(#269)とトークン予算による交絡の診断(#706)。どちらもモデルのランタイムには触れていません。"
+proven:
+  pt:
+    - "#269 — permutação semeada das opções, deriva de probabilidade e divergência JS — mesclada em 23/09/2026"
+    - "#706 — diagnóstico de confusão por orçamento de tokens — mesclada em 29/09/2026"
+    - "Ambas apenas em research/eval, com testes offline"
+  en:
+    - "#269 — seeded option permutation, probability drift and JS divergence — merged 2026-09-23"
+    - "#706 — token-budget confounding diagnostics — merged 2026-09-29"
+    - "Both only in research/eval, with offline tests"
+planned:
+  pt: ["Medições com checkpoints reais ficaram fora do escopo das PRs"]
+  en: ["Measurements on real checkpoints were out of scope for the PRs"]
+sources:
+  - { label: "Laya PR #269", url: "https://github.com/NandhaKishorM/laya/pull/269" }
+  - { label: "Laya PR #706", url: "https://github.com/NandhaKishorM/laya/pull/706" }

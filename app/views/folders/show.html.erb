@@ -1,0 +1,12 @@
+<% content_for :title, t("folders.#{@folder}") %>
+<% content_for :description, t("folder_intro.#{@folder}") %>
+
+<section class="hero hero--small">
+  <p class="mono"><a href="<%= home_path %>"><%= t("nav.home") %></a> / <%= t("folders.#{@folder}") %></p>
+  <h1><%= t("folders.#{@folder}") %></h1>
+  <p class="lead"><%= t("folder_intro.#{@folder}") %></p>
+</section>
+
+<ul class="rows block">
+  <%= render partial: "shared/entry_row", collection: @entries, as: :entry %>
+</ul>

@@ -1,0 +1,37 @@
+id: lira
+folder: sistemas
+order: 1
+filename: lira-vtuber.app
+status: live
+stack: [Python, Whisper, SQLite, RAG, FastAPI, Node.js]
+description:
+  pt: "Assistente VTuber de código aberto para desktop (Windows), em Python: conversa por voz, mantém memória em três camadas, alterna entre vários provedores de LLM e de voz e integra Discord, WhatsApp e VTube Studio. Tem 25 estrelas no GitHub."
+  en: "An open-source desktop VTuber assistant (Windows, Python): it talks by voice, keeps three-layer memory, switches between several LLM and voice providers, and integrates Discord, WhatsApp and VTube Studio. 25 GitHub stars."
+  es: "Asistente VTuber de código abierto para escritorio (Windows), en Python: conversa por voz, mantiene memoria en tres capas, alterna entre varios proveedores de LLM y de voz e integra Discord, WhatsApp y VTube Studio. 25 estrellas en GitHub."
+  ja: "Python製のオープンソースのデスクトップ(Windows)VTuberアシスタント。音声で会話し、3層の記憶を持ち、複数のLLM・音声プロバイダを切り替え、Discord、WhatsApp、VTube Studioと連携します。GitHubスター25。"
+proven:
+  pt:
+    - "Voz: reconhecimento com Whisper e síntese com cadeia de fallback entre provedores"
+    - "Memória em 3 camadas: SQLite, busca semântica (RAG) e grafo de conhecimento"
+    - "Loops de agente (pensar, agir, observar) e lembretes proativos"
+    - "Bot de Discord com 13 módulos e ponte de WhatsApp"
+    - "Integração com VTube Studio: hotkeys, expressões e parâmetros"
+  en:
+    - "Voice: Whisper recognition and synthesis with a provider fallback chain"
+    - "3-layer memory: SQLite, semantic search (RAG) and a knowledge graph"
+    - "Agent loops (think, act, observe) and proactive reminders"
+    - "Discord bot with 13 modules and a WhatsApp bridge"
+    - "VTube Studio integration: hotkeys, expressions and parameters"
+planned:
+  pt:
+    - "Mapeamento emocional de voz (RVC)"
+    - "Memória episódica (resumos diários)"
+    - "OCR multimodal profundo"
+    - "Mais guardrails nas automações de PC"
+  en:
+    - "Emotional voice mapping (RVC)"
+    - "Episodic memory (daily summaries)"
+    - "Deep multimodal OCR"
+    - "More guardrails on PC automations"
+sources:
+  - { label: "Rukafuu/LiraVtuber", url: "https://github.com/Rukafuu/LiraVtuber" }

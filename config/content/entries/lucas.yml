@@ -1,0 +1,15 @@
+id: lucas
+folder: empresa
+order: 1
+filename: lucas.txt
+status: info
+stack: []
+description:
+  pt: "Lucas Frischeisen (online: Reskyume e Rukafuu), engenheiro de IA e backend em São Paulo. Owner da organização Énois e head de frontend, também atua no backend. Faz música eletrônica sob os nomes Reskyume e Rukafuu."
+  en: "Lucas Frischeisen (online: Reskyume and Rukafuu), AI and backend engineer based in São Paulo. Owner of the Énois organization and head of frontend, also working on the backend. Makes electronic music as Reskyume and Rukafuu."
+  es: "Lucas Frischeisen (en línea: Reskyume y Rukafuu), ingeniero de IA y backend en São Paulo. Owner de la organización Énois y head de frontend, también trabaja en el backend. Hace música electrónica como Reskyume y Rukafuu."
+  ja: "Lucas Frischeisen(オンラインではReskyume、Rukafuu)。サンパウロを拠点とするAI・バックエンドエンジニア。Énois組織のオーナーでフロントエンドのヘッド、バックエンドにも携わる。ReskyumeおよびRukafuu名義で電子音楽も制作。"
+proven: {}
+planned: {}
+sources:
+  - { label: "github.com/Rukafuu", url: "https://github.com/Rukafuu" }

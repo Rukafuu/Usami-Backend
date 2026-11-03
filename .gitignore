@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+node_modules/
+/public/vite*
+/public/assets
+/log/*
+/tmp/*
+/storage/*
+!/log/.keep
+!/tmp/.keep
+!/storage/.keep
+/db/*.sqlite3*
+.bundle/
+/config/master.key
+/config/credentials/*.key

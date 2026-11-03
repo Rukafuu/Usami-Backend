@@ -1,0 +1,16 @@
+# Metadados reais da construção do site, exibidos em "Sobre o sistema".
+# Gerado por: node script/measure_session.mjs <transcrição .jsonl da sessão>
+# Regra: só entra número medido. O que não foi medido fica null e aparece como "não medido".
+version: "0.4"
+measured_at: 2026-11-03T05:28:55Z
+started_at: 2026-11-03T01:48:57Z      # primeira mensagem da sessão
+models: ["Claude Sonnet 5.5", "Claude Opus 5.5"]
+prompts: 11                           # mensagens digitadas por Lucas (sem notificações do sistema nem respostas de múltipla escolha)
+api_responses: 189                    # respostas do modelo na sessão (cada uma contada uma vez)
+tokens:
+  input: 392                          # entrada nova, preço cheio
+  cache_creation: 1789606             # entrada gravada no cache de prompt
+  cache_read: 69054111                # entrada relida do cache (o mesmo contexto conta de novo a cada turno)
+  output: 353047                      # gerados pelo modelo
+# total = entrada + gravação de cache + saída (releituras de cache ficam de fora, para não contar o mesmo contexto várias vezes)
+total_tokens: 2143045

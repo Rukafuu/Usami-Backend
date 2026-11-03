@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="<%= html_lang %>">
+  <head>
+    <meta charset="utf-8">
+    <title><%= content_for?(:title) ? page_title(yield(:title)) : page_title %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : localized_site("description") %>">
+    <meta name="color-scheme" content="dark light">
+    <meta property="og:site_name" content="<%= t("site.name") %>">
+    <meta property="og:title" content="<%= content_for?(:title) ? page_title(yield(:title)) : page_title %>">
+    <meta property="og:description" content="<%= content_for?(:description) ? yield(:description) : localized_site("description") %>">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="<%= html_lang.tr("-", "_") %>">
+    <% unless controller_name == "errors" %>
+      <link rel="canonical" href="<%= alternate_url(I18n.locale) %>">
+      <% I18n.available_locales.each do |locale| %>
+        <link rel="alternate" hreflang="<%= ApplicationHelper::HTML_LANG[locale] %>" href="<%= alternate_url(locale) %>">
+      <% end %>
+      <link rel="alternate" hreflang="x-default" href="<%= alternate_url(:pt) %>">
+    <% end %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= yield :head %>
+    <link rel="icon" href="/brand/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+    <meta property="og:image" content="<%= request.base_url %>/brand/logo-512.png">
+    <%= vite_client_tag %>
+    <%= vite_typescript_tag "application" %>
+  </head>
+
+  <body>
+    <a class="skip" href="#conteudo"><%= t("site.skip") %></a>
+
+    <header class="bar">
+      <a class="brand" href="<%= home_path %>">
+        <%= render "shared/mark" %>
+        <span><%= t("site.name") %></span>
+      </a>
+      <nav class="primary" aria-label="<%= t("nav.main") %>">
+        <% Content::Store::FOLDERS.each do |folder| %>
+          <%= link_to t("folders.#{folder}"), folder_path(folder: folder), aria: { current: (params[:folder] == folder ? "page" : nil) } %>
+        <% end %>
+        <%= link_to t("nav.evidence"), evidence_path, aria: { current: (controller_name == "evidence" ? "page" : nil) } %>
+        <%= link_to t("apps.gallery"), gallery_path, aria: { current: (controller_name == "gallery" ? "page" : nil) } %>
+      </nav>
+      <nav class="langs" aria-label="<%= t("site.language") %>">
+        <% I18n.available_locales.each do |locale| %>
+          <a href="<%= alternate_url(locale) %>" hreflang="<%= ApplicationHelper::HTML_LANG[locale] %>" lang="<%= ApplicationHelper::HTML_LANG[locale] %>" <%= 'aria-current="true"'.html_safe if locale == I18n.locale %>><%= locale.to_s.upcase %></a>
+        <% end %>
+      </nav>
+    </header>
+
+    <main id="conteudo">
+      <%= yield %>
+    </main>
+
+    <footer class="foot">
+      <p class="mono"><%= t("site.footer") %></p>
+    </footer>
+
+    <%# Progressive enhancement: the page above is complete without JavaScript; the shell layers Fuwarch Linux on top. %>
+    <div id="usamios"
+         data-endpoint="<%= os_path %>"
+         data-locale="<%= I18n.locale %>"
+         data-folder="<%= params[:folder] %>"
+         data-slug="<%= params[:slug] %>"
+         data-alternates="<%= I18n.available_locales.index_with { |l| alternate_url(l) }.to_json %>"></div>
+    <button type="button" class="shell-open" data-shell-open hidden><%= t("shell.open_shell") %></button>
+    <%= vite_javascript_tag "usamios.tsx" %>
+  </body>
+</html>

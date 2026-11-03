@@ -1,0 +1,15 @@
+id: deus
+folder: laboratorio
+order: 2
+filename: deus.lang
+status: experimental
+stack: [C17]
+description:
+  pt: "Linguagem de pipelines de informação em C17, com intenção validada e execução limitada. Há uma extensão de VS Code para suporte à linguagem."
+  en: "An information-pipeline language in C17 with validated intent and bounded execution. A VS Code extension provides language support."
+  es: "Lenguaje de pipelines de información en C17, con intención validada y ejecución acotada. Hay una extensión de VS Code para dar soporte al lenguaje."
+  ja: "検証済みの意図と制限付き実行を備えた、C17による情報パイプライン言語。言語サポート用のVS Code拡張もあります。"
+proven: {}
+planned: {}
+sources:
+  - { label: "Rukafuu/DEUS", url: "https://github.com/Rukafuu/DEUS" }

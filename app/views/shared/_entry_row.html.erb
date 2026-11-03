@@ -1,0 +1,7 @@
+<li class="row">
+  <a href="<%= entry.route ? evidence_path : entry_path(folder: entry.folder, slug: entry.id) %>">
+    <span class="row-name"><%= entry.filename %></span>
+    <span class="row-text"><%= entry.description(I18n.locale).to_s.truncate(150) %></span>
+  </a>
+  <span class="badge <%= 'badge--live' if entry.status == 'live' %>"><%= t("status.#{entry.status}") %></span>
+</li>

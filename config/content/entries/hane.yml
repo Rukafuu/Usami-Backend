@@ -1,0 +1,39 @@
+id: hane
+folder: sistemas
+order: 2
+filename: hane.core
+status: live
+stack: [Node.js 22, SQLite, Argon2id, Apache-2.0]
+description:
+  pt: "Núcleo local-first que executa um objetivo em três papéis — planejador, executor e revisor — com orçamento rígido de chamadas, leitura de arquivos restrita a um escopo concedido e uma trilha de auditoria que não pode ser reescrita. Hoje só a leitura de workspace está implementada."
+  en: "A local-first core that runs an objective through three roles — planner, executor and reviewer — with a hard call budget, file reads limited to a granted scope, and an audit trail that cannot be rewritten. Today only workspace reads are implemented."
+  es: "Núcleo local-first que ejecuta un objetivo con tres roles — planificador, ejecutor y revisor — con presupuesto estricto de llamadas, lectura de archivos limitada a un alcance concedido y un registro de auditoría que no se puede reescribir. Hoy solo la lectura de workspace está implementada."
+  ja: "目標を計画役・実行役・レビュー役の3つの役割で実行するローカルファーストのコア。呼び出し回数の厳格な上限、許可された範囲に限定したファイル読み取り、書き換えられない監査記録を備えます。現在実装されているのはワークスペースの読み取りのみです。"
+proven:
+  pt:
+    - "Papéis planejador, executor e revisor com ciclo de vida auditado"
+    - "Orçamento rígido de chamadas, verificado antes de cada requisição"
+    - "Retomada de missões interrompidas (só os papéis sem saída salva)"
+    - "Leitura restrita a um escopo, com lista de negação de segredos"
+    - "Chaves guardadas só no Windows Credential Manager"
+    - "Trilha de auditoria append-only; CLI e API em loopback"
+  en:
+    - "Planner, executor and reviewer roles with an audited lifecycle"
+    - "Hard call budget, checked before every request"
+    - "Interrupted missions resume (only roles without saved output re-run)"
+    - "Reads limited to a granted scope, with a secrets deny-list"
+    - "API keys stored only in Windows Credential Manager"
+    - "Append-only audit trail; CLI and loopback API"
+planned:
+  pt:
+    - "workspace.write, process.run e network.request (declarados, nada os executa ainda)"
+    - "Imagem de máquina WSL"
+    - "Times de agentes operacionais"
+    - "Casca desktop"
+  en:
+    - "workspace.write, process.run and network.request (declared, nothing executes them yet)"
+    - "WSL machine image"
+    - "Operational agent teams"
+    - "Desktop shell"
+sources:
+  - { label: "Rukafuu/Hane", url: "https://github.com/Rukafuu/Hane" }

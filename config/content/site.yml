@@ -1,0 +1,41 @@
+name: Usami
+os_name: Fuwarch Linux
+founder:
+  name: Lucas Frischeisen
+  aliases: [Reskyume, Rukafuu]
+  github: https://github.com/Rukafuu
+headline:
+  pt: "IA que conversa, lembra e age — e prova o que faz."
+  en: "AI that talks, remembers and acts — and shows its proof."
+  es: "IA que conversa, recuerda y actúa — y demuestra lo que hace."
+  ja: "会話し、記憶し、行動するAI。そして、その根拠を示す。"
+description:
+  pt: "A Usami é uma empresa de tecnologia recém-criada. Desenvolve aplicações, plataformas e soluções de IA para outras empresas, com foco em sistemas que conversam, lembram e agem — e que mostram evidências do que fazem."
+  en: "Usami is a newly founded technology company. It builds applications, platforms and AI solutions for other companies, focused on systems that talk, remember and act — and show evidence of what they do."
+  es: "Usami es una empresa de tecnología recién creada. Desarrolla aplicaciones, plataformas y soluciones de IA para otras empresas, con foco en sistemas que conversan, recuerdan y actúan, y que muestran evidencia de lo que hacen."
+  ja: "Usamiは設立されたばかりのテクノロジー企業です。他の企業向けにアプリケーション、プラットフォーム、AIソリューションを開発し、会話し、記憶し、行動するシステムと、その根拠を示すことに重点を置いています。"
+pillars:
+  - title: { pt: "Presença", en: "Presence", es: "Presencia", ja: "存在感" }
+    text:
+      pt: "Voz, memória e personalidade — LiraVtuber, Usami."
+      en: "Voice, memory and personality — LiraVtuber, Usami."
+      es: "Voz, memoria y personalidad — LiraVtuber, Usami."
+      ja: "音声・記憶・個性 — LiraVtuber、Usami。"
+  - title: { pt: "Controle", en: "Control", es: "Control", ja: "制御" }
+    text:
+      pt: "Orçamento, escopo e auditoria — Hane."
+      en: "Budget, scope and audit — Hane."
+      es: "Presupuesto, alcance y auditoría — Hane."
+      ja: "予算・範囲・監査 — Hane。"
+  - title: { pt: "Medição", en: "Measurement", es: "Medición", ja: "計測" }
+    text:
+      pt: "Avaliar com honestidade — Laya."
+      en: "Evaluating honestly — Laya."
+      es: "Evaluar con honestidad — Laya."
+      ja: "誠実な評価 — Laya。"
+  - title: { pt: "Escala", en: "Scale", es: "Escala", ja: "スケール" }
+    text:
+      pt: "Produto real, em equipe — Énois."
+      en: "A real product, in a team — Énois."
+      es: "Producto real, en equipo — Énois."
+      ja: "チームで作る実プロダクト — Énois。"

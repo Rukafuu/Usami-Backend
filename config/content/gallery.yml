@@ -1,0 +1,79 @@
+# Mídias de evidência dos projetos. Imagens vêm dos repositórios do próprio Lucas (capturas de tela das interfaces).
+# kind: image | video | diagram. Itens com `placeholder: true` ainda não têm arquivo e aparecem como "em breve".
+- id: lira-monitor
+  entry: lira
+  kind: image
+  src: /media/lira-monitor.jpg
+  thumb: /media/lira-monitor-thumb.jpg
+  caption:
+    pt: "LiraVtuber · painel de controle: monitor de hardware, log do sistema e status das conexões."
+    en: "LiraVtuber · control panel: hardware monitor, system log and connection status."
+    es: "LiraVtuber · panel de control: monitor de hardware, registro del sistema y estado de las conexiones."
+    ja: "LiraVtuber · コントロールパネル:ハードウェアモニター、システムログ、接続状況。"
+- id: lira-chat
+  entry: lira
+  kind: image
+  src: /media/lira-chat.jpg
+  thumb: /media/lira-chat-thumb.jpg
+  caption:
+    pt: "LiraVtuber · chat do painel de controle, com escolha de provedor e modelo."
+    en: "LiraVtuber · control panel chat, with provider and model selection."
+    es: "LiraVtuber · chat del panel de control, con selección de proveedor y modelo."
+    ja: "LiraVtuber · コントロールパネルのチャット。プロバイダとモデルを選択できます。"
+- id: lira-connections
+  entry: lira
+  kind: image
+  src: /media/lira-connections.jpg
+  thumb: /media/lira-connections-thumb.jpg
+  caption:
+    pt: "LiraVtuber · conexões e módulos: voz (TTS e STT), push-to-talk, visão, VTube Studio e bot do Discord, ligados por interruptores."
+    en: "LiraVtuber · connections and modules: voice (TTS and STT), push-to-talk, vision, VTube Studio and the Discord bot, each behind a switch."
+    es: "LiraVtuber · conexiones y módulos: voz (TTS y STT), push-to-talk, visión, VTube Studio y el bot de Discord, cada uno con su interruptor."
+    ja: "LiraVtuber · 接続とモジュール:音声(TTS/STT)、プッシュトゥトーク、ビジョン、VTube Studio、Discordボットをスイッチで切り替え。"
+- id: lira-demo
+  entry: lira
+  kind: video
+  placeholder: true
+  caption:
+    pt: "LiraVtuber · vídeo de demonstração (em breve)."
+    en: "LiraVtuber · demo video (coming soon)."
+    es: "LiraVtuber · video de demostración (próximamente)."
+    ja: "LiraVtuber · デモ動画(近日公開)。"
+- id: hane-onboarding
+  entry: hane
+  kind: image
+  src: /media/hane-onboarding.jpg
+  thumb: /media/hane-onboarding-thumb.jpg
+  caption:
+    pt: "Hane · onboarding: conectar um provedor de IA é opcional, e tudo começa no próprio dispositivo."
+    en: "Hane · onboarding: connecting an AI provider is optional, and everything starts on the device."
+    es: "Hane · onboarding: conectar un proveedor de IA es opcional y todo empieza en el propio dispositivo."
+    ja: "Hane · オンボーディング:AIプロバイダーの接続は任意で、すべてこの端末から始まります。"
+- id: hane-demo
+  entry: hane
+  kind: video
+  placeholder: true
+  caption:
+    pt: "Hane · vídeo de demonstração (em breve)."
+    en: "Hane · demo video (coming soon)."
+    es: "Hane · video de demostración (próximamente)."
+    ja: "Hane · デモ動画(近日公開)。"
+- id: enois-jobs
+  entry: enois
+  kind: image
+  src: /media/enois-jobs.jpg
+  thumb: /media/enois-jobs-thumb.jpg
+  caption:
+    pt: "Énois · página de vagas, com filtros por nível, local e tipo de contrato e busca por habilidades."
+    en: "Énois · jobs page, with filters for level, location and contract type, and a skills search."
+    es: "Énois · página de empleos, con filtros por nivel, ubicación y tipo de contrato y búsqueda por habilidades."
+    ja: "Énois · 求人ページ。レベル・勤務地・契約形態のフィルターとスキル検索を備えます。"
+- id: usami-demo
+  entry: usami
+  kind: video
+  placeholder: true
+  caption:
+    pt: "Usami · vídeo de demonstração da companion (em breve)."
+    en: "Usami · companion demo video (coming soon)."
+    es: "Usami · video de demostración de la companion (próximamente)."
+    ja: "Usami · コンパニオンのデモ動画(近日公開)。"

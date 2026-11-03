@@ -1,0 +1,37 @@
+id: usami
+folder: sistemas
+order: 3
+filename: usami.companion
+status: in_development
+stack: [React 19, Three.js, VRM, Node.js, faster-whisper, Gemini TTS]
+description:
+  pt: "A companion 3D da empresa, em desenvolvimento: avatar VRM com Three.js, voz em português com resposta em streaming, memória local com exclusão confirmada e um diretor de animação em que o modelo de linguagem nunca gera movimento cru — só escolhe entre formas validadas. É um protótipo, ainda não um produto."
+  en: "The company's 3D companion, in development: a VRM avatar on Three.js, Portuguese voice with streamed replies, local memory with confirmed deletion, and an animation director where the language model never emits raw motion — it only picks among validated shapes. A prototype, not yet a product."
+  es: "La companion 3D de la empresa, en desarrollo: avatar VRM con Three.js, voz en portugués con respuesta en streaming, memoria local con borrado confirmado y un director de animación donde el modelo de lenguaje nunca genera movimiento crudo, solo elige entre formas validadas. Es un prototipo, aún no un producto."
+  ja: "社内で開発中の3Dコンパニオン。Three.jsのVRMアバター、ストリーミング応答のポルトガル語音声、確認付き削除のローカル記憶、そして言語モデルが生のモーションを出さず検証済みの形から選ぶだけのアニメーション・ディレクターを備えます。プロトタイプであり、まだ製品ではありません。"
+proven:
+  pt:
+    - "Voz em streaming: primeiro som em ~1,0 s contra ~5,3 s do áudio completo (medido no projeto)"
+    - "Memória local por seções; exclusão exige confirmação escrita"
+    - "Resumos diários e busca em notas (índice FTS5 derivado)"
+    - "Diretor de animação com allowlist: o modelo só escolhe formas validadas"
+    - "Fila, retry e circuit breaker no cliente de LLM; API local com allowlist de origem e token fail-closed"
+    - "459 testes passando em 25/10/2026 (421 Node + 38 Python)"
+  en:
+    - "Streamed voice: first sound in ~1.0 s vs ~5.3 s for the full clip (measured in the project)"
+    - "Sectioned local memory; deleting requires a typed confirmation"
+    - "Daily summaries and note search (derived FTS5 index)"
+    - "Allowlisted animation director: the model only picks validated shapes"
+    - "Queue, retry and circuit breaker on the LLM client; local API with origin allowlist and fail-closed token"
+    - "459 tests passing on 2026-10-25 (421 Node + 38 Python)"
+planned:
+  pt:
+    - "Janela pet e atalhos globais (aguardam escolha entre Electron e Tauri)"
+    - "Consolidação de fatos da memória"
+    - "Personagem e logo definitivos"
+  en:
+    - "Pet window and global hotkeys (waiting on an Electron vs Tauri choice)"
+    - "Memory fact consolidation"
+    - "Final character and logo"
+sources:
+  - { label: "UsamiVtuber/Usami (showcase)", url: "https://github.com/UsamiVtuber/Usami" }

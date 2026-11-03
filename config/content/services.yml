@@ -1,0 +1,19 @@
+# O que a Usami oferece, nas palavras do briefing do fundador. Sem clientes, prazos ou métricas inventados.
+- title: { pt: "Aplicações", en: "Applications", es: "Aplicaciones", ja: "アプリケーション" }
+  text:
+    pt: "Aplicações web, desktop e mobile, do protótipo à produção."
+    en: "Web, desktop and mobile applications, from prototype to production."
+    es: "Aplicaciones web, de escritorio y móviles, del prototipo a producción."
+    ja: "Web・デスクトップ・モバイルのアプリケーションを、プロトタイプから本番まで。"
+- title: { pt: "Plataformas", en: "Platforms", es: "Plataformas", ja: "プラットフォーム" }
+  text:
+    pt: "Plataformas e backends com arquitetura pensada para crescer, como o Énois."
+    en: "Platforms and backends designed to grow, like Énois."
+    es: "Plataformas y backends pensados para crecer, como Énois."
+    ja: "Énoisのように、成長を前提に設計したプラットフォームとバックエンド。"
+- title: { pt: "Inteligência artificial", en: "Artificial intelligence", es: "Inteligencia artificial", ja: "人工知能" }
+  text:
+    pt: "Agentes, voz, memória e avaliação de modelos, com limites e auditoria — como na Hane e na LiraVtuber."
+    en: "Agents, voice, memory and model evaluation, with limits and audit trails — as in Hane and LiraVtuber."
+    es: "Agentes, voz, memoria y evaluación de modelos, con límites y auditoría — como en Hane y LiraVtuber."
+    ja: "上限と監査を備えたエージェント、音声、記憶、モデル評価 — HaneやLiraVtuberのように。"

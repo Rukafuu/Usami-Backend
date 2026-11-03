@@ -1,0 +1,15 @@
+id: cafune
+folder: laboratorio
+order: 1
+filename: cafune.lab
+status: experimental
+stack: [Julia, Python]
+description:
+  pt: "Motor de linguagem experimental que combina difusão mascarada bidirecional com dinâmica de redes neurais de spikes (SNN)."
+  en: "An experimental language-model engine combining bidirectional masked diffusion with spiking-neural-network dynamics."
+  es: "Motor de lenguaje experimental que combina difusión enmascarada bidireccional con dinámica de redes neuronales de spikes (SNN)."
+  ja: "双方向マスク拡散とスパイキングニューラルネットワークの力学を組み合わせた、実験的な言語モデルエンジン。"
+proven: {}
+planned: {}
+sources:
+  - { label: "Rukafuu/CAFUNE", url: "https://github.com/Rukafuu/CAFUNE" }

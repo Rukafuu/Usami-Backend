@@ -1,0 +1,34 @@
+id: enois
+folder: sistemas
+order: 4
+filename: enois.net
+status: live
+stack: [Java 25, Spring Boot 4, React 19, TanStack Start, Go, GPL-3.0]
+description:
+  pt: "Rede social brasileira para quem trabalha com tecnologia: gratuita, sem anúncios e de código aberto. Backend em Spring Boot com arquitetura hexagonal; frontend em React 19 com TanStack Start; design system próprio e API gateway em Go. Lucas é owner da organização, head de frontend e também atua no backend."
+  en: "A Brazilian social network for people who work in tech: free, ad-free and open source. Spring Boot backend with hexagonal architecture; React 19 + TanStack Start frontend; its own design system and a Go API gateway. Lucas is the organization's owner, head of frontend, and also works on the backend."
+  es: "Red social brasileña para quienes trabajan en tecnología: gratuita, sin anuncios y de código abierto. Backend en Spring Boot con arquitectura hexagonal; frontend en React 19 con TanStack Start; design system propio y API gateway en Go. Lucas es owner de la organización, head de frontend y también trabaja en el backend."
+  ja: "テクノロジー分野で働く人のためのブラジルのSNS。無料・広告なし・オープンソース。ヘキサゴナルアーキテクチャのSpring Bootバックエンド、React 19とTanStack Startのフロントエンド、独自のデザインシステムとGo製APIゲートウェイ。Lucasは組織のオーナーでありフロントエンドのヘッド、バックエンドにも携わっています。"
+proven:
+  pt:
+    - "Backend Spring Boot 4 / Java 25, arquitetura hexagonal, migrações Flyway"
+    - "Frontend React 19 + TanStack Start e design system próprio"
+    - "API gateway em Go"
+    - "Vagas, feed, mentorias, eventos, mensagens, login Google/Apple e 2FA"
+    - "Código aberto (GPL-3.0); 57 e 55 estrelas nos repositórios"
+  en:
+    - "Spring Boot 4 / Java 25 backend, hexagonal architecture, Flyway migrations"
+    - "React 19 + TanStack Start frontend and its own design system"
+    - "API gateway in Go"
+    - "Jobs, feed, mentoring, events, messaging, Google/Apple login and 2FA"
+    - "Open source (GPL-3.0); 57 and 55 stars on the repositories"
+planned:
+  pt:
+    - "Verificação via gov.br (implementada, desligada)"
+    - "Sistema de integridade de conteúdo (projetado, não implementado)"
+  en:
+    - "gov.br identity verification (implemented, switched off)"
+    - "Content integrity system (designed, not implemented)"
+sources:
+  - { label: "Rede-ENois", url: "https://github.com/Rede-ENois" }
+  - { label: "enois.ia.br", url: "https://enois.ia.br" }

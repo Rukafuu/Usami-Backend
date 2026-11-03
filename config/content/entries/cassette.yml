@@ -1,0 +1,15 @@
+id: cassette
+folder: laboratorio
+order: 4
+filename: portfolio-ab.tape
+status: experimental
+stack: [TypeScript, Vite]
+description:
+  pt: "Portfólio interativo em forma de toca-fitas, que mistura software, música eletrônica original e experimentos."
+  en: "An interactive cassette-deck portfolio mixing software, original electronic music and experiments."
+  es: "Portafolio interactivo en forma de casetera que mezcla software, música electrónica original y experimentos."
+  ja: "ソフトウェア、オリジナルの電子音楽、実験を混ぜ合わせた、カセットデッキ型のインタラクティブなポートフォリオ。"
+proven: {}
+planned: {}
+sources:
+  - { label: "Rukafuu/PortfolioAB", url: "https://github.com/Rukafuu/PortfolioAB" }

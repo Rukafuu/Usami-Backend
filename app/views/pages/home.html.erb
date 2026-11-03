@@ -1,0 +1,30 @@
+<% content_for :title, localized_site("headline") %>
+<script type="application/ld+json"><%= raw organization_json_ld %></script>
+
+<section class="hero">
+  <p class="mono"><%= t("home.kicker") %></p>
+  <h1><%= localized_site("headline") %></h1>
+  <p class="lead"><%= localized_site("description") %></p>
+</section>
+
+<section aria-labelledby="pillars-title" class="block">
+  <h2 id="pillars-title" class="mono"><%= t("home.pillars") %></h2>
+  <ul class="pillars">
+    <% site["pillars"].each do |pillar| %>
+      <li>
+        <strong><%= localized(pillar["title"]) %></strong>
+        <span><%= localized(pillar["text"]) %></span>
+      </li>
+    <% end %>
+  </ul>
+</section>
+
+<% @folders.each do |folder, entries| %>
+  <section class="block" aria-labelledby="f-<%= folder %>">
+    <h2 id="f-<%= folder %>"><a href="<%= folder_path(folder: folder) %>"><%= t("folders.#{folder}") %></a></h2>
+    <p class="muted"><%= t("folder_intro.#{folder}") %></p>
+    <ul class="rows">
+      <%= render partial: "shared/entry_row", collection: entries, as: :entry %>
+    </ul>
+  </section>
+<% end %>

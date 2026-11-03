@@ -1,0 +1,15 @@
+id: ledger
+folder: empresa
+order: 2
+filename: evidencias.ledger
+status: info
+route: evidencias
+stack: []
+description:
+  pt: "Cada afirmação do site, ligada à sua fonte e à data em que foi verificada."
+  en: "Every claim on the site, tied to its source and the date it was verified."
+  es: "Cada afirmación del sitio, ligada a su fuente y a la fecha en que se verificó."
+  ja: "サイト上のすべての主張を、出典と確認日に結び付けた台帳。"
+proven: {}
+planned: {}
+sources: []

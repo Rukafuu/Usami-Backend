@@ -1,0 +1,29 @@
+# Cada afirmação pública do site, ligada à fonte e à data em que foi verificada.
+- claim: { pt: "LiraVtuber · 25 estrelas", en: "LiraVtuber · 25 stars", es: "LiraVtuber · 25 estrellas", ja: "LiraVtuber · スター25" }
+  source: github.com/Rukafuu/LiraVtuber
+  url: https://github.com/Rukafuu/LiraVtuber
+  verified_on: 2026-11-02
+- claim: { pt: "Laya PR #269 mesclada", en: "Laya PR #269 merged", es: "Laya PR #269 aceptada", ja: "Laya PR #269 マージ済み" }
+  source: github.com/NandhaKishorM/laya/pull/269
+  url: https://github.com/NandhaKishorM/laya/pull/269
+  verified_on: 2026-09-23
+- claim: { pt: "Laya PR #706 mesclada", en: "Laya PR #706 merged", es: "Laya PR #706 aceptada", ja: "Laya PR #706 マージ済み" }
+  source: github.com/NandhaKishorM/laya/pull/706
+  url: https://github.com/NandhaKishorM/laya/pull/706
+  verified_on: 2026-09-29
+- claim: { pt: "Jaeger UI PR #4419 mesclada", en: "Jaeger UI PR #4419 merged", es: "Jaeger UI PR #4419 aceptada", ja: "Jaeger UI PR #4419 マージ済み" }
+  source: github.com/jaegertracing/jaeger-ui/pull/4419
+  url: https://github.com/jaegertracing/jaeger-ui/pull/4419
+  verified_on: 2026-11-02
+- claim: { pt: "Énois · 57 estrelas (backend) e 55 (frontend)", en: "Énois · 57 stars (backend) and 55 (frontend)", es: "Énois · 57 estrellas (backend) y 55 (frontend)", ja: "Énois · スター57(バックエンド)と55(フロントエンド)" }
+  source: github.com/Rede-ENois
+  url: https://github.com/Rede-ENois
+  verified_on: 2026-11-02
+- claim: { pt: "Hane · licença Apache-2.0", en: "Hane · Apache-2.0 license", es: "Hane · licencia Apache-2.0", ja: "Hane · Apache-2.0ライセンス" }
+  source: github.com/Rukafuu/Hane
+  url: https://github.com/Rukafuu/Hane
+  verified_on: 2026-11-02
+- claim: { pt: "Usami · 459 testes passando (421 Node + 38 Python)", en: "Usami · 459 tests passing (421 Node + 38 Python)", es: "Usami · 459 pruebas pasando (421 Node + 38 Python)", ja: "Usami · 459件のテストが成功(Node 421 + Python 38)" }
+  source: "documentação interna do projeto (repositório ainda não público)"
+  url: null
+  verified_on: 2026-10-25

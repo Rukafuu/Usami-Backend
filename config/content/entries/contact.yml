@@ -1,0 +1,14 @@
+id: contact
+folder: empresa
+order: 3
+filename: contato.msg
+status: tbd
+stack: []
+description:
+  pt: "Canal de contato da empresa — a definir."
+  en: "Company contact channel — to be defined."
+  es: "Canal de contacto de la empresa — por definir."
+  ja: "会社の連絡窓口 — 未定。"
+proven: {}
+planned: {}
+sources: []

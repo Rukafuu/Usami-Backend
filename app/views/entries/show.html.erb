@@ -1,0 +1,55 @@
+<% proven = @entry.proven(I18n.locale) %>
+<% planned = @entry.planned(I18n.locale) %>
+<% content_for :title, @entry.filename %>
+<% content_for :description, @entry.description(I18n.locale) %>
+
+<article class="entry">
+  <header class="hero hero--small">
+    <p class="mono">
+      <a href="<%= home_path %>"><%= t("nav.home") %></a> /
+      <a href="<%= folder_path(folder: @entry.folder) %>"><%= t("folders.#{@entry.folder}") %></a>
+    </p>
+    <h1><%= @entry.filename %></h1>
+    <p><span class="badge <%= 'badge--live' if @entry.status == 'live' %>"><%= t("status.#{@entry.status}") %></span></p>
+    <p class="lead"><%= @entry.description(I18n.locale) %></p>
+  </header>
+
+  <% if @entry.stack.any? %>
+    <section class="block" aria-label="<%= t("entry.stack") %>">
+      <ul class="chips">
+        <% @entry.stack.each do |item| %><li><%= item %></li><% end %>
+      </ul>
+    </section>
+  <% end %>
+
+  <% if proven.value.present? %>
+    <section class="block" aria-labelledby="proven">
+      <h2 id="proven" class="mono mono--accent"><%= t("entry.proven") %></h2>
+      <ul class="facts"><% Array(proven.value).each do |item| %><li><%= item %></li><% end %></ul>
+    </section>
+  <% end %>
+
+  <% if planned.value.present? %>
+    <section class="block" aria-labelledby="planned">
+      <h2 id="planned" class="mono"><%= t("entry.planned") %></h2>
+      <ul class="facts facts--planned"><% Array(planned.value).each do |item| %><li><%= item %></li><% end %></ul>
+    </section>
+  <% end %>
+
+  <% if (proven.value.present? && !proven.translated) || (planned.value.present? && !planned.translated) %>
+    <p class="mono muted"><%= t("entry.translation_pending") %></p>
+  <% end %>
+
+  <% if @entry.sources.any? %>
+    <section class="block" aria-labelledby="sources">
+      <h2 id="sources" class="mono"><%= t("entry.sources") %></h2>
+      <ul class="sources">
+        <% @entry.sources.each do |source| %>
+          <li><a href="<%= source.url %>" target="_blank" rel="noopener"><%= source.label %> <span aria-hidden="true">↗</span></a></li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+
+  <p class="block"><a href="<%= folder_path(folder: @entry.folder) %>">← <%= t("entry.back", folder: t("folders.#{@entry.folder}")) %></a></p>
+</article>

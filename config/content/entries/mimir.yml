@@ -1,0 +1,15 @@
+id: mimir
+folder: laboratorio
+order: 3
+filename: mimir.mvp
+status: experimental
+stack: [Go]
+description:
+  pt: "Capacidades com propósito definido para IA. O MVP usa fontes simuladas e estado em memória — é um experimento, não um produto."
+  en: "Purpose-bound capabilities for AI. The MVP uses mock sources and in-memory state — an experiment, not a product."
+  es: "Capacidades con propósito definido para IA. El MVP usa fuentes simuladas y estado en memoria: es un experimento, no un producto."
+  ja: "目的を限定したAI向けの機能。MVPは模擬データソースとインメモリ状態を使用 — 製品ではなく実験です。"
+proven: {}
+planned: {}
+sources:
+  - { label: "Rukafuu/Mimir", url: "https://github.com/Rukafuu/Mimir" }

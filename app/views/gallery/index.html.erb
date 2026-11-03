@@ -1,0 +1,25 @@
+<% content_for :title, t("apps.gallery") %>
+<% content_for :description, t("gallery.intro") %>
+
+<section class="hero hero--small">
+  <p class="mono"><a href="<%= home_path %>"><%= t("nav.home") %></a> / <%= t("apps.gallery") %></p>
+  <h1><%= t("apps.gallery") %></h1>
+  <p class="lead"><%= t("gallery.intro") %></p>
+</section>
+
+<ul class="gallery block">
+  <% @items.each do |item| %>
+    <% media = item[:media] %>
+    <li>
+      <% if media["placeholder"] %>
+        <div class="gallery-soon" role="img" aria-label="<%= item[:caption] %>"><span class="mono"><%= t("gallery.soon") %></span></div>
+      <% else %>
+        <a href="<%= media["src"] %>"><img src="<%= media["thumb"] || media["src"] %>" alt="<%= item[:caption] %>" loading="lazy" width="480"></a>
+      <% end %>
+      <p><%= item[:caption] %></p>
+      <% if item[:entry] %>
+        <p class="mono"><a href="<%= entry_path(folder: item[:entry].folder, slug: item[:entry].id) %>"><%= item[:entry].filename %></a></p>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
