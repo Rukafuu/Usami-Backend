@@ -12,7 +12,16 @@ if (-not $line) { throw "NVIDIA_API_KEY is not set in $source" }
 $nvidia = ($line -replace '^\s*NVIDIA_API_KEY\s*=\s*', '').Trim().Trim('"').Trim("'")
 if (-not $nvidia) { throw "NVIDIA_API_KEY is empty" }
 
+$content = "NVIDIA_API_KEY=$nvidia`n"
+$names = "NVIDIA_API_KEY"
+# RESEND_API_KEY sends the quote-form emails; without it the form tells visitors to write to the email address.
+$mail = Get-Content $source | Where-Object { $_ -match '^\s*RESEND_API_KEY\s*=' } | Select-Object -First 1
+if ($mail) {
+  $resend = ($mail -replace '^\s*RESEND_API_KEY\s*=\s*', '').Trim().Trim('"').Trim("'")
+  if ($resend) { $content += "RESEND_API_KEY=$resend`n"; $names += ", RESEND_API_KEY" }
+}
+
 $target = Join-Path $root "cloudflare\.env.deploy"
-[IO.File]::WriteAllText($target, "NVIDIA_API_KEY=$nvidia`n", (New-Object Text.UTF8Encoding($false)))
-Write-Host "Wrote $target with: NVIDIA_API_KEY (value not shown)."
+[IO.File]::WriteAllText($target, $content, (New-Object Text.UTF8Encoding($false)))
+Write-Host "Wrote $target with: $names (values not shown)."
 Write-Host "Next: cd cloudflare; npx wrangler secret bulk .env.deploy; then delete .env.deploy"

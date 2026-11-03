@@ -22,7 +22,7 @@
       <% end %>
 
       <!-- Honeypot anti-spam (invisível para humanos) -->
-      <div class="form-hp" aria-hidden="true" style="display:none !important;">
+      <div class="form-hp" aria-hidden="true">
         <%= f.label :honeypot, "Deixe em branco se for humano" %>
         <%= f.text_field :honeypot, tabindex: "-1", autocomplete: "off" %>
       </div>

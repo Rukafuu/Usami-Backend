@@ -187,3 +187,83 @@
     en: "Énois on mobile · moderation panel with real-time observability: requests per second and per minute, p50, p95 and p99 latency, 4xx and 5xx errors and the total since boot."
     es: "Énois en el móvil · panel de moderación con monitorización en tiempo real: solicitudes por segundo y por minuto, latencias p50, p95 y p99, errores 4xx y 5xx y el total desde el arranque."
     ja: "Énois(モバイル)· モデレーションパネルのリアルタイム監視:毎秒・毎分のリクエスト数、p50・p95・p99のレイテンシ、4xx・5xxエラー、起動後の総数。"
+- id: usami-companion
+  entry: usami
+  kind: image
+  src: /media/usami-companion.jpg
+  thumb: /media/usami-companion-thumb.jpg
+  caption:
+    pt: "Usami · a companion 3D, em desenvolvimento: avatar VRM no navegador, em repouso, com controles de voz, teclado, modo noturno e som. Modelo 3D «白一 (shiro)» por @Sweet_nya (sweetnya.booth.pm), usado conforme os termos do autor."
+    en: "Usami · the 3D companion, in development: a VRM avatar in the browser, at rest, with voice, keyboard, night mode and sound controls. 3D model «白一 (shiro)» by @Sweet_nya (sweetnya.booth.pm), used under the author's terms."
+    es: "Usami · la companion 3D, en desarrollo: avatar VRM en el navegador, en reposo, con controles de voz, teclado, modo nocturno y sonido. Modelo 3D «白一 (shiro)» de @Sweet_nya (sweetnya.booth.pm), usado según los términos del autor."
+    ja: "Usami · 開発中の3Dコンパニオン:ブラウザ上のVRMアバター(待機中)。音声、キーボード、ナイトモード、サウンドの操作を備えています。3Dモデル「白一 (shiro)」は @Sweet_nya(sweetnya.booth.pm)の作品で、作者の利用規約に従って使用しています。"
+- id: usami-conversation
+  entry: usami
+  kind: image
+  src: /media/usami-conversation.jpg
+  thumb: /media/usami-conversation-thumb.jpg
+  caption:
+    pt: "Usami · conversa e animações: painel de conversa, lista de animações do avatar (VRMA) e chamada de voz. Modelo 3D «白一 (shiro)» por @Sweet_nya (sweetnya.booth.pm)."
+    en: "Usami · chat and animations: the conversation panel, the avatar's animation list (VRMA) and voice call. 3D model «白一 (shiro)» by @Sweet_nya (sweetnya.booth.pm)."
+    es: "Usami · conversación y animaciones: panel de conversación, lista de animaciones del avatar (VRMA) y llamada de voz. Modelo 3D «白一 (shiro)» de @Sweet_nya (sweetnya.booth.pm)."
+    ja: "Usami · 会話とアニメーション:会話パネル、アバターのアニメーション一覧(VRMA)、音声通話。3Dモデル「白一 (shiro)」は @Sweet_nya(sweetnya.booth.pm)の作品です。"
+- id: enois-profile
+  entry: enois
+  kind: image
+  src: /media/enois-profile.jpg
+  thumb: /media/enois-profile-thumb.jpg
+  caption:
+    pt: "Énois no celular · perfil com moldura, nome estilizado, emblemas e selos de contribuição verificados nos repositórios oficiais. A cidade foi ocultada."
+    en: "Énois on mobile · a profile with a frame, a styled name, badges and contribution seals verified in the official repositories. The city has been hidden."
+    es: "Énois en el móvil · perfil con marco, nombre estilizado, insignias y sellos de contribución verificados en los repositorios oficiales. La ciudad fue ocultada."
+    ja: "Énois(モバイル)· フレーム、装飾された名前、バッジ、公式リポジトリで検証された貢献シールを備えたプロフィール。都市名は非表示にしています。"
+- id: liraos-landing
+  entry: liraos
+  kind: image
+  src: /media/liraos-landing.jpg
+  thumb: /media/liraos-landing-thumb.jpg
+  caption:
+    pt: "LiraOS · página inicial (v2.0): «Pense. Crie.», com o chat de boas-vindas da Lira e o botão «Entrar no Sistema»."
+    en: "LiraOS · home page (v2.0): 'Think. Create.', with Lira's welcome chat and the 'Enter the System' button."
+    es: "LiraOS · página de inicio (v2.0): «Piensa. Crea.», con el chat de bienvenida de Lira y el botón «Entrar al Sistema»."
+    ja: "LiraOS · トップページ(v2.0):「Pense. Crie.(考える。創る。)」、Liraのウェルカムチャットと「システムに入る」ボタン。"
+- id: liraos-login
+  entry: liraos
+  kind: image
+  src: /media/liraos-login.jpg
+  thumb: /media/liraos-login-thumb.jpg
+  caption:
+    pt: "LiraOS · entrada: e-mail e senha, ou conta Google, Patreon ou GitHub."
+    en: "LiraOS · sign-in: email and password, or a Google, Patreon or GitHub account."
+    es: "LiraOS · acceso: correo y contraseña, o cuenta de Google, Patreon o GitHub."
+    ja: "LiraOS · サインイン:メールアドレスとパスワード、またはGoogle、Patreon、GitHubアカウント。"
+- id: liraos-chat
+  entry: liraos
+  kind: image
+  src: /media/liraos-chat.jpg
+  thumb: /media/liraos-chat-thumb.jpg
+  caption:
+    pt: "LiraOS · chat com a Lira (v2.0.0-beta): conversas salvas, atalhos laterais e uma lista de tarefas gerada a partir do pedido, com botão para salvar no painel."
+    en: "LiraOS · chat with Lira (v2.0.0-beta): saved conversations, side shortcuts and a task list generated from the request, with a button to save it to the panel."
+    es: "LiraOS · chat con Lira (v2.0.0-beta): conversaciones guardadas, atajos laterales y una lista de tareas generada a partir de la petición, con un botón para guardarla en el panel."
+    ja: "LiraOS · Liraとのチャット(v2.0.0-beta):保存された会話、サイドのショートカット、依頼から生成されたタスクリスト(パネルに保存するボタン付き)。"
+- id: audax-sdr
+  entry: audax
+  kind: image
+  src: /media/audax-sdr.jpg
+  thumb: /media/audax-sdr-thumb.jpg
+  caption:
+    pt: "Audax Hub · painel do SDR: leads no painel, quentes, cadências ativas e follow-ups atrasados, com filtros e a lista de leads. Nomes, telefones e e-mails foram ocultados."
+    en: "Audax Hub · SDR panel: leads on the panel, hot leads, active cadences and overdue follow-ups, with filters and the lead list. Names, phone numbers and emails have been hidden."
+    es: "Audax Hub · panel del SDR: leads en el panel, calientes, cadencias activas y seguimientos atrasados, con filtros y la lista de leads. Los nombres, teléfonos y correos fueron ocultados."
+    ja: "Audax Hub · SDRパネル:パネル上のリード、ホットリード、稼働中のケイデンス、遅延中のフォローアップ。絞り込みとリード一覧付き。氏名・電話番号・メールアドレスは非表示にしています。"
+- id: audax-lead
+  entry: audax
+  kind: image
+  src: /media/audax-lead.jpg
+  thumb: /media/audax-lead-thumb.jpg
+  caption:
+    pt: "Audax Hub · tela de um lead: status, ações de ganho e perdido, janela de 24 h do WhatsApp, timeline e ações rápidas (e-mail, agendar reunião, criar tarefa e proposta, iniciar agente de IA). Telefone e e-mail ocultados."
+    en: "Audax Hub · a lead's page: status, won and lost actions, the 24-hour WhatsApp window, timeline and quick actions (email, schedule a meeting, create a task and a proposal, start an AI agent). Phone and email hidden."
+    es: "Audax Hub · pantalla de un lead: estado, acciones de ganado y perdido, ventana de 24 h de WhatsApp, línea de tiempo y acciones rápidas (correo, agendar reunión, crear tarea y propuesta, iniciar agente de IA). Teléfono y correo ocultados."
+    ja: "Audax Hub · リード詳細画面:ステータス、受注/失注の操作、WhatsAppの24時間ウィンドウ、タイムライン、クイックアクション(メール、会議の予約、タスク・提案書の作成、AIエージェントの起動)。電話番号とメールアドレスは非表示にしています。"

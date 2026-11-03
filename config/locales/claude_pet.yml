@@ -6,6 +6,7 @@ pt:
     name: Claude
     label: "Claude, o bichinho da área de trabalho. Clique para ouvir uma mensagem."
     asleep: "Dormindo"
+    toggle: "Mostrar o Claude na área de trabalho"
     lines:
       - "Eu ajudei a montar isso aqui. O Lucas deu a direção, eu escrevi parte do código."
       - "Fui o Claude Code, em sessões com o Lucas. Os números reais estão em Sobre o sistema."
@@ -20,6 +21,7 @@ en:
     name: Claude
     label: "Claude, the desktop critter. Click to hear a message."
     asleep: "Asleep"
+    toggle: "Show Claude on the desktop"
     lines:
       - "I helped build this. Lucas set the direction, I wrote part of the code."
       - "That was Claude Code, in sessions with Lucas. The real numbers are in About the system."
@@ -34,6 +36,7 @@ es:
     name: Claude
     label: "Claude, el bichito del escritorio. Haga clic para oír un mensaje."
     asleep: "Durmiendo"
+    toggle: "Mostrar a Claude en el escritorio"
     lines:
       - "Ayudé a montar esto. Lucas puso la dirección, yo escribí parte del código."
       - "Fui Claude Code, en sesiones con Lucas. Los números reales están en Acerca del sistema."
@@ -48,6 +51,7 @@ ja:
     name: Claude
     label: "デスクトップのClaude。クリックするとメッセージが聞けます。"
     asleep: "おやすみ中"
+    toggle: "デスクトップにClaudeを表示"
     lines:
       - "このサイトづくりを手伝いました。方向を決めたのはLucas、コードの一部を書いたのが私です。"
       - "Claude CodeとしてLucasとセッションを重ねました。実際の数字は「システム情報」にあります。"

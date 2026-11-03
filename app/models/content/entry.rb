@@ -29,6 +29,7 @@ module Content
         id: id, folder: folder, filename: filename, status: status, route: route,
         stack: stack, description: description(locale),
         proven: Array(proven.value), planned: Array(planned.value),
+        title: title(locale),
         about: about(locale),
         photo: (@photo && { src: @photo["src"], small: @photo["small"], width: @photo["width"], height: @photo["height"], alt: photo_alt(locale) }),
         listsTranslated: (proven.value.blank? || proven.translated) && (planned.value.blank? || planned.translated),

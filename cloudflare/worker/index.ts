@@ -1,14 +1,15 @@
 import { handleAssistant, type AssistantEnv } from "./assistant"
 import { handleConsent } from "./consent"
+import { handleContact, type ContactEnv } from "./contact"
 import { preferredLocale } from "./locale"
 import prompts from "./prompts.generated.json"
 import { LOCALES, type Locale } from "./types"
 
 export { Limiter } from "./limiter"
 
-type Env = AssistantEnv & { ASSETS: Fetcher }
+type Env = AssistantEnv & ContactEnv & { ASSETS: Fetcher }
 
-const ROUTE = new RegExp(`^/(${LOCALES.join("|")})/(assistant|consentimento)$`)
+const ROUTE = new RegExp(`^/(${LOCALES.join("|")})/(assistant|consentimento|contato)$`)
 
 /**
  * The site itself is static files (served by Cloudflare's asset layer). Only three things need code, so only these
@@ -27,8 +28,10 @@ export default {
     const match = ROUTE.exec(url.pathname)
     if (match) {
       const locale = match[1] as Locale
+      if (match[2] === "contato" && (request.method === "GET" || request.method === "HEAD")) return env.ASSETS.fetch(request) // the form page is a static file
       if (request.method !== "POST") return new Response("Method Not Allowed", { status: 405, headers: { Allow: "POST" } })
-      return match[2] === "assistant" ? handleAssistant(request, env, locale, prompts) : handleConsent(request, locale)
+      if (match[2] === "assistant") return handleAssistant(request, env, locale, prompts)
+      return match[2] === "contato" ? handleContact(request, env, locale) : handleConsent(request, locale)
     }
 
     return env.ASSETS.fetch(request)

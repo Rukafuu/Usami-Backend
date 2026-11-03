@@ -7,19 +7,30 @@
   <p class="lead"><%= t("gallery.intro") %></p>
 </section>
 
-<ul class="gallery block">
-  <% @items.each do |item| %>
-    <% media = item[:media] %>
-    <li>
-      <% if media["placeholder"] %>
-        <div class="gallery-soon" role="img" aria-label="<%= item[:caption] %>"><span class="mono"><%= t("gallery.soon") %></span></div>
-      <% else %>
-        <a href="<%= media["src"] %>"><img src="<%= media["thumb"] || media["src"] %>" alt="<%= item[:caption] %>" loading="lazy" width="480"></a>
+<nav class="block gallery-folders" aria-label="<%= t("gallery.projects") %>">
+  <ul>
+    <% @folders.each do |folder| %>
+      <li><a href="#<%= folder[:entry].id %>"><%= folder[:entry].title(I18n.locale).split(" — ").first %> <span class="mono">(<%= folder[:items].size %>)</span></a></li>
+    <% end %>
+  </ul>
+</nav>
+
+<% @folders.each do |folder| %>
+  <% entry = folder[:entry] %>
+  <section class="block gallery-folder" id="<%= entry.id %>" aria-labelledby="g-<%= entry.id %>">
+    <h2 id="g-<%= entry.id %>"><a href="<%= entry_path(folder: entry.folder, slug: entry.id) %>"><%= entry.title(I18n.locale).split(" — ").first %></a> <span class="mono muted"><%= entry.filename %></span></h2>
+    <ul class="gallery">
+      <% folder[:items].each do |item| %>
+        <% media = item[:media] %>
+        <li>
+          <% if media["placeholder"] %>
+            <div class="gallery-soon" role="img" aria-label="<%= item[:caption] %>"><span class="mono"><%= t("gallery.soon") %></span></div>
+          <% else %>
+            <a href="<%= media["src"] %>" target="_blank" rel="noopener" title="<%= t("gallery.open_original") %>"><img src="<%= media["thumb"] || media["src"] %>" alt="<%= item[:caption] %>" loading="lazy" width="480"></a>
+          <% end %>
+          <p><%= item[:caption] %></p>
+        </li>
       <% end %>
-      <p><%= item[:caption] %></p>
-      <% if item[:entry] %>
-        <p class="mono"><a href="<%= entry_path(folder: item[:entry].folder, slug: item[:entry].id) %>"><%= item[:entry].filename %></a></p>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+    </ul>
+  </section>
+<% end %>
