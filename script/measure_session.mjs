@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-// Measures a Claude Code session from its transcript (.jsonl) and prints the numbers
+// Measures one or more AI coding sessions from their transcripts (.jsonl) — supporting both
+// Claude Code transcripts and Google Antigravity transcripts — and prints the exact numbers
 // config/content/build.yml needs. Nothing is estimated: every figure is summed from
-// the `usage` blocks the API returned, or counted from the transcript itself.
+// the token usage fields returned by the API, or counted from the transcript itself.
 //
-//   node script/measure_session.mjs <transcript.jsonl>
+//   node script/measure_session.mjs <transcript1.jsonl> [transcript2.jsonl ...]
 //
 // Definitions (kept explicit because "tokens spent" is ambiguous):
 //   input_tokens          fresh input the model read at full price
@@ -12,21 +13,44 @@
 //   output_tokens         tokens the model generated
 import { readFileSync } from "node:fs"
 
-const file = process.argv[2]
-if (!file) {
-  console.error("usage: node script/measure_session.mjs <transcript.jsonl>")
+const files = process.argv.slice(2)
+if (files.length === 0) {
+  console.error("usage: node script/measure_session.mjs <transcript.jsonl> [more.jsonl ...]")
   process.exit(1)
 }
 
-const records = readFileSync(file, "utf8").split("\n").filter(Boolean).map((line) => {
-  try { return JSON.parse(line) } catch { return null }
-}).filter(Boolean)
+const records = files.flatMap((file) =>
+  readFileSync(file, "utf8")
+    .split("\n")
+    .filter(Boolean)
+    .map((line) => {
+      try {
+        return JSON.parse(line)
+      } catch {
+        return null
+      }
+    })
+    .filter(Boolean),
+)
 
-// One API response can be written as several records (one per content block) with the same
+// One Claude Code API response can be written as several records (one per content block) with the same
 // message id and the same usage. Count each response once, keeping the largest usage seen.
+// Antigravity records use `type === "PLANNER_RESPONSE"` with direct `input_tokens`, `cache_read_tokens`, `output_tokens`.
 const responses = new Map()
 const models = new Set()
+let agyIndex = 0
+
 for (const r of records) {
+  if (r.type === "PLANNER_RESPONSE") {
+    models.add("Gemini Pro (Antigravity)")
+    responses.set(`agy-${agyIndex++}`, {
+      input_tokens: r.input_tokens ?? 0,
+      cache_creation_input_tokens: r.cache_creation_tokens ?? 0,
+      cache_read_input_tokens: r.cache_read_tokens ?? 0,
+      output_tokens: r.output_tokens ?? 0,
+    })
+    continue
+  }
   const msg = r.message
   if (r.type !== "assistant" || !msg?.usage || !msg.id) continue
   if (msg.model && !msg.model.startsWith("<")) models.add(msg.model)
@@ -48,6 +72,10 @@ const stripReminders = (text) => text.replace(/<system-reminder>[\s\S]*?<\/syste
 
 let prompts = 0
 for (const r of records) {
+  if (r.type === "USER_INPUT" && r.source === "USER_EXPLICIT") {
+    prompts += 1
+    continue
+  }
   if (r.type !== "user" || r.isMeta || r.isSidechain) continue
   const content = r.message?.content
   const blocks = typeof content === "string" ? [{ type: "text", text: content }] : Array.isArray(content) ? content : []
@@ -59,7 +87,9 @@ for (const r of records) {
   prompts += 1
 }
 
-const stamps = records.map((r) => Date.parse(r.timestamp)).filter(Number.isFinite)
+const stamps = records
+  .map((r) => Date.parse(r.timestamp ?? r.created_at))
+  .filter(Number.isFinite)
 const started = new Date(Math.min(...stamps)).toISOString()
 const ended = new Date(Math.max(...stamps)).toISOString()
 

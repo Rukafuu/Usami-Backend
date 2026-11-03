@@ -1,16 +1,16 @@
 # Metadados reais da construção do site, exibidos em "Sobre o sistema".
-# Gerado por: node script/measure_session.mjs <transcrição .jsonl da sessão>
+# Gerado por: node script/measure_session.mjs <transcrição Claude Code .jsonl> <transcrição Antigravity .jsonl>
 # Regra: só entra número medido. O que não foi medido fica null e aparece como "não medido".
 version: "0.4"
-measured_at: 2026-11-03T05:28:55Z
-started_at: 2026-11-03T01:48:57Z      # primeira mensagem da sessão
-models: ["Claude Sonnet 5.5", "Claude Opus 5.5"]
-prompts: 11                           # mensagens digitadas por Lucas (sem notificações do sistema nem respostas de múltipla escolha)
-api_responses: 189                    # respostas do modelo na sessão (cada uma contada uma vez)
+measured_at: 2026-11-03T07:47:58Z
+started_at: 2026-11-03T01:48:57Z      # primeira mensagem da construção (Claude Code: 01:48:57Z; Antigravity: 05:29:02Z -> 07:47:58Z)
+models: ["Claude Sonnet 5.5", "Claude Opus 5.5", "Gemini Pro (Antigravity)"]
+prompts: 43                           # mensagens digitadas por Lucas (29 Claude Code + 14 Antigravity; sem notificações do sistema)
+api_responses: 652                    # respostas do modelo nas sessões (424 Claude Code + 228 Antigravity)
 tokens:
-  input: 392                          # entrada nova, preço cheio
-  cache_creation: 1789606             # entrada gravada no cache de prompt
-  cache_read: 69054111                # entrada relida do cache (o mesmo contexto conta de novo a cada turno)
-  output: 353047                      # gerados pelo modelo
+  input: 1082777                      # entrada nova, preço cheio (889 Claude Code + 1.081.888 Antigravity)
+  cache_creation: 2291812             # entrada gravada no cache de prompt
+  cache_read: 232956281               # entrada relida do cache (200.049.540 Claude Code + 32.906.741 Antigravity)
+  output: 868666                      # gerados pelos modelos (623.372 Claude Code + 245.294 Antigravity)
 # total = entrada + gravação de cache + saída (releituras de cache ficam de fora, para não contar o mesmo contexto várias vezes)
-total_tokens: 2143045
+total_tokens: 4243255
