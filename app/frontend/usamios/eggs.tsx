@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react"
+import { Sprite } from "./pet/ClaudePet"
+import type { Frame } from "./pet/sprite"
 import { prefersReducedMotion } from "./shell"
 import { FUWARCH_BANNER } from "./terminal/ascii"
 import type { OsData } from "./types"
@@ -26,7 +28,10 @@ export function useKonami(onMatch: () => void) {
   }, [])
 }
 
-/** Celebration toast with a few falling logos. The confetti is skipped when motion is reduced. */
+const RAIN_COUNT = 36
+const RAIN_FRAMES: Frame[] = ["idle", "happy", "wave", "dizzy", "happy", "stepA"]
+
+/** Celebration toast with falling logos and a rain of pixel critters. Skipped when motion is reduced. */
 export function Celebration({ data, onDone }: { data: OsData; onDone: () => void }) {
   const { eggs } = data.ui
   const still = prefersReducedMotion()
@@ -47,6 +52,15 @@ export function Celebration({ data, onDone }: { data: OsData; onDone: () => void
         Array.from({ length: 16 }, (_, i) => (
           <img key={i} src="/brand/logo-64.png" alt="" aria-hidden="true" className="os-fall"
             style={{ left: `${(i * 37) % 100}%`, animationDelay: `${(i % 8) * 0.25}s`, animationDuration: `${2.6 + (i % 5) * 0.4}s` }} />
+        ))}
+      {!still &&
+        Array.from({ length: RAIN_COUNT }, (_, i) => (
+          <span key={`c${i}`} className="os-rain" aria-hidden="true"
+            style={{ left: `${(i * 29 + (i % 3) * 7) % 96}%`, animationDelay: `${(i % 9) * 0.28}s`, animationDuration: `${2.8 + (i % 6) * 0.45}s`, ["--pet-w" as string]: `${28 + (i % 4) * 10}px` }}>
+            <span className="os-rain-in" style={{ animationDelay: `${(i % 5) * -0.3}s` }}>
+              <Sprite frame={RAIN_FRAMES[i % RAIN_FRAMES.length] ?? "idle"} />
+            </span>
+          </span>
         ))}
       <div className="os-celebrate-card">
         <img src="/brand/logo-192.png" alt="" width="72" height="72" />
