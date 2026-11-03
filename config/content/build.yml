@@ -1,17 +1,16 @@
 # Metadados reais da construção do site, exibidos em "Sobre o sistema".
-# Gerado por: node script/measure_session.mjs <transcrições Claude Code .jsonl> <transcrições Antigravity .jsonl>
+# Gerado por: node script/measure_session.mjs <transcrição Claude Code .jsonl> <transcrição Antigravity .jsonl>
 # Regra: só entra número medido. O que não foi medido fica null e aparece como "não medido".
-version: "0.4"
-measured_at: 2026-11-03T18:53:42Z
-started_at: 2026-11-03T01:48:57Z      # primeira mensagem da construção (Claude Code: 01:48:57Z; Antigravity: 05:29:02Z)
+version: "0.5"
+measured_at: 2026-11-03T18:55:19Z
+started_at: 2026-11-03T01:48:57Z
 models: ["Claude Sonnet 5.5", "Claude Opus 5.5", "Gemini Pro (Antigravity)"]
-prompts: 107                          # mensagens digitadas por Lucas (75 Claude Code em 3 sessões + 32 Antigravity em 2 sessões; sem notificações do sistema)
-api_responses: 1705                   # respostas do modelo nas sessões (976 Claude Code + 729 Antigravity)
+prompts: 89
+api_responses: 1412
 tokens:
-  input: 6207508                      # entrada nova, preço cheio (2.070 Claude Code + 6.205.438 Antigravity)
-  cache_creation: 3893182             # entrada gravada no cache de prompt (só Claude Code)
-  cache_read: 538940845               # entrada relida do cache (445.338.343 Claude Code + 93.602.502 Antigravity)
-  output: 1658744                     # gerados pelos modelos (1.180.332 Claude Code + 478.412 Antigravity)
+  input: 4460342
+  cache_creation: 3904387
+  cache_read: 498259104
+  output: 1315108
 # total = entrada + gravação de cache + saída (releituras de cache ficam de fora, para não contar o mesmo contexto várias vezes)
-# Instantâneo: as sessões desta construção continuavam abertas na hora da medição, então o número cresce depois dela.
-total_tokens: 11759434
+total_tokens: 9679837
