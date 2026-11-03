@@ -1,0 +1,45 @@
+<% content_for :title, t("thanks_page.meta_title") %>
+<% content_for :description, t("thanks_page.lead") %>
+
+<section class="hero hero--small">
+  <%= breadcrumbs([ t("contact_form.title"), contact_url ], [ t("thanks_page.breadcrumb"), thanks_url ]) %>
+</section>
+
+<div class="block">
+  <div class="error-card thanks-card">
+    <div class="error-art-wrap">
+      <img src="/wallpapers/fuwarch-hug-landscape-thumb.jpg" alt="Usami e Fuwarch celebrando com carinho" class="error-art" width="400" height="225" loading="eager" decoding="async">
+      <span class="error-badge thanks-badge"><%= t("thanks_page.badge") %></span>
+    </div>
+
+    <div class="error-content">
+      <p class="error-scene-desc mono"><%= t("thanks_page.scene_desc") %></p>
+      <h1><%= t("thanks_page.heading") %></h1>
+      <p class="lead"><%= t("thanks_page.lead") %></p>
+
+      <div class="thanks-steps">
+        <h3 class="mono"><%= t("thanks_page.steps_title") %></h3>
+        <ol class="thanks-steps-list">
+          <li>
+            <strong>1. <%= t("thanks_page.step1_title") %></strong>
+            <span><%= t("thanks_page.step1_desc") %></span>
+          </li>
+          <li>
+            <strong>2. <%= t("thanks_page.step2_title") %></strong>
+            <span><%= t("thanks_page.step2_desc") %></span>
+          </li>
+          <li>
+            <strong>3. <%= t("thanks_page.step3_title") %></strong>
+            <span><%= t("thanks_page.step3_desc") %></span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="error-actions thanks-actions">
+        <%= link_to t("errors.actions.home_btn"), home_path, class: "button button--primary" %>
+        <%= link_to t("errors.actions.shell_btn"), "/?os=1", class: "button" %>
+        <%= link_to t("errors.actions.evidence_btn"), evidence_path, class: "button" %>
+      </div>
+    </div>
+  </div>
+</div>

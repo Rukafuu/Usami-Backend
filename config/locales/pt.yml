@@ -1,351 +1,398 @@
 pt:
   site:
-    name: "Usami"
-    company: "Usami"
-    skip: "Pular para o conteúdo"
-    language: "Idioma"
-    footer: "Marca e arte provisórias. Cada afirmação do site tem fonte e data na página de evidências."
+    name: Usami
+    company: Usami
+    skip: Pular para o conteúdo
+    language: Idioma
+    footer: Marca e arte provisórias. Cada afirmação do site tem fonte e data na página de evidências.
   contact:
-    label: "Contato"
-    email: "Falar por e-mail"
-    whatsapp: "Falar no WhatsApp"
-    response: "Respondo em até 72 horas — ou depois de abrir uma latinha de Monster ⚡"
+    label: Contato
+    email: Falar por e-mail
+    whatsapp: Falar no WhatsApp
+    response: Respondo em até 72 horas — ou depois de abrir uma latinha de Monster ⚡
   consent:
-    banner_title: "Cookies e privacidade"
-    banner_text: "Usamos só o necessário para o site funcionar. Com a sua permissão, também carregamos conteúdo de terceiros (o player do SoundCloud). Não usamos publicidade nem rastreamento hoje."
-    essential: "Só essenciais"
-    all: "Permitir todos"
-    privacy: "Política de privacidade"
-    cookies: "Política de cookies"
-    current_essential: "Sua escolha: só os essenciais."
-    current_all: "Sua escolha: todos permitidos."
-    current_none: "Você ainda não escolheu. Por enquanto, só os essenciais estão ativos."
-    music_blocked: "O player do SoundCloud usa cookies de terceiros. Ele só carrega se você permitir todos os cookies."
-    music_allow: "Permitir todos e carregar"
-    music_open: "Abrir no SoundCloud"
-    assistant_note: "As perguntas à Usami são processadas pela NVIDIA para gerar a resposta."
-    about_title: "Privacidade"
-    updated: "Atualizado em %{date}"
+    banner_title: Cookies e privacidade
+    banner_text: Usamos só o necessário para o site funcionar. Com a sua permissão, também carregamos conteúdo de terceiros (o player do SoundCloud). Não usamos publicidade nem rastreamento hoje.
+    essential: Só essenciais
+    all: Permitir todos
+    privacy: Política de privacidade
+    cookies: Política de cookies
+    current_essential: 'Sua escolha: só os essenciais.'
+    current_all: 'Sua escolha: todos permitidos.'
+    current_none: Você ainda não escolheu. Por enquanto, só os essenciais estão ativos.
+    music_blocked: O player do SoundCloud usa cookies de terceiros. Ele só carrega se você permitir todos os cookies.
+    music_allow: Permitir todos e carregar
+    music_open: Abrir no SoundCloud
+    assistant_note: As perguntas à Usami são processadas pela NVIDIA para gerar a resposta.
+    about_title: Privacidade
+    updated: Atualizado em %{date}
   nav:
-    home: "Início"
-    evidence: "Evidências"
-    main: "Principal"
-    breadcrumbs: "Caminho"
+    home: Início
+    evidence: Evidências
+    main: Principal
+    breadcrumbs: Caminho
+    contact: Contato
   faq:
-    title: "Perguntas frequentes"
-    intro: "Respostas diretas às dúvidas mais comuns sobre a Usami, o Fuwarch Linux, as evidências e a privacidade."
+    title: Perguntas frequentes
+    intro: Respostas diretas às dúvidas mais comuns sobre a Usami, o Fuwarch Linux, as evidências e a privacidade.
   folders:
-    sistemas: "Sistemas"
-    contribuicoes: "Contribuições"
-    laboratorio: "Laboratório"
-    empresa: "Empresa"
+    sistemas: Sistemas
+    contribuicoes: Contribuições
+    laboratorio: Laboratório
+    empresa: Empresa
   folder_intro:
-    sistemas: "Os produtos e plataformas que construímos."
-    contribuicoes: "Código que enviamos a projetos de terceiros e foi aceito."
-    laboratorio: "Experimentos. Alguns viram produto, outros ficam como estudo."
-    empresa: "Quem somos, como falar com a gente e como provamos o que dizemos."
+    sistemas: Os produtos e plataformas que construímos.
+    contribuicoes: Código que enviamos a projetos de terceiros e foi aceito.
+    laboratorio: Experimentos. Alguns viram produto, outros ficam como estudo.
+    empresa: Quem somos, como falar com a gente e como provamos o que dizemos.
   status:
-    live: "Público"
-    in_development: "Em desenvolvimento"
-    experimental: "Experimental"
-    info: "Informação"
-    tbd: "A definir"
+    live: Público
+    in_development: Em desenvolvimento
+    experimental: Experimental
+    info: Informação
+    tbd: A definir
   entry:
-    proven: "Provado nos repositórios"
-    planned: "Planejado — ainda não existe"
-    stack: "Stack"
-    sources: "Fontes"
-    translation_pending: "As listas desta seção estão em inglês — tradução em revisão."
-    back: "Voltar para %{folder}"
-    open: "Abrir"
+    proven: Provado nos repositórios
+    planned: Planejado — ainda não existe
+    stack: Stack
+    sources: Fontes
+    translation_pending: As listas desta seção estão em inglês — tradução em revisão.
+    back: Voltar para %{folder}
+    open: Abrir
   home:
-    kicker: "Empresa de tecnologia"
-    explore: "Explorar"
-    pillars: "O que une os projetos"
+    kicker: Empresa de tecnologia
+    explore: Explorar
+    pillars: O que une os projetos
+    quote_cta: Pedir Orçamento
   evidence:
-    title: "Evidências"
-    intro: "Cada afirmação do site, ligada à sua fonte e à data em que foi verificada. Se algo não está aqui, não afirmamos."
-    claim: "Afirmação"
-    source: "Fonte"
-    verified: "Verificado em"
+    title: Evidências
+    intro: Cada afirmação do site, ligada à sua fonte e à data em que foi verificada. Se algo não está aqui, não afirmamos.
+    claim: Afirmação
+    source: Fonte
+    verified: Verificado em
   errors:
-    badge: "Erro HTTP %{code}"
-    home_btn: "Voltar ao Início"
-    shell_btn: "Abrir Fuwarch Linux"
-    evidence_btn: "Ver Evidências"
+    badge: Erro HTTP %{code}
+    home_btn: Voltar ao Início
+    shell_btn: Abrir Fuwarch Linux
+    evidence_btn: Ver Evidências
     status_404:
-      title: "Página não encontrada"
-      body: "Olhamos até pelas estrelas do observatório estelar, mas não encontramos nenhuma evidência de que esta página exista."
-      scene: "Usami no observatório estelar com o telescópio e mapa celestial"
+      title: Página não encontrada
+      body: Olhamos até pelas estrelas do observatório estelar, mas não encontramos nenhuma evidência de que esta página exista.
+      scene: Usami no observatório estelar com o telescópio e mapa celestial
     status_403:
-      title: "Acesso restrito"
-      body: "Xeque-mate! Esta área requer permissões elevadas que a sua sessão não possui no momento."
-      scene: "Usami e o Fuwarch analisando o tabuleiro de xadrez"
+      title: Acesso restrito
+      body: Xeque-mate! Esta área requer permissões elevadas que a sua sessão não possui no momento.
+      scene: Usami e o Fuwarch analisando o tabuleiro de xadrez
     status_402:
-      title: "Operação requer confirmação"
-      body: "Esta operação necessita de créditos, autorização ou confirmação de assinatura para prosseguir."
-      scene: "Usami no estúdio Fuwarch com fones de ouvido e vinil"
+      title: Operação requer confirmação
+      body: Esta operação necessita de créditos, autorização ou confirmação de assinatura para prosseguir.
+      scene: Usami no estúdio Fuwarch com fones de ouvido e vinil
     status_500:
-      title: "Falha interna no servidor"
-      body: "Eita, parece que derramamos café no servidor! A equipe já está verificando os logs para restaurar o sistema."
-      scene: "Usami tomando café na mesa de código de madrugada"
-    not_found_title: "Página não encontrada"
-    not_found_body: "Não temos evidência de que esta página exista. Volte ao início."
+      title: Falha interna no servidor
+      body: Eita, parece que derramamos café no servidor! A equipe já está verificando os logs para restaurar o sistema.
+      scene: Usami tomando café na mesa de código de madrugada
+    not_found_title: Página não encontrada
+    not_found_body: Não temos evidência de que esta página exista. Volte ao início.
   shell:
-    apps: "Aplicativos"
-    files: "Arquivos"
-    folders_label: "Pastas"
-    close: "Fechar janela"
-    classic: "Modo clássico"
-    open_shell: "Abrir Fuwarch Linux"
-    theme: "Alternar tema claro e escuro"
-    language: "Idioma"
-    sub: "Sistemas · Contribuições · Evidências"
-    boot_skip: "toque ou tecle para entrar"
+    apps: Aplicativos
+    files: Arquivos
+    folders_label: Pastas
+    close: Fechar janela
+    classic: Modo clássico
+    open_shell: Abrir Fuwarch Linux
+    theme: Alternar tema claro e escuro
+    language: Idioma
+    sub: Sistemas · Contribuições · Evidências
+    boot_skip: toque ou tecle para entrar
     boot:
-      - "Fuwarch Linux boot 0.1"
-      - "iniciando o kernel emulado"
-      - "montando sistema de arquivos"
-      - "carregando projetos como arquivos"
-      - "iniciando serviços virtuais"
-      - "ativando rede de brincadeira"
-      - "chamando o ambiente gráfico"
-      - "pronto."
-    login_user: "Visitante"
-    login_note: "Conta de convidado: nenhuma senha real é usada."
-    login_action: "Entrar"
-    init_title: "Preparando sua área de trabalho…"
+    - Fuwarch Linux boot 0.1
+    - iniciando o kernel emulado
+    - montando sistema de arquivos
+    - carregando projetos como arquivos
+    - iniciando serviços virtuais
+    - ativando rede de brincadeira
+    - chamando o ambiente gráfico
+    - pronto.
+    login_user: Visitante
+    login_note: 'Conta de convidado: nenhuma senha real é usada.'
+    login_action: Entrar
+    init_title: Preparando sua área de trabalho…
     init:
-      - "carregando tema e papel de parede"
-      - "restaurando seus atalhos"
-      - "abrindo a barra de tarefas"
-    start: "Iniciar"
-    start_menu: "Menu Iniciar"
-    minimize: "Minimizar"
-    maximize: "Maximizar"
-    restore: "Restaurar"
-    home: "Tela inicial"
-    back: "Voltar"
-    running: "Aplicativos abertos"
-    desktop_icons: "Atalhos da área de trabalho"
+    - carregando tema e papel de parede
+    - restaurando seus atalhos
+    - abrindo a barra de tarefas
+    start: Iniciar
+    start_menu: Menu Iniciar
+    minimize: Minimizar
+    maximize: Maximizar
+    restore: Restaurar
+    home: Tela inicial
+    back: Voltar
+    running: Aplicativos abertos
+    desktop_icons: Atalhos da área de trabalho
   apps:
-    browser: "Navegador"
-    files: "Arquivos"
-    files_open_code: "Abrir no Code Studio"
-    code: "Usami Code Studio"
-    code_repo: "Repositório"
-    code_files: "Arquivos do repositório"
-    code_tab_editor: "Código"
-    code_tab_commits: "Commits e PRs"
-    code_tab_arch: "Arquitetura"
-    code_blank: "Projeto em branco"
-    code_new_file: "Novo arquivo"
-    code_fork_scratch: "Editar cópia no rascunho"
-    messenger: "Usami Messenger"
-    music: "Usami Music"
-    achievements: "Conquistas"
-    gallery: "Galeria"
-    settings: "Configurações"
-    about: "Sobre o sistema"
+    browser: Navegador
+    files: Arquivos
+    files_open_code: Abrir no Code Studio
+    code: Usami Code Studio
+    code_repo: Repositório
+    code_files: Arquivos do repositório
+    code_tab_editor: Código
+    code_tab_commits: Commits e PRs
+    code_tab_arch: Arquitetura
+    code_blank: Projeto em branco
+    code_new_file: Novo arquivo
+    code_fork_scratch: Editar cópia no rascunho
+    messenger: Usami Messenger
+    music: Usami Music
+    achievements: Conquistas
+    gallery: Galeria
+    settings: Configurações
+    about: Sobre o sistema
     browser_pages:
-      company: "Empresa"
-      projects: "Projetos"
-      services: "Serviços"
-      about_me: "Sobre mim"
-    browser_open_files: "Abrir no Explorer"
-    gallery_empty: "Nenhuma mídia publicada ainda. Imagens, vídeos de demonstração e diagramas entram aqui quando houver material real de cada projeto."
-    theme: "Tema"
-    theme_system: "Seguir o sistema"
-    theme_light: "Creme (claro)"
-    theme_dark: "Café (escuro)"
-    wallpaper: "Papel de parede"
+      company: Empresa
+      projects: Projetos
+      services: Serviços
+      about_me: Sobre mim
+    browser_open_files: Abrir no Explorer
+    gallery_empty: Nenhuma mídia publicada ainda. Imagens, vídeos de demonstração e diagramas entram aqui quando houver material real de cada projeto.
+    theme: Tema
+    theme_system: Seguir o sistema
+    theme_light: Creme (claro)
+    theme_dark: Café (escuro)
+    wallpaper: Papel de parede
     wallpapers:
-      fuwarch: "Fuwarch abraçado"
-      chess: "Partida de xadrez"
-      cafe: "Café da madrugada"
-      melody: "Estúdio de música"
-      stargaze: "Observatório estelar"
-      auto: "Automático (segue o tema)"
-      coffee: "Café noturno"
-      cream: "Papel creme"
-      caramel: "Caramelo"
-    about_built_with: "Construído com"
-    about_models: "Modelos de IA usados"
-    about_prompts: "Prompts enviados"
-    about_context: "Contexto atual da sessão (tokens)"
-    about_total: "Tokens gastos no total"
-    about_time: "Tempo desde o início"
-    about_libraries: "Bibliotecas"
-    not_measured: "não medido"
-    about_note: "Só números com fonte. O que não foi medido aparece como não medido."
-    about_emulated: "Fuwarch Linux é, por enquanto, um sistema emulado no navegador — ainda não é uma distribuição Linux. Torná-la real está nos planos."
-
-    terminal: "Terminal"
-    calendar: "Calendário"
-    calendar_today: "Hoje"
-    calendar_prev: "Mês anterior"
-    calendar_next: "Próximo mês"
-    calendar_milestones: "Marcos verificados"
-    calendar_selected: "Eventos do dia"
-    calendar_empty_day: "Nenhum marco registrado nesta data."
-    calendar_egg_badge: "Segredo"
-    calendar_egg_1103: "Aniversário do Fuwarch Linux — o café está passado e os terminais estão quentes."
-    calendar_egg_1031: "Noite das Bruxas no Fuwarch — nenhum bug fantasma sobreviveu à auditoria."
-    calendar_egg_0913: "Dia do Programador (256º dia) — a Usami separou uma xícara extra de café."
-    calendar_egg_0101: "Ano Novo no Fuwarch — novos commits, mesma disciplina de engenharia."
-    calendar_egg_0307: "Aniversário do Lucas (Reskyume) — %{age} anos hoje. Fuwarch Linux gostaria de lembrar que bolo também é infraestrutura."
-    calendar_candle: "Soprar a vela"
-    calendar_candle_done: "Desejo feito! Parabéns, Lucas — a Usami guardou o primeiro pedaço ☕🎂"
-    about_mascot_title: "Mascote e companion"
-    about_mascot_text: "Usami é a personagem central da marca e guia do Fuwarch Linux: uma AI companion 3D em desenvolvimento (React 19, Three.js/VRM, voz em streaming e diretor de animação auditado)."
-    about_env_title: "Ambiente de execução"
-    about_env_host: "Hospedagem da interface"
-    about_env_storage: "Persistência local"
-    about_env_files: "Arquivos virtuais montados"
-    taskmgr: "Gerenciador de tarefas"
-    taskmgr_session: "Sessão e ambiente (real)"
-    taskmgr_uptime: "Tempo de sessão"
-    taskmgr_open_count: "Janelas abertas"
-    taskmgr_viewport: "Viewport"
-    taskmgr_dom_nodes: "Nós DOM"
-    taskmgr_windows: "Aplicativos abertos"
-    taskmgr_no_windows: "Nenhuma outra janela aberta no momento."
-    taskmgr_col_app: "Aplicativo"
-    taskmgr_col_state: "Estado"
-    taskmgr_col_layer: "Camada"
-    taskmgr_col_actions: "Ações"
-    taskmgr_state_focused: "Em foco"
-    taskmgr_state_normal: "Aberto"
-    taskmgr_state_minimized: "Minimizado"
-    taskmgr_state_maximized: "Maximizado"
-    taskmgr_focus: "Focar"
-    taskmgr_end: "Encerrar"
-    taskmgr_daemons: "Processos virtuais do Fuwarch"
-    taskmgr_daemons_note: "Processos conceituais do ambiente emulado no navegador — não representam processos nem uso de recursos do seu computador."
-    gallery_soon: "em breve"
-    gallery_close: "Fechar visualização"
-    cat_appearance: "Aparência"
-    cat_wallpaper: "Papéis de parede"
-    cat_apps: "Aplicativos"
-    slot_group_pc: "Computador"
-    slot_group_phone: "Celular"
-    slot_desktop: "Área de trabalho"
-    slot_taskbar: "Barra de tarefas"
-    slot_home: "Tela inicial"
-    slot_dock: "Dock"
-    apps_note: "Escolha onde cada aplicativo aparece. Todos continuam disponíveis: no computador, pelo Menu Iniciar; no celular, pela biblioteca de aplicativos."
-    apps_locked: "Este app não pode sair daqui: sem ele não haveria como abrir as Configurações."
-    apps_reset: "Restaurar a organização padrão"
-    app_library: "Biblioteca de aplicativos"
-    ctx_open: "Abrir"
-    ctx_add_desktop: "Adicionar à área de trabalho"
-    ctx_remove_desktop: "Remover da área de trabalho"
-    ctx_add_taskbar: "Fixar na barra de tarefas"
-    ctx_remove_taskbar: "Desafixar da barra de tarefas"
-    ctx_add_home: "Adicionar à tela inicial"
-    ctx_remove_home: "Remover da tela inicial"
-    ctx_add_dock: "Adicionar ao dock"
-    ctx_remove_dock: "Remover do dock"
-    ctx_uninstall: "Desinstalar"
-    ctx_essential: "Este app é essencial e não pode ser desinstalado."
-    ctx_add_to_group: "Adicionar ao grupo %{name}"
-    ctx_leave_group: "Tirar do grupo %{name}"
-    uninstall_title: "Tem certeza que eu não fui útil pra você?"
-    uninstall_body: "%{app} vai embora do sistema. Prometo não ficar chateado… só um pouquinho. Se mudar de ideia, é só me reinstalar em Configurações → Aplicativos."
-    uninstall_keep: "Fico com você"
-    uninstall_confirm: "Desinstalar mesmo assim"
-    app_install: "Instalação"
-    app_uninstall: "Desinstalar"
-    app_reinstall: "Reinstalar"
-    app_essential: "Essencial"
-    app_uninstalled: "desinstalado"
-    group_default: "Grupo"
-    group_open: "Abrir o grupo %{name}"
-    group_close: "Fechar o grupo"
-    group_rename: "Renomear grupo"
-    cat_layout: "Organização"
-    layout_note: "Reordene com as setas ou arrastando os ícones. Arraste um app para cima de outro para criar um grupo; arraste-o para fora do grupo para desfazê-lo. Na área de trabalho, solte o ícone em qualquer espaço livre. Cada grupo vale só para o lugar onde foi criado."
-    layout_order: "Ordem"
-    layout_move_up: "Mover para antes"
-    layout_move_down: "Mover para depois"
-    layout_group_select: "Grupo"
-    layout_no_group: "Sem grupo"
-    layout_new_group: "Novo grupo"
-    layout_group_with: "Agrupar com"
-    layout_groups: "Grupos"
-    layout_group_name: "Nome do grupo"
-    layout_delete_group: "Desfazer grupo"
-    layout_empty: "Nada para organizar aqui."
-    layout_group_empty: "Grupo vazio"
-    cat_display: "Tela e movimento"
-    cat_language: "Idioma"
-    cat_system: "Sistema"
-    vision: "Visão e contraste"
-    vision_none: "Padrão"
-    vision_redgreen: "Daltonismo: vermelho-verde (protanopia e deuteranopia)"
-    vision_blueyellow: "Daltonismo: azul-amarelo (tritanopia)"
-    vision_contrast: "Alto contraste"
-    vision_note: "Os modos de visão trocam a cor de destaque por uma paleta segura para esse tipo de visão e sublinham os links, para que nada dependa só de cor."
-    accent: "Cor de destaque"
-    accent_locked: "Neste modo de visão a cor de destaque é definida pelo próprio modo."
+      fuwarch: Fuwarch abraçado
+      chess: Partida de xadrez
+      cafe: Café da madrugada
+      melody: Estúdio de música
+      stargaze: Observatório estelar
+      auto: Automático (segue o tema)
+      coffee: Café noturno
+      cream: Papel creme
+      caramel: Caramelo
+    about_built_with: Construído com
+    about_models: Modelos de IA usados
+    about_prompts: Prompts enviados
+    about_context: Contexto atual da sessão (tokens)
+    about_total: Tokens gastos no total
+    about_time: Tempo desde o início
+    about_libraries: Bibliotecas
+    not_measured: não medido
+    about_note: Só números com fonte. O que não foi medido aparece como não medido.
+    about_emulated: Fuwarch Linux é, por enquanto, um sistema emulado no navegador — ainda não é uma distribuição Linux. Torná-la real está nos planos.
+    terminal: Terminal
+    calendar: Calendário
+    calendar_today: Hoje
+    calendar_prev: Mês anterior
+    calendar_next: Próximo mês
+    calendar_milestones: Marcos verificados
+    calendar_selected: Eventos do dia
+    calendar_empty_day: Nenhum marco registrado nesta data.
+    calendar_egg_badge: Segredo
+    calendar_egg_1103: Aniversário do Fuwarch Linux — o café está passado e os terminais estão quentes.
+    calendar_egg_1031: Noite das Bruxas no Fuwarch — nenhum bug fantasma sobreviveu à auditoria.
+    calendar_egg_0913: Dia do Programador (256º dia) — a Usami separou uma xícara extra de café.
+    calendar_egg_0101: Ano Novo no Fuwarch — novos commits, mesma disciplina de engenharia.
+    calendar_egg_0307: Aniversário do Lucas (Reskyume) — %{age} anos hoje. Fuwarch Linux gostaria de lembrar que bolo também é infraestrutura.
+    calendar_candle: Soprar a vela
+    calendar_candle_done: Desejo feito! Parabéns, Lucas — a Usami guardou o primeiro pedaço ☕🎂
+    about_mascot_title: Mascote e companion
+    about_mascot_text: 'Usami é a personagem central da marca e guia do Fuwarch Linux: uma AI companion 3D em desenvolvimento (React 19, Three.js/VRM, voz em streaming e diretor de animação auditado).'
+    about_env_title: Ambiente de execução
+    about_env_host: Hospedagem da interface
+    about_env_storage: Persistência local
+    about_env_files: Arquivos virtuais montados
+    taskmgr: Gerenciador de tarefas
+    taskmgr_session: Sessão e ambiente (real)
+    taskmgr_uptime: Tempo de sessão
+    taskmgr_open_count: Janelas abertas
+    taskmgr_viewport: Viewport
+    taskmgr_dom_nodes: Nós DOM
+    taskmgr_windows: Aplicativos abertos
+    taskmgr_no_windows: Nenhuma outra janela aberta no momento.
+    taskmgr_col_app: Aplicativo
+    taskmgr_col_state: Estado
+    taskmgr_col_layer: Camada
+    taskmgr_col_actions: Ações
+    taskmgr_state_focused: Em foco
+    taskmgr_state_normal: Aberto
+    taskmgr_state_minimized: Minimizado
+    taskmgr_state_maximized: Maximizado
+    taskmgr_focus: Focar
+    taskmgr_end: Encerrar
+    taskmgr_daemons: Processos virtuais do Fuwarch
+    taskmgr_daemons_note: Processos conceituais do ambiente emulado no navegador — não representam processos nem uso de recursos do seu computador.
+    gallery_soon: em breve
+    gallery_close: Fechar visualização
+    cat_appearance: Aparência
+    cat_wallpaper: Papéis de parede
+    cat_apps: Aplicativos
+    slot_group_pc: Computador
+    slot_group_phone: Celular
+    slot_desktop: Área de trabalho
+    slot_taskbar: Barra de tarefas
+    slot_home: Tela inicial
+    slot_dock: Dock
+    apps_note: 'Escolha onde cada aplicativo aparece. Todos continuam disponíveis: no computador, pelo Menu Iniciar; no celular, pela biblioteca de aplicativos.'
+    apps_locked: 'Este app não pode sair daqui: sem ele não haveria como abrir as Configurações.'
+    apps_reset: Restaurar a organização padrão
+    app_library: Biblioteca de aplicativos
+    ctx_open: Abrir
+    ctx_add_desktop: Adicionar à área de trabalho
+    ctx_remove_desktop: Remover da área de trabalho
+    ctx_add_taskbar: Fixar na barra de tarefas
+    ctx_remove_taskbar: Desafixar da barra de tarefas
+    ctx_add_home: Adicionar à tela inicial
+    ctx_remove_home: Remover da tela inicial
+    ctx_add_dock: Adicionar ao dock
+    ctx_remove_dock: Remover do dock
+    ctx_uninstall: Desinstalar
+    ctx_essential: Este app é essencial e não pode ser desinstalado.
+    ctx_add_to_group: Adicionar ao grupo %{name}
+    ctx_leave_group: Tirar do grupo %{name}
+    uninstall_title: Tem certeza que eu não fui útil pra você?
+    uninstall_body: '%{app} vai embora do sistema. Prometo não ficar chateado… só um pouquinho. Se mudar de ideia, é só me reinstalar em Configurações → Aplicativos.'
+    uninstall_keep: Fico com você
+    uninstall_confirm: Desinstalar mesmo assim
+    app_install: Instalação
+    app_uninstall: Desinstalar
+    app_reinstall: Reinstalar
+    app_essential: Essencial
+    app_uninstalled: desinstalado
+    group_default: Grupo
+    group_open: Abrir o grupo %{name}
+    group_close: Fechar o grupo
+    group_rename: Renomear grupo
+    cat_layout: Organização
+    layout_note: Reordene com as setas ou arrastando os ícones. Arraste um app para cima de outro para criar um grupo; arraste-o para fora do grupo para desfazê-lo. Na área de trabalho, solte o ícone em qualquer espaço livre. Cada grupo vale só para o lugar onde foi criado.
+    layout_order: Ordem
+    layout_move_up: Mover para antes
+    layout_move_down: Mover para depois
+    layout_group_select: Grupo
+    layout_no_group: Sem grupo
+    layout_new_group: Novo grupo
+    layout_group_with: Agrupar com
+    layout_groups: Grupos
+    layout_group_name: Nome do grupo
+    layout_delete_group: Desfazer grupo
+    layout_empty: Nada para organizar aqui.
+    layout_group_empty: Grupo vazio
+    cat_display: Tela e movimento
+    cat_language: Idioma
+    cat_system: Sistema
+    vision: Visão e contraste
+    vision_none: Padrão
+    vision_redgreen: 'Daltonismo: vermelho-verde (protanopia e deuteranopia)'
+    vision_blueyellow: 'Daltonismo: azul-amarelo (tritanopia)'
+    vision_contrast: Alto contraste
+    vision_note: Os modos de visão trocam a cor de destaque por uma paleta segura para esse tipo de visão e sublinham os links, para que nada dependa só de cor.
+    accent: Cor de destaque
+    accent_locked: Neste modo de visão a cor de destaque é definida pelo próprio modo.
     accents:
-      caramel: "Caramelo"
-      rose: "Rosa Fuwarch"
-      sage: "Sálvia"
-      slate: "Azul-ardósia"
-    text_size: "Tamanho do texto"
-    size_small: "Pequeno"
-    size_default: "Padrão"
-    size_large: "Grande"
-    size_xl: "Muito grande"
-    icon_size: "Tamanho dos ícones da área de trabalho"
-    motion: "Animações"
-    motion_system: "Seguir o sistema"
-    motion_reduce: "Sempre reduzir"
-    transparency: "Efeitos de vidro (transparência e desfoque)"
-    reset: "Restaurar padrões"
-    about_tokens_out: "Tokens gerados pelo modelo (saída)"
-    about_tokens_in: "Entrada nova, incluindo gravação em cache"
-    about_tokens_cache: "Releitura de cache (o mesmo contexto, a cada turno)"
-    about_total_note: "Total = entrada nova + saída. As releituras de cache ficam de fora, para não contar o mesmo contexto várias vezes."
-    about_responses: "Respostas do modelo"
-    about_measured: "Medido em"
+      caramel: Caramelo
+      rose: Rosa Fuwarch
+      sage: Sálvia
+      slate: Azul-ardósia
+    text_size: Tamanho do texto
+    size_small: Pequeno
+    size_default: Padrão
+    size_large: Grande
+    size_xl: Muito grande
+    icon_size: Tamanho dos ícones da área de trabalho
+    motion: Animações
+    motion_system: Seguir o sistema
+    motion_reduce: Sempre reduzir
+    transparency: Efeitos de vidro (transparência e desfoque)
+    reset: Restaurar padrões
+    about_tokens_out: Tokens gerados pelo modelo (saída)
+    about_tokens_in: Entrada nova, incluindo gravação em cache
+    about_tokens_cache: Releitura de cache (o mesmo contexto, a cada turno)
+    about_total_note: Total = entrada nova + saída. As releituras de cache ficam de fora, para não contar o mesmo contexto várias vezes.
+    about_responses: Respostas do modelo
+    about_measured: Medido em
   gallery:
-    intro: "Capturas de tela das interfaces dos projetos, tiradas dos repositórios. Vídeos de demonstração entram quando estiverem prontos."
-    soon: "em breve"
+    intro: Capturas de tela das interfaces dos projetos, tiradas dos repositórios. Vídeos de demonstração entram quando estiverem prontos.
+    soon: em breve
   terminal:
-    welcome: "Fuwarch shell 0.1 — digite 'help'. (simulado: nenhum comando real é executado)"
-    help: |-
-      comandos:
-        help             esta ajuda
-        about            sobre a empresa e o Fuwarch
-        projects         lista todos os projetos e status
-        skills           stack e áreas de engenharia
-        contact          como falar com o fundador
-        usami --about    sobre a companion e mascote Usami
-        ls [pasta]       lista pastas e arquivos
-        cd <pasta>       entra numa pasta (cd .. volta)
-        pwd              mostra onde você está
-        cat <arquivo>    lê um arquivo
-        open <arquivo>   abre no Explorador de Arquivos
-        evidence         abre a página de evidências
-        ps               lista processos virtuais ativos
-        top              abre o Gerenciador de Tarefas
-        neofetch         informações do sistema
-        whoami           quem é você
-        clear            limpa a tela
-        exit             fecha o terminal
-    not_found: "%{cmd}: comando não encontrado. Tente 'help'."
-    no_such: "%{path}: arquivo ou pasta não encontrado"
-    usage: "uso: %{usage}"
-    whoami: "visitante (sem sudo)"
-    sudo: "visitante não está no arquivo sudoers. Este incidente será reportado ao Fuwarch."
-    rm_root: "rm: removendo '/'… espera. Este terminal é de mentirinha, e o Fuwarch já mordeu o seu comando antes que ele fizesse estrago. Nada foi apagado. Nem o sistema, nem a sua reputação. (por pouco)"
-    neofetch_note: "emulado no navegador — ainda não é uma distribuição Linux"
-    read_only: "este terminal é somente leitura"
+    welcome: 'Fuwarch shell 0.1 — digite ''help''. (simulado: nenhum comando real é executado)'
+    help: "comandos:\n  help             esta ajuda\n  about            sobre a empresa e o Fuwarch\n  projects         lista todos os projetos e status\n  skills           stack e áreas de engenharia\n  contact          como falar com o fundador\n  usami --about    sobre a companion e mascote Usami\n  ls [pasta]       lista pastas e arquivos\n  cd <pasta>       entra numa pasta (cd .. volta)\n  pwd              mostra onde você está\n  cat <arquivo>    lê um arquivo\n  open <arquivo>   abre no Explorador de Arquivos\n  evidence         abre a página de evidências\n  ps               lista processos virtuais ativos\n  top              abre o Gerenciador de Tarefas\n  neofetch         informações do sistema\n  whoami           quem é você\n  clear            limpa a tela\n  exit             fecha o terminal"
+    not_found: '%{cmd}: comando não encontrado. Tente ''help''.'
+    no_such: '%{path}: arquivo ou pasta não encontrado'
+    usage: 'uso: %{usage}'
+    whoami: visitante (sem sudo)
+    sudo: visitante não está no arquivo sudoers. Este incidente será reportado ao Fuwarch.
+    rm_root: 'rm: removendo ''/''… espera. Este terminal é de mentirinha, e o Fuwarch já mordeu o seu comando antes que ele fizesse estrago. Nada foi apagado. Nem o sistema, nem a sua reputação. (por pouco)'
+    neofetch_note: emulado no navegador — ainda não é uma distribuição Linux
+    read_only: este terminal é somente leitura
   eggs:
-    konami_title: "Código Konami detectado!"
-    konami_text: "+30 vidas e um cafuné virtual do Fuwarch."
-    start_label: "Fazer um carinho no Fuwarch"
-    console_intro: "Olá, curioso(a)! Abriu o console, então você sabe fuçar."
-    console_contact: "Se gostou do código, fala comigo: %{url} — prometo responder mais rápido do que o Fuwarch some com um 'sudo rm -rf /'."
+    konami_title: Código Konami detectado!
+    konami_text: +30 vidas e um cafuné virtual do Fuwarch.
+    start_label: Fazer um carinho no Fuwarch
+    console_intro: Olá, curioso(a)! Abriu o console, então você sabe fuçar.
+    console_contact: 'Se gostou do código, fala comigo: %{url} — prometo responder mais rápido do que o Fuwarch some com um ''sudo rm -rf /''.'
+  contact_form:
+    title: Orçamento & Contato
+    meta_title: Solicitar Orçamento · Usami
+    meta_description: Inicie um projeto de software, design system ou agentes de IA com a Usami. Resposta em até 24-48h úteis.
+    heading: Vamos construir algo juntos?
+    lead: Conte sobre sua ideia, sistema ou demanda técnica. O Lucas analisa cada projeto pessoalmente e retorna com uma proposta transparente ou próximos passos.
+    errors_header: 'Por favor, corrija os erros abaixo:'
+    fields:
+      name: Seu nome ou empresa
+      email: E-mail de contato
+      contact_handle: WhatsApp, Discord ou Telegram (opcional)
+      services: Em quais áreas podemos ajudar?
+      budget: Faixa de investimento estimada
+      timeline: Prazo desejado
+      details: Conte mais sobre o projeto ou desafio
+    placeholders:
+      name: 'Ex: Maria Silva ou Acme Corp'
+      email: seu.email@exemplo.com
+      contact_handle: 'Ex: +55 (11) 98765-4321 ou @usuario'
+      details: Descreva a ideia, o estágio atual, referências ou tecnologias que você tem em mente...
+    hints:
+      contact_handle: Caso prefira uma resposta ágil por mensagem.
+      services: Selecione uma ou mais opções.
+      budget: Ajuda a calibrar o escopo e arquitetura ideais.
+      details: Mínimo de 10 caracteres.
+    services:
+      design_engineering: Design Engineering & Web Apps
+      design_system: Design Systems & UI Kit
+      ai_agents: Agentes de IA & LLMs
+      fullstack: Aplicação Fullstack Completa
+      consulting: Consultoria & Auditoria Técnica
+      none: Geral
+    budgets:
+      under_5k: Até R$ 5.000
+      5k_to_15k: R$ 5.000 a R$ 15.000
+      15k_to_30k: R$ 15.000 a R$ 30.000
+      over_30k: Acima de R$ 30.000
+      international_usd: Internacional (USD)
+    timelines:
+      urgent: Urgente (1-2 semanas)
+      standard: Padrão (1-2 meses)
+      flexible: Sem pressa / Flexível
+    submit: Enviar Solicitação de Orçamento →
+    privacy_note: 🔒 Seus dados são confidenciais e usados exclusivamente para responder ao seu contato. Sem spam.
+    direct_title: Prefere falar diretamente?
+    direct_intro: 'Você também pode iniciar uma conversa direta pelos canais verificados abaixo:'
+    promise_badge: Compromisso de Resposta
+    promise_text: Respondo todas as solicitações qualificadas em até 24 a 48 horas úteis.
+    mobile_cta_aria: Barra rápida de contato
+    mobile_cta_text: Tem um projeto em mente?
+    mobile_cta_btn: Pedir Orçamento
+  thanks_page:
+    meta_title: Solicitação Enviada com Sucesso · Usami
+    breadcrumb: Obrigado
+    badge: Enviado com Sucesso
+    scene_desc: Usami e Fuwarch · Agradecimento
+    heading: Recebemos sua mensagem!
+    lead: Muito obrigado pelo interesse em construir com a Usami. Sua solicitação foi registrada e o Lucas já recebeu a notificação.
+    steps_title: O que acontece agora?
+    step1_title: Análise técnica do escopo
+    step1_desc: Avaliamos as tecnologias necessárias, arquitetura e viabilidade do prazo.
+    step2_title: Retorno em 24-48 horas úteis
+    step2_desc: Você receberá uma resposta detalhada no seu e-mail ou WhatsApp com estimativa ou link de alinhamento.
+    step3_title: Sem pressão
+    step3_desc: A conversa inicial é 100% sem compromisso para garantir que o projeto seja um sucesso mútuo.

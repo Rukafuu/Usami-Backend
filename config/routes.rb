@@ -13,6 +13,9 @@ Rails.application.routes.draw do
     get "evidencias", to: "evidence#index", as: :evidence
     get "galeria", to: "gallery#index", as: :gallery
     get "perguntas", to: "faq#index", as: :faq
+    get "contato", to: "contact#new", as: :contact
+    post "contato", to: "contact#create"
+    get "obrigado", to: "contact#thanks", as: :thanks
     get "privacidade", to: "legal#privacy", as: :privacy
     get "cookies", to: "legal#cookies_policy", as: :cookies_policy
     post "consentimento", to: "consent#create", as: :consent
