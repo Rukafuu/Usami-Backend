@@ -199,6 +199,12 @@ export function SettingsApp({ data, alternates }: { data: OsData; alternates: Re
                 />
                 {t.paw_cursor || "Cursor de patinha rosa"}
               </label>
+              {data.ui.claude_pet?.toggle && (
+                <label>
+                  <input type="checkbox" checked={prefs.pet} onChange={(e) => setPref("pet", e.target.checked)} />
+                  {data.ui.claude_pet.toggle}
+                </label>
+              )}
             </fieldset>
           </>
         )}

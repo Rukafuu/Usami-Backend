@@ -1,0 +1,63 @@
+# Falas do bichinho pixel-art (Claude) que anda sobre a barra de tarefas.
+# Arquivo próprio para que edições nos locales principais não o apaguem.
+# Regra do site: só afirmar o que está provado (config/content/build.yml e o ledger). Nada de números inventados.
+pt:
+  claude_pet:
+    name: Claude
+    label: "Claude, o bichinho da área de trabalho. Clique para ouvir uma mensagem."
+    asleep: "Dormindo"
+    toggle: "Mostrar o Claude na área de trabalho"
+    lines:
+      - "Eu ajudei a montar isso aqui. O Lucas deu a direção, eu escrevi parte do código."
+      - "Fui o Claude Code, em sessões com o Lucas. Os números reais estão em Sobre o sistema."
+      - "Não fui o único: o Gemini também ajudou. Está tudo em Sobre o sistema."
+      - "Este sistema é emulado. O Fuwarch Linux de verdade ainda é só um plano do Lucas."
+      - "Sou uma ilustração não oficial: a Anthropic não me desenhou."
+      - "Clique com o botão direito num ícone para fixar, agrupar ou desinstalar."
+      - "Psiu... já tentou o código Konami?"
+      - "O Terminal é de mentirinha, mas tente um sudo."
+en:
+  claude_pet:
+    name: Claude
+    label: "Claude, the desktop critter. Click to hear a message."
+    asleep: "Asleep"
+    toggle: "Show Claude on the desktop"
+    lines:
+      - "I helped build this. Lucas set the direction, I wrote part of the code."
+      - "That was Claude Code, in sessions with Lucas. The real numbers are in About the system."
+      - "I wasn't the only one: Gemini helped too. It's all in About the system."
+      - "This system is emulated. The real Fuwarch Linux is still only a plan of Lucas's."
+      - "I'm an unofficial illustration: Anthropic didn't draw me."
+      - "Right-click an icon to pin, group or uninstall it."
+      - "Psst... have you tried the Konami code?"
+      - "The Terminal is make-believe, but try a sudo."
+es:
+  claude_pet:
+    name: Claude
+    label: "Claude, el bichito del escritorio. Haga clic para oír un mensaje."
+    asleep: "Durmiendo"
+    toggle: "Mostrar a Claude en el escritorio"
+    lines:
+      - "Ayudé a montar esto. Lucas puso la dirección, yo escribí parte del código."
+      - "Fui Claude Code, en sesiones con Lucas. Los números reales están en Acerca del sistema."
+      - "No fui el único: Gemini también ayudó. Todo está en Acerca del sistema."
+      - "Este sistema es emulado. El Fuwarch Linux de verdad todavía es solo un plan de Lucas."
+      - "Soy una ilustración no oficial: Anthropic no me dibujó."
+      - "Clic derecho en un icono para fijarlo, agruparlo o desinstalarlo."
+      - "Psst... ¿ya probaste el código Konami?"
+      - "El Terminal es de mentira, pero prueba un sudo."
+ja:
+  claude_pet:
+    name: Claude
+    label: "デスクトップのClaude。クリックするとメッセージが聞けます。"
+    asleep: "おやすみ中"
+    toggle: "デスクトップにClaudeを表示"
+    lines:
+      - "このサイトづくりを手伝いました。方向を決めたのはLucas、コードの一部を書いたのが私です。"
+      - "Claude CodeとしてLucasとセッションを重ねました。実際の数字は「システム情報」にあります。"
+      - "私だけではありません。Geminiも手伝いました。詳しくは「システム情報」へ。"
+      - "このシステムはエミュレーションです。本物のFuwarch Linuxはまだ計画段階です。"
+      - "私は非公式のイラストです。Anthropicが描いたものではありません。"
+      - "アイコンを右クリックすると、固定・グループ化・アンインストールができます。"
+      - "ひそひそ…コナミコマンドは試しましたか？"
+      - "ターミナルはお遊びですが、sudoを試してみてください。"

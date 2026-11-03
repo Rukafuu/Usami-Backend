@@ -6,6 +6,7 @@ import { GroupPanel, GroupTile, groupLabel } from "../components/Groups"
 import { applyDrop, buildItems, renameGroup } from "../layout"
 import { DragGhost, readHit, useDrag } from "../useDrag"
 import { placedApps } from "../placement"
+import { ClaudePet } from "../pet/ClaudePet"
 import { useShell } from "../shell"
 import { Wallpaper } from "../Wallpaper"
 import { APP_IDS, AppIcon, type AppId } from "../registry"
@@ -26,6 +27,7 @@ export function MobileShell({ data, page, titles, onClassic }: Props) {
   const { open, minimize, minimizeAll } = useWindows.getState()
   const launch = (id: AppId) => open(id, viewport())
   const placement = useShell((s) => s.placement)
+  const showPet = useShell((s) => s.pet)
   const appMenu = useAppMenu()
   const uninstalled = useShell((s) => s.uninstalled)
   const arrangement = useShell((s) => s.layouts.home)
@@ -109,6 +111,8 @@ export function MobileShell({ data, page, titles, onClassic }: Props) {
           </button>
         </main>
       )}
+
+      {!front && showPet && data.ui.claude_pet?.lines?.length > 0 && <ClaudePet pet={data.ui.claude_pet} variant="phone" />}
 
       {!front && (
         <nav className="os-phone-dock" aria-label={data.ui.shell.running}>

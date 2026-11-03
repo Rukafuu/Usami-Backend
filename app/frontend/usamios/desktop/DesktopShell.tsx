@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react"
 import { AppContent } from "../AppContent"
 import { AppMenu, useAppMenu } from "../components/AppMenu"
+import { ClaudePet } from "../pet/ClaudePet"
 import { Wallpaper } from "../Wallpaper"
 import type { AppId } from "../registry"
 import type { OsData, PageContext } from "../types"
@@ -18,6 +19,7 @@ const viewport = () => ({ width: window.innerWidth, height: window.innerHeight }
 /** Desktop paradigm: wallpaper with shortcuts, floating windows, taskbar with Start menu. */
 export function DesktopShell({ data, page, titles, onClassic }: Props) {
   const order = useWindows((s) => s.order)
+  const showPet = useShell((s) => s.pet)
   const [startOpen, setStartOpen] = useState(false)
   const closeStart = useCallback(() => setStartOpen(false), [])
   const appMenu = useAppMenu()
@@ -58,6 +60,7 @@ export function DesktopShell({ data, page, titles, onClassic }: Props) {
         }}
         menu={(id) => appMenu.handlers(id, "taskbar")}
       />
+      {showPet && data.ui.claude_pet?.lines?.length > 0 && <ClaudePet pet={data.ui.claude_pet} variant="desktop" />}
       <AppMenu state={appMenu.state} data={data} titles={titles} onOpenApp={open} onClose={appMenu.close} />
     </div>
   )

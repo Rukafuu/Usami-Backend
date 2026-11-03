@@ -258,6 +258,13 @@ export const data: OsData = {
       id: "hane", folder: "sistemas", filename: "hane.core", status: "live", route: null,
       stack: ["Node.js"], description: "Núcleo local-first.", proven: ["Orçamento de chamadas"], planned: ["workspace.write"],
       listsTranslated: true, sources: [{ label: "Rukafuu/Hane", url: "https://github.com/Rukafuu/Hane" }],
+    claude_pet: {
+      name: "Claude",
+      label: "Claude, o bichinho da área de trabalho. Clique para ouvir uma mensagem.",
+      asleep: "Dormindo",
+      toggle: "Mostrar o Claude na área de trabalho",
+      lines: ["Eu ajudei a montar isso aqui.", "Sou uma ilustração não oficial.", "Psiu... já tentou o código Konami?"],
+    },
     },
     {
       id: "usami", folder: "sistemas", filename: "usami.companion", status: "in_development", route: null,

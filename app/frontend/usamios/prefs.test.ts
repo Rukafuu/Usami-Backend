@@ -19,7 +19,8 @@ describe("preferences", () => {
     setPref("accent", "rose")
     setPref("textSize", "large")
     setPref("glass", false)
-    expect(loadPrefs()).toMatchObject({ vision: "redgreen", accent: "rose", textSize: "large", glass: false })
+    setPref("pet", false)
+    expect(loadPrefs()).toMatchObject({ vision: "redgreen", accent: "rose", textSize: "large", glass: false, pet: false })
   })
 
   it("ignore garbage in storage", () => {

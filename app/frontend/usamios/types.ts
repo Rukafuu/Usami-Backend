@@ -277,6 +277,7 @@ export type OsData = {
   folders: string[]
   entries: Entry[]
   ledger: LedgerItem[]
+  claude_pet: { name: string; label: string; asleep: string; toggle?: string; lines: string[] }
   services: TitledText[]
   gallery: MediaItem[]
   system: SystemInfo

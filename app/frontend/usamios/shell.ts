@@ -43,11 +43,13 @@ export type Prefs = {
   motion: MotionPref
   glass: boolean
   cursor: CursorStyle
+  /** Show the pixel critter that walks along the taskbar. */
+  pet: boolean
 }
 
 export const DEFAULT_PREFS: Prefs = {
   theme: null, wallpaper: "fuwarch", vision: "none", accent: "caramel",
-  textSize: "default", iconSize: "default", motion: "system", glass: true, cursor: "paw",
+  textSize: "default", iconSize: "default", motion: "system", glass: true, cursor: "paw", pet: true,
 }
 
 const MODE_KEY = "usamios:mode"
@@ -67,6 +69,7 @@ const VALID: { [K in keyof Prefs]: (value: string) => Prefs[K] | undefined } = {
   motion: (v) => (v === "system" || v === "reduce" ? v : undefined),
   glass: (v) => (v === "on" ? true : v === "off" ? false : undefined),
   cursor: (v) => (v === "paw" || v === "system" ? v : undefined),
+  pet: (v) => (v === "on" ? true : v === "off" ? false : undefined),
 }
 
 // Storage can be missing or throw (private windows, blocked cookies): never depend on it.
