@@ -1,0 +1,13 @@
+# Project statuses added after the main locale files were written (kept apart so edits to pt/en/es/ja.yml cannot drop them).
+pt:
+  status:
+    paused: "Pausado"
+en:
+  status:
+    paused: "Paused"
+es:
+  status:
+    paused: "En pausa"
+ja:
+  status:
+    paused: "休止中"

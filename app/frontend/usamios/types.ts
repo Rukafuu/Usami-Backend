@@ -6,6 +6,8 @@ export type Entry = {
   id: string
   folder: string
   filename: string
+  /** Descriptive title ("Hane — agents with a budget…"); the short project name is the part before the dash. */
+  title?: string
   status: string
   route: string | null
   stack: string[]
@@ -176,6 +178,13 @@ export type Ui = {
     taskmgr_daemons_note: string
     gallery_soon: string
     gallery_close: string
+    gallery_folders: string
+    gallery_back: string
+    gallery_prev: string
+    gallery_next: string
+    gallery_original: string
+    gallery_count: string
+    gallery_items: string
     cat_appearance: string
     cat_wallpaper: string
     cat_apps: string
@@ -268,6 +277,7 @@ export type Ui = {
   terminal: Record<string, string>
   consent: { essential: string; all: string; privacy: string; cookies: string; current_essential: string; current_all: string; current_none: string; music_blocked: string; music_allow: string; music_open: string; assistant_note: string; about_title: string }
   eggs: { konami_title: string; konami_text: string; start_label: string; console_intro: string; console_contact: string }
+  claude_pet: { name: string; label: string; asleep: string; toggle?: string; lines: string[] }
 }
 
 export type OsData = {
@@ -277,7 +287,6 @@ export type OsData = {
   folders: string[]
   entries: Entry[]
   ledger: LedgerItem[]
-  claude_pet: { name: string; label: string; asleep: string; toggle?: string; lines: string[] }
   services: TitledText[]
   gallery: MediaItem[]
   system: SystemInfo

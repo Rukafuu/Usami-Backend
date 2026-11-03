@@ -35,3 +35,23 @@
   source: github.com/Rukafuu/Usami-Design-System
   url: https://github.com/Rukafuu/Usami-Design-System
   verified_on: 2026-11-03
+- claim: { pt: "LiraOS · 12 estrelas", en: "LiraOS · 12 stars", es: "LiraOS · 12 estrellas", ja: "LiraOS · スター12" }
+  source: github.com/Rukafuu/LiraOS
+  url: https://github.com/Rukafuu/LiraOS
+  verified_on: 2026-11-03
+- claim: { pt: "LiraOS · licença MIT", en: "LiraOS · MIT license", es: "LiraOS · licencia MIT", ja: "LiraOS · MITライセンス" }
+  source: github.com/Rukafuu/LiraOS
+  url: https://github.com/Rukafuu/LiraOS
+  verified_on: 2026-11-03
+- claim: { pt: "LiraOS · README informa projeto pausado por tempo indeterminado", en: "LiraOS · README states the project is paused indefinitely", es: "LiraOS · el README indica que el proyecto está en pausa indefinida", ja: "LiraOS · READMEに無期限の休止中と明記" }
+  source: github.com/Rukafuu/LiraOS
+  url: https://github.com/Rukafuu/LiraOS
+  verified_on: 2026-11-03
+- claim: { pt: "Lucas é Owner da organização Rede-ENois no GitHub", en: "Lucas is an Owner of the Rede-ENois organization on GitHub", es: "Lucas es Owner de la organización Rede-ENois en GitHub", ja: "LucasはGitHubのRede-ENois組織のオーナー" }
+  source: github.com/Rede-ENois · captura da página de organizações da conta do Lucas
+  url: https://github.com/Rede-ENois
+  verified_on: 2026-11-03
+- claim: { pt: "Lucas é Owner da organização UsamiVtuber no GitHub", en: "Lucas is an Owner of the UsamiVtuber organization on GitHub", es: "Lucas es Owner de la organización UsamiVtuber en GitHub", ja: "LucasはGitHubのUsamiVtuber組織のオーナー" }
+  source: github.com/UsamiVtuber · captura da página de organizações da conta do Lucas
+  url: https://github.com/UsamiVtuber
+  verified_on: 2026-11-03

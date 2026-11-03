@@ -1,0 +1,19 @@
+id: audax
+folder: sistemas
+order: 6
+filename: audax-hub.app
+status: info
+title:
+  pt: "Audax Hub — CRM comercial (projeto de cliente)"
+  en: "Audax Hub — a sales CRM (client project)"
+  es: "Audax Hub — CRM comercial (proyecto de cliente)"
+  ja: "Audax Hub — 営業向けCRM(クライアント案件)"
+stack: []
+description:
+  pt: "Plataforma comercial da Audax, um projeto de cliente: CRM com painel do SDR, leads, cadências, funil de vendas, caixa de WhatsApp, discador, agenda e reuniões. Só há capturas de tela (sem repositório público), com nomes, telefones e e-mails ocultados."
+  en: "The sales platform of Audax, a client project: a CRM with an SDR panel, leads, cadences, a sales funnel, a WhatsApp inbox, a dialer, a calendar and meetings. Only screenshots exist (there is no public repository), with names, phone numbers and emails hidden."
+  es: "La plataforma comercial de Audax, un proyecto de cliente: un CRM con panel del SDR, leads, cadencias, embudo de ventas, bandeja de WhatsApp, marcador, agenda y reuniones. Solo hay capturas de pantalla (no hay repositorio público), con nombres, teléfonos y correos ocultados."
+  ja: "クライアント案件であるAudaxの営業プラットフォーム。SDR向けパネル、リード、ケイデンス、営業ファネル、WhatsAppの受信箱、ダイヤラー、カレンダー、会議を備えたCRMです。公開リポジトリはなく、スクリーンショットのみで、氏名・電話番号・メールアドレスは非表示にしています。"
+proven: {}
+planned: {}
+sources: []

@@ -1,0 +1,68 @@
+id: liraos
+folder: sistemas
+order: 5
+filename: liraos.app
+status: paused
+title:
+  pt: "LiraOS — ecossistema de companion de IA (pausado)"
+  en: "LiraOS — an AI companion ecosystem (paused)"
+  es: "LiraOS — ecosistema de companion de IA (en pausa)"
+  ja: "LiraOS — AIコンパニオンのエコシステム(休止中)"
+stack: [React, Vite, Tauri, Electron, Node.js, WebSocket, Firestore, Live2D, MIT]
+description:
+  pt: "Ecossistema experimental de companion de IA (v2.0, Gaming Copilot Edition), em três partes: Lira Companion (app desktop em Electron para jogos e automações), Lira Chat (interface web e desktop) e Lira Backend (API em Node.js). O próprio repositório informa que o projeto está pausado por tempo indeterminado, sem manutenção nem deploy público."
+  en: "An experimental AI companion ecosystem (v2.0, Gaming Copilot Edition) in three parts: Lira Companion (an Electron desktop app for games and automation), Lira Chat (web and desktop interface) and Lira Backend (a Node.js API). The repository itself states that the project is paused indefinitely, with no maintenance or public deployment."
+  es: "Ecosistema experimental de companion de IA (v2.0, Gaming Copilot Edition), en tres partes: Lira Companion (app de escritorio en Electron para juegos y automatizaciones), Lira Chat (interfaz web y de escritorio) y Lira Backend (API en Node.js). El propio repositorio indica que el proyecto está en pausa indefinida, sin mantenimiento ni despliegue público."
+  ja: "AIコンパニオンの実験的エコシステム(v2.0、Gaming Copilot Edition)。ゲームと自動化向けのElectronデスクトップアプリ「Lira Companion」、Web/デスクトップ向けの「Lira Chat」、Node.js製API「Lira Backend」の3つで構成。リポジトリ自身が、無期限の休止中で、保守も公開デプロイも行っていないと明記しています。"
+proven:
+  pt:
+    - "Gaming Copilot: detecção automática de jogos e perfis por jogo (League of Legends, Valorant, osu!, Minecraft, Counter-Strike 2)"
+    - "Voz: síntese com ElevenLabs e Minimax, com cadeia de fallback entre provedores"
+    - "Análise visual com Gemini e avatar Live2D"
+    - "Memória de conversa no Firestore, níveis, experiência e conquistas"
+    - "Integrações com Discord e WhatsApp e comunicação em tempo real por WebSocket"
+    - "Atenção: estes itens vêm da lista de funcionalidades do README. O próprio README avisa que algumas integrações podem estar desativadas e partes do código incompletas."
+  en:
+    - "Gaming Copilot: automatic game detection and per-game profiles (League of Legends, Valorant, osu!, Minecraft, Counter-Strike 2)"
+    - "Voice: synthesis with ElevenLabs and Minimax, with a fallback chain between providers"
+    - "Visual analysis with Gemini and a Live2D avatar"
+    - "Conversation memory in Firestore, levels, experience and achievements"
+    - "Discord and WhatsApp integrations and real-time communication over WebSocket"
+    - "Note: these items come from the README's feature list. The README itself warns that some integrations may be disabled and parts of the code incomplete."
+  es:
+    - "Gaming Copilot: detección automática de juegos y perfiles por juego (League of Legends, Valorant, osu!, Minecraft, Counter-Strike 2)"
+    - "Voz: síntesis con ElevenLabs y Minimax, con cadena de respaldo entre proveedores"
+    - "Análisis visual con Gemini y avatar Live2D"
+    - "Memoria de conversación en Firestore, niveles, experiencia y logros"
+    - "Integraciones con Discord y WhatsApp y comunicación en tiempo real por WebSocket"
+    - "Nota: estos elementos vienen de la lista de funcionalidades del README. El propio README advierte que algunas integraciones pueden estar desactivadas y partes del código incompletas."
+  ja:
+    - "Gaming Copilot:ゲームの自動検出とゲームごとのプロファイル(League of Legends、Valorant、osu!、Minecraft、Counter-Strike 2)"
+    - "音声:ElevenLabsとMinimaxによる音声合成(プロバイダー間のフォールバックあり)"
+    - "Geminiによる画像解析とLive2Dアバター"
+    - "Firestoreでの会話メモリ、レベル、経験値、実績"
+    - "DiscordとWhatsAppの連携、WebSocketによるリアルタイム通信"
+    - "注:これらはREADMEの機能一覧に基づきます。READMEは、一部の連携が無効になっている可能性や、コードが未完成の部分があることも注記しています。"
+planned:
+  pt:
+    - "Detecção de eventos por OCR e identificação de abates e mortes nas partidas (congelado)"
+    - "Integração com OBS e criação automática de clipes (congelado)"
+    - "Atalhos globais e comandos de voz (congelado)"
+    - "App mobile e memória expandida (congelado)"
+  en:
+    - "OCR-based event detection and kill/death identification in matches (frozen)"
+    - "OBS integration and automatic clip creation (frozen)"
+    - "Global hotkeys and voice commands (frozen)"
+    - "Mobile app and expanded memory (frozen)"
+  es:
+    - "Detección de eventos por OCR e identificación de bajas y muertes en las partidas (congelado)"
+    - "Integración con OBS y creación automática de clips (congelado)"
+    - "Atajos globales y comandos de voz (congelado)"
+    - "App móvil y memoria ampliada (congelado)"
+  ja:
+    - "OCRによるイベント検出と、試合中のキル/デスの識別(凍結)"
+    - "OBS連携とクリップの自動作成(凍結)"
+    - "グローバルホットキーと音声コマンド(凍結)"
+    - "モバイルアプリと拡張メモリ(凍結)"
+sources:
+  - { label: "Rukafuu/LiraOS", url: "https://github.com/Rukafuu/LiraOS" }

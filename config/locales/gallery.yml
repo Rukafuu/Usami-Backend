@@ -1,0 +1,49 @@
+# Strings of the gallery's project folders and image viewer (own file so edits to pt/en/es/ja.yml cannot drop them).
+pt:
+  apps:
+    gallery_folders: "Pastas de projetos"
+    gallery_back: "Voltar às pastas"
+    gallery_prev: "Imagem anterior"
+    gallery_next: "Próxima imagem"
+    gallery_original: "Abrir original ↗"
+    gallery_count: "%{n} de %{total}"
+    gallery_items: "%{n} itens"
+  gallery:
+    projects: "Projetos"
+    open_original: "Abrir imagem em tamanho real"
+en:
+  apps:
+    gallery_folders: "Project folders"
+    gallery_back: "Back to folders"
+    gallery_prev: "Previous image"
+    gallery_next: "Next image"
+    gallery_original: "Open original ↗"
+    gallery_count: "%{n} of %{total}"
+    gallery_items: "%{n} items"
+  gallery:
+    projects: "Projects"
+    open_original: "Open image at full size"
+es:
+  apps:
+    gallery_folders: "Carpetas de proyectos"
+    gallery_back: "Volver a las carpetas"
+    gallery_prev: "Imagen anterior"
+    gallery_next: "Imagen siguiente"
+    gallery_original: "Abrir original ↗"
+    gallery_count: "%{n} de %{total}"
+    gallery_items: "%{n} elementos"
+  gallery:
+    projects: "Proyectos"
+    open_original: "Abrir imagen a tamaño completo"
+ja:
+  apps:
+    gallery_folders: "プロジェクトフォルダ"
+    gallery_back: "フォルダに戻る"
+    gallery_prev: "前の画像"
+    gallery_next: "次の画像"
+    gallery_original: "元の画像を開く ↗"
+    gallery_count: "%{n} / %{total}"
+    gallery_items: "%{n}件"
+  gallery:
+    projects: "プロジェクト"
+    open_original: "原寸大で画像を開く"

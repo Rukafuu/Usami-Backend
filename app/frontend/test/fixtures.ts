@@ -128,6 +128,13 @@ export const data: OsData = {
       taskmgr_daemons_note: "Processos conceituais do ambiente emulado no navegador.",
       gallery_soon: "em breve",
       gallery_close: "Fechar visualização",
+      gallery_folders: "Pastas de projetos",
+      gallery_back: "Voltar às pastas",
+      gallery_prev: "Imagem anterior",
+      gallery_next: "Próxima imagem",
+      gallery_original: "Abrir original ↗",
+      gallery_count: "%{n} de %{total}",
+      gallery_items: "%{n} itens",
       cat_appearance: "Aparência",
       cat_wallpaper: "Papéis de parede",
       cat_apps: "Aplicativos",
@@ -251,13 +258,6 @@ export const data: OsData = {
       console_intro: "Olá, curioso(a)!",
       console_contact: "Fala comigo: %{url}",
     },
-  },
-  folders: ["sistemas", "empresa"],
-  entries: [
-    {
-      id: "hane", folder: "sistemas", filename: "hane.core", status: "live", route: null,
-      stack: ["Node.js"], description: "Núcleo local-first.", proven: ["Orçamento de chamadas"], planned: ["workspace.write"],
-      listsTranslated: true, sources: [{ label: "Rukafuu/Hane", url: "https://github.com/Rukafuu/Hane" }],
     claude_pet: {
       name: "Claude",
       label: "Claude, o bichinho da área de trabalho. Clique para ouvir uma mensagem.",
@@ -265,6 +265,13 @@ export const data: OsData = {
       toggle: "Mostrar o Claude na área de trabalho",
       lines: ["Eu ajudei a montar isso aqui.", "Sou uma ilustração não oficial.", "Psiu... já tentou o código Konami?"],
     },
+  },
+  folders: ["sistemas", "empresa"],
+  entries: [
+    {
+      id: "hane", folder: "sistemas", filename: "hane.core", status: "live", route: null,
+      stack: ["Node.js"], description: "Núcleo local-first.", proven: ["Orçamento de chamadas"], planned: ["workspace.write"],
+      listsTranslated: true, sources: [{ label: "Rukafuu/Hane", url: "https://github.com/Rukafuu/Hane" }],
     },
     {
       id: "usami", folder: "sistemas", filename: "usami.companion", status: "in_development", route: null,
@@ -289,7 +296,9 @@ export const data: OsData = {
   services: [{ title: "Aplicações", text: "Web, desktop e mobile." }],
   gallery: [
     { id: "hane-onboarding", entry: "hane", kind: "image", src: "/media/hane-onboarding.jpg", thumb: "/media/hane-onboarding-thumb.jpg", placeholder: false, caption: "Hane · onboarding." },
+    { id: "hane-mission", entry: "hane", kind: "image", src: "/media/hane-mission.jpg", thumb: "/media/hane-mission-thumb.jpg", placeholder: false, caption: "Hane · uma missão real." },
     { id: "hane-demo", entry: "hane", kind: "video", src: null, thumb: null, placeholder: true, caption: "Hane · vídeo de demonstração (em breve)." },
+    { id: "usami-companion", entry: "usami", kind: "image", src: "/media/usami-companion.jpg", thumb: "/media/usami-companion-thumb.jpg", placeholder: false, caption: "Usami · a companion." },
   ],
   system: {
     version: "0.3",
