@@ -305,7 +305,7 @@ export function MusicApp({ data }: { data: OsData }) {
                 aria-selected={artistFilter === "rukafuu"}
                 onClick={() => setArtistFilter("rukafuu")}
               >
-                Reskyume (3)
+                Reskyume ({MUSIC_TRACKS.filter((tr) => tr.artistId === "rukafuu").length})
               </button>
               <button
                 type="button"
@@ -313,7 +313,7 @@ export function MusicApp({ data }: { data: OsData }) {
                 aria-selected={artistFilter === "lira"}
                 onClick={() => setArtistFilter("lira")}
               >
-                Amarynth Lira (10)
+                Amarynth Lira ({MUSIC_TRACKS.filter((tr) => tr.artistId === "lira").length})
               </button>
             </div>
           </header>
