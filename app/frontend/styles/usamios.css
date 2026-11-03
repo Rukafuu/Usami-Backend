@@ -1084,3 +1084,4 @@ body.is-dragging-win iframe { pointer-events: none; }
 .os-quote-actions .os-note { margin: 0; }
 .os-quote-done { align-content: center; justify-items: start; min-height: 240px; }
 @container quote (max-width: 520px) { .os-quote-row { grid-template-columns: 1fr; } }
+.os-quote-done img { width: 100%; max-width: 440px; height: auto; border-radius: 12px; border: 1px solid var(--line-2); }

@@ -30,6 +30,7 @@ export function QuoteApp({ data }: { data: OsData }) {
   if (status === "sent") {
     return (
       <div className="os-quote os-quote-done" role="status">
+        <img src="/media/thanks-usami.webp" alt={data.ui.thanks_page.image_alt} width="1024" height="576" />
         <h2>{data.ui.thanks_page.heading}</h2>
         <p>{data.ui.thanks_page.lead}</p>
         <button type="button" className="os-button" onClick={() => { setFormKey((k) => k + 1); setStatus("idle") }}>{t.app_again}</button>

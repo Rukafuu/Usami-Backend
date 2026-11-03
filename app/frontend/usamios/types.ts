@@ -296,7 +296,7 @@ export type Ui = {
     app_error_failed: string
     app_again: string
   }
-  thanks_page: { heading: string; lead: string }
+  thanks_page: { heading: string; lead: string; image_alt: string }
 }
 
 export type OsData = {

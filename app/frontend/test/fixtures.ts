@@ -283,7 +283,7 @@ export const data: OsData = {
       app_error_failed: "Não consegui enviar agora. Escreva direto para",
       app_again: "Enviar outro pedido",
     },
-    thanks_page: { heading: "Recebemos sua mensagem!", lead: "Muito obrigado pelo interesse." },
+    thanks_page: { heading: "Recebemos sua mensagem!", lead: "Muito obrigado pelo interesse.", image_alt: "Usami agradecendo" },
   },
   folders: ["sistemas", "empresa"],
   entries: [

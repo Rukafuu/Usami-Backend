@@ -1,4 +1,6 @@
 pt:
+  thanks_page:
+    image_alt: Usami abraçando o Fuwarch com as mãos juntas em agradecimento
   apps:
     quote: Orçamento
   contact_form:
@@ -7,6 +9,8 @@ pt:
     app_error_failed: Não consegui enviar agora. Escreva direto para
     app_again: Enviar outro pedido
 en:
+  thanks_page:
+    image_alt: Usami hugging Fuwarch with hands pressed together in thanks
   apps:
     quote: Quote
   contact_form:
@@ -15,6 +19,8 @@ en:
     app_error_failed: I could not send it right now. Please write directly to
     app_again: Send another request
 es:
+  thanks_page:
+    image_alt: Usami abrazando a Fuwarch con las manos juntas en agradecimiento
   apps:
     quote: Presupuesto
   contact_form:
@@ -23,6 +29,8 @@ es:
     app_error_failed: No pude enviarlo ahora. Escribe directamente a
     app_again: Enviar otra solicitud
 ja:
+  thanks_page:
+    image_alt: Fuwarchを抱きしめ、手を合わせて感謝を伝えるUsami
   apps:
     quote: お見積り
   contact_form:
