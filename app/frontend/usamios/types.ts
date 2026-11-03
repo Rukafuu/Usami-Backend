@@ -44,6 +44,11 @@ export type Ui = {
     sub: string
     boot_skip: string
     boot: string[]
+    login_user: string
+    login_note: string
+    login_action: string
+    init_title: string
+    init: string[]
     start: string
     start_menu: string
     minimize: string

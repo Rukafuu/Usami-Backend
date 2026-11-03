@@ -30,7 +30,17 @@ const FALLBACK_TITLES: Record<AppId, string> = {
   about: "Sobre o sistema",
 }
 
-const pickPrefs = (state: Prefs): Prefs =>
+const bootStrings = (shell: OsData["ui"]["shell"]) => ({
+  skip: shell.boot_skip,
+  boot: shell.boot,
+  loginUser: shell.login_user,
+  loginNote: shell.login_note,
+  loginAction: shell.login_action,
+  initTitle: shell.init_title,
+  init: shell.init,
+})
+
+const pickPrefs =(state: Prefs): Prefs =>
   Object.fromEntries((Object.keys(DEFAULT_PREFS) as (keyof Prefs)[]).map((k) => [k, state[k]])) as Prefs
 
 /**
@@ -106,7 +116,7 @@ export function App({ data, page }: Props) {
       <Shell data={normalizedData} page={page} titles={titles} onClassic={toClassic} />
       <UninstallDialog data={normalizedData} titles={titles} />
       {celebrating && <Celebration data={normalizedData} onDone={() => useShell.getState().celebrate(false)} />}
-      {!booted && <Boot name={normalizedData.site.osName} lines={normalizedData.ui.shell.boot} skipLabel={normalizedData.ui.shell.boot_skip} onDone={() => setBooted(true)} />}
+      {!booted && <Boot name={normalizedData.site.osName} strings={bootStrings(normalizedData.ui.shell)} onDone={() => setBooted(true)} />}
     </>
   )
 }

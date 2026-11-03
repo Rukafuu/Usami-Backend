@@ -221,13 +221,18 @@ describe("desktop", () => {
     expect(window.location.pathname).toBe("/pt/sistemas/usami")
   })
 
-  it("plays the boot sequence on the first visit, skippable with a key", async () => {
+  it("plays boot, guest login and initialisation on the first visit, each skippable", async () => {
     window.sessionStorage.clear()
     renderOS()
     expect(screen.getByRole("status")).toBeInTheDocument()
     await userEvent.keyboard("{Enter}")
     await act(async () => {
       await new Promise((r) => setTimeout(r, 600))
+    const signIn = await screen.findByRole("button", { name: "Entrar" })
+    expect(screen.getByText("Visitante")).toBeInTheDocument()
+    await userEvent.click(signIn)
+    expect(screen.getByText("Preparando sua área de trabalho…")).toBeInTheDocument()
+    await userEvent.keyboard("{Enter}")
     })
     expect(screen.queryByRole("status")).not.toBeInTheDocument()
   })
