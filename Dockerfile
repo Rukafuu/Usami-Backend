@@ -3,7 +3,8 @@
 
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
 # docker build -t usami_app .
-# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name usami_app usami_app
+# docker run -d -p 8080:8080 -e SECRET_KEY_BASE=<any long random string> -e NVIDIA_API_KEY=<key> --name usami_app usami_app
+# In production the image runs inside a Cloudflare Container (see cloudflare.config.ts and edge/index.ts).
 
 # For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
 
@@ -35,6 +36,12 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
+# Node builds the front end (Vite) while the image is built; it is not part of the final image.
+COPY --from=docker.io/library/node:24-slim /usr/local/bin/node /usr/local/bin/node
+COPY --from=docker.io/library/node:24-slim /usr/local/lib/node_modules /usr/local/lib/node_modules
+RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm && \
+    ln -s /usr/local/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
+
 # Install application gems
 COPY vendor/* ./vendor/
 COPY Gemfile Gemfile.lock ./
@@ -43,6 +50,10 @@ RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     # -j 1 disable parallel compilation to avoid a QEMU bug: https://github.com/rails/bootsnap/issues/495
     bundle exec bootsnap precompile -j 1 --gemfile
+
+# Front-end dependencies (cached until package files change)
+COPY package.json package-lock.json ./
+RUN npm ci --no-audit --no-fund
 
 # Copy application code
 COPY . .
@@ -57,7 +68,8 @@ RUN chmod +x bin/* && \
     sed -i 's/ruby\.exe$/ruby/' bin/*
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile && \
+    rm -rf node_modules tmp/cache
 
 
 
@@ -74,9 +86,13 @@ USER 1000:1000
 COPY --chown=rails:rails --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
 COPY --chown=rails:rails --from=build /rails /rails
 
+# Cloudflare's Worker talks to the app on 8080 (an unprivileged port). Puma serves directly: the Worker already
+# handles TLS and caching, so Thruster is not needed here.
+ENV PORT="8080" \
+    BINDING="0.0.0.0"
+
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
-# Start server via Thruster by default, this can be overwritten at runtime
-EXPOSE 80
-CMD ["./bin/thrust", "./bin/rails", "server"]
+EXPOSE 8080
+CMD ["./bin/rails", "server"]

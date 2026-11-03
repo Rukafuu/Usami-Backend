@@ -14,3 +14,14 @@ node_modules/
 .bundle/
 /config/master.key
 /config/credentials/*.key
+
+# Cloudflare
+.cf/
+.wrangler/
+.env.deploy
+/cloudflare/dist/
+/cloudflare/worker-configuration.d.ts
+/cloudflare/site/
+/cloudflare/worker/prompts.generated.json
+.dev.vars
+/cloudflare/.dev.vars

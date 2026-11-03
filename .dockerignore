@@ -45,3 +45,11 @@
 # Ignore Docker-related files
 /.dockerignore
 /Dockerfile*
+
+# Local build output, the Cloudflare Worker and its config are not part of the Rails image.
+/public/vite*
+/cloudflare
+/.cf
+/.wrangler
+/design
+/test
