@@ -107,4 +107,18 @@ cookies:
         pt: ["Sem eles o site não funciona direito (sessão, segurança e lembrar a sua escolha). Você pode apagá-los a qualquer momento nas configurações do navegador."]
         en: ["Without them the site does not work properly (session, security and remembering your choice). You can delete them at any time in your browser settings."]
         es: ["Sin ellas el sitio no funciona bien (sesión, seguridad y recordar tu elección). Puedes borrarlas en cualquier momento desde los ajustes del navegador."]
-        ja: ["これらがないと、サイトは正しく動作しません(セッション、セキュリティ、選択の記憶)。ブラウザの設定からいつでも削除できます。"]
+        ja: ["これらがないと、サイトは正しく動作しません(セッション、セキュリティ、選択の記憶)。ブラウザの設定からいつでも削除できます。"]# Shown only when the site was built with a Cloudflare Web Analytics token (see script/build_static.ps1).
+analytics:
+  privacy_section:
+    title: { pt: "Estatísticas de visita (opcional)", en: "Visit statistics (optional)", es: "Estadísticas de visitas (opcional)", ja: "訪問統計(任意)" }
+    body:
+      pt: ["Só se você escolher «Permitir todos», o site usa o Cloudflare Web Analytics para contar visitas por página, país, tipo de aparelho e site de origem. Ele não usa cookies e não cria um perfil seu. A Cloudflare processa esses dados conforme a política dela."]
+      en: ["Only if you choose 'Allow all', the site uses Cloudflare Web Analytics to count visits by page, country, device type and referring site. It uses no cookies and builds no profile of you. Cloudflare processes this data under its own policy."]
+      es: ["Solo si eliges «Permitir todas», el sitio usa Cloudflare Web Analytics para contar visitas por página, país, tipo de dispositivo y sitio de origen. No usa cookies ni crea un perfil tuyo. Cloudflare trata estos datos según su propia política."]
+      ja: ["「すべて許可」を選んだ場合に限り、ページ、国、端末の種類、参照元サイトごとの訪問数を数えるため、Cloudflare Web Analyticsを使用します。Cookieは使わず、あなたのプロファイルも作りません。これらのデータはCloudflareのポリシーに従って処理されます。"]
+  cookie_item:
+    name: "Cloudflare Web Analytics (cloudflareinsights.com)"
+    type: optional
+    purpose: { pt: "Contagem anônima de visitas, sem cookies. Só carrega com «Permitir todos».", en: "Anonymous visit counts, no cookies. Loads only with 'Allow all'.", es: "Conteo anónimo de visitas, sin cookies. Solo carga con «Permitir todas».", ja: "Cookieを使わない匿名の訪問数集計。「すべて許可」の場合のみ読み込まれます。" }
+    duration: { pt: "Nenhum dado fica no seu aparelho", en: "Nothing is stored on your device", es: "No se guarda nada en tu dispositivo", ja: "お使いの端末には何も保存されません" }
+  banner: { pt: "Também contamos visitas de forma anônima, sem cookies.", en: "We also count visits anonymously, without cookies.", es: "También contamos visitas de forma anónima, sin cookies.", ja: "Cookieを使わず、匿名で訪問数も集計します。" }

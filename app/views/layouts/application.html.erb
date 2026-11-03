@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <title><%= content_for?(:title) ? page_title(yield(:title)) : page_title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : localized_site("description") %>">
+    <meta name="description" content="<%= meta_description(content_for?(:description) ? yield(:description) : localized_site("description")) %>">
     <meta name="color-scheme" content="dark light">
     <meta property="og:site_name" content="<%= t("site.name") %>">
     <meta property="og:title" content="<%= content_for?(:title) ? page_title(yield(:title)) : page_title %>">
-    <meta property="og:description" content="<%= content_for?(:description) ? yield(:description) : localized_site("description") %>">
+    <meta property="og:description" content="<%= meta_description(content_for?(:description) ? yield(:description) : localized_site("description")) %>">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="<%= html_lang.tr("-", "_") %>">
     <% unless controller_name == "errors" %>
@@ -30,7 +30,7 @@
     <% unless controller_name == "errors" %><meta property="og:url" content="<%= alternate_url(I18n.locale) %>"><% end %>
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<%= content_for?(:title) ? page_title(yield(:title)) : page_title %>">
-    <meta name="twitter:description" content="<%= content_for?(:description) ? yield(:description) : localized_site("description") %>">
+    <meta name="twitter:description" content="<%= meta_description(content_for?(:description) ? yield(:description) : localized_site("description")) %>">
     <meta name="twitter:image" content="<%= og_image_url %>">
     <%= vite_client_tag %>
     <%= vite_typescript_tag "application" %>
@@ -82,7 +82,7 @@
     </nav>
 
     <%# Progressive enhancement: the page above is complete without JavaScript; the shell layers Fuwarch Linux on top. %>
-    <div id="usamios"
+    <div id="usamios"<%= %( data-analytics-token="#{ERB::Util.h(analytics_token)}").html_safe if analytics_token %>
          data-endpoint="<%= os_path %>"
          data-locale="<%= I18n.locale %>"
          data-folder="<%= params[:folder] %>"

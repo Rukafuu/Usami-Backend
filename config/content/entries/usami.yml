@@ -3,6 +3,11 @@ folder: sistemas
 order: 3
 filename: usami.companion
 status: in_development
+title:
+  pt: "Usami — a companion 3D da empresa"
+  en: "Usami — the company's 3D companion"
+  es: "Usami — la companion 3D de la empresa"
+  ja: "Usami — 会社の3Dコンパニオン"
 stack: [React 19, Three.js, VRM, Node.js, faster-whisper, Gemini TTS]
 description:
   pt: "A companion 3D da empresa, em desenvolvimento: avatar VRM com Three.js, voz em português com resposta em streaming, memória local com exclusão confirmada e um diretor de animação em que o modelo de linguagem nunca gera movimento cru — só escolhe entre formas validadas. É um protótipo, ainda não um produto."

@@ -69,6 +69,26 @@ pt:
     source: "Fonte"
     verified: "Verificado em"
   errors:
+    badge: "Erro HTTP %{code}"
+    home_btn: "Voltar ao Início"
+    shell_btn: "Abrir Fuwarch Linux"
+    evidence_btn: "Ver Evidências"
+    status_404:
+      title: "Página não encontrada"
+      body: "Olhamos até pelas estrelas do observatório estelar, mas não encontramos nenhuma evidência de que esta página exista."
+      scene: "Usami no observatório estelar com o telescópio e mapa celestial"
+    status_403:
+      title: "Acesso restrito"
+      body: "Xeque-mate! Esta área requer permissões elevadas que a sua sessão não possui no momento."
+      scene: "Usami e o Fuwarch analisando o tabuleiro de xadrez"
+    status_402:
+      title: "Operação requer confirmação"
+      body: "Esta operação necessita de créditos, autorização ou confirmação de assinatura para prosseguir."
+      scene: "Usami no estúdio Fuwarch com fones de ouvido e vinil"
+    status_500:
+      title: "Falha interna no servidor"
+      body: "Eita, parece que derramamos café no servidor! A equipe já está verificando os logs para restaurar o sistema."
+      scene: "Usami tomando café na mesa de código de madrugada"
     not_found_title: "Página não encontrada"
     not_found_body: "Não temos evidência de que esta página exista. Volte ao início."
   shell:

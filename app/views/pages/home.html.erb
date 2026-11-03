@@ -25,6 +25,18 @@
   </ul>
 </section>
 
+<% if founder_entry %>
+  <section class="block founder-card" aria-labelledby="founder-title">
+    <img src="<%= founder_entry.photo["small"] %>" width="120" height="180" alt="<%= founder_entry.photo_alt(I18n.locale) %>" loading="lazy" decoding="async">
+    <div>
+      <h2 id="founder-title" class="mono"><%= t("home.founder_kicker") %></h2>
+      <p><strong><%= site["founder"]["name"] %></strong> — <%= founder_entry.title(I18n.locale).split(" — ").last %></p>
+      <p class="muted"><%= meta_description(founder_entry.about(I18n.locale).first, limit: 200) %></p>
+      <p><a href="<%= entry_path(folder: founder_entry.folder, slug: founder_entry.id) %>"><%= t("home.founder_link") %> →</a></p>
+    </div>
+  </section>
+<% end %>
+
 <% @folders.each do |folder, entries| %>
   <section class="block" aria-labelledby="f-<%= folder %>">
     <h2 id="f-<%= folder %>"><a href="<%= folder_path(folder: folder) %>"><%= t("folders.#{folder}") %></a></h2>

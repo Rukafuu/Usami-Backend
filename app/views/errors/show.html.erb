@@ -1,0 +1,30 @@
+<% 
+  code = @code || 404
+  config = @config || ErrorsController::ERROR_CONFIGS[code] || ErrorsController::ERROR_CONFIGS[404]
+  title = t("errors.status_#{code}.title", default: t("errors.not_found_title"))
+  body = t("errors.status_#{code}.body", default: t("errors.not_found_body"))
+  scene = t("errors.status_#{code}.scene", default: "Usami")
+  content_for :title, "#{code} — #{title}"
+%>
+
+<article class="error-page block">
+  <div class="error-card">
+    <div class="error-art-wrap">
+      <img src="<%= config[:image] %>" alt="<%= scene %>" class="error-art" loading="eager" decoding="async">
+      <div class="error-art-overlay"></div>
+      <span class="error-badge mono"><%= t("errors.badge", code: code) %></span>
+    </div>
+
+    <div class="error-content">
+      <p class="mono error-scene-label"><%= scene %></p>
+      <h1><%= title %></h1>
+      <p class="lead"><%= body %></p>
+
+      <div class="error-actions">
+        <a href="<%= home_path %>" class="button button--primary"><%= t("errors.home_btn") %></a>
+        <button type="button" class="button" data-shell-open><%= t("errors.shell_btn") %></button>
+        <a href="<%= evidence_path %>" class="button"><%= t("errors.evidence_btn") %></a>
+      </div>
+    </div>
+  </div>
+</article>

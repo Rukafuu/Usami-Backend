@@ -3,6 +3,11 @@ folder: laboratorio
 order: 3
 filename: mimir.mvp
 status: experimental
+title:
+  pt: "Mimir — capacidades com propósito para IA"
+  en: "Mimir — purpose-bound capabilities for AI"
+  es: "Mimir — capacidades con propósito para IA"
+  ja: "Mimir — 目的を限定したAIの能力"
 stack: [Go]
 description:
   pt: "Capacidades com propósito definido para IA. O MVP usa fontes simuladas e estado em memória — é um experimento, não um produto."

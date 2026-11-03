@@ -3,6 +3,11 @@ folder: laboratorio
 order: 2
 filename: deus.lang
 status: experimental
+title:
+  pt: "Deus — linguagem de pipelines de informação"
+  en: "Deus — an information-pipeline language"
+  es: "Deus — lenguaje de pipelines de información"
+  ja: "Deus — 情報パイプライン言語"
 stack: [C17]
 description:
   pt: "Linguagem de pipelines de informação em C17, com intenção validada e execução limitada. Há uma extensão de VS Code para suporte à linguagem."

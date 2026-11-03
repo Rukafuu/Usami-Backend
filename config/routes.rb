@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     post "consentimento", to: "consent#create", as: :consent
     get ":folder", to: "folders#show", as: :folder, constraints: { folder: /sistemas|contribuicoes|laboratorio|empresa/ }
     get ":folder/:slug", to: "entries#show", as: :entry, constraints: { folder: /sistemas|contribuicoes|laboratorio|empresa/ }
+    get "erro/:code", to: "errors#show", as: :error, constraints: { code: /402|403|404|500/ }
   end
 
   match "*unmatched", to: "errors#not_found", via: :all

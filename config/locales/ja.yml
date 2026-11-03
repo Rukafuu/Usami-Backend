@@ -69,6 +69,26 @@ ja:
     source: "出典"
     verified: "確認日"
   errors:
+    badge: "HTTPエラー %{code}"
+    home_btn: "ホームに戻る"
+    shell_btn: "Fuwarch Linuxを開く"
+    evidence_btn: "エビデンスを見る"
+    status_404:
+      title: "ページが見つかりません"
+      body: "星空の天文台を探してみましたが、このページが存在する証拠は見つかりませんでした。"
+      scene: "望遠鏡と天体図を持つ天文台のUsami"
+    status_403:
+      title: "アクセスが制限されています"
+      body: "チェックメイト！ この領域には、現在のセッションでは許可されていない特権が必要です。"
+      scene: "チェス盤を見つめるUsamiとFuwarch"
+    status_402:
+      title: "支払いや認証が必要です"
+      body: "この操作を進めるには、クレジットやサブスクリプションの確認が必要です。"
+      scene: "ヘッドフォンをつけてスタジオにいるUsami"
+    status_500:
+      title: "サーバー内部エラー"
+      body: "おっと、サーバーにコーヒーをこぼしてしまったようです！ 復旧に向けてログを確認しています。"
+      scene: "深夜のデスクで温かいコーヒーを飲むUsami"
     not_found_title: "ページが見つかりません"
     not_found_body: "このページが存在する根拠はありません。ホームに戻ってください。"
   shell:

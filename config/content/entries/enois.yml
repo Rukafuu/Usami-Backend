@@ -3,6 +3,11 @@ folder: sistemas
 order: 4
 filename: enois.net
 status: live
+title:
+  pt: "Énois — rede social para quem trabalha com tecnologia"
+  en: "Énois — a social network for people in tech"
+  es: "Énois — red social para quien trabaja en tecnología"
+  ja: "Énois — テック従事者のためのSNS"
 stack: [Java 25, Spring Boot 4, React 19, TanStack Start, Go, GPL-3.0]
 description:
   pt: "Rede social brasileira para quem trabalha com tecnologia: gratuita, sem anúncios e de código aberto. Backend em Spring Boot com arquitetura hexagonal; frontend em React 19 com TanStack Start; design system próprio e API gateway em Go. Lucas é owner da organização, head de frontend e também atua no backend."

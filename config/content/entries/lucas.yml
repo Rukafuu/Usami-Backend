@@ -3,6 +3,11 @@ folder: empresa
 order: 1
 filename: lucas.txt
 status: info
+title:
+  pt: "Lucas Frischeisen — engenheiro de IA e backend"
+  en: "Lucas Frischeisen — AI and backend engineer"
+  es: "Lucas Frischeisen — ingeniero de IA y backend"
+  ja: "Lucas Frischeisen — AI・バックエンドエンジニア"
 stack: []
 description:
   pt: "Lucas Frischeisen (online: Reskyume e Rukafuu), engenheiro de IA e backend em São Paulo. Owner da organização Énois e head de frontend, também atua no backend. Faz música eletrônica sob os nomes Reskyume e Rukafuu."
@@ -11,5 +16,53 @@ description:
   ja: "Lucas Frischeisen(オンラインではReskyume、Rukafuu)。サンパウロを拠点とするAI・バックエンドエンジニア。Énois組織のオーナーでフロントエンドのヘッド、バックエンドにも携わる。ReskyumeおよびRukafuu名義で電子音楽も制作。"
 proven: {}
 planned: {}
+# Written by Lucas himself; the site shows it as his own words.
+photo:
+  src: /media/lucas-800.jpg
+  small: /media/lucas-400.jpg
+  width: 800
+  height: 1200
+  alt:
+    pt: "Lucas Frischeisen, de cabelo rosa e óculos redondos, em frente a uma loja de discos, em uma foto com aparência de filme antigo"
+    en: "Lucas Frischeisen with pink hair and round glasses in front of a record store, in a vintage film look"
+    es: "Lucas Frischeisen con el pelo rosa y gafas redondas frente a una tienda de discos, en una foto con aspecto de película antigua"
+    ja: "ピンクの髪に丸眼鏡のLucas Frischeisen。レコード店の前で撮影した、古いフィルム風の写真"
+about:
+  pt:
+    - "Lucas Frischeisen, também conhecido como Ruka ou Reskyume. Sou engenheiro de software e IA, movido pela curiosidade de entender como a tecnologia funciona e pela vontade de transformar ideias em sistemas reais."
+    - "Minha trajetória começou longe do desenvolvimento de software. Ao longo dos anos, passei por diferentes áreas profissionais, experiências que ampliaram minha visão sobre pessoas, negócios e resolução de problemas. Foi na programação que encontrei uma forma de unir minha curiosidade técnica à minha criatividade."
+    - "Hoje, meu trabalho está concentrado no desenvolvimento de aplicações, arquiteturas de software e soluções de inteligência artificial. Gosto de explorar desde o backend e a infraestrutura até sistemas multiagentes, aplicações multimodais e experiências interativas que aproximam a tecnologia das pessoas."
+    - "Mais do que utilizar ferramentas, gosto de entender como elas funcionam, experimentar novas abordagens e construir soluções que tenham propósito. Acredito que a engenharia de software não se resume a escrever código, mas envolve compreender problemas, tomar decisões e transformar conceitos em produtos funcionais."
+    - "Meus projetos pessoais refletem essa maneira de pensar. De sistemas de IA e agentes virtuais a plataformas colaborativas e ambientes digitais experimentais, cada projeto representa uma oportunidade de explorar novas possibilidades e expandir meus conhecimentos."
+    - "Tenho um interesse especial na interseção entre inteligência artificial, desenvolvimento de software e criatividade. É nesse espaço que encontro algumas das perguntas mais interessantes da tecnologia atual: como construir sistemas mais inteligentes, úteis, expressivos e capazes de interagir de maneira natural com as pessoas?"
+    - "Na USAMI, quero levar essa curiosidade para além dos experimentos, transformando ideias em aplicações, produtos e soluções que possam gerar valor real."
+    - "Meu objetivo é continuar explorando os limites do que podemos construir com tecnologia, sem perder de vista aquilo que torna cada criação significativa: as pessoas que irão utilizá-la."
+  en:
+    - "Lucas Frischeisen, also known as Ruka or Reskyume. I am a software and AI engineer, driven by curiosity about how technology works and by the urge to turn ideas into real systems."
+    - "My path began far from software development. Over the years I worked in different professional fields, experiences that widened my view of people, business and problem solving. Programming is where I found a way to join my technical curiosity with my creativity."
+    - "Today my work focuses on applications, software architecture and artificial intelligence solutions. I like to explore everything from backend and infrastructure to multi-agent systems, multimodal applications and interactive experiences that bring technology closer to people."
+    - "More than using tools, I like to understand how they work, try new approaches and build solutions with a purpose. I believe software engineering is not just writing code: it means understanding problems, making decisions and turning concepts into working products."
+    - "My personal projects reflect this way of thinking. From AI systems and virtual agents to collaborative platforms and experimental digital environments, each project is a chance to explore new possibilities and broaden what I know."
+    - "I have a special interest in the intersection of artificial intelligence, software development and creativity. That is where I find some of the most interesting questions in technology today: how do we build systems that are smarter, more useful, more expressive and able to interact naturally with people?"
+    - "At USAMI, I want to take this curiosity beyond experiments, turning ideas into applications, products and solutions that create real value."
+    - "My goal is to keep exploring the limits of what we can build with technology, without losing sight of what makes every creation meaningful: the people who will use it."
+  es:
+    - "Lucas Frischeisen, también conocido como Ruka o Reskyume. Soy ingeniero de software e IA, movido por la curiosidad de entender cómo funciona la tecnología y por las ganas de convertir ideas en sistemas reales."
+    - "Mi trayectoria empezó lejos del desarrollo de software. Con los años pasé por distintas áreas profesionales, experiencias que ampliaron mi visión sobre las personas, los negocios y la resolución de problemas. Fue en la programación donde encontré la forma de unir mi curiosidad técnica con mi creatividad."
+    - "Hoy mi trabajo se concentra en el desarrollo de aplicaciones, arquitecturas de software y soluciones de inteligencia artificial. Me gusta explorar desde el backend y la infraestructura hasta sistemas multiagente, aplicaciones multimodales y experiencias interactivas que acercan la tecnología a las personas."
+    - "Más que usar herramientas, me gusta entender cómo funcionan, probar nuevos enfoques y construir soluciones con propósito. Creo que la ingeniería de software no se reduce a escribir código: implica comprender problemas, tomar decisiones y transformar conceptos en productos funcionales."
+    - "Mis proyectos personales reflejan esta forma de pensar. Desde sistemas de IA y agentes virtuales hasta plataformas colaborativas y entornos digitales experimentales, cada proyecto es una oportunidad de explorar nuevas posibilidades y ampliar mis conocimientos."
+    - "Tengo un interés especial en la intersección entre inteligencia artificial, desarrollo de software y creatividad. Ahí encuentro algunas de las preguntas más interesantes de la tecnología actual: ¿cómo construir sistemas más inteligentes, útiles, expresivos y capaces de interactuar de forma natural con las personas?"
+    - "En USAMI quiero llevar esa curiosidad más allá de los experimentos, convirtiendo ideas en aplicaciones, productos y soluciones que generen valor real."
+    - "Mi objetivo es seguir explorando los límites de lo que podemos construir con tecnología, sin perder de vista lo que hace significativa a cada creación: las personas que la van a usar."
+  ja:
+    - "Lucas Frischeisen、別名RukaまたはReskyume。ソフトウェアとAIのエンジニアで、テクノロジーがどう動くのかを知りたいという好奇心と、アイデアを実際のシステムにしたいという思いで動いています。"
+    - "私の歩みはソフトウェア開発から遠いところから始まりました。これまで様々な職種を経験し、人やビジネス、問題解決への視野が広がりました。技術への好奇心と創造性を結びつける方法を見つけたのが、プログラミングでした。"
+    - "現在はアプリケーション開発、ソフトウェアアーキテクチャ、人工知能ソリューションを中心に取り組んでいます。バックエンドやインフラから、マルチエージェントシステム、マルチモーダルなアプリケーション、人とテクノロジーを近づけるインタラクティブな体験まで、幅広く探求するのが好きです。"
+    - "道具を使うこと以上に、その仕組みを理解し、新しいアプローチを試し、目的のあるソリューションを作ることが好きです。ソフトウェアエンジニアリングはコードを書くことだけではなく、問題を理解し、判断し、概念を動くプロダクトに変えることだと考えています。"
+    - "個人プロジェクトにもこの考え方が表れています。AIシステムや仮想エージェントから、共同作業のプラットフォーム、実験的なデジタル空間まで、どのプロジェクトも新しい可能性を探り、知識を広げる機会です。"
+    - "人工知能、ソフトウェア開発、創造性が交わる領域に特に関心があります。そこには、今のテクノロジーで最も興味深い問いがあります。より賢く、役に立ち、表現力があり、人と自然にやり取りできるシステムをどう作るか。"
+    - "USAMIでは、この好奇心を実験の先へ広げ、アイデアを実際の価値を生むアプリケーション、プロダクト、ソリューションにしていきたいと考えています。"
+    - "私の目標は、テクノロジーで作れることの限界を探り続けることです。そして、あらゆる創作を意味あるものにするもの、つまりそれを使う人々を見失わないことです。"
 sources:
   - { label: "github.com/Rukafuu", url: "https://github.com/Rukafuu" }

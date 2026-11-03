@@ -3,6 +3,11 @@ folder: sistemas
 order: 1
 filename: lira-vtuber.app
 status: live
+title:
+  pt: "LiraVtuber — assistente VTuber com voz e memória"
+  en: "LiraVtuber — VTuber assistant with voice and memory"
+  es: "LiraVtuber — asistente VTuber con voz y memoria"
+  ja: "LiraVtuber — 音声と記憶を持つVTuberアシスタント"
 stack: [Python, Whisper, SQLite, RAG, FastAPI, Node.js]
 description:
   pt: "Assistente VTuber de código aberto para desktop (Windows), em Python: conversa por voz, mantém memória em três camadas, alterna entre vários provedores de LLM e de voz e integra Discord, WhatsApp e VTube Studio. Tem 25 estrelas no GitHub."

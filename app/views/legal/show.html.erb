@@ -26,7 +26,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @content["items"].each do |item| %>
+            <% (@content["items"] + (analytics_token ? [ @legal["analytics"]["cookie_item"] ] : [])).each do |item| %>
               <tr>
                 <th scope="row" class="mono"><%= item["name"] %></th>
                 <td><span class="badge <%= 'badge--live' if item["type"] == "essential" %>"><%= localized(@content["types"][item["type"]]) %></span></td>
@@ -40,7 +40,8 @@
     </section>
   <% end %>
 
-  <% @content["sections"].each_with_index do |section, i| %>
+  <% sections = @content["sections"] + (@page == "privacy" && analytics_token ? [ @legal["analytics"]["privacy_section"] ] : []) %>
+  <% sections.each_with_index do |section, i| %>
     <section class="block" aria-labelledby="s<%= i %>">
       <h2 id="s<%= i %>"><%= localized(section["title"]) %></h2>
       <% (Content.localize(section["body"], I18n.locale).value || []).each do |paragraph| %>

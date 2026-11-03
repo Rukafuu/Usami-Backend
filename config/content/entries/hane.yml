@@ -3,6 +3,11 @@ folder: sistemas
 order: 2
 filename: hane.core
 status: live
+title:
+  pt: "Hane — agentes com orçamento e auditoria"
+  en: "Hane — agents with a budget and an audit trail"
+  es: "Hane — agentes con presupuesto y auditoría"
+  ja: "Hane — 予算と監査を備えたエージェント"
 stack: [Node.js 22, SQLite, Argon2id, Apache-2.0]
 description:
   pt: "Núcleo local-first que executa um objetivo em três papéis — planejador, executor e revisor — com orçamento rígido de chamadas, leitura de arquivos restrita a um escopo concedido e uma trilha de auditoria que não pode ser reescrita. Hoje só a leitura de workspace está implementada."

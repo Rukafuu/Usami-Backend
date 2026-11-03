@@ -44,7 +44,8 @@ module Assistant
         out << "Stack: #{data[:stack].join(", ")}" if data[:stack].any?
         out << "Proven (backed by the sources): #{data[:proven].join("; ")}" if data[:proven].any?
         out << "Planned (NOT built yet): #{data[:planned].join("; ")}" if data[:planned].any?
-        out << "Sources: #{data[:sources].map { |s| "#{s[:label]} <#{s[:url]}>" }.join(", ")}" if data[:sources].any?
+        out << "About (the founder's own words, in first person): #{e.about(@locale).join(" ")}" if e.about(@locale).any?
+        out << "Sources:#{data[:sources].map { |s| "#{s[:label]} <#{s[:url]}>" }.join(", ")}" if data[:sources].any?
         out.join("\n")
       end
       "## Projects and folders\n#{blocks.join("\n\n")}"

@@ -1,6 +1,6 @@
 <div class="consent-banner" role="dialog" aria-labelledby="consent-title" aria-describedby="consent-text" data-consent-banner>
   <p id="consent-title" class="consent-title"><%= t("consent.banner_title") %></p>
-  <p id="consent-text" class="consent-text"><%= t("consent.banner_text") %></p>
+  <p id="consent-text" class="consent-text"><%= t("consent.banner_text") %><% if analytics_token %> <%= localized(Content::Store.legal["analytics"]["banner"]) %><% end %></p>
   <%= render "shared/consent_choices" %>
   <p class="consent-links">
     <a href="<%= privacy_path %>"><%= t("consent.privacy") %></a> ·

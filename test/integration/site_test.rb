@@ -109,11 +109,31 @@ class SiteTest < ActionDispatch::IntegrationTest
     assert_select "a[href^='https://github.com'][rel~=noopener][target=_blank]"
   end
 
-  test "unknown pages answer 404 with a helpful page" do
+  test "unknown pages answer 404 with a helpful page and Usami artwork" do
     get "/pt/sistemas/nao-existe"
     assert_response :not_found
+    assert_select ".error-card"
+    assert_select ".error-badge", text: /404/
+    assert_select "img[src*='starlit-window']"
+
     get "/qualquer/coisa"
     assert_response :not_found
+    assert_select ".error-card"
+  end
+
+  test "custom error pages render properly for 402, 403, 404 and 500" do
+    {
+      402 => "melody-studio",
+      403 => "chess-night",
+      404 => "starlit-window",
+      500 => "cafe-night"
+    }.each do |code, expected_img|
+      get "/pt/erro/#{code}"
+      assert_response code
+      assert_select ".error-card"
+      assert_select ".error-badge", text: /#{code}/
+      assert_select "img[src*='#{expected_img}']"
+    end
   end
 
   test "sitemap, robots and llms.txt" do

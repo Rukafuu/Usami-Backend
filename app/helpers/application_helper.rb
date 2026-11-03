@@ -28,8 +28,9 @@ module ApplicationHelper
         "@type" => "Person",
         "name" => founder["name"],
         "alternateName" => founder["aliases"],
+        "image" => founder_photo_url,
         "sameAs" => [ founder["github"], contact["linkedin"], contact["enois"], contact["soundcloud"] ]
-      },
+      }.compact,
       "email" => contact["email"],
       "contactPoint" => {
         "@type" => "ContactPoint",
@@ -38,6 +39,25 @@ module ApplicationHelper
         "telephone" => contact["whatsapp"],
         "availableLanguage" => %w[pt en es ja]
       }
+    }.to_json
+  end
+
+  def founder_entry = Content::Store.entries.find { |e| e.photo }
+  def founder_photo_url = founder_entry && "#{request.base_url}#{founder_entry.photo["src"]}"
+
+  # The person behind the company, for the founder's own page: the portrait is what lets search engines tie the name to a face.
+  def person_json_ld(entry)
+    founder = site["founder"]
+    {
+      "@context" => "https://schema.org",
+      "@type" => "Person",
+      "name" => founder["name"],
+      "alternateName" => founder["aliases"],
+      "image" => "#{request.base_url}#{entry.photo["src"]}",
+      "jobTitle" => entry.title(I18n.locale).split(" — ").last,
+      "description" => meta_description(entry.about(I18n.locale).first, limit: 300),
+      "worksFor" => { "@type" => "Organization", "name" => site["name"] },
+      "sameAs" => [ founder["github"], contact["linkedin"], contact["enois"], contact["soundcloud"] ]
     }.to_json
   end
 
@@ -82,12 +102,21 @@ module ApplicationHelper
     return if icon.blank?
     return image_tag("/brand/channels/enois.ico", class: "ch-icon ch-icon--img", alt: "", width: 18, height: 18) if icon == "enois"
 
-    tag.span(class: "ch-icon", style: "--ch: url(/brand/channels/#{icon}.svg)", aria: { hidden: true })
+    # One CSS class per icon: the site's CSP forbids inline style attributes.
+    tag.span(class: "ch-icon ch-icon--#{icon}", aria: { hidden: true })
   end
 
   def contact = site["contact"]
   def whatsapp_url = "https://wa.me/#{contact["whatsapp"].delete("^0-9")}"
   def whatsapp_label = contact["whatsapp"].sub(/\A\+55(\d{2})(\d{5})(\d{4})\z/, "+55 \\1 \\2-\\3")
+
+  # Search results show about 155 characters: cut at a word boundary instead of in the middle of a word.
+  def meta_description(text, limit: 155)
+    text = text.to_s.squish
+    return text if text.length <= limit
+
+    "#{text[0, limit].sub(/\s+\S*\z/, "").sub(/[\s,;:—-]+\z/, "")}…"
+  end
 
   def localized(hash) = Content.localize(hash, I18n.locale).value
 end
