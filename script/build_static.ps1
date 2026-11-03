@@ -18,6 +18,10 @@ try {
   if ($LASTEXITCODE -ne 0) { throw "assets:precompile failed" }
   ruby bin/rails static:export
   if ($LASTEXITCODE -ne 0) { throw "static:export failed" }
+
+  # Gate: no page may ship with untranslated text or an inline style attribute (the CSP blocks those in production).
+  $bad = Get-ChildItem (Join-Path $root "cloudflare\site") -Recurse -Filter *.html | Where-Object { [IO.File]::ReadAllText($_.FullName, [Text.Encoding]::UTF8) -match 'translation[ _]missing|\sstyle="' }
+  if ($bad) { throw ("Build stopped: these pages have untranslated text or an inline style: " + (($bad | ForEach-Object { $_.Name }) -join ", ")) }
 } finally {
   Remove-Item -Recurse -Force public\vite -ErrorAction SilentlyContinue   # build output is copied into cloudflare/site
   Remove-Item Env:RAILS_ENV, Env:SECRET_KEY_BASE, Env:RAILS_LOG_LEVEL, Env:SITE_URL, Env:CF_ANALYTICS_TOKEN -ErrorAction SilentlyContinue

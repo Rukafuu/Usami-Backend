@@ -3,6 +3,7 @@ import { DatabaseSync } from "node:sqlite"
 import { describe, expect, it } from "vitest"
 import { handleAssistant, type AssistantEnv } from "./assistant"
 import { handleConsent } from "./consent"
+import { emailText, handleContact, parseQuote, type ContactEnv } from "./contact"
 import { safeReturnPath, sameOrigin } from "./guard"
 import { ensureSchema, PER_HOUR, PER_MINUTE, take, visitorKey, type Sql } from "./limiter-core"
 import { preferredLocale } from "./locale"
@@ -213,5 +214,68 @@ describe("assistant", () => {
     expect(text).not.toContain("secret internal detail")
     const broken = (async () => { throw new Error("network") }) as unknown as typeof fetch
     expect(await readAll(await handleAssistant(ask(), env(), "pt", prompts, broken))).toContain("event: error")
+  })
+})
+
+describe("quote form", () => {
+  const valid = { name: "Ana", email: "ana@example.com", details: "Preciso de um site novo para a minha loja.", budget: "5k_to_15k", timeline: "standard" }
+  const formOf = (fields: Record<string, string | string[]>) => {
+    const f = new FormData()
+    for (const [k, v] of Object.entries(fields)) for (const item of [v].flat()) f.append(k.endsWith("services") ? `contact_request[${k}][]` : `contact_request[${k}]`, item)
+    return f
+  }
+  const cenv = (over: Partial<ContactEnv> = {}): ContactEnv => ({ RESEND_API_KEY: "re_test", CONTACT_TO: "lucas@example.com", LIMITER: { getByName: () => ({ take: async () => "ok" as const }) }, ...over })
+  const submit = (fields: Record<string, string | string[]>, headers: Record<string, string> = { Origin: ORIGIN }) => {
+    return post("/pt/contato", formOf(fields), headers)
+  }
+
+  it("accepts the same rules as the Rails model", () => {
+    expect("quote" in parseQuote(formOf(valid))).toBe(true)
+    for (const bad of [{ name: "" }, { email: "nope" }, { details: "curto" }, { budget: "free" }, { timeline: "never" }, { services: ["hack"] }]) {
+      const parsed = parseQuote(formOf({ ...valid, ...bad }))
+      expect("errors" in parsed).toBe(true)
+    }
+  })
+
+  it("treats a filled honeypot as spam and sends nothing", async () => {
+    let calls = 0
+    const spy = (async () => { calls++; return new Response("{}") }) as unknown as typeof fetch
+    const res = await handleContact(submit({ ...valid, honeypot: "x" }), cenv(), "pt", spy)
+    expect(res.status).toBe(303)
+    expect(calls).toBe(0)
+  })
+
+  it("emails the request to Lucas with the visitor as reply-to, then redirects to the thank-you page", async () => {
+    let sent: { url: string; auth: string | null; body: Record<string, unknown> } | undefined
+    const ok = (async (url: string, init: RequestInit) => {
+      sent = { url, auth: new Headers(init.headers).get("Authorization"), body: JSON.parse(String(init.body)) }
+      return new Response("{}", { status: 200 })
+    }) as unknown as typeof fetch
+    const res = await handleContact(submit({ ...valid, services: ["fullstack", "consulting"] }), cenv(), "en", ok)
+    expect(res.status).toBe(303)
+    expect(res.headers.get("Location")).toBe("/en/obrigado")
+    expect(sent?.url).toBe("https://api.resend.com/emails")
+    expect(sent?.auth).toBe("Bearer re_test")
+    expect(sent?.body.to).toEqual(["lucas@example.com"])
+    expect(sent?.body.reply_to).toBe("ana@example.com")
+    expect(String(sent?.body.text)).toContain("fullstack, consulting")
+    expect(emailText({ name: "A", email: "a@b.co", handle: "", services: [], budget: "", timeline: "", details: "detalhes aqui" }, "pt")).toContain("detalhes aqui")
+  })
+
+  it("refuses other origins, bad input and hides provider details", async () => {
+    expect((await handleContact(submit(valid, { Origin: "https://evil.example" }), cenv(), "pt")).status).toBe(403)
+    expect((await handleContact(submit({ ...valid, email: "x" }), cenv(), "pt")).status).toBe(422)
+    const down = (async () => new Response("secret detail", { status: 500 })) as unknown as typeof fetch
+    const res = await handleContact(submit(valid), cenv(), "pt", down)
+    expect(res.status).toBe(502)
+    const text = await res.text()
+    expect(text).toContain("lucas@example.com")
+    expect(text).not.toContain("secret detail")
+  })
+
+  it("fails closed without a key or when the limiter says no", async () => {
+    expect((await handleContact(submit(valid), cenv({ RESEND_API_KEY: "" }), "pt")).status).toBe(503)
+    const busy = cenv({ LIMITER: { getByName: () => ({ take: async () => "minute" as const }) } })
+    expect((await handleContact(submit(valid), busy, "pt")).status).toBe(429)
   })
 })
