@@ -1,0 +1,30 @@
+# Strings for the founder's page, the home card and the "see also" block.
+# Kept in their own file (not in pt.yml/en.yml/...) so edits to the main locale files cannot drop them.
+pt:
+  entry:
+    about: "Sobre mim"
+    related: "Veja também"
+  home:
+    founder_kicker: "Quem está por trás"
+    founder_link: "Conheça o Lucas"
+en:
+  entry:
+    about: "About me"
+    related: "See also"
+  home:
+    founder_kicker: "Who is behind it"
+    founder_link: "Meet Lucas"
+es:
+  entry:
+    about: "Sobre mí"
+    related: "Vea también"
+  home:
+    founder_kicker: "Quién está detrás"
+    founder_link: "Conoce a Lucas"
+ja:
+  entry:
+    about: "自己紹介"
+    related: "関連ページ"
+  home:
+    founder_kicker: "運営している人"
+    founder_link: "Lucasについて"

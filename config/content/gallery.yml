@@ -77,3 +77,113 @@
     en: "Usami · companion demo video (coming soon)."
     es: "Usami · video de demostración de la companion (próximamente)."
     ja: "Usami · コンパニオンのデモ動画(近日公開)。"
+- id: hane-mission
+  entry: hane
+  kind: image
+  src: /media/hane-mission.jpg
+  thumb: /media/hane-mission-thumb.jpg
+  caption:
+    pt: "Hane · uma missão real: planejador (Orion), executor (Byte) e revisor (Cipher) respondem em sequência. O painel mostra as 3 chamadas usadas do orçamento, 0 permissões concedidas e as saídas geradas."
+    en: "Hane · a real mission: planner (Orion), executor (Byte) and reviewer (Cipher) answer in turn. The panel shows the 3 calls used from the budget, 0 permissions granted and the outputs produced."
+    es: "Hane · una misión real: planificador (Orion), ejecutor (Byte) y revisor (Cipher) responden en secuencia. El panel muestra las 3 llamadas usadas del presupuesto, 0 permisos concedidos y las salidas generadas."
+    ja: "Hane · 実際のミッション:プランナー(Orion)、実行役(Byte)、レビュー役(Cipher)が順に回答。パネルには予算のうち使用した3回の呼び出し、付与された権限0、生成された出力が表示されます。"
+- id: hane-connectors
+  entry: hane
+  kind: image
+  src: /media/hane-connectors.jpg
+  thumb: /media/hane-connectors-thumb.jpg
+  caption:
+    pt: "Hane · configurações: um provedor de IA configurado (OpenRouter) e conectores que só funcionam com credencial e aprovação humana. O GitHub já está autorizado; Figma, Supabase e servidores MCP aparecem como «ainda não integrado»."
+    en: "Hane · settings: one AI provider configured (OpenRouter) and connectors that only work with a credential and human approval. GitHub is already authorized; Figma, Supabase and MCP servers show as 'not integrated yet'."
+    es: "Hane · configuración: un proveedor de IA configurado (OpenRouter) y conectores que solo funcionan con credencial y aprobación humana. GitHub ya está autorizado; Figma, Supabase y servidores MCP figuran como «aún no integrado»."
+    ja: "Hane · 設定:AIプロバイダー1件(OpenRouter)を設定済み。コネクターは認証情報と人による承認がある場合のみ動作します。GitHubは承認済みで、Figma、Supabase、MCPサーバーは「未統合」と表示されています。"
+- id: hane-appearance
+  entry: hane
+  kind: image
+  src: /media/hane-appearance.jpg
+  thumb: /media/hane-appearance-thumb.jpg
+  caption:
+    pt: "Hane · aparência: três modos de cor, cor de destaque, fonte e tamanho do texto, salvos neste dispositivo."
+    en: "Hane · appearance: three colour modes, accent colour, font and text size, saved on this device."
+    es: "Hane · apariencia: tres modos de color, color de acento, fuente y tamaño del texto, guardados en este dispositivo."
+    ja: "Hane · 外観:3つのカラーモード、アクセントカラー、フォント、文字サイズ。この端末に保存されます。"
+- id: enois-events
+  entry: enois
+  kind: image
+  src: /media/enois-events.jpg
+  thumb: /media/enois-events-thumb.jpg
+  caption:
+    pt: "Énois · eventos da comunidade: webinars, meetups e encontros, online e presenciais, com confirmação de presença."
+    en: "Énois · community events: webinars, meetups and gatherings, online and in person, with attendance confirmation."
+    es: "Énois · eventos de la comunidad: webinars, meetups y encuentros, en línea y presenciales, con confirmación de asistencia."
+    ja: "Énois · コミュニティイベント:ウェビナー、ミートアップ、集まり(オンライン・対面)。出欠の確認ができます。"
+- id: enois-customize
+  entry: enois
+  kind: image
+  src: /media/enois-customize.jpg
+  thumb: /media/enois-customize-thumb.jpg
+  caption:
+    pt: "Énois · customizações do perfil: molduras, emblemas, temas, nomes e placas, com prévia do visual antes de equipar."
+    en: "Énois · profile customization: frames, badges, themes, names and plates, with a preview before equipping."
+    es: "Énois · personalización del perfil: marcos, insignias, temas, nombres y placas, con vista previa antes de equipar."
+    ja: "Énois · プロフィールのカスタマイズ:フレーム、バッジ、テーマ、名前、プレート。装備前にプレビューできます。"
+- id: enois-explore
+  entry: enois
+  kind: image
+  src: /media/enois-explore.jpg
+  thumb: /media/enois-explore-thumb.jpg
+  caption:
+    pt: "Énois no celular · Explorar: jogos indie feitos pela comunidade, desafio do dia, projetos, loja, developers (API e integrações), selos e sugestões votadas por todos."
+    en: "Énois on mobile · Explore: indie games made by the community, daily challenge, projects, store, developers (API and integrations), badges and suggestions voted by everyone."
+    es: "Énois en el móvil · Explorar: juegos indie hechos por la comunidad, desafío del día, proyectos, tienda, developers (API e integraciones), sellos y sugerencias votadas por todos."
+    ja: "Énois(モバイル)· 探索:コミュニティ制作のインディーゲーム、今日のチャレンジ、プロジェクト、ストア、開発者向け(APIと連携)、バッジ、みんなで投票する提案。"
+- id: enois-communities
+  entry: enois
+  kind: image
+  src: /media/enois-communities.jpg
+  thumb: /media/enois-communities-thumb.jpg
+  caption:
+    pt: "Énois no celular · menu lateral: grupos, eventos, blogs, par de estudo, favoritas e as comunidades da pessoa."
+    en: "Énois on mobile · side menu: groups, events, blogs, study partner, favourites and the person's communities."
+    es: "Énois en el móvil · menú lateral: grupos, eventos, blogs, compañero de estudio, favoritas y las comunidades de la persona."
+    ja: "Énois(モバイル)· サイドメニュー:グループ、イベント、ブログ、勉強パートナー、お気に入り、参加中のコミュニティ。"
+- id: enois-profile-menu
+  entry: enois
+  kind: image
+  src: /media/enois-profile-menu.jpg
+  thumb: /media/enois-profile-menu-thumb.jpg
+  caption:
+    pt: "Énois no celular · menu do perfil: perfil Social ou Profissional, carteira de faíscas, conta e segurança, ajuda e tema."
+    en: "Énois on mobile · profile menu: Social or Professional profile, sparks wallet, account and security, help and theme."
+    es: "Énois en el móvil · menú del perfil: perfil Social o Profesional, billetera de chispas, cuenta y seguridad, ayuda y tema."
+    ja: "Énois(モバイル)· プロフィールメニュー:ソーシャル/プロフェッショナルの切り替え、ウォレット、アカウントとセキュリティ、ヘルプ、テーマ。"
+- id: enois-feed
+  entry: enois
+  kind: image
+  src: /media/enois-feed.jpg
+  thumb: /media/enois-feed-thumb.jpg
+  caption:
+    pt: "Énois · feed da comunidade: filtros por tipo de publicação (insights, dúvidas, projetos, notícias, oportunidades), eventos acontecendo agora e os jogos mais jogados do dia. O autor da publicação foi ocultado."
+    en: "Énois · community feed: filters by post type (insights, questions, projects, news, opportunities), events happening now and the most played games of the day. The post's author has been hidden."
+    es: "Énois · feed de la comunidad: filtros por tipo de publicación (insights, dudas, proyectos, noticias, oportunidades), eventos en curso y los juegos más jugados del día. El autor de la publicación fue ocultado."
+    ja: "Énois · コミュニティのフィード:投稿の種類(インサイト、質問、プロジェクト、ニュース、機会)での絞り込み、開催中のイベント、今日よく遊ばれたゲーム。投稿者は非表示にしています。"
+- id: enois-blogs
+  entry: enois
+  kind: image
+  src: /media/enois-blogs.jpg
+  thumb: /media/enois-blogs-thumb.jpg
+  caption:
+    pt: "Énois · blogs: cada pessoa pode ter o seu cantinho (portfólio, diário, receitas), sem passar pelo feed. Nomes e fotos dos autores foram ocultados."
+    en: "Énois · blogs: anyone can have their own corner (portfolio, diary, recipes), without going through the feed. The authors' names and photos have been hidden."
+    es: "Énois · blogs: cada persona puede tener su rincón (portafolio, diario, recetas), sin pasar por el feed. Los nombres y fotos de los autores fueron ocultados."
+    ja: "Énois · ブログ:ポートフォリオ、日記、レシピなど、フィードを通さずに自分の場所を持てます。著者の名前と写真は非表示にしています。"
+- id: enois-monitoring
+  entry: enois
+  kind: image
+  src: /media/enois-monitoring.jpg
+  thumb: /media/enois-monitoring-thumb.jpg
+  caption:
+    pt: "Énois no celular · painel de moderação com monitorabilidade em tempo real: requisições por segundo e por minuto, latências p50, p95 e p99, erros 4xx e 5xx e o total desde o boot."
+    en: "Énois on mobile · moderation panel with real-time observability: requests per second and per minute, p50, p95 and p99 latency, 4xx and 5xx errors and the total since boot."
+    es: "Énois en el móvil · panel de moderación con monitorización en tiempo real: solicitudes por segundo y por minuto, latencias p50, p95 y p99, errores 4xx y 5xx y el total desde el arranque."
+    ja: "Énois(モバイル)· モデレーションパネルのリアルタイム監視:毎秒・毎分のリクエスト数、p50・p95・p99のレイテンシ、4xx・5xxエラー、起動後の総数。"
