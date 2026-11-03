@@ -23,7 +23,15 @@
     <%= yield :head %>
     <link rel="icon" href="/brand/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
-    <meta property="og:image" content="<%= request.base_url %>/brand/logo-512.png">
+    <meta property="og:image" content="<%= og_image_url %>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="<%= content_for?(:title) ? page_title(yield(:title)) : page_title %>">
+    <% unless controller_name == "errors" %><meta property="og:url" content="<%= alternate_url(I18n.locale) %>"><% end %>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= content_for?(:title) ? page_title(yield(:title)) : page_title %>">
+    <meta name="twitter:description" content="<%= content_for?(:description) ? yield(:description) : localized_site("description") %>">
+    <meta name="twitter:image" content="<%= og_image_url %>">
     <%= vite_client_tag %>
     <%= vite_typescript_tag "application" %>
   </head>
@@ -56,7 +64,22 @@
 
     <footer class="foot">
       <p class="mono"><%= t("site.footer") %></p>
+      <p class="foot-legal"><a href="<%= faq_path %>"><%= t("faq.title") %></a> · <a href="<%= privacy_path %>"><%= t("consent.privacy") %></a> · <a href="<%= cookies_policy_path %>"><%= t("consent.cookies") %></a></p>
+      <ul class="foot-contact" aria-label="<%= t("contact.label") %>">
+        <li><a href="mailto:<%= contact["email"] %>"><%= channel_icon("email") %><%= contact["email"] %></a></li>
+        <li><a href="<%= whatsapp_url %>" target="_blank" rel="noopener"><%= channel_icon("whatsapp") %>WhatsApp <%= whatsapp_label %></a></li>
+        <li><a href="<%= contact["linkedin"] %>" target="_blank" rel="noopener"><%= channel_icon("linkedin") %>LinkedIn</a></li>
+        <li><a href="<%= contact["enois"] %>" target="_blank" rel="noopener"><%= channel_icon("enois") %>Énois</a></li>
+        <li><a href="<%= site["founder"]["github"] %>" target="_blank" rel="noopener"><%= channel_icon("github") %>GitHub</a></li>
+        <li><a href="<%= contact["soundcloud"] %>" target="_blank" rel="noopener"><%= channel_icon("soundcloud") %>SoundCloud</a></li>
+      </ul>
     </footer>
+
+    <%# Fixed on phones so the way to talk to us follows the visitor. %>
+    <nav class="cta-bar" aria-label="<%= t("contact.label") %>">
+      <a class="button button--primary" href="<%= whatsapp_url %>" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="button" href="mailto:<%= contact["email"] %>"><%= t("contact.email") %></a>
+    </nav>
 
     <%# Progressive enhancement: the page above is complete without JavaScript; the shell layers Fuwarch Linux on top. %>
     <div id="usamios"
@@ -65,7 +88,10 @@
          data-folder="<%= params[:folder] %>"
          data-slug="<%= params[:slug] %>"
          data-alternates="<%= I18n.available_locales.index_with { |l| alternate_url(l) }.to_json %>"></div>
+    <%# Above the OS shell (outside the parts that are made inert), so the choice is always reachable. %>
+    <%= render "shared/consent_banner" unless consent_asked? %>
     <button type="button" class="shell-open" data-shell-open hidden><%= t("shell.open_shell") %></button>
     <%= vite_javascript_tag "usamios.tsx" %>
+    <% if analytics_enabled? %><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="<%= { token: analytics_token }.to_json %>"></script><% end %>
   </body>
 </html>

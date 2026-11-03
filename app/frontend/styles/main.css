@@ -178,3 +178,56 @@ td { padding: 12px 10px; border-bottom: 1px solid var(--line-2); vertical-align:
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+/* Contact: buttons under the headline, links in the footer, and a bar fixed to the bottom on phones. */
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface-2); color: var(--fg); font-weight: 500; text-decoration: none; }
+.button:hover { border-color: var(--accent); }
+.button--primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; }
+.foot-contact { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 10px 0 0; padding: 0; list-style: none; font-size: 0.875rem; }
+.cta-bar { display: none; }
+@media (max-width: 720px) {
+  .cta-bar { position: fixed; inset: auto 0 0 0; z-index: 5; display: flex; gap: 8px; padding: 8px 16px calc(8px + env(safe-area-inset-bottom)); background: var(--surface); border-top: 1px solid var(--line-2); }
+  .cta-bar .button { flex: 1; }
+  body { padding-bottom: 72px; }
+}
+/* Contact channel icons: line icons take the text colour through a mask; Énois shows its own favicon. */
+.ch-icon { display: inline-block; flex: none; width: 18px; height: 18px; margin-right: 8px; vertical-align: -3px; background: currentColor; -webkit-mask: var(--ch) center / contain no-repeat; mask: var(--ch) center / contain no-repeat; }
+.ch-icon--img { background: none; -webkit-mask: none; mask: none; border-radius: 4px; object-fit: contain; }
+a:has(> .ch-icon) { display: inline-flex; align-items: center; }
+/* Contact channels as a list: icon, name and address on each row. */
+.sources--channels { display: grid; gap: 8px; max-width: 520px; padding: 0; list-style: none; }
+.sources--channels a { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--line-2); border-radius: 10px; background: var(--surface); color: var(--fg); text-decoration: none; font-family: var(--sans, inherit); font-size: 1rem; }
+.sources--channels a:hover { border-color: var(--accent); background: var(--surface-2); }
+.sources--channels .ch-icon { width: 22px; height: 22px; margin: 0; color: var(--accent); }
+.sources--channels .ch-icon--img { background: none; }
+.channel-text { display: grid; flex: 1; min-width: 0; gap: 2px; }
+.channel-text .mono { color: var(--mute); font-size: 0.8125rem; overflow-wrap: anywhere; }
+.cta-note { margin: 12px 0 0; color: var(--mute); font-size: 0.8125rem; text-transform: none; letter-spacing: normal; }
+
+/* Cookie banner (above the OS shell, which sits at z-index 100) and the legal pages. */
+.consent-banner { position: fixed; left: 16px; bottom: calc(64px + env(safe-area-inset-bottom)); z-index: 200; width: min(420px, calc(100vw - 32px)); padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); color: var(--fg); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45); }
+.consent-banner[hidden] { display: none; }
+.consent-title { margin: 0 0 6px; font: 500 1rem var(--serif); }
+.consent-text { margin: 0 0 12px; color: var(--mute); font-size: 0.875rem; }
+.consent-form { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.consent-form .button { flex: 1 1 140px; }
+.consent-links { margin: 12px 0 0; font-size: 0.8125rem; }
+.foot-legal { margin: 8px 0 0; font-size: 0.875rem; }
+.legal { max-width: 760px; }
+.legal .block p { max-width: var(--measure); }
+.legal-table { overflow-x: auto; margin-top: 12px; border: 1px solid var(--line-2); border-radius: 10px; }
+.legal-table table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 0.875rem; }
+.legal-table th, .legal-table td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line-2); }
+.legal-table thead th { font: 500 0.6875rem var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--mute); }
+.legal-table tbody tr:last-child > * { border-bottom: 0; }
+@media (max-width: 720px) { .consent-banner { left: 8px; bottom: calc(76px + env(safe-area-inset-bottom)); } }
+.legal-table tbody th { text-transform: none; letter-spacing: normal; font-weight: 400; font-size: 0.8125rem; overflow-wrap: anywhere; }
+button.button { font: inherit; font-weight: 500; cursor: pointer; }
+.legal-table tbody th { min-width: 12rem; overflow-wrap: normal; }
+
+/* Breadcrumb trail and FAQ page. */
+.crumbs { margin: 0 0 10px; }
+.faq { display: grid; gap: 28px; max-width: 760px; }
+.faq-item { padding-top: 20px; border-top: 1px solid var(--line-2); }
+.faq-item h2 { margin: 0 0 8px; font: 400 clamp(1.2rem, 2.2vw, 1.5rem) / 1.25 var(--serif); color: var(--fg); }
+.faq-item p { margin: 0; color: var(--mute); max-width: var(--measure); }

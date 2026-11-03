@@ -6,11 +6,12 @@ class OsController < ApplicationController
       site: {
         name: site["name"],
         osName: site["os_name"],
+        founderBirthday: site.dig("founder", "birthday"),
         headline: localized_site("headline"),
         description: localized_site("description"),
         pillars: site["pillars"].map { |p| { title: localize(p["title"]), text: localize(p["text"]) } }
       },
-      ui: %w[shell apps entry status folders evidence nav terminal eggs].index_with { |key| I18n.t(key) },
+      ui: %w[shell apps entry status folders evidence nav terminal eggs consent].index_with { |key| I18n.t(key) },
       folders: Content::Store::FOLDERS,
       entries: Content::Store.entries.map { |e| e.as_os_json(I18n.locale) },
       ledger: Content::Store.ledger.map do |item|

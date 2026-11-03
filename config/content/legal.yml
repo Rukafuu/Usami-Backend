@@ -1,0 +1,110 @@
+# Legal pages. Everything stated here must match what the site really does (see the code):
+# - no analytics, ads or tracking today; if that changes, update this file and gate it behind "Allow all".
+# - the assistant (a Cloudflare Worker) sends the visitor's questions to NVIDIA and does not store them.
+# - the SoundCloud player is the only third-party embed and loads only after "Allow all".
+updated: "2026-11-03"
+privacy:
+  title: { pt: "Política de privacidade", en: "Privacy policy", es: "Política de privacidad", ja: "プライバシーポリシー" }
+  intro:
+    pt: "Esta página explica, em linguagem simples, quais dados o site da Usami trata, para quê, com quem são compartilhados e como você exerce seus direitos pela Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018)."
+    en: "This page explains in plain language which data the Usami site handles, why, who it is shared with, and how you can exercise your rights under Brazil's data protection law (LGPD, Law 13,709/2018)."
+    es: "Esta página explica, en lenguaje sencillo, qué datos trata el sitio de Usami, para qué, con quién se comparten y cómo ejercer tus derechos según la ley brasileña de protección de datos (LGPD, Ley 13.709/2018)."
+    ja: "このページでは、Usamiのサイトが扱うデータ、その目的、共有先、そしてブラジルの個人情報保護法(LGPD、法律13.709/2018)に基づく権利の行使方法を、わかりやすく説明します。"
+  sections:
+    - title: { pt: "Quem é responsável", en: "Who is responsible", es: "Quién es responsable", ja: "責任者" }
+      body:
+        pt: ["O responsável pelo tratamento dos dados deste site é Lucas Frischeisen (Reskyume), fundador da Usami. Contato para qualquer assunto de privacidade: devreskyume@gmail.com."]
+        en: ["The person responsible for the data handled on this site is Lucas Frischeisen (Reskyume), founder of Usami. For any privacy matter, contact: devreskyume@gmail.com."]
+        es: ["El responsable de los datos que trata este sitio es Lucas Frischeisen (Reskyume), fundador de Usami. Para cualquier asunto de privacidad: devreskyume@gmail.com."]
+        ja: ["このサイトのデータ取扱いの責任者は、Usamiの創業者であるLucas Frischeisen(Reskyume)です。プライバシーに関するお問い合わせ:devreskyume@gmail.com"]
+    - title: { pt: "Quais dados tratamos e para quê", en: "What data we handle and why", es: "Qué datos tratamos y para qué", ja: "取り扱うデータと目的" }
+      body:
+        pt:
+          - "Perguntas à Usami (assistente): o texto que você escreve e as últimas mensagens da conversa são enviados ao provedor de IA (NVIDIA) apenas para gerar a resposta. Nós não gravamos essas perguntas; a NVIDIA trata o texto conforme a política dela. Não escreva dados pessoais sensíveis no chat."
+          - "Contato: se você escrever por e-mail ou WhatsApp, usamos o que você enviar apenas para responder."
+          - "Dados técnicos: endereço IP e dados da requisição, usados para segurança, para limitar o uso do assistente e para diagnosticar falhas."
+          - "No seu navegador: preferências do sistema (tema, papel de parede, layout dos apps) e conquistas ficam salvas no seu próprio aparelho e não são enviadas aos nossos servidores."
+          - "Base legal: execução do que você pediu (responder uma pergunta ou uma mensagem) e legítimo interesse em manter o site seguro. Para conteúdo de terceiros opcional, o seu consentimento."
+        en:
+          - "Questions to Usami (assistant): the text you write and the latest messages of the conversation are sent to the AI provider (NVIDIA) only to generate the answer. We do not store these questions; NVIDIA handles the text under its own policy. Do not write sensitive personal data in the chat."
+          - "Contact: if you write by email or WhatsApp, we use what you send only to reply."
+          - "Technical data: IP address and request data, used for security, to limit use of the assistant and to diagnose failures."
+          - "In your browser: system preferences (theme, wallpaper, app layout) and achievements are saved on your own device and are not sent to our servers."
+          - "Legal basis: carrying out what you asked for (answering a question or a message) and legitimate interest in keeping the site secure. For optional third-party content, your consent."
+        es:
+          - "Preguntas a Usami (asistente): el texto que escribes y los últimos mensajes de la conversación se envían al proveedor de IA (NVIDIA) solo para generar la respuesta. No guardamos esas preguntas; NVIDIA trata el texto según su propia política. No escribas datos personales sensibles en el chat."
+          - "Contacto: si escribes por correo o WhatsApp, usamos lo que envíes solo para responder."
+          - "Datos técnicos: dirección IP y datos de la solicitud, usados para seguridad, para limitar el uso del asistente y para diagnosticar fallos."
+          - "En tu navegador: las preferencias del sistema (tema, fondo, diseño de apps) y los logros se guardan en tu propio dispositivo y no se envían a nuestros servidores."
+          - "Base legal: cumplir lo que pediste (responder una pregunta o un mensaje) e interés legítimo en mantener el sitio seguro. Para el contenido opcional de terceros, tu consentimiento."
+        ja:
+          - "Usamiへの質問(アシスタント):入力した文章と直近のやり取りは、回答の生成のためだけにAIプロバイダー(NVIDIA)へ送信されます。これらの質問を当社が保存することはありません。NVIDIAはその文章を自社のポリシーに従って扱います。チャットに機微な個人情報を書かないでください。"
+          - "連絡:メールやWhatsAppで連絡いただいた場合、内容は返信のためにのみ使用します。"
+          - "技術データ:IPアドレスとリクエスト情報を、セキュリティ、アシスタントの利用制限、障害の診断のために使用します。"
+          - "お使いのブラウザ内:システム設定(テーマ、壁紙、アプリの配置)や実績はお使いの端末に保存され、当社のサーバーには送信されません。"
+          - "法的根拠:ご依頼の対応(質問やメッセージへの回答)、サイトの安全を保つ正当な利益、および任意の外部コンテンツについてはご本人の同意です。"
+    - title: { pt: "Com quem compartilhamos", en: "Who we share it with", es: "Con quién lo compartimos", ja: "共有先" }
+      body:
+        pt: ["NVIDIA: processa as perguntas feitas à Usami para gerar as respostas.", "SoundCloud: só se você permitir todos os cookies e abrir o player de música; o SoundCloud passa a tratar dados conforme a política dele.", "Cloudflare: hospeda o site e executa o assistente; recebe seu endereço IP e os dados da requisição ao entregar as páginas. Não vendemos dados nem os usamos para publicidade.", "Canais de contato: se você escrever por e-mail (Gmail), WhatsApp ou LinkedIn, essas plataformas tratam seus dados conforme as próprias políticas.", "Transferência internacional: esses provedores podem tratar dados fora do Brasil (por exemplo, nos Estados Unidos)."]
+        en: ["NVIDIA: processes the questions asked to Usami to generate the answers.", "SoundCloud: only if you allow all cookies and open the music player; SoundCloud then handles data under its own policy.", "Cloudflare: hosts the site and runs the assistant; it receives your IP address and request data when delivering the pages. We do not sell data or use it for advertising.", "Contact channels: if you write by email (Gmail), WhatsApp or LinkedIn, those platforms handle your data under their own policies.", "International transfer: these providers may handle data outside Brazil (for example, in the United States)."]
+        es: ["NVIDIA: procesa las preguntas hechas a Usami para generar las respuestas.", "SoundCloud: solo si permites todas las cookies y abres el reproductor de música; SoundCloud trata los datos según su propia política.", "Cloudflare: aloja el sitio y ejecuta el asistente; recibe tu dirección IP y los datos de la solicitud al entregar las páginas. No vendemos datos ni los usamos para publicidad.", "Canales de contacto: si escribes por correo (Gmail), WhatsApp o LinkedIn, esas plataformas tratan tus datos según sus propias políticas.", "Transferencia internacional: estos proveedores pueden tratar datos fuera de Brasil (por ejemplo, en Estados Unidos)."]
+        ja: ["NVIDIA:Usamiへの質問を処理して回答を生成します。", "SoundCloud:すべてのCookieを許可し、音楽プレーヤーを開いた場合のみ。その後のデータはSoundCloud自身のポリシーに従って扱われます。", "Cloudflare:サイトをホスティングし、アシスタントを実行します。ページの配信時にIPアドレスとリクエスト情報を受け取ります。データの販売や広告への利用は行いません。", "連絡手段:メール(Gmail)、WhatsApp、LinkedInで連絡された場合、これらのプラットフォームがそれぞれのポリシーに従ってデータを扱います。", "国際移転:これらの事業者はブラジル国外(例:米国)でデータを扱う場合があります。"]
+    - title: { pt: "Por quanto tempo guardamos", en: "How long we keep it", es: "Cuánto tiempo lo guardamos", ja: "保存期間" }
+      body:
+        pt: ["Perguntas ao assistente: não são gravadas por nós. Limites de uso: guardamos por até 1 hora um código embaralhado derivado do seu IP (ele muda todo dia e não permite reconhecer você de um dia para o outro), só para contar pedidos por minuto e por hora; há também um contador diário geral que não identifica visitantes. Esses registros não contêm o texto das suas perguntas. Mensagens que você nos enviar: pelo tempo necessário para responder e atender o assunto. Registros técnicos do servidor: só pelo tempo necessário para segurança e diagnóstico."]
+        en: ["Assistant questions: not stored by us. Usage limits: we keep for up to 1 hour a scrambled code derived from your IP (it changes every day and cannot recognise you from one day to the next), only to count requests per minute and per hour; there is also a general daily counter that does not identify visitors. These records do not contain the text of your questions. Messages you send us: for as long as needed to reply and handle the matter. Technical server logs: only as long as needed for security and diagnosis."]
+        es: ["Preguntas al asistente: no las guardamos. Límites de uso: guardamos hasta 1 hora un código revuelto derivado de tu IP (cambia cada día y no permite reconocerte de un día a otro), solo para contar solicitudes por minuto y por hora; también hay un contador diario general que no identifica visitantes. Esos registros no contienen el texto de tus preguntas. Mensajes que nos envíes: el tiempo necesario para responder y atender el asunto. Registros técnicos del servidor: solo el tiempo necesario para seguridad y diagnóstico."]
+        ja: ["アシスタントへの質問:当社は保存しません。利用制限:1分あたり・1時間あたりのリクエスト数を数えるためだけに、IPアドレスから作った暗号化コード(毎日変わり、日をまたいで本人を特定できません)を最大1時間保持します。訪問者を特定しない1日全体のカウンターもあります。これらの記録に質問の文章は含まれません。お送りいただいたメッセージ:返信と対応に必要な期間。サーバーの技術ログ:セキュリティと診断に必要な期間のみ。"]
+    - title: { pt: "Seus direitos", en: "Your rights", es: "Tus derechos", ja: "あなたの権利" }
+      body:
+        pt: ["Pela LGPD (art. 18) você pode pedir: confirmação de que tratamos seus dados, acesso, correção, anonimização ou eliminação, portabilidade, informação sobre com quem compartilhamos e a revogação do consentimento. Escreva para devreskyume@gmail.com. Você também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD)."]
+        en: ["Under the LGPD (art. 18) you can ask for: confirmation that we handle your data, access, correction, anonymization or deletion, portability, information about who we share it with, and withdrawal of consent. Write to devreskyume@gmail.com. You may also complain to Brazil's data protection authority (ANPD)."]
+        es: ["Según la LGPD (art. 18) puedes pedir: confirmación de que tratamos tus datos, acceso, corrección, anonimización o eliminación, portabilidad, información sobre con quién los compartimos y la revocación del consentimiento. Escribe a devreskyume@gmail.com. También puedes reclamar ante la autoridad brasileña de protección de datos (ANPD)."]
+        ja: ["LGPD(第18条)に基づき、データ取扱いの確認、アクセス、訂正、匿名化または削除、ポータビリティ、共有先の情報、同意の撤回を請求できます。devreskyume@gmail.com までご連絡ください。ブラジルのデータ保護当局(ANPD)に申し立てることもできます。"]
+    - title: { pt: "Crianças e mudanças", en: "Children and changes", es: "Menores y cambios", ja: "お子様と変更" }
+      body:
+        pt: ["O site não é direcionado a crianças. Se esta política mudar, a data de atualização no topo da página será alterada."]
+        en: ["The site is not aimed at children. If this policy changes, the update date at the top of the page will change."]
+        es: ["El sitio no está dirigido a menores. Si esta política cambia, se actualizará la fecha en la parte superior de la página."]
+        ja: ["このサイトはお子様を対象としていません。本ポリシーを変更した場合は、ページ上部の更新日を変更します。"]
+cookies:
+  title: { pt: "Política de cookies", en: "Cookie policy", es: "Política de cookies", ja: "Cookieポリシー" }
+  intro:
+    pt: "Cookies são pequenos arquivos que o site guarda no seu navegador. Também usamos o armazenamento local do navegador (localStorage) para lembrar preferências. Veja abaixo exatamente o que usamos e escolha o que permitir."
+    en: "Cookies are small files the site stores in your browser. We also use the browser's local storage (localStorage) to remember preferences. Below is exactly what we use, so you can choose what to allow."
+    es: "Las cookies son pequeños archivos que el sitio guarda en tu navegador. También usamos el almacenamiento local del navegador (localStorage) para recordar preferencias. Abajo está exactamente lo que usamos, para que elijas qué permitir."
+    ja: "Cookieは、サイトがお使いのブラウザに保存する小さなファイルです。設定を記憶するため、ブラウザのローカルストレージ(localStorage)も使用します。使用しているものを以下に示しますので、許可する内容をお選びください。"
+  columns:
+    name: { pt: "Nome", en: "Name", es: "Nombre", ja: "名前" }
+    type: { pt: "Tipo", en: "Type", es: "Tipo", ja: "種類" }
+    purpose: { pt: "Para quê", en: "Purpose", es: "Para qué", ja: "目的" }
+    duration: { pt: "Duração", en: "Duration", es: "Duración", ja: "期間" }
+  types:
+    essential: { pt: "Essencial", en: "Essential", es: "Esencial", ja: "必須" }
+    optional: { pt: "Opcional", en: "Optional", es: "Opcional", ja: "任意" }
+  items:
+    - name: "usami_consent"
+      type: essential
+      purpose: { pt: "Lembra a sua escolha nesta página (só essenciais ou todos).", en: "Remembers your choice on this page (essential only or all).", es: "Recuerda tu elección en esta página (solo esenciales o todas).", ja: "このページでのあなたの選択(必須のみ/すべて)を記憶します。" }
+      duration: { pt: "180 dias", en: "180 days", es: "180 días", ja: "180日" }
+    - name: "usamios:* e usamios.code.scratch.v1 (localStorage / sessionStorage)"
+      type: essential
+      purpose: { pt: "Guarda no seu aparelho as preferências do sistema (tema, papel de parede, layout, idioma), as conquistas e o rascunho do editor de código. Não é enviado aos nossos servidores.", en: "Stores on your device the system preferences (theme, wallpaper, layout, language), achievements and the code editor draft. It is not sent to our servers.", es: "Guarda en tu dispositivo las preferencias del sistema (tema, fondo, diseño, idioma), los logros y el borrador del editor de código. No se envía a nuestros servidores.", ja: "システム設定(テーマ、壁紙、配置、言語)、実績、コードエディタの下書きをお使いの端末に保存します。当社のサーバーには送信されません。" }
+      duration: { pt: "Até você apagar os dados do navegador", en: "Until you clear your browser data", es: "Hasta que borres los datos del navegador", ja: "ブラウザのデータを削除するまで" }
+    - name: "SoundCloud (soundcloud.com)"
+      type: optional
+      purpose: { pt: "Player e capas do app Usami Music, carregados do SoundCloud. O SoundCloud recebe seu endereço IP e pode definir cookies próprios. Só carrega com «Permitir todos».", en: "Player and cover art of the Usami Music app, loaded from SoundCloud. SoundCloud receives your IP address and may set its own cookies. Loads only with 'Allow all'.", es: "Reproductor y portadas de la app Usami Music, cargados desde SoundCloud. SoundCloud recibe tu dirección IP y puede definir cookies propias. Solo carga con «Permitir todas».", ja: "Usami Musicアプリのプレーヤーとジャケット画像(SoundCloudから読み込み)。SoundCloudはIPアドレスを受け取り、独自のCookieを設定する場合があります。「すべて許可」の場合のみ読み込まれます。" }
+      duration: { pt: "Definida pelo SoundCloud", en: "Set by SoundCloud", es: "Definida por SoundCloud", ja: "SoundCloudが設定" }
+  sections:
+    - title: { pt: "O que não usamos", en: "What we do not use", es: "Lo que no usamos", ja: "使用していないもの" }
+      body:
+        pt: ["Hoje o site não usa cookies de publicidade, de análise de audiência nem de rastreamento entre sites. Se um dia adicionarmos algo assim, será opcional, só funcionará com «Permitir todos» e esta página será atualizada antes."]
+        en: ["Today the site uses no advertising, audience-analytics or cross-site tracking cookies. If we ever add something like that, it will be optional, will only work with 'Allow all', and this page will be updated first."]
+        es: ["Hoy el sitio no usa cookies de publicidad, de analítica de audiencia ni de rastreo entre sitios. Si algún día añadimos algo así, será opcional, solo funcionará con «Permitir todas» y esta página se actualizará antes."]
+        ja: ["現在、このサイトは広告用、アクセス解析用、サイト横断の追跡用のCookieを使用していません。将来追加する場合は任意とし、「すべて許可」の場合のみ動作させ、事前にこのページを更新します。"]
+    - title: { pt: "Os essenciais não podem ser desligados", en: "Essential ones cannot be turned off", es: "Las esenciales no se pueden desactivar", ja: "必須のものは無効にできません" }
+      body:
+        pt: ["Sem eles o site não funciona direito (sessão, segurança e lembrar a sua escolha). Você pode apagá-los a qualquer momento nas configurações do navegador."]
+        en: ["Without them the site does not work properly (session, security and remembering your choice). You can delete them at any time in your browser settings."]
+        es: ["Sin ellas el sitio no funciona bien (sesión, seguridad y recordar tu elección). Puedes borrarlas en cualquier momento desde los ajustes del navegador."]
+        ja: ["これらがないと、サイトは正しく動作しません(セッション、セキュリティ、選択の記憶)。ブラウザの設定からいつでも削除できます。"]

@@ -1,0 +1,22 @@
+<% content_for :title, t("faq.title") %>
+<% content_for :description, t("faq.intro") %>
+<script type="application/ld+json"><%= raw faq_json_ld(@items) %></script>
+
+<section class="hero hero--small">
+  <%= breadcrumbs([ t("faq.title"), faq_url ]) %>
+  <h1><%= t("faq.title") %></h1>
+  <p class="lead"><%= t("faq.intro") %></p>
+</section>
+
+<div class="faq block">
+  <% @items.each_with_index do |item, i| %>
+    <section class="faq-item" aria-labelledby="q<%= i %>">
+      <h2 id="q<%= i %>"><%= localized(item["q"]) %></h2>
+      <p><%= localized(item["a"]) %></p>
+    </section>
+  <% end %>
+</div>
+
+<p class="block muted">
+  <%= link_to t("nav.evidence"), evidence_path %> · <%= link_to t("consent.privacy"), privacy_path %>
+</p>

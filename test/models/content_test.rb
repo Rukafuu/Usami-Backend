@@ -18,10 +18,10 @@ class ContentTest < ActiveSupport::TestCase
     assert (entries.map(&:folder).uniq - Content::Store::FOLDERS).empty?
   end
 
-  test "every source link is https" do
+  test "every source link is https (the contact email is the one mailto:)" do
     urls = Content::Store.entries.flat_map { |e| e.sources.map(&:url) } +
            Content::Store.ledger.filter_map(&:url)
-    assert urls.all? { |u| u.start_with?("https://") }
+    assert urls.all? { |u| u.start_with?("https://") || u == "mailto:#{Content::Store.site["contact"]["email"]}" }
   end
 
   test "every ledger item has a claim in every language and a verification date" do

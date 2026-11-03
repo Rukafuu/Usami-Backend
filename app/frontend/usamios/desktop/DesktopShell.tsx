@@ -29,7 +29,7 @@ export function DesktopShell({ data, page, titles, onClassic }: Props) {
 
   return (
     <div className="os os--desktop">
-      <Wallpaper headline={data.site.headline} kicker={data.site.name} sub={data.ui.shell.sub} />
+      <Wallpaper />
       <DesktopIcons data={data} titles={titles} onOpen={open} menu={(id) => appMenu.handlers(id, "desktop")} />
 
       {order.map((id) => (

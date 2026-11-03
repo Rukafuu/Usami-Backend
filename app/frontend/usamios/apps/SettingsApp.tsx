@@ -123,11 +123,11 @@ export function SettingsApp({ data, alternates }: { data: OsData; alternates: Re
                       <th scope="row">
                         <span className="os-taskmgr-app"><AppIcon id={id} />{t[id]}{prefs.uninstalled.includes(id) ? ` (${t.app_uninstalled})` : ""}</span>
                       </th>
-                      {SLOT_COLUMNS.map((slot: Slot) => {
+                      {SLOT_COLUMNS.map((slot: Slot, column: number) => {
                         const placed = isPlaced(prefs.placement, id, slot)
                         const locked = isLocked(id, slot)
                         return (
-                          <td key={slot}>
+                          <td key={slot} data-label={`${column < 2 ? t.slot_group_pc : t.slot_group_phone} · ${t[`slot_${slot}` as keyof typeof t] as string}`}>
                             <input
                               type="checkbox"
                               checked={placed}

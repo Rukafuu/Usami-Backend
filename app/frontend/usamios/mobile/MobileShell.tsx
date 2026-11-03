@@ -48,7 +48,7 @@ export function MobileShell({ data, page, titles, onClassic }: Props) {
 
   return (
     <div className="os os--mobile">
-      <Wallpaper headline={data.site.headline} kicker={data.site.name} sub={data.ui.shell.sub} />
+      <Wallpaper />
       <header className="os-status">
         <Clock locale={data.locale} />
         <span className="mono">{data.site.osName}</span>

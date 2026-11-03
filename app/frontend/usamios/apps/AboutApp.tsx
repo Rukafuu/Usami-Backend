@@ -1,3 +1,4 @@
+import { setConsent, useConsent } from "../consent"
 import type { OsData } from "../types"
 
 const elapsed = (from: string | null, to: string | null, locale: string) => {
@@ -14,6 +15,7 @@ const fmtFor = (locale: string, n: number) => new Intl.NumberFormat(locale).form
 export function AboutApp({ data }: { data: OsData }) {
   const { system, ui, locale } = data
   const t = ui.apps
+  const consent = useConsent()
   const num = (n: number | null) => (n === null ? t.not_measured : new Intl.NumberFormat(locale).format(n))
   const freshInput =
     system.tokens.input === null && system.tokens.cacheCreation === null
@@ -75,6 +77,18 @@ export function AboutApp({ data }: { data: OsData }) {
           <dd>{fmtFor(locale, data.entries.length)} ({fmtFor(locale, data.ledger.length)} {data.ui.evidence.title.toLowerCase()})</dd>
         </div>
       </dl>
+
+      <h3>{ui.consent.about_title}</h3>
+      <p>{consent === "all" ? ui.consent.current_all : ui.consent.current_essential}</p>
+      <p className="os-about-consent">
+        <button type="button" className="os-button" aria-pressed={consent === "essential"} onClick={() => setConsent("essential")}>{ui.consent.essential}</button>
+        <button type="button" className="os-button is-primary" aria-pressed={consent === "all"} onClick={() => setConsent("all")}>{ui.consent.all}</button>
+      </p>
+      <p className="os-note">
+        <a href={`/${locale}/privacidade`} target="_blank" rel="noopener">{ui.consent.privacy} ↗</a>
+        {" · "}
+        <a href={`/${locale}/cookies`} target="_blank" rel="noopener">{ui.consent.cookies} ↗</a>
+      </p>
 
       <h3>{t.about_libraries}</h3>
       <table>

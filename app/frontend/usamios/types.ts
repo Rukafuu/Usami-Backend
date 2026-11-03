@@ -1,6 +1,6 @@
 export type Locale = "pt" | "en" | "es" | "ja"
 
-export type Source = { label: string; url: string | null }
+export type Source = { label: string; url: string | null; /** Key of a channel icon in /brand/channels (email, whatsapp, linkedin, enois, github, soundcloud). */ icon?: string; /** Readable address shown next to the label (e.g. the handle or number). */ detail?: string }
 
 export type Entry = {
   id: string
@@ -142,6 +142,9 @@ export type Ui = {
     calendar_egg_1031: string
     calendar_egg_0913: string
     calendar_egg_0101: string
+    calendar_egg_0307: string
+    calendar_candle: string
+    calendar_candle_done: string
     about_mascot_title: string
     about_mascot_text: string
     about_env_title: string
@@ -260,12 +263,13 @@ export type Ui = {
   evidence: { title: string; claim: string; source: string; verified: string }
   nav: { evidence: string }
   terminal: Record<string, string>
+  consent: { essential: string; all: string; privacy: string; cookies: string; current_essential: string; current_all: string; current_none: string; music_blocked: string; music_allow: string; music_open: string; assistant_note: string; about_title: string }
   eggs: { konami_title: string; konami_text: string; start_label: string; console_intro: string; console_contact: string }
 }
 
 export type OsData = {
   locale: Locale
-  site: { name: string; osName: string; headline: string; description: string; pillars: TitledText[] }
+  site: { name: string; osName: string; founderBirthday?: string; headline: string; description: string; pillars: TitledText[] }
   ui: Ui
   folders: string[]
   entries: Entry[]

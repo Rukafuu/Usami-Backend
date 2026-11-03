@@ -2,7 +2,7 @@
 <% content_for :description, t("folder_intro.#{@folder}") %>
 
 <section class="hero hero--small">
-  <p class="mono"><a href="<%= home_path %>"><%= t("nav.home") %></a> / <%= t("folders.#{@folder}") %></p>
+  <%= breadcrumbs([ t("folders.#{@folder}"), folder_url(folder: @folder) ]) %>
   <h1><%= t("folders.#{@folder}") %></h1>
   <p class="lead"><%= t("folder_intro.#{@folder}") %></p>
 </section>

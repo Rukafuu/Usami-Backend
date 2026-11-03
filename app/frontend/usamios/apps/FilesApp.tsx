@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react"
+import { ChannelIcon } from "../components/ChannelIcon"
 import { useAchievements } from "../achievements"
 import { REPO_PROJECTS } from "../code/repositories"
 import { entryPath } from "../paths"
@@ -167,12 +168,33 @@ function Preview({ entry, data }: { entry: Entry; data: OsData }) {
 
       {entry.route === "evidencias" && <Ledger data={data} />}
 
-      {entry.sources.length > 0 && (
+      {entry.sources.some((s) => s.icon) ? (
+        <section aria-label={ui.entry.sources}>
+          <h3 className="mono os-channels-title">{ui.entry.sources}</h3>
+          <ul className="os-channels">
+            {entry.sources.map((s) =>
+              s.url ? (
+                <li key={s.url}>
+                  <a href={s.url} target="_blank" rel="noopener">
+                    <ChannelIcon icon={s.icon} />
+                    <span className="os-channel-text">
+                      <strong>{s.label}</strong>
+                      {s.detail && <span className="mono">{s.detail}</span>}
+                    </span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </li>
+              ) : null,
+            )}
+          </ul>
+        </section>
+      ) : entry.sources.length > 0 && (
         <p className="os-sources">
           <span className="mono">{ui.entry.sources}</span>
           {entry.sources.map((s) =>
             s.url ? (
-              <a key={s.url} href={s.url} target="_blank" rel="noopener">
+              <a key={s.url} href={s.url} target="_blank" rel="noopener" className={s.icon ? "has-icon" : undefined}>
+                <ChannelIcon icon={s.icon} />
                 {s.label} ↗
               </a>
             ) : null,

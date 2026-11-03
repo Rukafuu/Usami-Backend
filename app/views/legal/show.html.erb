@@ -1,0 +1,55 @@
+<% title = localized(@content["title"]) %>
+<% content_for :title, title %>
+<% content_for :description, localized(@content["intro"]) %>
+<article class="legal">
+  <header class="hero hero--small">
+    <%= breadcrumbs([ title, url_for(only_path: false) ]) %>
+    <h1><%= title %></h1>
+    <p class="mono muted"><%= t("consent.updated", date: l(Date.parse(@legal["updated"]), format: :long)) %></p>
+    <p class="lead"><%= localized(@content["intro"]) %></p>
+  </header>
+
+  <% if @page == "cookies" %>
+    <section class="block" aria-labelledby="choice-title">
+      <h2 id="choice-title" class="mono"><%= t("consent.banner_title") %></h2>
+      <p data-consent-current data-all="<%= t("consent.current_all") %>" data-essential="<%= t("consent.current_essential") %>"><%= consent_asked? ? t("consent.current_#{consent_choice}") : t("consent.current_none") %></p>
+      <%= render "shared/consent_choices" %>
+    </section>
+
+    <section class="block" aria-labelledby="cookie-table">
+      <h2 id="cookie-table" class="mono"><%= title %></h2>
+      <div class="legal-table" role="region" aria-label="<%= title %>" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <% %w[name type purpose duration].each do |col| %><th scope="col"><%= localized(@content["columns"][col]) %></th><% end %>
+            </tr>
+          </thead>
+          <tbody>
+            <% @content["items"].each do |item| %>
+              <tr>
+                <th scope="row" class="mono"><%= item["name"] %></th>
+                <td><span class="badge <%= 'badge--live' if item["type"] == "essential" %>"><%= localized(@content["types"][item["type"]]) %></span></td>
+                <td><%= localized(item["purpose"]) %></td>
+                <td><%= localized(item["duration"]) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  <% end %>
+
+  <% @content["sections"].each_with_index do |section, i| %>
+    <section class="block" aria-labelledby="s<%= i %>">
+      <h2 id="s<%= i %>"><%= localized(section["title"]) %></h2>
+      <% (Content.localize(section["body"], I18n.locale).value || []).each do |paragraph| %>
+        <p><%= paragraph %></p>
+      <% end %>
+    </section>
+  <% end %>
+
+  <p class="block">
+    <a href="<%= @page == "privacy" ? cookies_policy_path : privacy_path %>"><%= t(@page == "privacy" ? "consent.cookies" : "consent.privacy") %></a>
+  </p>
+</article>

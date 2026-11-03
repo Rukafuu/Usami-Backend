@@ -112,6 +112,15 @@ class AssistantTest < ActionDispatch::IntegrationTest
     assert_equal Assistant::Nvidia::DEFAULT_MODEL, client.model
   end
 
+  test "NVIDIA client keeps whitespace-only pieces" do
+    transport = lambda do |_u, _b, _k, &blk|
+      [ "tem", " ", "25", "\n", "ok" ].each { |c| blk.call(%(data: {"choices":[{"delta":{"content":#{c.to_json}}}]}\n\n)) }
+    end
+    out = +""
+    Assistant::Nvidia.new(env: { "NVIDIA_API_KEY" => "k" }, transport: transport).stream([]) { |t| out << t }
+    assert_equal "tem 25\nok", out
+  end
+
   test "visitor text is filtered from logs" do
     filtered = ActiveSupport::ParameterFilter.new(Rails.application.config.filter_parameters)
     assert_equal "[FILTERED]", filtered.filter("messages" => "private")["messages"]

@@ -10,7 +10,7 @@ module Assistant
     end
 
     def to_text
-      [ company, services, systems, ledger ].join("\n\n")
+      [ company, services, faq, systems, ledger ].join("\n\n")
     end
 
     private
@@ -30,6 +30,11 @@ module Assistant
     def services
       lines = Array(@store.services).map { |s| "- #{localize(s["title"])}: #{localize(s["text"])}" }
       "## What the company offers\n#{lines.join("\n")}"
+    end
+
+    def faq
+      lines = Array(@store.faq).map { |i| "Q: #{localize(i["q"])}\nA: #{localize(i["a"])}" }
+      "## Frequently asked questions (answer these the same way)\n#{lines.join("\n\n")}"
     end
 
     def systems

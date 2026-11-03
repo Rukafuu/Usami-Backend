@@ -2,7 +2,7 @@
 <% content_for :description, t("gallery.intro") %>
 
 <section class="hero hero--small">
-  <p class="mono"><a href="<%= home_path %>"><%= t("nav.home") %></a> / <%= t("apps.gallery") %></p>
+  <%= breadcrumbs([ t("apps.gallery"), gallery_url ]) %>
   <h1><%= t("apps.gallery") %></h1>
   <p class="lead"><%= t("gallery.intro") %></p>
 </section>

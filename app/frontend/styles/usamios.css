@@ -149,7 +149,7 @@
 .os a { color: var(--accent); }
 
 /* ---------- code studio ---------- */
-.os-code { container: code / inline-size; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; overflow: hidden; background: var(--bg); }
+.os-code { container: code / inline-size; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; overflow: hidden; background: var(--bg); }
 .os-code-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 12px; background: var(--surface-2); border-bottom: 1px solid var(--line-2); }
 .os-code-brand { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .os-code-select { display: inline-flex; align-items: center; gap: 6px; }
@@ -881,3 +881,49 @@
 .os-about-consent { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
 .os-msn-note { margin: 0; padding: 6px 12px 10px; font-size: 0.75rem; }
 .os-music-art--empty { display: grid; place-items: center; font-size: 2rem; color: var(--accent); }
+
+/* ---- Windows adapt to their own width (they can be resized, so viewport media queries are not enough) ---- */
+.os-body { container: win / inline-size; }
+
+@container win (max-width: 640px) {
+  .os-files { grid-template-columns: 1fr; grid-template-rows: auto auto 1fr; height: auto; }
+  .os-files nav { display: flex; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--line-2); }
+  .os-files nav .mono { display: none; }
+  .os-list { border-right: 0; border-bottom: 1px solid var(--line-2); }
+}
+
+@container win (max-width: 560px) {
+  .os-calendar { grid-template-columns: 1fr; height: auto; }
+  .os-cal-main { border-right: 0; border-bottom: 1px solid var(--line-2); }
+  .os-msn-sub { white-space: normal; }
+}
+
+/* Settings: the category list moves above the content, and the apps table becomes one card per app. */
+@container win (max-width: 560px) {
+  .os-settings { grid-template-columns: 1fr; grid-template-rows: auto 1fr; height: auto; }
+  .os-settings nav { display: flex; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--line-2); }
+  .os-settings nav button { white-space: nowrap; }
+}
+
+@container win (max-width: 700px) {
+  .os-placement { min-width: 0 !important; }
+  .os-placement, .os-placement tbody, .os-placement tr, .os-placement td, .os-placement th[scope="row"] { display: block; }
+  .os-placement thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .os-placement tr { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px 8px; padding: 12px; margin-bottom: 8px; border: 1px solid var(--line-2); border-radius: 10px; background: var(--surface-2); }
+  .os-placement th[scope="row"] { grid-column: 1 / -1; padding: 0; border: 0; }
+  .os-placement td { padding: 0; border: 0; text-align: left; }
+  .os-placement td[data-label] { display: grid; gap: 6px; justify-items: start; align-content: start; }
+  .os-placement td[data-label]::before { content: attr(data-label); font: 500 0.6875rem var(--mono); color: var(--mute); text-transform: none; letter-spacing: normal; }
+  .os-placement td:last-child { grid-column: 1 / -1; }
+  .os-placement input { width: 22px; height: 22px; }
+}
+
+/* Code Studio: nothing inside may push the window wider than itself. */
+.os-code-workspace > *, .os-code-top > *, .os-code-main > * { min-width: 0; }
+.os-code-brand, .os-code-select { min-width: 0; max-width: 100%; }
+.os-code-select select { flex: 1 1 0; min-width: 0; max-width: 100%; text-overflow: ellipsis; }
+@container win (max-width: 480px) {
+  .os-settings-pane { padding: 14px; }
+  .os-layout-list li { grid-template-columns: 1fr auto; }
+  .os-layout-select { grid-column: 1 / -1; order: 3; }
+}

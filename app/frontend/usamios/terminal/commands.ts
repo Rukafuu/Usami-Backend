@@ -117,6 +117,7 @@ function contactInfo(data: OsData): string[] {
   if (contact) {
     if (out.length) out.push("")
     out.push(contact.description)
+    for (const s of contact.sources) if (s.url) out.push(`  > ${s.label}: ${s.url.replace(/^mailto:/, "")}`)
   }
   return out
 }

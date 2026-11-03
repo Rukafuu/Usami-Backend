@@ -31,7 +31,9 @@ describe("desktop", () => {
     renderOS()
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument()
     const icons = screen.getByRole("list", { name: "Atalhos da área de trabalho" })
-    expect(within(icons).getAllByRole("button").map((b) => b.textContent)).toEqual(["Navegador", "Arquivos", "Galeria", "Terminal"])
+    // Every app starts on the desktop.
+    expect(within(icons).getAllByRole("button")).toHaveLength(APP_IDS.length)
+    expect(within(icons).getAllByRole("button").map((b) => b.textContent)).toEqual(expect.arrayContaining(["Navegador", "Arquivos", "Galeria", "Terminal"]))
     expect(screen.getByRole("button", { name: /Iniciar/ })).toBeInTheDocument()
     expect(window.location.pathname).toBe("/pt")
   })
@@ -226,13 +228,13 @@ describe("desktop", () => {
     renderOS()
     expect(screen.getByRole("status")).toBeInTheDocument()
     await userEvent.keyboard("{Enter}")
-    await act(async () => {
-      await new Promise((r) => setTimeout(r, 600))
     const signIn = await screen.findByRole("button", { name: "Entrar" })
     expect(screen.getByText("Visitante")).toBeInTheDocument()
     await userEvent.click(signIn)
     expect(screen.getByText("Preparando sua área de trabalho…")).toBeInTheDocument()
     await userEvent.keyboard("{Enter}")
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 600))
     })
     expect(screen.queryByRole("status")).not.toBeInTheDocument()
   })
@@ -278,10 +280,14 @@ describe("desktop", () => {
     expect(within(codeWin).getByText(/TOOL_ROLES/)).toBeInTheDocument()
 
     const tree = within(codeWin).getByRole("complementary", { name: "Arquivos do repositório" })
-    // Real Hane commit history appears right in the sidebar
-    expect(within(tree).getByText("7c7db80")).toBeInTheDocument()
     await userEvent.click(within(tree).getByRole("button", { name: /src\/capabilities\.js/ }))
     expect(within(codeWin).getByText(/KNOWN_CAPABILITIES/)).toBeInTheDocument()
+
+    // Real Hane commit history has its own tab, at full width (the file list is hidden there)
+    await userEvent.click(within(codeWin).getByRole("button", { name: /Commits e PRs/ }))
+    expect(within(codeWin).getByText("7c7db80")).toBeInTheDocument()
+    expect(within(codeWin).queryByRole("complementary", { name: "Arquivos do repositório" })).not.toBeInTheDocument()
+    await userEvent.click(within(codeWin).getByRole("button", { name: /^Código$/ }))
 
     // Switch to Laya to inspect merged PRs #269 and #706
     await userEvent.selectOptions(within(codeWin).getByRole("combobox", { name: "Repositório" }), "laya")
@@ -313,6 +319,21 @@ describe("desktop", () => {
     expect(within(cal).getByText("github.com/Rukafuu/Hane ↗")).toBeInTheDocument()
   })
 
+  it("shows the founder's birthday (07/03/1998) every year, with his age and a candle to blow out", async () => {
+    renderOS()
+    await userEvent.click(screen.getByRole("button", { name: /Calendário \(/ }))
+    const cal = screen.getByRole("dialog", { name: "Calendário" })
+
+    // Walk back from Nov 2026 to Mar 2026.
+    for (let i = 0; i < 8; i++) await userEvent.click(within(cal).getByRole("button", { name: "Mês anterior" }))
+    await userEvent.click(within(cal).getByRole("button", { name: "2026-03-07" }))
+    expect(within(cal).getByText(/Aniversário do Lucas — 28 anos\./)).toBeInTheDocument()
+
+    await userEvent.click(within(cal).getByRole("button", { name: /Soprar a vela/ }))
+    expect(within(cal).getByRole("status")).toHaveTextContent("Parabéns, Lucas")
+    expect(within(cal).queryByRole("button", { name: /Soprar a vela/ })).not.toBeInTheDocument()
+  })
+
   it("Usami Messenger answers questions with verified facts, opens apps as a guide, and unlocks Achievements", async () => {
     renderOS()
     act(() => useWindows.getState().open("messenger", { width: 1280, height: 800 }))
@@ -339,13 +360,38 @@ describe("desktop", () => {
     expect(within(ach).getAllByText(/Desbloqueada/).length).toBeGreaterThanOrEqual(4)
   })
 
+  it("Usami Music keeps the SoundCloud player off until the visitor allows all cookies", async () => {
+    document.cookie = "usami_consent=; Max-Age=0; Path=/"
+    renderOS()
+    act(() => useWindows.getState().open("music", { width: 1280, height: 800 }))
+    const musicWin = screen.getByRole("dialog", { name: "Usami Music" })
+
+    expect(within(musicWin).queryByTitle(/^SoundCloud — /)).not.toBeInTheDocument()
+    // The cover art lives on SoundCloud's CDN too, so nothing from SoundCloud is requested yet.
+    expect(musicWin.querySelector('img[src*="sndcdn"]')).toBeNull()
+    expect(within(musicWin).getByText(/cookies de terceiros/)).toBeInTheDocument()
+    expect(within(musicWin).getByRole("button", { name: /Reproduzir/ })).toBeDisabled()
+
+    await userEvent.click(within(musicWin).getByRole("button", { name: "Permitir todos e carregar" }))
+    expect(document.cookie).toContain("usami_consent=all")
+    expect(within(musicWin).getByTitle(/^SoundCloud — /)).toBeInTheDocument()
+    expect(musicWin.querySelector('img[src*="sndcdn"]')).not.toBeNull()
+    document.cookie = "usami_consent=; Max-Age=0; Path=/"
+  })
+
   it("Usami Music plays Lucas's SoundCloud tracks from Reskyume (@rukafuu) and Amarynth Lira (@amarynth-lira)", async () => {
+    document.cookie = "usami_consent=all; Path=/"
     renderOS()
     act(() => useWindows.getState().open("music", { width: 1280, height: 800 }))
 
     const musicWin = screen.getByRole("dialog", { name: "Usami Music" })
     expect(within(musicWin).getByRole("heading", { name: "Aus der Ferne, em rosa" })).toBeInTheDocument()
-    expect(within(musicWin).getByText("Todas (13)")).toBeInTheDocument()
+    expect(within(musicWin).getByText("Todas (20)")).toBeInTheDocument()
+
+    // Filter by Reskyume tracks (from sets/my-tracks) and select one
+    await userEvent.click(within(musicWin).getByRole("tab", { name: "Reskyume (10)" }))
+    await userEvent.click(within(musicWin).getByRole("button", { name: /Horizonte de eventos/ }))
+    expect(within(musicWin).getByRole("heading", { name: "Horizonte de eventos" })).toBeInTheDocument()
 
     // Filter by Amarynth Lira tracks and select one
     await userEvent.click(within(musicWin).getByRole("tab", { name: "Amarynth Lira (10)" }))
@@ -355,6 +401,7 @@ describe("desktop", () => {
       "src",
       expect.stringContaining("amarynth-lira%2Fdona-do-servidor-5"),
     )
+    document.cookie = "usami_consent=; Max-Age=0; Path=/"
   })
 })
 

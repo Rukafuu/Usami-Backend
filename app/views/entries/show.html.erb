@@ -2,13 +2,11 @@
 <% planned = @entry.planned(I18n.locale) %>
 <% content_for :title, @entry.filename %>
 <% content_for :description, @entry.description(I18n.locale) %>
+<% content_for :og_image, "/og/#{@entry.id}.png" if File.exist?(Rails.public_path.join("og", "#{@entry.id}.png")) %>
 
 <article class="entry">
   <header class="hero hero--small">
-    <p class="mono">
-      <a href="<%= home_path %>"><%= t("nav.home") %></a> /
-      <a href="<%= folder_path(folder: @entry.folder) %>"><%= t("folders.#{@entry.folder}") %></a>
-    </p>
+    <%= breadcrumbs([ t("folders.#{@entry.folder}"), folder_url(folder: @entry.folder) ], [ @entry.filename, entry_url(folder: @entry.folder, slug: @entry.id) ]) %>
     <h1><%= @entry.filename %></h1>
     <p><span class="badge <%= 'badge--live' if @entry.status == 'live' %>"><%= t("status.#{@entry.status}") %></span></p>
     <p class="lead"><%= @entry.description(I18n.locale) %></p>
@@ -43,9 +41,9 @@
   <% if @entry.sources.any? %>
     <section class="block" aria-labelledby="sources">
       <h2 id="sources" class="mono"><%= t("entry.sources") %></h2>
-      <ul class="sources">
+      <ul class="sources<%= " sources--channels" if @entry.sources.any?(&:icon) %>">
         <% @entry.sources.each do |source| %>
-          <li><a href="<%= source.url %>" target="_blank" rel="noopener"><%= source.label %> <span aria-hidden="true">↗</span></a></li>
+          <li><a href="<%= source.url %>" target="_blank" rel="noopener"><%= channel_icon(source.icon) %><span class="channel-text"><strong><%= source.label %></strong><% if source.detail %><span class="mono"><%= source.detail %></span><% end %></span> <span aria-hidden="true">↗</span></a></li>
         <% end %>
       </ul>
     </section>

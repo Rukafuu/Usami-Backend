@@ -212,7 +212,9 @@ export function CodeStudioApp({ data }: { data: OsData }) {
         )}
       </header>
 
-      <div className="os-code-workspace">
+      <div className={`os-code-workspace${viewMode === "editor" ? "" : " is-solo"}`}>
+        {/* The file list only matters while editing; commits and architecture get the full width. */}
+        {viewMode === "editor" && (
         <aside className="os-code-tree" aria-label={labelFiles}>
           <div className="os-code-tree-section">
             <div className="os-code-tree-head">
@@ -260,29 +262,8 @@ export function CodeStudioApp({ data }: { data: OsData }) {
             </ul>
           </div>
 
-          {baseRepo.commits.length > 0 && (
-            <div className="os-code-tree-section os-code-tree-commits">
-              <p className="mono">{labelCommits} ({baseRepo.commits.length})</p>
-              <ul>
-                {baseRepo.commits.map((c) => (
-                  <li key={c.id}>
-                    <button
-                      type="button"
-                      aria-current={viewMode === "commits" && selectedCommitId === c.id ? "true" : undefined}
-                      onClick={() => {
-                        setSelectedCommitId(c.id)
-                        setViewMode("commits")
-                      }}
-                    >
-                      <span className="os-code-lang mono">{c.id}</span>
-                      <span className="os-code-commit-short">{c.title}</span>
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
         </aside>
+        )}
 
         <div className="os-code-main">
           {viewMode === "editor" && activeFile && (

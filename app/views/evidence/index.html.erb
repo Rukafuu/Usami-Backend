@@ -2,7 +2,7 @@
 <% content_for :description, t("evidence.intro") %>
 
 <section class="hero hero--small">
-  <p class="mono"><a href="<%= home_path %>"><%= t("nav.home") %></a> / <%= t("evidence.title") %></p>
+  <%= breadcrumbs([ t("evidence.title"), evidence_url ]) %>
   <h1><%= t("evidence.title") %></h1>
   <p class="lead"><%= t("evidence.intro") %></p>
 </section>

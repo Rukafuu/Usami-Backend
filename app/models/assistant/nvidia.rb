@@ -8,7 +8,8 @@ module Assistant
     class Error < StandardError; end
 
     URL = URI("https://integrate.api.nvidia.com/v1/chat/completions")
-    DEFAULT_MODEL = "meta/llama-3.3-70b-instruct"
+    # Chosen by testing the account's catalog: fast, no hidden "reasoning" phase, grounded answers in pt/en/ja. Override with NVIDIA_MODEL.
+    DEFAULT_MODEL = "poolside/laguna-xs-2.1"
 
     def initialize(env: ENV, transport: nil)
       @env = env
@@ -39,7 +40,9 @@ module Assistant
       return unless line.start_with?("data:")
       payload = line.delete_prefix("data:").strip
       return if payload.empty? || payload == "[DONE]"
-      JSON.parse(payload).dig("choices", 0, "delta", "content").presence
+      # Whitespace-only pieces ("\n", " ") are real text: do not drop them.
+      text = JSON.parse(payload).dig("choices", 0, "delta", "content")
+      text unless text.nil? || text.empty?
     rescue JSON::ParserError
       nil
     end

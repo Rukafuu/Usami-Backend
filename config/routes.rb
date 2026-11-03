@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   get "robots.txt" => "seo#robots", defaults: { format: :text }
   get "sitemap.xml" => "seo#sitemap", defaults: { format: :xml }
+  get "llms.txt" => "seo#llms", defaults: { format: :text }
 
   root "locales#redirect"
 
@@ -11,6 +12,10 @@ Rails.application.routes.draw do
     get "os.json", to: "os#show", as: :os, defaults: { format: :json }
     get "evidencias", to: "evidence#index", as: :evidence
     get "galeria", to: "gallery#index", as: :gallery
+    get "perguntas", to: "faq#index", as: :faq
+    get "privacidade", to: "legal#privacy", as: :privacy
+    get "cookies", to: "legal#cookies_policy", as: :cookies_policy
+    post "consentimento", to: "consent#create", as: :consent
     get ":folder", to: "folders#show", as: :folder, constraints: { folder: /sistemas|contribuicoes|laboratorio|empresa/ }
     get ":folder/:slug", to: "entries#show", as: :entry, constraints: { folder: /sistemas|contribuicoes|laboratorio|empresa/ }
   end

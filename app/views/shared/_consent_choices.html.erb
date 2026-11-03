@@ -1,0 +1,6 @@
+<%# The two choices as a plain form: works without JavaScript; with JavaScript the page keeps the shell open. %>
+<%= form_with url: consent_path, method: :post, class: "consent-form", data: { consent_form: true } do %>
+  <%= hidden_field_tag :return_to, request.path %>
+  <button type="submit" name="choice" value="essential" class="button"><%= t("consent.essential") %></button>
+  <button type="submit" name="choice" value="all" class="button button--primary"><%= t("consent.all") %></button>
+<% end %>

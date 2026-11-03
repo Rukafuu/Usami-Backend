@@ -10,13 +10,13 @@ module Content
       @status = data.fetch("status")
       @route = data["route"]
       @stack = Array(data["stack"])
-      @sources = Array(data["sources"]).map { |s| Source.new(s["label"], s["url"]) }
+      @sources = Array(data["sources"]).map { |s| Source.new(s["label"], s["url"], s["icon"], s["detail"]) }
       @description = data.fetch("description")
       @proven = data["proven"] || {}
       @planned = data["planned"] || {}
     end
 
-    Source = Data.define(:label, :url)
+    Source = Data.define(:label, :url, :icon, :detail)
 
     # Shape consumed by the React shell (and, later, the assistant's knowledge base).
     def as_os_json(locale)
@@ -27,7 +27,7 @@ module Content
         stack: stack, description: description(locale),
         proven: Array(proven.value), planned: Array(planned.value),
         listsTranslated: (proven.value.blank? || proven.translated) && (planned.value.blank? || planned.translated),
-        sources: sources.map { |s| { label: s.label, url: s.url } }
+        sources: sources.map { |s| { label: s.label, url: s.url, icon: s.icon, detail: s.detail }.compact }
       }
     end
 

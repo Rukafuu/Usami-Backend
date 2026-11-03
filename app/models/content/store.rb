@@ -25,10 +25,12 @@ module Content
         end
       end
 
+      def legal = @legal ||= load_yaml("legal.yml")
       def services = @services ||= load_yaml("services.yml")
       def gallery = @gallery ||= Array(load_yaml("gallery.yml"))
+      def faq = @faq ||= Array(load_yaml("faq.yml"))
 
-      def reset! = (@site = @entries = @ledger = @services = @gallery = nil)
+      def reset! = (@site = @entries = @ledger = @services = @gallery = @legal = @faq = nil)
 
       private
 

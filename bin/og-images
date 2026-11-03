@@ -1,0 +1,118 @@
+#!/usr/bin/env python3
+"""Generate 1200x630 Open Graph preview cards in public/og/ from config/content/."""
+from pathlib import Path
+from PIL import Image, ImageDraw, ImageFont
+import yaml
+
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "public" / "og"
+OUT.mkdir(parents=True, exist_ok=True)
+
+W, H = 1200, 630
+BG = (16, 13, 12)
+SURFACE = (33, 23, 19)
+FG = (248, 242, 235)
+MUTE = (187, 168, 151)
+ACCENT = (212, 164, 119)
+LINE = (58, 43, 35)
+
+
+def load_font(names, size):
+    for name in names:
+        try:
+            return ImageFont.truetype(name, size)
+        except OSError:
+            continue
+    return ImageFont.load_default()
+
+
+F_TITLE = load_font(["georgia.ttf", "DejaVuSerif.ttf"], 62)
+F_BODY = load_font(["segoeui.ttf", "DejaVuSans.ttf"], 28)
+F_MONO = load_font(["consola.ttf", "DejaVuSansMono.ttf"], 22)
+F_BRAND = load_font(["segoeuib.ttf", "segoeui.ttf", "DejaVuSans-Bold.ttf"], 26)
+
+
+def wrap(draw, text, font, max_w, max_lines=3):
+    words = text.split()
+    lines, cur = [], ""
+    for w in words:
+        cand = f"{cur} {w}".strip()
+        if draw.textlength(cand, font=font) <= max_w:
+            cur = cand
+        else:
+            if cur:
+                lines.append(cur)
+            cur = w
+    if cur:
+        lines.append(cur)
+    if len(lines) > max_lines:
+        lines = lines[:max_lines]
+        lines[-1] = lines[-1].rstrip(" .,;:") + "…"
+    return lines
+
+
+def render_card(out_path: Path, kicker: str, title: str, body: str, chips=()):
+    img = Image.new("RGB", (W, H), BG)
+    draw = ImageDraw.Draw(img)
+
+    # Outer frame
+    pad = 44
+    draw.rounded_rectangle([pad, pad, W - pad, H - pad], radius=24, fill=SURFACE, outline=LINE, width=2)
+    draw.rounded_rectangle([pad, pad, W - pad, pad + 6], radius=3, fill=ACCENT)
+
+    x = 96
+    # Header: logo + brand + kicker
+    logo_path = ROOT / "public" / "brand" / "logo-192.png"
+    if logo_path.exists():
+        logo = Image.open(logo_path).convert("RGBA").resize((48, 48), Image.LANCZOS)
+        img.paste(logo, (x, 86), logo)
+        draw.text((x + 62, 95), "Usami", font=F_BRAND, fill=FG)
+    draw.text((W - 96, 98), kicker.upper(), font=F_MONO, fill=ACCENT, anchor="ra")
+
+    # Title
+    y = 195
+    for line in wrap(draw, title, F_TITLE, W - 2 * x, max_lines=2):
+        draw.text((x, y), line, font=F_TITLE, fill=FG)
+        y += 74
+
+    # Description
+    y += 14
+    for line in wrap(draw, body, F_BODY, W - 2 * x, max_lines=3):
+        draw.text((x, y), line, font=F_BODY, fill=MUTE)
+        y += 40
+
+    # Bottom bar: stack chips or tagline
+    footer_y = H - 108
+    draw.line([(x, footer_y - 18), (W - x, footer_y - 18)], fill=LINE, width=1)
+    footer = "  ·  ".join(chips[:5]) if chips else "Fuwarch Linux  ·  Sistemas · Contribuições · Evidências"
+    draw.text((x, footer_y), footer, font=F_MONO, fill=ACCENT)
+
+    img.save(out_path, "PNG", optimize=True)
+
+
+def main():
+    site = yaml.safe_load((ROOT / "config/content/site.yml").read_text(encoding="utf-8"))
+    render_card(
+        OUT / "default.png",
+        kicker="Usami · Fuwarch Linux",
+        title=site["headline"]["pt"],
+        body=site["description"]["pt"],
+    )
+
+    for entry_file in sorted((ROOT / "config/content/entries").glob("*.yml")):
+        data = yaml.safe_load(entry_file.read_text(encoding="utf-8"))
+        if data.get("route"):
+            continue
+        desc = data["description"]
+        body = desc.get("pt") if isinstance(desc, dict) else str(desc)
+        render_card(
+            OUT / f"{data['id']}.png",
+            kicker=f"{data['folder']} / {data['status']}",
+            title=data["filename"],
+            body=body,
+            chips=data.get("stack") or (),
+        )
+
+
+if __name__ == "__main__":
+    main()

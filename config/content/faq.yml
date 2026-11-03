@@ -1,0 +1,52 @@
+# Perguntas frequentes. Cada resposta repete só o que o resto do site já afirma (site.yml, services.yml,
+# legal.yml, Evidências). Se uma resposta mudar lá, mude aqui também. Também alimenta a Usami (Assistant::Knowledge).
+- q:
+    pt: "O que a Usami faz?"
+    en: "What does Usami do?"
+    es: "¿Qué hace Usami?"
+    ja: "Usamiは何をしている会社ですか?"
+  a:
+    pt: "A Usami é uma empresa de tecnologia recém-criada. Desenvolve aplicações web, desktop e mobile, plataformas e backends e soluções de inteligência artificial (agentes, voz, memória e avaliação de modelos) para outras empresas."
+    en: "Usami is a newly founded technology company. It builds web, desktop and mobile applications, platforms and backends, and artificial intelligence solutions (agents, voice, memory and model evaluation) for other companies."
+    es: "Usami es una empresa de tecnología recién creada. Desarrolla aplicaciones web, de escritorio y móviles, plataformas y backends, y soluciones de inteligencia artificial (agentes, voz, memoria y evaluación de modelos) para otras empresas."
+    ja: "Usamiは設立されたばかりのテクノロジー企業です。Web・デスクトップ・モバイルのアプリケーション、プラットフォームとバックエンド、そしてAIソリューション(エージェント、音声、記憶、モデル評価)を企業向けに開発しています。"
+- q:
+    pt: "Como sei que o que vocês afirmam é verdade?"
+    en: "How do I know what you claim is true?"
+    es: "¿Cómo sé que lo que afirman es verdad?"
+    ja: "主張が本当だとどうやって確認できますか?"
+  a:
+    pt: "Cada afirmação do site está na página de Evidências, ligada à sua fonte (em geral um repositório público) e à data em que foi verificada. Nas páginas de cada projeto separamos o que já está provado no código do que ainda é só planejado."
+    en: "Every claim on the site is on the Evidence page, linked to its source (usually a public repository) and to the date it was checked. On each project page we separate what is already proven in the code from what is only planned."
+    es: "Cada afirmación del sitio está en la página de Evidencias, enlazada a su fuente (en general un repositorio público) y a la fecha en que se verificó. En la página de cada proyecto separamos lo que ya está probado en el código de lo que solo está planeado."
+    ja: "サイト上のすべての主張は「エビデンス」ページに、出典(多くは公開リポジトリ)と確認日とともに掲載しています。各プロジェクトのページでは、コードで実証済みのことと、まだ計画段階のことを分けて記載しています。"
+- q:
+    pt: "Vocês já têm clientes?"
+    en: "Do you already have clients?"
+    es: "¿Ya tienen clientes?"
+    ja: "すでに顧客はいますか?"
+  a:
+    pt: "A empresa é nova, e por isso não mostramos depoimentos nem números de clientes que não existem. O que mostramos são os nossos próprios sistemas e o código que enviamos a projetos de terceiros e foi aceito, tudo com fonte."
+    en: "The company is new, so we do not show testimonials or client numbers that do not exist. What we show are our own systems and the code we sent to third-party projects that was accepted, all with sources."
+    es: "La empresa es nueva, así que no mostramos testimonios ni cifras de clientes que no existen. Lo que mostramos son nuestros propios sistemas y el código que enviamos a proyectos de terceros y fue aceptado, todo con fuente."
+    ja: "設立したばかりの会社のため、存在しない推薦文や顧客数は掲載していません。掲載しているのは、自社のシステムと、他のプロジェクトに送って採用されたコードで、すべて出典付きです。"
+- q:
+    pt: "O que é o Fuwarch Linux?"
+    en: "What is Fuwarch Linux?"
+    es: "¿Qué es Fuwarch Linux?"
+    ja: "Fuwarch Linuxとは何ですか?"
+  a:
+    pt: "É o ambiente de desktop que abre neste site: um sistema emulado no navegador, com janelas, arquivos, terminal e apps, que serve de portfólio interativo. Ainda não é uma distribuição Linux real; uma versão real é só um plano. Quem preferir pode usar o modo clássico, uma página comum com o mesmo conteúdo."
+    en: "It is the desktop environment that opens on this site: a system emulated in the browser, with windows, files, a terminal and apps, that works as an interactive portfolio. It is not a real Linux distribution yet; a real version is only a plan. If you prefer, the classic mode is a regular page with the same content."
+    es: "Es el entorno de escritorio que se abre en este sitio: un sistema emulado en el navegador, con ventanas, archivos, terminal y apps, que funciona como portafolio interactivo. Todavía no es una distribución Linux real; una versión real es solo un plan. Si lo prefieres, el modo clásico es una página normal con el mismo contenido."
+    ja: "このサイトで開くデスクトップ環境です。ウィンドウ、ファイル、ターミナル、アプリを備えたブラウザ上のエミュレーションで、インタラクティブなポートフォリオとして機能します。まだ本物のLinuxディストリビューションではなく、実際の版は計画段階です。通常のページで同じ内容を見たい場合はクラシックモードを使えます。"
+- q:
+    pt: "A Usami (a assistente do site) guarda o que eu escrevo?"
+    en: "Does Usami (the site's assistant) keep what I write?"
+    es: "¿Usami (la asistente del sitio) guarda lo que escribo?"
+    ja: "Usami(サイトのアシスタント)は入力内容を保存しますか?"
+  a:
+    pt: "Nós não gravamos as perguntas. O texto que você escreve e as últimas mensagens da conversa são enviados à NVIDIA apenas para gerar a resposta, e a NVIDIA trata esse texto conforme a política dela. Por isso, não escreva dados pessoais sensíveis no chat. Os detalhes estão na política de privacidade."
+    en: "We do not store the questions. The text you write and the latest messages of the conversation are sent to NVIDIA only to generate the answer, and NVIDIA handles that text under its own policy. So please do not write sensitive personal data in the chat. The details are in the privacy policy."
+    es: "No guardamos las preguntas. El texto que escribes y los últimos mensajes de la conversación se envían a NVIDIA solo para generar la respuesta, y NVIDIA trata ese texto según su propia política. Por eso, no escribas datos personales sensibles en el chat. Los detalles están en la política de privacidad."
+    ja: "質問は当社では保存しません。入力した文章と直近のやり取りは回答を生成するためだけにNVIDIAへ送信され、NVIDIAは自社のポリシーに従ってその文章を扱います。そのため、チャットに機微な個人情報は書かないでください。詳細はプライバシーポリシーをご覧ください。"

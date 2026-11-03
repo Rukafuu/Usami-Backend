@@ -1,10 +1,8 @@
 import { Stars } from "./components/Stars"
 import { useShell, WALLPAPER_IMAGES } from "./shell"
 
-type Props = { kicker: string; headline: string; sub: string }
-
-/** Wallpaper layer: the chosen background (illustration or colour), a few stars and the company statement. */
-export function Wallpaper({ kicker, headline, sub }: Props) {
+/** Wallpaper layer: the chosen background (illustration or colour) and a few stars. Nothing is written over it, so the art stays clean. */
+export function Wallpaper() {
   const wallpaper = useShell((s) => s.wallpaper)
   const image = WALLPAPER_IMAGES[wallpaper]
 
@@ -23,11 +21,6 @@ export function Wallpaper({ kicker, headline, sub }: Props) {
         <Stars />
       )}
       {!image && <div className="os-moon" />}
-      <div className="os-statement">
-        <span className="mono">{kicker}</span>
-        <p className="os-headline">{headline}</p>
-        <span className="mono">{sub}</span>
-      </div>
     </div>
   )
 }

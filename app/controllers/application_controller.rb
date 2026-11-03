@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Consent
+
   before_action :set_locale
   rescue_from Content::NotFound, with: :render_not_found
 

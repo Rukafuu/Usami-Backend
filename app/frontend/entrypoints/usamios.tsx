@@ -2,10 +2,13 @@ import { createRoot } from "react-dom/client"
 import "../styles/usamios.css"
 import { App } from "../usamios/App"
 import { printConsoleGreeting } from "../usamios/eggs"
+import { wireConsentForms } from "../usamios/consent"
 import { useShell } from "../usamios/shell"
 import type { Locale, OsData, PageContext } from "../usamios/types"
 
 const mount = document.getElementById("usamios")
+
+wireConsentForms()
 
 async function start(el: HTMLElement) {
   const { endpoint, locale, folder, slug, alternates } = el.dataset

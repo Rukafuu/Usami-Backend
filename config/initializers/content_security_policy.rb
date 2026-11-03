@@ -15,6 +15,12 @@ Rails.application.configure do
     policy.form_action :self
     policy.frame_ancestors :none
 
+    # Cloudflare Web Analytics, only when a token is configured (the beacon itself also waits for "Allow all").
+    if ENV["CF_ANALYTICS_TOKEN"].present?
+      policy.script_src  *policy.script_src, "https://static.cloudflareinsights.com"
+      policy.connect_src *policy.connect_src, "https://cloudflareinsights.com"
+    end
+
     if Rails.env.development?
       # Vite hot reload when the dev server is running.
       vite = "http://#{ViteRuby.config.host_with_port}"

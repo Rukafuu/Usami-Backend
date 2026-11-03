@@ -2,13 +2,19 @@ id: contact
 folder: empresa
 order: 3
 filename: contato.msg
-status: tbd
+status: info
 stack: []
 description:
-  pt: "Canal de contato da empresa — a definir."
-  en: "Company contact channel — to be defined."
-  es: "Canal de contacto de la empresa — por definir."
-  ja: "会社の連絡窓口 — 未定。"
+  pt: "Fale com Lucas Frischeisen (Reskyume) por qualquer um destes canais. O e-mail e o WhatsApp são os mais diretos. Prazo de resposta: até 72 horas — ou depois de abrir uma latinha de Monster ⚡"
+  en: "Reach Lucas Frischeisen (Reskyume) through any of these channels. Email and WhatsApp are the most direct. Response time: within 72 hours — or after opening a can of Monster ⚡"
+  es: "Habla con Lucas Frischeisen (Reskyume) por cualquiera de estos canales. El correo y WhatsApp son los más directos. Plazo de respuesta: hasta 72 horas — o después de abrir una lata de Monster ⚡"
+  ja: "Lucas Frischeisen(Reskyume)へは以下のいずれかでご連絡ください。メールとWhatsAppが最も確実です。返信は72時間以内 — またはモンスターを1缶開けたあとに ⚡"
 proven: {}
 planned: {}
-sources: []
+sources:
+  - { label: "E-mail", icon: "email", detail: "devreskyume@gmail.com", url: "mailto:devreskyume@gmail.com" }
+  - { label: "WhatsApp", icon: "whatsapp", detail: "+55 11 98182-6659", url: "https://wa.me/5511981826659" }
+  - { label: "LinkedIn", icon: "linkedin", detail: "linkedin.com/in/rukafuu", url: "https://linkedin.com/in/rukafuu" }
+  - { label: "Énois", icon: "enois", detail: "enois.ia.br/perfil/reskyume", url: "https://enois.ia.br/perfil/reskyume" }
+  - { label: "GitHub", icon: "github", detail: "github.com/Rukafuu", url: "https://github.com/Rukafuu" }
+  - { label: "SoundCloud", icon: "soundcloud", detail: "soundcloud.com/rukafuu", url: "https://soundcloud.com/rukafuu" }
