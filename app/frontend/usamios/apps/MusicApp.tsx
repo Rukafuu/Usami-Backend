@@ -133,8 +133,8 @@ export function MusicApp({ data }: { data: OsData }) {
             src={currentTrack.artworkUrl}
             alt={currentTrack.title}
             className="os-music-art"
-            width="112"
-            height="112"
+            width="88"
+            height="88"
           />
           <div className="os-music-info">
             <div className="os-music-badges">
@@ -245,7 +245,7 @@ export function MusicApp({ data }: { data: OsData }) {
             ref={iframeRef}
             title={`SoundCloud — ${currentTrack.title}`}
             width="100%"
-            height="120"
+            height="110"
             scrolling="no"
             frameBorder="no"
             allow="autoplay; encrypted-media"

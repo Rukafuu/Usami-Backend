@@ -261,7 +261,7 @@ export function MessengerApp({ data }: { data: OsData }) {
       <header className="os-msn-head">
         <div className="os-msn-profile">
           <div className="os-msn-avatar">
-            <img src="/boot-logo.svg" alt="" width="38" height="38" />
+            <img src="/brand/logo-64.png" alt="Usami" width="38" height="38" />
             <span className="os-msn-dot" aria-hidden="true" />
           </div>
           <div className="os-msn-meta">

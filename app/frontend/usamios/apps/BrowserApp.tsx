@@ -52,7 +52,7 @@ export function BrowserApp({ data }: { data: OsData }) {
         {page === "projects" && (
           <>
             <h2>{labels.projects}</h2>
-            <ul className="os-cards">
+            <ul className="os-cards is-projects">
               {projects.map((entry) => (
                 <li key={entry.id}>
                   <span className={`os-badge${entry.status === "live" ? " is-live" : ""}`}>
@@ -61,7 +61,7 @@ export function BrowserApp({ data }: { data: OsData }) {
                   <strong>{entry.filename}</strong>
                   <span>{entry.description}</span>
                   {entry.stack.length > 0 && (
-                    <span className="mono">{entry.stack.join(" · ")}</span>
+                    <span className="mono os-card-stack">{entry.stack.join(" · ")}</span>
                   )}
                   <button type="button" className="os-button" onClick={() => openInFiles(entry)}>
                     {data.ui.apps.browser_open_files}

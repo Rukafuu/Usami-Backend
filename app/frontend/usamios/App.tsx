@@ -91,15 +91,22 @@ export function App({ data, page }: Props) {
   if (mode !== "os") return null
 
   const titles = Object.fromEntries(APP_IDS.map((id) => [id, data.ui.apps[id] || FALLBACK_TITLES[id]])) as Record<AppId, string>
+  const normalizedData: OsData = {
+    ...data,
+    ui: {
+      ...data.ui,
+      apps: { ...data.ui.apps, ...titles },
+    },
+  }
   const toClassic = () => useShell.getState().setMode("classic")
   const Shell = isMobile ? MobileShell : DesktopShell
 
   return (
     <>
-      <Shell data={data} page={page} titles={titles} onClassic={toClassic} />
-      <UninstallDialog data={data} titles={titles} />
-      {celebrating && <Celebration data={data} onDone={() => useShell.getState().celebrate(false)} />}
-      {!booted && <Boot name={data.site.osName} lines={data.ui.shell.boot} skipLabel={data.ui.shell.boot_skip} onDone={() => setBooted(true)} />}
+      <Shell data={normalizedData} page={page} titles={titles} onClassic={toClassic} />
+      <UninstallDialog data={normalizedData} titles={titles} />
+      {celebrating && <Celebration data={normalizedData} onDone={() => useShell.getState().celebrate(false)} />}
+      {!booted && <Boot name={normalizedData.site.osName} lines={normalizedData.ui.shell.boot} skipLabel={normalizedData.ui.shell.boot_skip} onDone={() => setBooted(true)} />}
     </>
   )
 }
