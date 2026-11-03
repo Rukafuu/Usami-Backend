@@ -334,7 +334,7 @@ ja:
   contact_form:
     title: お見積り・お問い合わせ
     meta_title: お見積り依頼 · Usami
-    meta_description: ソフトウェア、デザインシステム、AIエージェントの開発依頼。24〜48営業時間以内に返信します。
+    meta_description: ソフトウェア、デザインシステム、AIエージェントの開発依頼。72時間以内に返信します。
     heading: 一緒に新しいプロジェクトを創りませんか？
     lead: アイデアや技術的なご要望をお聞かせください。Lucasが一件ずつ確認し、透明性のあるご提案をお届けします。
     errors_header: '入力内容をご確認ください:'
@@ -378,7 +378,7 @@ ja:
     direct_title: 直接のご連絡
     direct_intro: '以下の認証済みチャンネルから直接メッセージを送信することもできます:'
     promise_badge: 返答コミットメント
-    promise_text: すべての有効なご相談に24〜48営業時間以内に返信いたします。
+    promise_text: すべての有効なご相談に72時間以内に返信いたします。
     mobile_cta_aria: クイック連絡バー
     mobile_cta_text: プロジェクトのご相談はこちら
     mobile_cta_btn: お見積り依頼
@@ -392,7 +392,7 @@ ja:
     steps_title: 今後の流れ
     step1_title: 技術的な要件・範囲の確認
     step1_desc: 必要な技術構成、アーキテクチャ、納期の実現可能性を検証します。
-    step2_title: 24〜48営業時間以内にご連絡
+    step2_title: 72時間以内にご連絡
     step2_desc: メールまたはチャットにて、詳細な提案やお打ち合わせのご案内をお送りします。
     step3_title: 初回相談無料
     step3_desc: 事前の相談・お見積りは一切無料です。安心してお話しいただけます。

@@ -334,7 +334,7 @@ en:
   contact_form:
     title: Quote & Contact
     meta_title: Request a Quote · Usami
-    meta_description: Start a software, design system, or AI agents project with Usami. Response within 24-48 business hours.
+    meta_description: Start a software, design system, or AI agents project with Usami. Response within 72 hours.
     heading: Let's build something together
     lead: Tell us about your project, idea, or technical demand. Lucas reviews every inquiry personally and responds with a transparent proposal or next steps.
     errors_header: 'Please review the issues below:'
@@ -378,7 +378,7 @@ en:
     direct_title: Prefer direct channels?
     direct_intro: 'You can also reach out directly via verified channels below:'
     promise_badge: Response Guarantee
-    promise_text: All qualified project inquiries are answered within 24 to 48 business hours.
+    promise_text: All qualified project inquiries are answered within 72 hours.
     mobile_cta_aria: Quick contact bar
     mobile_cta_text: Have a project in mind?
     mobile_cta_btn: Get a Quote
@@ -392,7 +392,7 @@ en:
     steps_title: What happens next?
     step1_title: Technical scope evaluation
     step1_desc: We examine the required stack, architecture, and timeline feasibility.
-    step2_title: Reply within 24-48 business hours
+    step2_title: Reply within 72 hours
     step2_desc: You will receive a detailed message by email or chat with an estimate or alignment call link.
     step3_title: Zero pressure
     step3_desc: The initial conversation is 100% no-strings-attached to ensure our mutual fit.

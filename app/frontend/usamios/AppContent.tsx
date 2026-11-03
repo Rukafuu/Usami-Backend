@@ -7,6 +7,7 @@ import { FilesApp } from "./apps/FilesApp"
 import { GalleryApp } from "./apps/GalleryApp"
 import { MessengerApp } from "./apps/MessengerApp"
 import { MusicApp } from "./apps/MusicApp"
+import { QuoteApp } from "./apps/QuoteApp"
 import { SettingsApp } from "./apps/SettingsApp"
 import { TaskManagerApp } from "./apps/TaskManagerApp"
 import { TerminalApp } from "./apps/TerminalApp"
@@ -40,6 +41,8 @@ export function AppContent({ id, data, page }: Props) {
       return <TaskManagerApp data={data} />
     case "settings":
       return <SettingsApp data={data} alternates={page.alternates} />
+    case "quote":
+      return <QuoteApp data={data} />
     case "about":
       return <AboutApp data={data} />
   }

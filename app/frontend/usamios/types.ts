@@ -115,6 +115,7 @@ export type Ui = {
     gallery: string
     settings: string
     about: string
+    quote: string
     browser_pages: { company: string; projects: string; services: string; about_me: string }
     browser_open_files: string
     gallery_empty: string
@@ -278,6 +279,24 @@ export type Ui = {
   consent: { essential: string; all: string; privacy: string; cookies: string; current_essential: string; current_all: string; current_none: string; music_blocked: string; music_allow: string; music_open: string; assistant_note: string; about_title: string }
   eggs: { konami_title: string; konami_text: string; start_label: string; console_intro: string; console_contact: string }
   claude_pet: { name: string; label: string; asleep: string; toggle?: string; lines: string[] }
+  contact_form: {
+    heading: string
+    lead: string
+    fields: Record<"name" | "email" | "contact_handle" | "services" | "budget" | "timeline" | "details", string>
+    placeholders: Record<"name" | "email" | "contact_handle" | "details", string>
+    hints: Record<"contact_handle" | "services" | "budget" | "details", string>
+    services: Record<string, string>
+    budgets: Record<string, string>
+    timelines: Record<string, string>
+    submit: string
+    privacy_note: string
+    promise_text: string
+    app_sending: string
+    app_error_invalid: string
+    app_error_failed: string
+    app_again: string
+  }
+  thanks_page: { heading: string; lead: string }
 }
 
 export type OsData = {

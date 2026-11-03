@@ -334,7 +334,7 @@ es:
   contact_form:
     title: Presupuesto y Contacto
     meta_title: Solicitar Presupuesto · Usami
-    meta_description: Inicia un proyecto de software, design system o agentes de IA con Usami. Respuesta en 24-48h laborables.
+    meta_description: Inicia un proyecto de software, design system o agentes de IA con Usami. Respuesta en hasta 72 horas.
     heading: ¿Construimos algo juntos?
     lead: Cuéntanos sobre tu idea o demanda técnica. Lucas revisa cada solicitud personalmente y responde con una propuesta transparente.
     errors_header: 'Por favor revisa los errores a continuación:'
@@ -378,7 +378,7 @@ es:
     direct_title: ¿Prefieres hablar directo?
     direct_intro: 'También puedes iniciar una conversación directa en nuestros canales verificados:'
     promise_badge: Garantía de Respuesta
-    promise_text: Respondemos a todas las consultas en un plazo de 24 a 48 horas laborables.
+    promise_text: Respondemos a todas las consultas en un plazo de hasta 72 horas.
     mobile_cta_aria: Barra rápida de contacto
     mobile_cta_text: ¿Tienes un proyecto en mente?
     mobile_cta_btn: Pedir Presupuesto
@@ -392,7 +392,7 @@ es:
     steps_title: ¿Qué sucede ahora?
     step1_title: Evaluación técnica de alcance
     step1_desc: Analizamos la arquitectura, stack necesario y viabilidad del plazo.
-    step2_title: Respuesta en 24-48 horas laborables
+    step2_title: Respuesta en hasta 72 horas
     step2_desc: Recibirás un mensaje detallado por correo o WhatsApp con presupuesto o enlace de reunión.
     step3_title: Sin compromisos
     step3_desc: La conversación inicial es 100% abierta para asegurar que el proyecto sea un éxito mutuo.

@@ -334,7 +334,7 @@ pt:
   contact_form:
     title: Orçamento & Contato
     meta_title: Solicitar Orçamento · Usami
-    meta_description: Inicie um projeto de software, design system ou agentes de IA com a Usami. Resposta em até 24-48h úteis.
+    meta_description: Inicie um projeto de software, design system ou agentes de IA com a Usami. Resposta em até 72 horas.
     heading: Vamos construir algo juntos?
     lead: Conte sobre sua ideia, sistema ou demanda técnica. O Lucas analisa cada projeto pessoalmente e retorna com uma proposta transparente ou próximos passos.
     errors_header: 'Por favor, corrija os erros abaixo:'
@@ -378,7 +378,7 @@ pt:
     direct_title: Prefere falar diretamente?
     direct_intro: 'Você também pode iniciar uma conversa direta pelos canais verificados abaixo:'
     promise_badge: Compromisso de Resposta
-    promise_text: Respondo todas as solicitações qualificadas em até 24 a 48 horas úteis.
+    promise_text: Respondo todas as solicitações qualificadas em até 72 horas.
     mobile_cta_aria: Barra rápida de contato
     mobile_cta_text: Tem um projeto em mente?
     mobile_cta_btn: Pedir Orçamento
@@ -392,7 +392,7 @@ pt:
     steps_title: O que acontece agora?
     step1_title: Análise técnica do escopo
     step1_desc: Avaliamos as tecnologias necessárias, arquitetura e viabilidade do prazo.
-    step2_title: Retorno em 24-48 horas úteis
+    step2_title: Retorno em até 72 horas
     step2_desc: Você receberá uma resposta detalhada no seu e-mail ou WhatsApp com estimativa ou link de alinhamento.
     step3_title: Sem pressão
     step3_desc: A conversa inicial é 100% sem compromisso para garantir que o projeto seja um sucesso mútuo.

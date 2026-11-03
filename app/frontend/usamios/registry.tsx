@@ -17,6 +17,7 @@ export type AppId =
   | "taskmgr"
   | "settings"
   | "about"
+  | "quote"
 
 export type AppCategory = "main" | "system"
 
@@ -170,6 +171,18 @@ export const APPS: Record<AppId, AppDef> = {
         <circle cx="9.5" cy="8.5" r="2.2" />
         <circle cx="14.5" cy="15.5" r="2.2" fill="var(--surface, #211713)" />
         <circle cx="14.5" cy="15.5" r="2.2" />
+      </>
+    ),
+  },
+  quote: {
+    id: "quote", category: "main", size: { w: 720, h: 640 }, onDesktop: true, inDock: false,
+    icon: (
+      <>
+        <rect x="3" y="5" width="18" height="14" rx="3" fill="currentColor" fillOpacity="0.16" stroke="none" />
+        <rect x="3" y="5" width="18" height="14" rx="3" />
+        <path d="M3.8 7.2L12 13l8.2-5.8" />
+        <circle cx="18.5" cy="17.5" r="3.2" fill="var(--surface, #211713)" />
+        <path d="M18.5 15.9v3.2M16.9 17.5h3.2" />
       </>
     ),
   },

@@ -28,6 +28,7 @@ const FALLBACK_TITLES: Record<AppId, string> = {
   taskmgr: "Gerenciador de tarefas",
   settings: "Configurações",
   about: "Sobre o sistema",
+  quote: "Orçamento",
 }
 
 const bootStrings = (shell: OsData["ui"]["shell"]) => ({

@@ -1,0 +1,32 @@
+pt:
+  apps:
+    quote: Orçamento
+  contact_form:
+    app_sending: Enviando…
+    app_error_invalid: Confira os campos (nome, e-mail e uma descrição de pelo menos 10 caracteres) e tente de novo.
+    app_error_failed: Não consegui enviar agora. Escreva direto para
+    app_again: Enviar outro pedido
+en:
+  apps:
+    quote: Quote
+  contact_form:
+    app_sending: Sending…
+    app_error_invalid: Please check the fields (name, email and a description of at least 10 characters) and try again.
+    app_error_failed: I could not send it right now. Please write directly to
+    app_again: Send another request
+es:
+  apps:
+    quote: Presupuesto
+  contact_form:
+    app_sending: Enviando…
+    app_error_invalid: Revisa los campos (nombre, correo y una descripción de al menos 10 caracteres) e inténtalo de nuevo.
+    app_error_failed: No pude enviarlo ahora. Escribe directamente a
+    app_again: Enviar otra solicitud
+ja:
+  apps:
+    quote: お見積り
+  contact_form:
+    app_sending: 送信中…
+    app_error_invalid: 入力内容（お名前、メール、10文字以上の内容）をご確認の上、もう一度お試しください。
+    app_error_failed: '現在送信できません。次のアドレスへ直接ご連絡ください:'
+    app_again: 別の依頼を送る

@@ -1061,3 +1061,26 @@ body.is-dragging-win iframe { pointer-events: none; }
 .os-gal-nav.is-prev { left: 8px; }
 .os-gal-nav.is-next { right: 8px; }
 .os-gal-caption { margin: 0; color: var(--text); font-size: 0.875rem; max-width: 80ch; }
+/* Quote app: the /contato form, inside the emulated system */
+.os-quote { container: quote / inline-size; display: grid; gap: 16px; align-content: start; padding: 20px 22px 28px; min-width: 0; }
+.os-quote h2 { font: 400 1.5rem / 1.15 var(--serif); margin: 0 0 6px; color: var(--fg); }
+.os-quote header p { margin: 0; color: var(--mute); font-size: 0.875rem; }
+.os-quote label, .os-quote fieldset { display: grid; gap: 6px; min-width: 0; margin: 0; padding: 0; border: 0; }
+.os-quote label > span, .os-quote legend { font: 500 0.75rem var(--mono); letter-spacing: 0.06em; color: var(--accent); padding: 0; }
+.os-quote small { color: var(--mute); font-size: 0.75rem; }
+.os-quote input[type="text"], .os-quote input[type="email"], .os-quote textarea { width: 100%; padding: 9px 11px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface-2); color: var(--fg); font: 400 0.875rem var(--sans, inherit); }
+.os-quote textarea { resize: vertical; min-height: 110px; }
+.os-quote input:focus-visible, .os-quote textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.os-quote-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.os-quote-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.os-quote .os-quote-chip { display: inline-flex; align-items: center; gap: 0; position: relative; }
+.os-quote-chip input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; }
+.os-quote .os-quote-chip > span { font: 400 0.8125rem var(--sans, inherit); letter-spacing: normal; color: var(--fg); padding: 7px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface-2); }
+.os-quote .os-quote-chip input:checked + span { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, transparent); }
+.os-quote .os-quote-chip input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.os-quote-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.os-quote-error { margin: 0; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); color: var(--fg); background: var(--surface-2); }
+.os-quote-actions { display: grid; gap: 10px; justify-items: start; }
+.os-quote-actions .os-note { margin: 0; }
+.os-quote-done { align-content: center; justify-items: start; min-height: 240px; }
+@container quote (max-width: 520px) { .os-quote-row { grid-template-columns: 1fr; } }

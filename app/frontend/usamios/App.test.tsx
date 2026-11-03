@@ -920,3 +920,42 @@ describe("naming a group", () => {
     expect(grid.getByRole("button", { name: "Abrir o grupo Trabalho" })).toBeInTheDocument()
   })
 })
+describe("quote app", () => {
+  const fill = async () => {
+    await userEvent.dblClick(screen.getByRole("button", { name: "Orçamento" }))
+    const win = within(screen.getByRole("dialog", { name: "Orçamento" }))
+    await userEvent.type(win.getByLabelText(/Seu nome ou empresa/), "Ana")
+    await userEvent.type(win.getByLabelText(/E-mail de contato/), "ana@example.com")
+    await userEvent.type(win.getByLabelText(/Conte mais sobre o projeto/), "Preciso de um site novo para a loja.")
+    await userEvent.click(win.getByRole("checkbox", { name: "Aplicação Fullstack Completa" }))
+    await userEvent.click(win.getByRole("radio", { name: "R$ 5.000 a R$ 15.000" }))
+    return win
+  }
+
+  it("sends the request to the same endpoint as the /contato page and says thanks", async () => {
+    const fetchMock = vi.fn(async () => new Response(JSON.stringify({ ok: true }), { status: 200 }))
+    vi.stubGlobal("fetch", fetchMock)
+    renderOS()
+    const win = await fill()
+    await userEvent.click(win.getByRole("button", { name: /Enviar Solicitação/ }))
+    await waitFor(() => expect(win.getByText("Recebemos sua mensagem!")).toBeInTheDocument())
+    const [url, init] = fetchMock.mock.calls[0] as unknown as [string, RequestInit]
+    expect(url).toBe("/pt/contato")
+    expect((init.headers as Record<string, string>).Accept).toBe("application/json")
+    const body = init.body as FormData
+    expect(body.get("contact_request[email]")).toBe("ana@example.com")
+    expect(body.getAll("contact_request[services][]")).toEqual(["fullstack"])
+    expect(body.get("contact_request[budget]")).toBe("5k_to_15k")
+    vi.unstubAllGlobals()
+  })
+
+  it("tells the visitor when sending failed and keeps what was typed", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => new Response("{}", { status: 502 })))
+    renderOS()
+    const win = await fill()
+    await userEvent.click(win.getByRole("button", { name: /Enviar Solicitação/ }))
+    await waitFor(() => expect(win.getByRole("alert")).toHaveTextContent("Não consegui enviar agora"))
+    expect(win.getByLabelText(/Seu nome ou empresa/)).toHaveValue("Ana")
+    vi.unstubAllGlobals()
+  })
+})

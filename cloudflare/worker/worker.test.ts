@@ -273,6 +273,17 @@ describe("quote form", () => {
     expect(text).not.toContain("secret detail")
   })
 
+  it("answers the OS app in JSON when it asks for it", async () => {
+    const ok = (async () => new Response("{}")) as unknown as typeof fetch
+    const asJson = { Origin: ORIGIN, Accept: "application/json" }
+    const done = await handleContact(submit(valid, asJson), cenv(), "pt", ok)
+    expect(done.status).toBe(200)
+    expect(await done.json()).toEqual({ ok: true })
+    const bad = await handleContact(submit({ ...valid, email: "x" }, asJson), cenv(), "pt", ok)
+    expect(bad.status).toBe(422)
+    expect(await bad.json()).toEqual({ error: "invalid" })
+  })
+
   it("fails closed without a key or when the limiter says no", async () => {
     expect((await handleContact(submit(valid), cenv({ RESEND_API_KEY: "" }), "pt")).status).toBe(503)
     const busy = cenv({ LIMITER: { getByName: () => ({ take: async () => "minute" as const }) } })

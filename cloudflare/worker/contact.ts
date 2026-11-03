@@ -71,12 +71,15 @@ const MESSAGES: Record<Locale, { invalid: string; failed: string; back: string }
 
 const escapeHtml = (s: string) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!)
 
-function notice(locale: Locale, text: string, status: number): Response {
+/** The OS app posts with "Accept: application/json" and gets a status code it can show in its own window. */
+const wantsJson = (request: Request) => (request.headers.get("Accept") ?? "").includes("application/json")
+
+function notice(locale: Locale, text: string, status: number, json = false): Response {
+  if (json) return new Response(JSON.stringify({ error: status === 422 ? "invalid" : "failed" }), { status, headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } })
   const back = MESSAGES[locale].back
   const html = `<!doctype html><html lang="${locale}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Usami</title></head><body><main><p>${escapeHtml(text)}</p><p><a href="/${locale}/contato">${escapeHtml(back)}</a></p></main></body></html>`
   return new Response(html, { status, headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" } })
 }
-
 /**
  * POST /:locale/contato — the quote form (works as a plain form without JavaScript). Validates, rate-limits per visitor,
  * and sends the request to Lucas by email through Resend. Nothing is stored here.
@@ -85,17 +88,21 @@ export async function handleContact(request: Request, env: ContactEnv, locale: L
   if (!sameOrigin(request)) return new Response("Forbidden", { status: 403 })
   if (Number(request.headers.get("Content-Length") ?? 0) > MAX_BODY) return new Response("Payload Too Large", { status: 413 })
 
+  const json = wantsJson(request)
+  const fail = (text: string, status: number) => notice(locale, text, status, json)
   const form = await request.formData().catch(() => null)
-  if (!form) return notice(locale, MESSAGES[locale].invalid, 422)
+  if (!form) return fail(MESSAGES[locale].invalid, 422)
 
-  const thanks = new Response(null, { status: 303, headers: { Location: `/${locale}/obrigado`, "Cache-Control": "no-store" } })
+  const thanks = json
+    ? new Response(JSON.stringify({ ok: true }), { status: 200, headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } })
+    : new Response(null, { status: 303, headers: { Location: `/${locale}/obrigado`, "Cache-Control": "no-store" } })
   const parsed = parseQuote(form)
   if (parsed.spam) return thanks // bots get the same answer as people, and nothing is sent
-  if ("errors" in parsed) return notice(locale, MESSAGES[locale].invalid, 422)
+  if ("errors" in parsed) return fail(MESSAGES[locale].invalid, 422)
 
   const to = env.CONTACT_TO?.trim()
   const key = env.RESEND_API_KEY?.trim()
-  if (!to || !key) return notice(locale, `${MESSAGES[locale].failed} ${to ?? ""}`.trim(), 503)
+  if (!to || !key) return fail(`${MESSAGES[locale].failed} ${to ?? ""}`.trim(), 503)
 
   let verdict: Verdict
   try {
@@ -104,7 +111,7 @@ export async function handleContact(request: Request, env: ContactEnv, locale: L
   } catch {
     verdict = "day"
   }
-  if (verdict !== "ok") return notice(locale, `${MESSAGES[locale].failed} ${to}`, 429)
+  if (verdict !== "ok") return fail(`${MESSAGES[locale].failed} ${to}`, 429)
 
   try {
     const sent = await fetcher("https://api.resend.com/emails", {
@@ -113,9 +120,9 @@ export async function handleContact(request: Request, env: ContactEnv, locale: L
       body: JSON.stringify({ from: "Usami <onboarding@resend.dev>", to: [to], reply_to: parsed.quote.email, subject: subject(parsed.quote), text: emailText(parsed.quote, locale) }),
       signal: AbortSignal.timeout(15_000),
     })
-    if (!sent.ok) return notice(locale, `${MESSAGES[locale].failed} ${to}`, 502)
+    if (!sent.ok) return fail(`${MESSAGES[locale].failed} ${to}`, 502)
   } catch {
-    return notice(locale, `${MESSAGES[locale].failed} ${to}`, 502)
+    return fail(`${MESSAGES[locale].failed} ${to}`, 502)
   }
   return thanks
 }
