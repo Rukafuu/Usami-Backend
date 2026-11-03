@@ -1,0 +1,52 @@
+/* Personalisation layers, applied as data attributes on <html> by the Settings app.
+   Every colour pair here is checked by app/frontend/theme/contrast.test.ts (WCAG AA).
+
+   How accents work: main.css reads --accent-d (dark theme) and --accent-l (light theme).
+   An accent or a vision mode only has to set those two (plus the text colour used on top of them). */
+
+/* ---------- accent colours ---------- */
+:root[data-accent="rose"] { --accent-d: #f59ac4; --accent-on-d: #2a0d1c; --accent-l: #a62a62; --accent-on-l: #ffffff; }
+:root[data-accent="sage"] { --accent-d: #9fcaa6; --accent-on-d: #10200f; --accent-l: #3b6945; --accent-on-l: #ffffff; }
+:root[data-accent="slate"] { --accent-d: #93b7dd; --accent-on-d: #0d1a2a; --accent-l: #2b5a8c; --accent-on-l: #ffffff; }
+
+/* ---------- colour-vision modes (Okabe-Ito based) ---------- */
+/* Red-green (protanopia / deuteranopia): blue accent, orange for "danger". */
+:root[data-vision="redgreen"] { --accent-d: #6ec1f0; --accent-on-d: #07202f; --accent-l: #005a8e; --accent-on-l: #ffffff; --danger: #e69f00; --danger-on: #1a1200; }
+/* Blue-yellow (tritanopia): warm red-pink accent, dark red for "danger". */
+:root[data-vision="blueyellow"] { --accent-d: #ff9f90; --accent-on-d: #2b0b06; --accent-l: #b03323; --accent-on-l: #ffffff; --danger: #cc79a7; --danger-on: #1f0a15; }
+/* Colour-blind modes never rely on colour alone: links are underlined everywhere. */
+:root[data-vision="redgreen"] a, :root[data-vision="blueyellow"] a, :root[data-vision="contrast"] a { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+
+/* ---------- high contrast: own palette per theme ---------- */
+:root[data-vision="contrast"][data-theme="dark"] {
+  --bg: #000000; --surface: #0b0b0b; --surface-2: #1c1c1c; --surface-3: #2e2e2e;
+  --fg: #ffffff; --text: #ffffff; --mute: #e6e6e6; --dim: #d0d0d0;
+  --accent: #ffd84a; --on-accent: #000000; --gold: #ffd84a;
+  --line: rgba(255, 255, 255, 0.75); --line-2: rgba(255, 255, 255, 0.45);
+  --desk: #000000; --star: 255, 255, 255; --desk-fg: #ffffff; --desk-mute: #ffd84a;
+}
+:root[data-vision="contrast"][data-theme="light"] {
+  --bg: #ffffff; --surface: #ffffff; --surface-2: #ececec; --surface-3: #dcdcdc;
+  --fg: #000000; --text: #000000; --mute: #1a1a1a; --dim: #333333;
+  --accent: #0a3d91; --on-accent: #ffffff; --gold: #0a3d91;
+  --line: rgba(0, 0, 0, 0.8); --line-2: rgba(0, 0, 0, 0.5);
+  --desk: #ffffff; --star: 0, 0, 0; --desk-fg: #000000; --desk-mute: #0a3d91;
+}
+
+/* ---------- text size (scales every rem, so the classic pages follow too) ---------- */
+:root[data-text="small"] { --fs: 0.9; }
+:root[data-text="large"] { --fs: 1.15; }
+:root[data-text="xl"] { --fs: 1.3; }
+
+/* ---------- desktop icon size ---------- */
+:root[data-icons="small"] { --icon: 40px; }
+:root[data-icons="large"] { --icon: 68px; }
+
+/* ---------- motion: the manual "always reduce" switch mirrors prefers-reduced-motion ---------- */
+:root[data-motion="reduce"] *, :root[data-motion="reduce"] *::before, :root[data-motion="reduce"] *::after {
+  animation: none !important; transition: none !important; scroll-behavior: auto !important;
+}
+
+/* ---------- glass effects off: solid surfaces, no blur ---------- */
+:root[data-glass="off"] * { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+:root[data-glass="off"] .os-taskbar, :root[data-glass="off"] .os-dock, :root[data-glass="off"] .os-phone-dock, :root[data-glass="off"] .bar { background: var(--surface); }

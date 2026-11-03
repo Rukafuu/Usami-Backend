@@ -1,0 +1,8 @@
+import "@fontsource-variable/fraunces"
+import "@fontsource-variable/geist"
+import "@fontsource-variable/jetbrains-mono"
+import "@fontsource/zen-kaku-gothic-new/400.css"
+import "@fontsource/zen-kaku-gothic-new/500.css"
+import "@fontsource/shippori-mincho/500.css"
+import "../styles/main.css"
+import "../styles/themes.css"
