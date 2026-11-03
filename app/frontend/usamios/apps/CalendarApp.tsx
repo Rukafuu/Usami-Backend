@@ -1,4 +1,6 @@
 import { useMemo, useState } from "react"
+import { fill } from "../format"
+import { prefersReducedMotion } from "../shell"
 import type { OsData } from "../types"
 
 type CalEvent = {
@@ -7,6 +9,8 @@ type CalEvent = {
   source?: string
   url?: string | null
   kind: "milestone" | "egg"
+  /** The founder's birthday: shows the candle. */
+  birthday?: boolean
 }
 
 const pad = (n: number) => String(n).padStart(2, "0")
@@ -60,11 +64,21 @@ export function CalendarApp({ data }: { data: OsData }) {
     "01-01": t.calendar_egg_0101,
   }
 
+  // The founder's birthday (from site.yml) is an egg on that day of every year, with his age that year.
+  const birthday = data.site.founderBirthday
+  const [blown, setBlown] = useState(false)
+
   const eventsForDate = (iso: string): CalEvent[] => {
     const found = milestones.filter((m) => m.date === iso)
     const mmdd = iso.slice(5)
+    const events = [...found]
     const egg = eggMap[mmdd]
-    return egg ? [...found, { date: iso, title: egg, kind: "egg" }] : found
+    if (egg) events.push({ date: iso, title: egg, kind: "egg" })
+    if (birthday && mmdd === birthday.slice(5)) {
+      const age = Number(iso.slice(0, 4)) - Number(birthday.slice(0, 4))
+      if (age >= 0) events.push({ date: iso, title: fill(t.calendar_egg_0307, { age: String(age) }), kind: "egg", birthday: true })
+    }
+    return events
   }
 
   const monthTitle = new Intl.DateTimeFormat(data.locale, { month: "long", year: "numeric", timeZone: "UTC" }).format(
@@ -146,14 +160,15 @@ export function CalendarApp({ data }: { data: OsData }) {
             const hasMilestone = dayEvents.some((e) => e.kind === "milestone")
             const hasEgg = dayEvents.some((e) => e.kind === "egg")
             const isSelected = iso === selectedDate
+            const isBirthday = dayEvents.some((e) => e.birthday)
             return (
               <button
                 key={iso}
                 type="button"
                 aria-label={iso}
                 aria-pressed={isSelected}
-                className={`os-cal-day${isSelected ? " is-selected" : ""}${hasMilestone ? " has-milestone" : ""}${hasEgg ? " has-egg" : ""}`}
-                onClick={() => setSelectedDate(iso)}
+                className={`os-cal-day${isSelected ? " is-selected" : ""}${hasMilestone ? " has-milestone" : ""}${hasEgg ? " has-egg" : ""}${isBirthday ? " is-birthday" : ""}`}
+                onClick={() => { setSelectedDate(iso); setBlown(false) }}
               >
                 <span>{day}</span>
                 {(hasMilestone || hasEgg) && (
@@ -181,6 +196,28 @@ export function CalendarApp({ data }: { data: OsData }) {
                 <li key={`${ev.date}-${i}`} className={ev.kind === "egg" ? "is-egg" : undefined}>
                   {ev.kind === "egg" && <span className="os-badge">{t.calendar_egg_badge}</span>}
                   <strong>{ev.title}</strong>
+                  {ev.birthday && (
+                    <div className="os-cal-candle">
+                      {blown ? (
+                        <p className="os-cal-wish" role="status">
+                          {t.calendar_candle_done}
+                          {!prefersReducedMotion() && (
+                            <span className="os-confetti" aria-hidden="true">
+                              {Array.from({ length: 18 }, (_, n) => <i key={n} style={{ ["--n" as string]: n }} />)}
+                            </span>
+                          )}
+                        </p>
+                      ) : (
+                        <button type="button" className="os-button" onClick={() => setBlown(true)}>
+                          <svg viewBox="0 0 24 24" aria-hidden="true" width="14" height="14" style={{ marginRight: 6, verticalAlign: "-2px" }}>
+                            <path d="M12 3c1.8 2.2 2.2 3.8 0 5.5-2.2-1.7-1.8-3.3 0-5.5z" fill="currentColor" />
+                            <rect x="9" y="10" width="6" height="10" rx="1.5" fill="currentColor" fillOpacity="0.22" stroke="currentColor" strokeWidth="1.6" />
+                          </svg>
+                          {t.calendar_candle}
+                        </button>
+                      )}
+                    </div>
+                  )}
                   {ev.source && (
                     <span className="mono">
                       {ev.url ? (

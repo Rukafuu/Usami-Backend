@@ -19,15 +19,26 @@ const formatMs = (ms: number) => {
 
 const BARS = 20
 
-const CURATED_MIXES = [
+type MixIconKind = "dj" | "vinyl" | "sparkle" | "synth"
+
+const CURATED_MIXES: readonly {
+  id: string
+  title: string
+  subtitle: string
+  badge: string
+  accent: string
+  icon: MixIconKind
+  filter: ArtistId
+  trackId: string
+}[] = [
   {
     id: "mix-dj",
     title: "DJ Usami",
     subtitle: "Click to start listening",
     badge: "AI MIX",
     accent: "is-dj",
-    icon: "◉",
-    filter: "all" as ArtistId,
+    icon: "dj",
+    filter: "all",
     trackId: "rukafuu-sissy",
   },
   {
@@ -36,8 +47,8 @@ const CURATED_MIXES = [
     subtitle: "FL Studio · Bass & ID",
     badge: "RESKYUME",
     accent: "is-warm",
-    icon: "♪",
-    filter: "rukafuu" as ArtistId,
+    icon: "vinyl",
+    filter: "rukafuu",
     trackId: "rukafuu-losemyid",
   },
   {
@@ -46,8 +57,8 @@ const CURATED_MIXES = [
     subtitle: "Vocal & Pop Autoral",
     badge: "LIRA",
     accent: "is-rose",
-    icon: "✦",
-    filter: "lira" as ArtistId,
+    icon: "sparkle",
+    filter: "lira",
     trackId: "lira-chip-de-ouro",
   },
   {
@@ -56,15 +67,210 @@ const CURATED_MIXES = [
     subtitle: "Synthwave & Electronic",
     badge: "SYNTH",
     accent: "is-gold",
-    icon: "◈",
-    filter: "lira" as ArtistId,
+    icon: "synth",
+    filter: "lira",
     trackId: "lira-silicon-sins",
   },
-] as const
+]
+
+type MusicIconName =
+  | "chevron-left"
+  | "chevron-right"
+  | "home"
+  | "search"
+  | "close"
+  | "library"
+  | "dj"
+  | "vinyl"
+  | "sparkle"
+  | "synth"
+  | "computer"
+  | "speaker-on"
+  | "speaker-off"
+  | "lock"
+  | "heart-filled"
+  | "heart-outline"
+  | "shuffle"
+  | "prev"
+  | "next"
+  | "play"
+  | "pause"
+  | "repeat"
+  | "eq"
+
+function MusicIcon({ name, className = "os-music-svg" }: { name: MusicIconName; className?: string }) {
+  switch (name) {
+    case "chevron-left":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M14.5 6.5L9 12l5.5 5.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    case "chevron-right":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M9.5 6.5L15 12l-5.5 5.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    case "home":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M4.5 10.8L12 4l7.5 6.8v8.2a1.5 1.5 0 01-1.5 1.5H6a1.5 1.5 0 01-1.5-1.5v-8.2z" fill="currentColor" fillOpacity="0.18" />
+          <path d="M4.5 10.8L12 4l7.5 6.8v8.2a1.5 1.5 0 01-1.5 1.5h-3.8v-5.2a2.2 2.2 0 00-4.4 0v5.2H6a1.5 1.5 0 01-1.5-1.5v-8.2z" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    case "search":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <circle cx="11" cy="11" r="6.5" fill="currentColor" fillOpacity="0.14" />
+          <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" strokeWidth="1.65" />
+          <path d="M8.8 8.6a3.2 3.2 0 014.2 0" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" opacity="0.6" />
+          <path d="M16 16l4.2 4.2" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        </svg>
+      )
+    case "close":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M7.5 7.5l9 9M16.5 7.5l-9 9" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+        </svg>
+      )
+    case "library":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <rect x="4" y="4.5" width="3.2" height="15" rx="1.2" fill="currentColor" fillOpacity="0.25" stroke="currentColor" strokeWidth="1.5" />
+          <rect x="9.4" y="4.5" width="3.2" height="15" rx="1.2" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M15.2 5.2l4.4 13.6a1.1 1.1 0 01-.7 1.4l-1.1.35a1.1 1.1 0 01-1.4-.7L12 6.2a1.1 1.1 0 01.7-1.4l1.1-.35a1.1 1.1 0 011.4.75z" fill="currentColor" fillOpacity="0.22" stroke="currentColor" strokeWidth="1.5" />
+        </svg>
+      )
+    case "dj":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <circle cx="12" cy="12" r="8.5" fill="currentColor" fillOpacity="0.18" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M7.8 9.2a5.2 5.2 0 016.8-1.4M16.2 14.8a5.2 5.2 0 01-6.8 1.4" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity="0.8" />
+          <circle cx="12" cy="12" r="2.4" fill="currentColor" />
+        </svg>
+      )
+    case "vinyl":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <circle cx="10.5" cy="13.5" r="6.8" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1.5" />
+          <circle cx="10.5" cy="13.5" r="2" fill="currentColor" />
+          <path d="M15.8 14.2V4.5l4.4-1v2.8l-4.4 1" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="14.1" cy="14.8" r="1.9" fill="currentColor" />
+        </svg>
+      )
+    case "sparkle":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M11.5 3.5c.6 4.1 2.9 6.4 7 7-4.1.6-6.4 2.9-7 7-.6-4.1-2.9-6.4-7-7 4.1-.6 6.4-2.9 7-7z" fill="currentColor" fillOpacity="0.26" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+          <path d="M18.2 15.2c.25 1.6 1.1 2.45 2.7 2.7-1.6.25-2.45 1.1-2.7 2.7-.25-1.6-1.1-2.45-2.7-2.7 1.6-.25 2.45-1.1 2.7-2.7z" fill="currentColor" />
+        </svg>
+      )
+    case "synth":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M12 3.2L20.8 12 12 20.8 3.2 12 12 3.2z" fill="currentColor" fillOpacity="0.18" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+          <path d="M6.8 12h2.4l1.5-3.2 2.4 6.4 1.6-3.2h2.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    case "computer":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <rect x="3" y="4" width="18" height="12.5" rx="2.2" fill="currentColor" fillOpacity="0.18" stroke="currentColor" strokeWidth="1.6" />
+          <path d="M8 20h8M12 16.5V20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          <circle cx="12" cy="14.2" r="0.8" fill="currentColor" />
+        </svg>
+      )
+    case "speaker-on":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M4.5 9.5h3.2L12.5 5v14l-4.8-4.5H4.5A1.5 1.5 0 013 13v-2a1.5 1.5 0 011.5-1.5z" fill="currentColor" fillOpacity="0.22" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+          <path d="M16 9a4.5 4.5 0 010 6M18.8 6.5a8 8 0 010 11" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        </svg>
+      )
+    case "speaker-off":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M4.5 9.5h3.2L12.5 5v14l-4.8-4.5H4.5A1.5 1.5 0 013 13v-2a1.5 1.5 0 011.5-1.5z" fill="currentColor" fillOpacity="0.16" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+          <path d="M16.2 9.8l4.4 4.4M20.6 9.8l-4.4 4.4" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        </svg>
+      )
+    case "lock":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <rect x="5" y="10.5" width="14" height="10" rx="2.4" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1.6" />
+          <path d="M8.2 10.5V7.8a3.8 3.8 0 017.6 0v2.7" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          <circle cx="12" cy="15.5" r="1.3" fill="currentColor" />
+        </svg>
+      )
+    case "heart-filled":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M12 20.4l-1.4-1.27C5.4 14.4 2.2 11.5 2.2 7.8 2.2 4.8 4.5 2.5 7.5 2.5c1.74 0 3.41.81 4.5 2.09A5.98 5.98 0 0116.5 2.5c3 0 5.3 2.3 5.3 5.3 0 3.7-3.2 6.6-8.4 11.34L12 20.4z" fill="currentColor" />
+        </svg>
+      )
+    case "heart-outline":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M12 20.2l-1.35-1.22C5.6 14.4 2.5 11.6 2.5 7.9 2.5 5 4.7 2.8 7.6 2.8c1.68 0 3.3.78 4.4 2.02A5.78 5.78 0 0116.4 2.8c2.9 0 5.1 2.2 5.1 5.1 0 3.7-3.1 6.5-8.15 11.08L12 20.2z" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="1.65" strokeLinejoin="round" />
+        </svg>
+      )
+    case "shuffle":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M16.5 4.5h3.5V8M4 18.5l6.2-6.2M14.2 9.8L20 4.5M16.5 19.5H20V16M4 5.5l16 14" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    case "prev":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M6 6v12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <path d="M18 6.2v11.6a.8.8 0 01-1.26.65L8.4 12.65a.8.8 0 010-1.3l8.34-5.8A.8.8 0 0118 6.2z" fill="currentColor" />
+        </svg>
+      )
+    case "next":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M18 6v12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <path d="M6 6.2v11.6a.8.8 0 001.26.65l8.34-5.8a.8.8 0 000-1.3L7.26 5.55A.8.8 0 006 6.2z" fill="currentColor" />
+        </svg>
+      )
+    case "play":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M7.5 5.4v13.2a.9.9 0 001.38.76l10.4-6.6a.9.9 0 000-1.52L8.88 4.64A.9.9 0 007.5 5.4z" fill="currentColor" />
+        </svg>
+      )
+    case "pause":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <rect x="6.5" y="5" width="4" height="14" rx="1.3" fill="currentColor" />
+          <rect x="13.5" y="5" width="4" height="14" rx="1.3" fill="currentColor" />
+        </svg>
+      )
+    case "repeat":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <path d="M17 3.5l3 3-3 3" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M4 11V9a2.5 2.5 0 012.5-2.5H20" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" />
+          <path d="M7 20.5l-3-3 3-3" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M20 13v2a2.5 2.5 0 01-2.5 2.5H4" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" />
+        </svg>
+      )
+    case "eq":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+          <rect x="4.5" y="10" width="3" height="9" rx="1.2" fill="currentColor" />
+          <rect x="10.5" y="5" width="3" height="14" rx="1.2" fill="currentColor" />
+          <rect x="16.5" y="8" width="3" height="11" rx="1.2" fill="currentColor" />
+        </svg>
+      )
+  }
+}
 
 /**
  * Usami Music — Spotify Desktop-inspired SoundCloud player for Lucas's own productions
- * (Reskyume @ soundcloud.com/rukafuu & Amarynth Lira @ soundcloud.com/amarynth-lira).
+ * (Reskyume @ soundcloud.com/rukafuu/sets/my-tracks & Amarynth Lira @ soundcloud.com/amarynth-lira).
  */
 export function MusicApp({ data }: { data: OsData }) {
   const t = data.ui.apps
@@ -205,6 +411,7 @@ export function MusicApp({ data }: { data: OsData }) {
   }
 
   const reduced = prefersReducedMotion()
+  const isSilent = muted || volume === 0
 
   return (
     <div className="os-music">
@@ -218,7 +425,7 @@ export function MusicApp({ data }: { data: OsData }) {
             title={t.music_prev || "Faixa anterior"}
             aria-label="Voltar faixa"
           >
-            ‹
+            <MusicIcon name="chevron-left" />
           </button>
           <button
             type="button"
@@ -227,7 +434,7 @@ export function MusicApp({ data }: { data: OsData }) {
             title={t.music_next || "Próxima faixa"}
             aria-label="Avançar faixa"
           >
-            ›
+            <MusicIcon name="chevron-right" />
           </button>
         </div>
 
@@ -242,10 +449,12 @@ export function MusicApp({ data }: { data: OsData }) {
             aria-label="Início da biblioteca"
             title="Início"
           >
-            ⌂
+            <MusicIcon name="home" />
           </button>
           <label className="os-music-search">
-            <span className="os-music-search-ico" aria-hidden="true">⌕</span>
+            <span className="os-music-search-ico" aria-hidden="true">
+              <MusicIcon name="search" />
+            </span>
             <input
               type="search"
               value={query}
@@ -260,7 +469,7 @@ export function MusicApp({ data }: { data: OsData }) {
                 onClick={() => setQuery("")}
                 aria-label="Limpar busca"
               >
-                ×
+                <MusicIcon name="close" />
               </button>
             )}
           </label>
@@ -286,9 +495,13 @@ export function MusicApp({ data }: { data: OsData }) {
         <aside className="os-music-playlist" aria-label={t.music_playlist || "Playlist autoral"}>
           <header className="os-music-pl-head">
             <div className="os-music-lib-title">
-              <span className="os-music-lib-ico" aria-hidden="true">|||</span>
+              <span className="os-music-lib-ico" aria-hidden="true">
+                <MusicIcon name="library" />
+              </span>
               <strong>Sua Biblioteca</strong>
-              <span className="os-music-lib-count mono">{t.music_playlist || "Playlist autoral"} ({playlist.length})</span>
+              <span className="os-music-lib-count mono">
+                {t.music_playlist || "Playlist autoral"} ({playlist.length})
+              </span>
             </div>
             <div className="os-music-filters" role="tablist">
               <button
@@ -333,11 +546,11 @@ export function MusicApp({ data }: { data: OsData }) {
                         <img src={tr.artworkUrl} alt="" width="40" height="40" loading="lazy" />
                       ) : (
                         <span className={`os-music-thumb-fallback is-${tr.artistId}`}>
-                          {tr.artistId === "rukafuu" ? "R" : "L"}
+                          <MusicIcon name={tr.artistId === "rukafuu" ? "vinyl" : "sparkle"} />
                         </span>
                       )}
                       <span className="os-music-idx mono">
-                        {isCurrent && playing ? "♫" : String(idx + 1).padStart(2, "0")}
+                        {String(idx + 1).padStart(2, "0")}
                       </span>
                     </span>
                     <span className="os-music-tr-body">
@@ -346,7 +559,7 @@ export function MusicApp({ data }: { data: OsData }) {
                     </span>
                     {isCurrent && (
                       <span className="os-music-active-speaker" aria-hidden="true">
-                        {playing ? "🔊" : "♪"}
+                        <MusicIcon name={playing ? "speaker-on" : "eq"} />
                       </span>
                     )}
                   </button>
@@ -370,14 +583,14 @@ export function MusicApp({ data }: { data: OsData }) {
                   onClick={() => activateMix(mix.filter, mix.trackId)}
                 >
                   <span className="os-music-quickart" aria-hidden="true">
-                    {mix.icon}
+                    <MusicIcon name={mix.icon} />
                   </span>
                   <span className="os-music-quickmeta">
                     <strong>{mix.title}</strong>
                     <small>{mix.subtitle}</small>
                   </span>
                   <span className="os-music-quickplay" aria-hidden="true">
-                    {isMixActive && playing ? "ılı" : "▶"}
+                    <MusicIcon name={isMixActive && playing ? "eq" : "play"} />
                   </span>
                 </button>
               )
@@ -397,7 +610,9 @@ export function MusicApp({ data }: { data: OsData }) {
                   height="92"
                 />
               ) : (
-                <span className="os-music-art os-music-art--empty" aria-hidden="true">♪</span>
+                <span className="os-music-art os-music-art--empty" aria-hidden="true">
+                  <MusicIcon name="vinyl" />
+                </span>
               )}
               <div className="os-music-info">
                 <div className="os-music-badges">
@@ -499,7 +714,9 @@ export function MusicApp({ data }: { data: OsData }) {
 
           <div className="os-music-device-card is-active">
             <div className="os-music-device-row">
-              <span className="os-music-device-ico" aria-hidden="true">💻</span>
+              <span className="os-music-device-ico" aria-hidden="true">
+                <MusicIcon name="computer" />
+              </span>
               <div>
                 <strong>Este computador</strong>
                 <small>Fuwarch PipeWire · SoundCloud API</small>
@@ -559,7 +776,9 @@ export function MusicApp({ data }: { data: OsData }) {
               height="52"
             />
           ) : (
-            <span className="os-music-now-art os-music-art--empty" aria-hidden="true">♪</span>
+            <span className="os-music-now-art os-music-art--empty" aria-hidden="true">
+              <MusicIcon name="vinyl" />
+            </span>
           )}
           <div className="os-music-now-text">
             <strong>{currentTrack.title}</strong>
@@ -572,7 +791,7 @@ export function MusicApp({ data }: { data: OsData }) {
             aria-label={isLiked ? "Remover dos favoritos" : "Salvar nos favoritos"}
             title={isLiked ? "Salvo nas Músicas Curtidas" : "Salvar nas Músicas Curtidas"}
           >
-            {isLiked ? "♥" : "♡"}
+            <MusicIcon name={isLiked ? "heart-filled" : "heart-outline"} />
           </button>
         </div>
 
@@ -587,7 +806,7 @@ export function MusicApp({ data }: { data: OsData }) {
               onClick={() => setShuffle((s) => !s)}
               title="Ordem aleatória"
             >
-              ⇄
+              <MusicIcon name="shuffle" />
             </button>
             <button
               type="button"
@@ -595,7 +814,7 @@ export function MusicApp({ data }: { data: OsData }) {
               aria-label={t.music_prev || "Faixa anterior"}
               onClick={() => stepTrack(-1)}
             >
-              ⏮
+              <MusicIcon name="prev" />
             </button>
             <button
               type="button"
@@ -604,7 +823,7 @@ export function MusicApp({ data }: { data: OsData }) {
               onClick={togglePlay}
               disabled={!allowed}
             >
-              {playing ? "⏸" : "▶"}
+              <MusicIcon name={playing ? "pause" : "play"} />
             </button>
             <button
               type="button"
@@ -612,7 +831,7 @@ export function MusicApp({ data }: { data: OsData }) {
               aria-label={t.music_next || "Próxima faixa"}
               onClick={() => stepTrack(1)}
             >
-              ⏭
+              <MusicIcon name="next" />
             </button>
             <button
               type="button"
@@ -622,7 +841,7 @@ export function MusicApp({ data }: { data: OsData }) {
               onClick={() => setRepeat((r) => !r)}
               title="Repetir"
             >
-              ↻
+              <MusicIcon name="repeat" />
             </button>
           </div>
 
@@ -648,7 +867,7 @@ export function MusicApp({ data }: { data: OsData }) {
             aria-label={muted ? "Ativar som" : "Silenciar"}
             onClick={toggleMute}
           >
-            {muted || volume === 0 ? "🔇" : "🔊"}
+            <MusicIcon name={isSilent ? "speaker-off" : "speaker-on"} />
           </button>
           <input
             type="range"
@@ -664,10 +883,13 @@ export function MusicApp({ data }: { data: OsData }) {
 
       {/* Bottom Spotify-style Active Device Status Strip */}
       <div className={`os-music-devicebar${allowed ? " is-ready" : ""}`}>
-        <span>
-          {allowed
-            ? `🔊 Tocando em Fuwarch Linux · ${currentTrack.artist} — ${currentTrack.title}`
-            : "🔒 SoundCloud em espera · Clique em Permitir acima para ativar o áudio"}
+        <span className="os-music-devicebar-status">
+          <MusicIcon name={allowed ? "speaker-on" : "lock"} />
+          <span>
+            {allowed
+              ? `Tocando em Fuwarch Linux · ${currentTrack.artist} — ${currentTrack.title}`
+              : "SoundCloud em espera · Clique em Permitir acima para ativar o áudio"}
+          </span>
         </span>
         <span className="mono">SoundCloud Direct · @rukafuu & @amarynth-lira</span>
       </div>

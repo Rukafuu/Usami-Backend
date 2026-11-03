@@ -158,7 +158,7 @@ export function MessengerApp({ data }: { data: OsData }) {
       sender: "usami",
       text:
         t.messenger_welcome ||
-        "Olá! Eu sou a Usami, guia do Fuwarch Linux ☕ Posso te apresentar a empresa, os projetos reais (Hane, LiraVtuber, Usami, Énois e Laya), a stack técnica ou abrir qualquer ferramenta para você.",
+        "Olá! Eu sou a Usami, guia do Fuwarch Linux. Posso te apresentar a empresa, os projetos reais (Hane, LiraVtuber, Usami, Énois e Laya), a stack técnica ou abrir qualquer ferramenta para você.",
       actions: [
         { kind: "app", appId: "code", label: "Abrir Usami Code Studio" },
         { kind: "app", appId: "files", label: "Explorar Arquivos" },
@@ -235,14 +235,14 @@ export function MessengerApp({ data }: { data: OsData }) {
       {
         id: `sys-${Date.now()}`,
         sender: "system",
-        text: t.messenger_nudge_sent || "〰 Você enviou um chamado de atenção (Nudge) para a Usami!",
+        text: t.messenger_nudge_sent || "Você enviou um chamado de atenção (Nudge) para a Usami!",
       },
       {
         id: `a-${Date.now() + 1}`,
         sender: "usami",
         text:
           t.messenger_nudge_reply ||
-          "Ei! Minha xícara de café quase virou aqui no desktop! ☕✨ (Conquista secreta desbloqueada!)",
+          "Ei! Minha xícara de café quase virou aqui no desktop! (Conquista secreta desbloqueada!)",
       },
     ])
   }
@@ -270,12 +270,16 @@ export function MessengerApp({ data }: { data: OsData }) {
               <span className="os-badge is-live">{t.messenger_status || "Online · Guia do Sistema"}</span>
             </div>
             <p className="mono os-msn-sub">
-              {t.messenger_substatus || "explorando repositórios e preparando café ☕ · guia local verificada"}
+              {t.messenger_substatus || "explorando repositórios e preparando café · guia local verificada"}
             </p>
           </div>
         </div>
         <button type="button" className="os-button mono os-msn-nudge" onClick={sendNudge}>
-          〰 {t.messenger_nudge || "Chamar atenção"}
+          <svg viewBox="0 0 24 24" aria-hidden="true" width="14" height="14" style={{ marginRight: 6, verticalAlign: "-2px" }}>
+            <path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+            <path d="M13.73 21a2 2 0 01-3.46 0M4 4l2 2M20 4l-2 2" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          </svg>
+          {t.messenger_nudge || "Chamar atenção"}
         </button>
       </header>
 
@@ -334,6 +338,7 @@ export function MessengerApp({ data }: { data: OsData }) {
           {t.messenger_send || "Enviar"}
         </button>
       </form>
+        <p className="os-note os-msn-note">{data.ui.consent.assistant_note} <a href={`/${data.locale}/privacidade`} target="_blank" rel="noopener">{data.ui.consent.privacy} ↗</a></p>
     </div>
   )
 }

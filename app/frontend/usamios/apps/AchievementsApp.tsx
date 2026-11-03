@@ -109,7 +109,16 @@ export function AchievementsApp({ data }: { data: OsData }) {
           return (
             <li key={id} className={`os-ach-card${isUnlocked ? " is-unlocked" : ""}`}>
               <div className="os-ach-icon" aria-hidden="true">
-                {isUnlocked ? "★" : "☆"}
+                <svg viewBox="0 0 24 24" width="18" height="18">
+                  <path
+                    d="M12 2.8l2.6 5.6 6.1.75-4.5 4.2 1.15 6.05L12 16.4l-5.35 3 1.15-6.05-4.5-4.2 6.1-.75L12 2.8z"
+                    fill="currentColor"
+                    fillOpacity={isUnlocked ? "0.32" : "0.08"}
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </div>
               <div className="os-ach-body">
                 <div className="os-ach-row">
