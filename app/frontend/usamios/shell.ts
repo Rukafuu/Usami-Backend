@@ -6,7 +6,7 @@ import type { AppId, Slot } from "./registry"
 
 export type Theme = "light" | "dark"
 export type Mode = "os" | "classic"
-export type Wallpaper = "fuwarch" | "chess" | "auto" | "coffee" | "cream" | "caramel"
+export type Wallpaper = "fuwarch" | "chess" | "cafe" | "melody" | "stargaze" | "auto" | "coffee" | "cream" | "caramel"
 export type Vision = "none" | "redgreen" | "blueyellow" | "contrast"
 export type Accent = "caramel" | "rose" | "sage" | "slate"
 export type TextSize = "small" | "default" | "large" | "xl"
@@ -20,9 +20,12 @@ export type SettingsCategory = "appearance" | "wallpaper" | "apps" | "layout" | 
 /** `src` is the landscape version (desktop and tablets); `portrait`, when present, is used on tall screens such as phones. */
 export const WALLPAPER_IMAGES: Partial<Record<Wallpaper, { src: string; thumb: string; portrait?: string }>> = {
   fuwarch: { src: "/wallpapers/fuwarch-hug-landscape.jpg", thumb: "/wallpapers/fuwarch-hug-landscape-thumb.jpg", portrait: "/wallpapers/fuwarch-hug.jpg" },
-  chess: { src: "/wallpapers/chess-night.jpg", thumb: "/wallpapers/chess-night-thumb.jpg" },
+  chess: { src: "/wallpapers/chess-night.jpg", thumb: "/wallpapers/chess-night-thumb.jpg", portrait: "/wallpapers/chess-night-portrait.jpg" },
+  cafe: { src: "/wallpapers/cafe-night-landscape.jpg", thumb: "/wallpapers/cafe-night-landscape-thumb.jpg", portrait: "/wallpapers/cafe-night-portrait.jpg" },
+  melody: { src: "/wallpapers/melody-studio-landscape.jpg", thumb: "/wallpapers/melody-studio-landscape-thumb.jpg", portrait: "/wallpapers/melody-studio-portrait.jpg" },
+  stargaze: { src: "/wallpapers/starlit-window-landscape.jpg", thumb: "/wallpapers/starlit-window-landscape-thumb.jpg", portrait: "/wallpapers/starlit-window-portrait.jpg" },
 }
-export const WALLPAPERS: Wallpaper[] = ["fuwarch", "chess", "auto", "coffee", "cream", "caramel"]
+export const WALLPAPERS: Wallpaper[] = ["fuwarch", "chess", "cafe", "melody", "stargaze", "auto", "coffee", "cream", "caramel"]
 export const VISIONS: Vision[] = ["none", "redgreen", "blueyellow", "contrast"]
 export const ACCENTS: Accent[] = ["caramel", "rose", "sage", "slate"]
 export const TEXT_SIZES: TextSize[] = ["small", "default", "large", "xl"]
