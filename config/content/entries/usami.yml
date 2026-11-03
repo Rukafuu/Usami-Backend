@@ -34,4 +34,7 @@ planned:
     - "Memory fact consolidation"
     - "Final character and logo"
 sources:
+  - { label: "Rukafuu/Usami-Backend", url: "https://github.com/Rukafuu/Usami-Backend" }
+  - { label: "Rukafuu/Usami-Frontend", url: "https://github.com/Rukafuu/Usami-Frontend" }
+  - { label: "Rukafuu/Usami-Design-System", url: "https://github.com/Rukafuu/Usami-Design-System" }
   - { label: "UsamiVtuber/Usami (showcase)", url: "https://github.com/UsamiVtuber/Usami" }

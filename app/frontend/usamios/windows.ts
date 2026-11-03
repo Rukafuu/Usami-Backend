@@ -12,6 +12,39 @@ const MARGIN = 12
 const MIN = { w: 320, h: 220 }
 const CASCADE = 28
 
+/** Apps with a header, a footer and a scrolling middle need room for the middle: below this they are unusable. */
+const MIN_BY_APP: Partial<Record<AppId, { w: number; h: number }>> = {
+  code: { w: 480, h: 400 },
+  messenger: { w: 360, h: 380 },
+  music: { w: 520, h: 420 },
+}
+
+export const minSizeOf = (id: AppId) => MIN_BY_APP[id] ?? MIN
+
+export type Edge = "n" | "s" | "e" | "w" | "ne" | "nw" | "se" | "sw"
+
+/**
+ * The rectangle after dragging `edge` by (dx, dy) from `start`. The edge opposite to the one being dragged stays where
+ * it is, the window never gets smaller than `min`, and it never leaves the screen (nor goes under the taskbar).
+ */
+export const resizeRect = (start: Rect, edge: Edge, dx: number, dy: number, viewport: Viewport, min: { w: number; h: number }): Rect => {
+  let { x, y, w, h } = start
+  const right = start.x + start.w
+  const bottom = start.y + start.h
+  const floor = viewport.height - TASKBAR
+  if (edge.includes("e")) w = Math.max(min.w, Math.min(start.w + dx, viewport.width - start.x))
+  if (edge.includes("w")) {
+    x = Math.max(0, Math.min(start.x + dx, right - min.w))
+    w = right - x
+  }
+  if (edge.includes("s")) h = Math.max(min.h, Math.min(start.h + dy, floor - start.y))
+  if (edge.includes("n")) {
+    y = Math.max(0, Math.min(start.y + dy, bottom - min.h))
+    h = bottom - y
+  }
+  return { x, y, w, h }
+}
+
 export type WindowsState = {
   windows: Partial<Record<AppId, Win>>
   /** Taskbar order: apps in the order they were opened. */
@@ -27,6 +60,10 @@ export type WindowsState = {
   minimizeAll: () => void
   move: (id: AppId, x: number, y: number, viewport: Viewport) => void
   resize: (id: AppId, w: number, h: number, viewport: Viewport) => void
+  /** Resize by dragging one edge or corner (from the rectangle the drag started with). */
+  resizeFrom: (id: AppId, edge: Edge, start: Rect, dx: number, dy: number, viewport: Viewport) => void
+  /** The browser window changed size: bring every window back inside it. */
+  clampAll: (viewport: Viewport) => void
 }
 
 /** The window the visitor is working in: highest z among the visible ones. */
@@ -40,8 +77,9 @@ export const focusedApp = (windows: WindowsState["windows"]): AppId | null => {
 
 const initialRect = (id: AppId, openCount: number, viewport: Viewport): Rect => {
   const size = APPS[id].size
-  const w = Math.max(MIN.w, Math.min(size.w, viewport.width - MARGIN * 2))
-  const h = Math.max(MIN.h, Math.min(size.h, viewport.height - TASKBAR - MARGIN * 2))
+  const min = minSizeOf(id)
+  const w = Math.max(min.w, Math.min(size.w, viewport.width - MARGIN * 2))
+  const h = Math.max(min.h, Math.min(size.h, viewport.height - TASKBAR - MARGIN * 2))
   const offset = (openCount % 6) * CASCADE
   const x = Math.max(MARGIN, Math.min(Math.round((viewport.width - w) / 2) - 60 + offset, viewport.width - w - MARGIN))
   const y = Math.max(MARGIN, Math.min(Math.round((viewport.height - TASKBAR - h) / 2) - 40 + offset, viewport.height - TASKBAR - h))
@@ -126,9 +164,27 @@ export const useWindows = create<WindowsState>()((set, get) => {
           ? null
           : {
               // Never larger than the room left on screen, never smaller than the minimum (the minimum wins).
-              w: Math.max(MIN.w, Math.min(w, viewport.width - win.x)),
-              h: Math.max(MIN.h, Math.min(h, viewport.height - TASKBAR - win.y)),
+              w: Math.max(minSizeOf(id).w, Math.min(w, viewport.width - win.x)),
+              h: Math.max(minSizeOf(id).h, Math.min(h, viewport.height - TASKBAR - win.y)),
             },
       ),
+
+    resizeFrom: (id, edge, start, dx, dy, viewport) =>
+      update(id, (win) => (win.mode !== "normal" ? null : resizeRect(start, edge, dx, dy, viewport, minSizeOf(id)))),
+
+    clampAll: (viewport) =>
+      set((s) => {
+        const windows = { ...s.windows }
+        for (const [id, win] of Object.entries(windows) as [AppId, Win][]) {
+          if (win.mode === "maximized" || (win.mode === "minimized" && win.restoreTo === "maximized")) continue
+          const min = minSizeOf(id)
+          const w = Math.max(min.w, Math.min(win.w, viewport.width))
+          const h = Math.max(min.h, Math.min(win.h, viewport.height - TASKBAR))
+          const x = Math.max(0, Math.min(win.x, viewport.width - w))
+          const y = Math.max(0, Math.min(win.y, viewport.height - TASKBAR - h))
+          if (x !== win.x || y !== win.y || w !== win.w || h !== win.h) windows[id] = { ...win, x, y, w, h }
+        }
+        return { windows }
+      }),
   }
 })

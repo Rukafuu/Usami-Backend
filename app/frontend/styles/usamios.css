@@ -107,7 +107,25 @@
 .os-winbtn:active { transform: scale(0.94); }
 .os-winbtn.is-close:hover { background: var(--danger, #a3442e); color: var(--danger-on, #fffcf8) !important; }
 .os-body { flex: 1; min-height: 0; overflow: auto; }
-.os-resize { position: absolute; right: 0; bottom: 0; width: 16px; height: 16px; cursor: nwse-resize; touch-action: none; background: linear-gradient(135deg, transparent 50%, var(--line) 50%); }
+/* Resize handles: every edge and corner. Edges are thin strips, corners are bigger; the corner handles sit above the edges. */
+.os-handle { position: absolute; z-index: 3; touch-action: none; }
+.os-handle--n { top: 0; left: 14px; right: 14px; height: 6px; cursor: ns-resize; }
+.os-handle--s { bottom: 0; left: 14px; right: 14px; height: 6px; cursor: ns-resize; }
+.os-handle--e { right: 0; top: 14px; bottom: 14px; width: 6px; cursor: ew-resize; }
+.os-handle--w { left: 0; top: 14px; bottom: 14px; width: 6px; cursor: ew-resize; }
+.os-handle--ne, .os-handle--nw, .os-handle--se, .os-handle--sw { width: 16px; height: 16px; z-index: 4; }
+.os-handle--ne { top: 0; right: 0; cursor: nesw-resize; }
+.os-handle--nw { top: 0; left: 0; cursor: nwse-resize; }
+.os-handle--sw { bottom: 0; left: 0; cursor: nesw-resize; }
+.os-handle--se { bottom: 0; right: 0; cursor: nwse-resize; background: linear-gradient(135deg, transparent 50%, var(--line) 50%); }
+/* While a window is being dragged or resized: no text selection, and embedded players do not capture the pointer. */
+body.is-dragging-win { user-select: none; -webkit-user-select: none; }
+body.is-dragging-win iframe { pointer-events: none; }
+@media (pointer: coarse) {
+  .os-handle--n, .os-handle--s { height: 12px; }
+  .os-handle--e, .os-handle--w { width: 12px; }
+  .os-handle--ne, .os-handle--nw, .os-handle--se, .os-handle--sw { width: 24px; height: 24px; }
+}
 
 /* ---------- files ---------- */
 .os-files { display: grid; grid-template-columns: 160px minmax(180px, 1fr) minmax(280px, 1.3fr); height: 100%; }
@@ -821,7 +839,7 @@
 }
 
 /* Code Studio in a narrow window or on the phone: files become a strip above the editor. */
-@container code (max-width: 640px) {
+@container code (max-width: 760px) {
   .os-code-workspace { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
   .os-code-tree { border-right: 0; border-bottom: 1px solid var(--line-2); padding: 6px 8px; gap: 4px; }
   .os-code-tree ul { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; }
@@ -927,3 +945,61 @@
   .os-layout-list li { grid-template-columns: 1fr auto; }
   .os-layout-select { grid-column: 1 / -1; order: 3; }
 }
+
+/* Messenger in a small window: chips scroll in one row and the subtitle goes, so the conversation keeps its room. */
+.os-msn-log { min-height: 96px; }
+@container win (max-width: 520px) {
+  .os-msn-topics { flex-wrap: nowrap; overflow-x: auto; }
+  .os-msn-chip { flex: none; }
+  .os-msn-sub { display: none; }
+  .os-msn-head { padding: 8px 12px; gap: 8px; }
+}
+/* Code Studio in a small window: keep the editor's room by dropping what repeats information. */
+@container code (max-width: 760px) {
+  .os-code-ext, .os-code-summary { display: none; }
+  .os-code-status { padding: 4px 10px; }
+  .os-code-tabs { padding: 2px 8px; border-bottom: 0; }
+  .os-code-tree { padding: 4px 8px; }
+  .os-code-tree-section > p, .os-code-tree-head > p { display: none; }
+}@container code (max-width: 760px) {
+  .os-code-top { padding: 6px 8px; gap: 6px; }
+  .os-code-brand { flex-wrap: nowrap; width: 100%; }
+  .os-code-select { flex: 1 1 auto; }
+  .os-code-blank-btn { flex: none; white-space: nowrap; }
+  .os-code-modes button { padding: 4px 6px; min-height: 28px; }
+  .os-code-tree ul, .os-code-tabs { scrollbar-width: none; }
+  .os-code-tree ul button { min-height: 30px; padding: 3px 8px; }
+}
+/* Music: its own container query cannot restyle the container itself, so the window's width does it: the app scrolls instead of squeezing its middle. */
+@container win (max-width: 620px) {
+  .os-music { overflow: auto; grid-template-rows: auto auto auto auto; }
+  .os-music-deck { min-height: 260px; }
+}
+
+/* ---- Phone: the full-screen app is a container too, so the same width rules apply as for desktop windows ---- */
+.os-phone-app { container: win / inline-size; }
+
+@container win (max-width: 400px) {
+  .os-msn-head { padding: 8px 10px; }
+  .os-msn-meta .os-badge { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+  .os-music-topbar { grid-template-columns: auto minmax(0, 1fr); }
+  .os-music-top-profiles { display: none; }
+  .os-music-user-pill span { display: none; }
+  .os-music-user-pill { padding: 3px; }
+}
+
+/* Touch: comfortable targets and text no smaller than 11px. */
+.os--mobile .os-phone-app :is(button, select, .os-button) { min-height: 36px; }
+.os--mobile .os-phone-app input:not([type="checkbox"], [type="radio"], [type="range"]) { min-height: 36px; }
+.os--mobile .os-phone-app input[type="checkbox"], .os--mobile .os-phone-app input[type="radio"] { width: 22px; height: 22px; }
+.os--mobile .os-phone-app .os-code-editor button, .os--mobile .os-phone-app .os-code-tab-close { min-height: 0; }
+.os--mobile .os-music :is(.os-music-lib-count, .os-music-idx, small, .os-badge, .mono) { font-size: 0.6875rem; }.os-messenger { grid-template-columns: minmax(0, 1fr); }
+.os-msn-head, .os-msn-meta, .os-msn-title { min-width: 0; }
+.os--mobile .os-cal-nav .os-button, .os--mobile .os-music-icon-btn, .os--mobile .os-music-like-btn { min-width: 36px; }
+.os--mobile .os-phone-app :is(input[type="checkbox"], input[type="radio"]) { flex: none; }
+/* Phone held sideways: these apps keep a usable height and the screen scrolls, instead of squeezing their middle. */
+.os--mobile .os-code { min-height: 420px; }
+.os--mobile .os-messenger { min-height: 480px; }
+.os--mobile .os-music { min-height: 540px; }
+.os--mobile .os-music-circle-btn { min-width: 36px; }
+.os--mobile .os-music-deck { min-width: 0; }

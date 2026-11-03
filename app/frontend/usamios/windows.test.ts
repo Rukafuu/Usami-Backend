@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "vitest"
-import { focusedApp, TASKBAR, useWindows } from "./windows"
+import { focusedApp, minSizeOf, resizeRect, TASKBAR, useWindows } from "./windows"
 
 const viewport = { width: 1280, height: 800 }
 const state = () => useWindows.getState()
@@ -85,5 +85,98 @@ describe("window manager", () => {
     expect(focusedApp(state().windows)).toBeNull()
     state().close("files")
     expect(state().order).toEqual(["about"])
+  })
+
+  it("apps that need room have a larger minimum size, and cannot be squeezed below it", () => {
+    for (const id of ["code", "messenger", "music"] as const) {
+      state().open(id, viewport)
+      state().resize(id, 10, 10, viewport)
+      const min = minSizeOf(id)
+      expect(state().windows[id]!.w).toBe(min.w)
+      expect(state().windows[id]!.h).toBe(min.h)
+      expect(min.h).toBeGreaterThan(220)
+    }
+    expect(minSizeOf("files")).toEqual({ w: 320, h: 220 })
+  })
+
+  it("opens small viewports with every app at least at its minimum size", () => {
+    state().open("code", { width: 900, height: 500 })
+    const win = state().windows.code!
+    expect(win.w).toBeGreaterThanOrEqual(minSizeOf("code").w)
+    expect(win.h).toBeGreaterThanOrEqual(minSizeOf("code").h)
+  })
+
+  it("brings every window back inside the screen when the browser window shrinks", () => {
+    state().open("files", viewport)
+    state().open("code", viewport)
+    state().move("files", 900, 500, viewport)
+    const small = { width: 800, height: 520 }
+    state().clampAll(small)
+    for (const win of Object.values(state().windows)) {
+      expect(win!.x).toBeGreaterThanOrEqual(0)
+      expect(win!.y).toBeGreaterThanOrEqual(0)
+      expect(win!.x + win!.w).toBeLessThanOrEqual(small.width)
+      expect(win!.y + win!.h).toBeLessThanOrEqual(small.height - TASKBAR)
+    }
+    // maximized windows are left alone
+    state().toggleMaximize("files")
+    const before = { ...state().windows.files! }
+    state().clampAll({ width: 500, height: 400 })
+    expect(state().windows.files).toEqual(before)
+  })
+})
+
+describe("resizing from edges and corners", () => {
+  const start = { x: 200, y: 100, w: 600, h: 400 }
+  const min = { w: 320, h: 220 }
+  const vp = { width: 1280, height: 800 }
+
+  it("east and south edges grow or shrink the window and keep the opposite corner", () => {
+    expect(resizeRect(start, "e", 100, 0, vp, min)).toEqual({ x: 200, y: 100, w: 700, h: 400 })
+    expect(resizeRect(start, "s", 0, -50, vp, min)).toEqual({ x: 200, y: 100, w: 600, h: 350 })
+  })
+
+  it("west and north edges move the window with them while the far edge stays put", () => {
+    const west = resizeRect(start, "w", -80, 0, vp, min)
+    expect(west).toEqual({ x: 120, y: 100, w: 680, h: 400 })
+    expect(west.x + west.w).toBe(start.x + start.w)
+    const north = resizeRect(start, "n", 0, 40, vp, min)
+    expect(north.y + north.h).toBe(start.y + start.h)
+    expect(north.h).toBe(360)
+  })
+
+  it("corners combine both edges", () => {
+    expect(resizeRect(start, "nw", 50, 30, vp, min)).toEqual({ x: 250, y: 130, w: 550, h: 370 })
+    expect(resizeRect(start, "se", 10, 10, vp, min)).toEqual({ x: 200, y: 100, w: 610, h: 410 })
+  })
+
+  it("never goes below the minimum, and the edge that is not being dragged does not move", () => {
+    const r = resizeRect(start, "w", 5000, 0, vp, min)
+    expect(r.w).toBe(min.w)
+    expect(r.x + r.w).toBe(start.x + start.w)
+    const t = resizeRect(start, "n", 0, 5000, vp, min)
+    expect(t.h).toBe(min.h)
+    expect(t.y + t.h).toBe(start.y + start.h)
+  })
+
+  it("never leaves the screen or goes under the taskbar", () => {
+    expect(resizeRect(start, "w", -5000, 0, vp, min).x).toBe(0)
+    expect(resizeRect(start, "n", 0, -5000, vp, min).y).toBe(0)
+    expect(resizeRect(start, "e", 5000, 0, vp, min).x + resizeRect(start, "e", 5000, 0, vp, min).w).toBe(vp.width)
+    const s = resizeRect(start, "s", 0, 5000, vp, min)
+    expect(s.y + s.h).toBe(vp.height - TASKBAR)
+  })
+
+  it("the store resizes a window from an edge and ignores maximized windows", () => {
+    state().open("files", vp)
+    const win = state().windows.files!
+    const startRect = { x: win.x, y: win.y, w: win.w, h: win.h }
+    state().resizeFrom("files", "w", startRect, -50, 0, vp)
+    expect(state().windows.files!.w).toBe(win.w + 50)
+    expect(state().windows.files!.x + state().windows.files!.w).toBe(win.x + win.w)
+    state().toggleMaximize("files")
+    const before = { ...state().windows.files! }
+    state().resizeFrom("files", "se", startRect, 100, 100, vp)
+    expect(state().windows.files).toEqual(before)
   })
 })

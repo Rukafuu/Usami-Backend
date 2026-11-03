@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { AppContent } from "../AppContent"
 import { AppMenu, useAppMenu } from "../components/AppMenu"
 import { Wallpaper } from "../Wallpaper"
@@ -26,6 +26,13 @@ export function DesktopShell({ data, page, titles, onClassic }: Props) {
     open("settings")
   }
   const open = (id: AppId) => useWindows.getState().open(id, viewport())
+
+  // When the browser window changes size no window may stay out of reach.
+  useEffect(() => {
+    const clamp = () => useWindows.getState().clampAll(viewport())
+    window.addEventListener("resize", clamp)
+    return () => window.removeEventListener("resize", clamp)
+  }, [])
 
   return (
     <div className="os os--desktop">

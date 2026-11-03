@@ -318,8 +318,8 @@ export const REPO_PROJECTS: RepoProject[] = [
   {
     entryId: "usami",
     name: "Usami Companion",
-    repoLabel: "UsamiVtuber/Usami",
-    repoUrl: "https://github.com/UsamiVtuber/Usami",
+    repoLabel: "Rukafuu/Usami-Backend · Usami-Frontend · Usami-Design-System",
+    repoUrl: "https://github.com/Rukafuu/Usami-Backend",
     branch: "main",
     verificationSummary: "459 tests passing (421 Node + 38 Python) · Streamed TTS (~1.0s first audio)",
     files: [
@@ -370,6 +370,12 @@ export const REPO_PROJECTS: RepoProject[] = [
         lang: "md",
         lines: [
           "# Usami — 3D AI Companion (In Development)",
+          "",
+          "## Public Microservices Repositories (Verified 2026-11-03)",
+          "- Usami-Backend: https://github.com/Rukafuu/Usami-Backend",
+          "- Usami-Frontend: https://github.com/Rukafuu/Usami-Frontend",
+          "- Usami-Design-System: https://github.com/Rukafuu/Usami-Design-System",
+          "- Usami (showcase): https://github.com/UsamiVtuber/Usami",
           "",
           "## Proven Benchmarks & Safeguards (Verified 2026-10-25)",
           "- Streamed Portuguese Voice: ~1.0s to first sound vs ~5.3s for full clip generation",

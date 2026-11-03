@@ -24,6 +24,14 @@
   url: https://github.com/Rukafuu/Hane
   verified_on: 2026-11-02
 - claim: { pt: "Usami · 459 testes passando (421 Node + 38 Python)", en: "Usami · 459 tests passing (421 Node + 38 Python)", es: "Usami · 459 pruebas pasando (421 Node + 38 Python)", ja: "Usami · 459件のテストが成功(Node 421 + Python 38)" }
-  source: "documentação interna do projeto (repositório ainda não público)"
-  url: null
+  source: github.com/Rukafuu/Usami-Backend
+  url: https://github.com/Rukafuu/Usami-Backend
   verified_on: 2026-10-25
+- claim: { pt: "Usami · microsserviços públicos (Backend, Frontend e Design System)", en: "Usami · public microservices (Backend, Frontend and Design System)", es: "Usami · microservicios públicos (Backend, Frontend y Design System)", ja: "Usami · 公開マイクロサービス(Backend、Frontend、Design System)" }
+  source: github.com/Rukafuu/Usami-Frontend
+  url: https://github.com/Rukafuu/Usami-Frontend
+  verified_on: 2026-11-03
+- claim: { pt: "Usami Design System · repositório público de componentes e tokens", en: "Usami Design System · public components and tokens repository", es: "Usami Design System · repositorio público de componentes y tokens", ja: "Usami Design System · コンポーネントとトークンの公開リポジトリ" }
+  source: github.com/Rukafuu/Usami-Design-System
+  url: https://github.com/Rukafuu/Usami-Design-System
+  verified_on: 2026-11-03

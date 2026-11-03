@@ -2,32 +2,43 @@ import { useEffect, useRef, type PointerEvent as ReactPointerEvent, type ReactNo
 import type { AppId } from "../registry"
 import { AppIcon } from "../registry"
 import type { Ui } from "../types"
-import { useWindows } from "../windows"
+import { useWindows, type Edge } from "../windows"
 
 type Props = { id: AppId; title: string; ui: Ui["shell"]; children: ReactNode }
 
 const viewport = () => ({ width: window.innerWidth, height: window.innerHeight })
 
-/** Pointer drag helper: calls onMove with the delta from where the drag started. */
+const EDGES: Edge[] = ["n", "s", "e", "w", "ne", "nw", "se", "sw"]
+
+/**
+ * Pointer drag helper: calls onMove with the delta from where the drag started. While dragging, text is not selected and
+ * embedded players (iframes) do not swallow the pointer; it also ends cleanly if the browser cancels the gesture.
+ */
 const drag = (e: ReactPointerEvent<HTMLElement>, onMove: (dx: number, dy: number) => void) => {
   const handle = e.currentTarget
   const startX = e.clientX
   const startY = e.clientY
   handle.setPointerCapture(e.pointerId)
+  document.body.classList.add("is-dragging-win")
   const move = (ev: PointerEvent) => onMove(ev.clientX - startX, ev.clientY - startY)
   const up = () => {
+    document.body.classList.remove("is-dragging-win")
     handle.removeEventListener("pointermove", move)
     handle.removeEventListener("pointerup", up)
+    handle.removeEventListener("pointercancel", up)
+    handle.removeEventListener("lostpointercapture", up)
   }
   handle.addEventListener("pointermove", move)
   handle.addEventListener("pointerup", up)
+  handle.addEventListener("pointercancel", up)
+  handle.addEventListener("lostpointercapture", up)
 }
 
-/** A desktop window: drag by the title bar, resize from the corner, minimize / maximize / close. */
+/** A desktop window: drag by the title bar, resize from any edge or corner, minimize / maximize / close. */
 export function WindowFrame({ id, title, ui, children }: Props) {
   const win = useWindows((s) => s.windows[id])
   const isFront = useWindows((s) => s.windows[id]?.z === s.topZ)
-  const { focus, close, minimize, toggleMaximize, move, resize } = useWindows.getState()
+  const { focus, close, minimize, toggleMaximize, move, resizeFrom } = useWindows.getState()
   const ref = useRef<HTMLElement>(null)
   const visible = Boolean(win && win.mode !== "minimized")
 
@@ -43,10 +54,10 @@ export function WindowFrame({ id, title, ui, children }: Props) {
     const { x, y } = win
     drag(e, (dx, dy) => move(id, x + dx, y + dy, viewport()))
   }
-  const onResizeDown = (e: ReactPointerEvent<HTMLElement>) => {
+  const onResizeDown = (edge: Edge) => (e: ReactPointerEvent<HTMLElement>) => {
     e.stopPropagation()
-    const { w, h } = win
-    drag(e, (dx, dy) => resize(id, w + dx, h + dy, viewport()))
+    const start = { x: win.x, y: win.y, w: win.w, h: win.h }
+    drag(e, (dx, dy) => resizeFrom(id, edge, start, dx, dy, viewport()))
   }
 
   return (
@@ -77,7 +88,8 @@ export function WindowFrame({ id, title, ui, children }: Props) {
         </button>
       </header>
       <div className="os-body">{children}</div>
-      {win.mode === "normal" && <span className="os-resize" aria-hidden="true" onPointerDown={onResizeDown} />}
+      {win.mode === "normal" &&
+        EDGES.map((edge) => <span key={edge} className={`os-handle os-handle--${edge}`} aria-hidden="true" onPointerDown={onResizeDown(edge)} />)}
     </section>
   )
 }
