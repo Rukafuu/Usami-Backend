@@ -1003,3 +1003,11 @@ body.is-dragging-win iframe { pointer-events: none; }
 .os--mobile .os-music { min-height: 540px; }
 .os--mobile .os-music-circle-btn { min-width: 36px; }
 .os--mobile .os-music-deck { min-width: 0; }
+
+/* The founder's portrait and about-me text inside the OS windows. */
+.os-portrait { float: right; width: 150px; margin: 0 0 12px 16px; border-radius: 12px; border: 1px solid var(--line-2); }
+.os-about-me p { max-width: 66ch; }
+@container win (max-width: 560px) { .os-portrait { float: none; display: block; width: 120px; margin: 0 0 12px; } }
+.os-portrait { height: auto; object-fit: cover; }
+
+.os-about-me p { margin: 0 0 0.9em; }

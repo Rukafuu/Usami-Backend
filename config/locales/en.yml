@@ -69,6 +69,26 @@ en:
     source: "Source"
     verified: "Verified on"
   errors:
+    badge: "HTTP Error %{code}"
+    home_btn: "Back to Home"
+    shell_btn: "Open Fuwarch Linux"
+    evidence_btn: "View Evidence"
+    status_404:
+      title: "Page not found"
+      body: "We searched all the way through the starlit observatory, but found no evidence that this page exists."
+      scene: "Usami in the starlit observatory with telescope and celestial charts"
+    status_403:
+      title: "Access restricted"
+      body: "Checkmate! This area requires higher privileges that your session currently lacks."
+      scene: "Usami and Fuwarch analyzing the chessboard"
+    status_402:
+      title: "Payment required"
+      body: "This operation requires credits, authorization, or subscription confirmation to proceed."
+      scene: "Usami in the Fuwarch studio with headphones and vinyl"
+    status_500:
+      title: "Internal server error"
+      body: "Whoops, looks like someone spilled coffee on the server! We are looking into the logs to get things back up."
+      scene: "Usami drinking warm coffee at the late night coding desk"
     not_found_title: "Page not found"
     not_found_body: "We have no evidence that this page exists. Head back home."
   shell:

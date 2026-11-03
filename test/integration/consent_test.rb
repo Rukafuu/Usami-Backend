@@ -83,4 +83,28 @@ class ConsentTest < ActionDispatch::IntegrationTest
     assert_match(%r{/pt/privacidade}, response.body)
     assert_match(%r{/ja/cookies}, response.body)
   end
+
+  test "without an analytics token nothing about analytics appears" do
+    get "/pt"
+    assert_select "#usamios[data-analytics-token]", 0
+    get "/pt/cookies"
+    assert_no_match(/Cloudflare Web Analytics/, response.body)
+    get "/pt/privacidade"
+    assert_no_match(/Estatísticas de visita/, response.body)
+  end
+
+  test "with a token the pages tell the visitor, and the token travels as data for the client to use after consent" do
+    ENV["CF_ANALYTICS_TOKEN"] = "cf-test-token"
+    get "/pt"
+    assert_select "#usamios[data-analytics-token='cf-test-token']"
+    assert_select "script[src*='cloudflareinsights']", 0, "the beacon is added by the client, never before consent"
+    assert_match(/sem cookies/, response.body)
+    get "/pt/cookies"
+    assert_match(/Cloudflare Web Analytics/, response.body)
+    assert_select "table tbody tr", Content::Store.legal["cookies"]["items"].size + 1
+    get "/en/privacidade"
+    assert_match(/Visit statistics \(optional\)/, response.body)
+  ensure
+    ENV.delete("CF_ANALYTICS_TOKEN")
+  end
 end

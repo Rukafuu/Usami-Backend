@@ -1,9 +1,10 @@
 <% proven = @entry.proven(I18n.locale) %>
 <% planned = @entry.planned(I18n.locale) %>
-<% content_for :title, @entry.filename %>
-<% content_for :description, @entry.description(I18n.locale) %>
+<% content_for :title, @entry.title(I18n.locale) %>
+<% content_for :description, meta_description(@entry.description(I18n.locale)) %>
 <% content_for :og_image, "/og/#{@entry.id}.png" if File.exist?(Rails.public_path.join("og", "#{@entry.id}.png")) %>
 
+<% if @entry.photo %><script type="application/ld+json"><%= raw person_json_ld(@entry) %></script><% end %>
 <article class="entry">
   <header class="hero hero--small">
     <%= breadcrumbs([ t("folders.#{@entry.folder}"), folder_url(folder: @entry.folder) ], [ @entry.filename, entry_url(folder: @entry.folder, slug: @entry.id) ]) %>
@@ -11,6 +12,21 @@
     <p><span class="badge <%= 'badge--live' if @entry.status == 'live' %>"><%= t("status.#{@entry.status}") %></span></p>
     <p class="lead"><%= @entry.description(I18n.locale) %></p>
   </header>
+
+  <% if @entry.photo %>
+    <figure class="portrait">
+      <img src="<%= @entry.photo["src"] %>" srcset="<%= @entry.photo["small"] %> 400w, <%= @entry.photo["src"] %> 800w" sizes="(max-width: 720px) 60vw, 320px"
+           width="<%= @entry.photo["width"] %>" height="<%= @entry.photo["height"] %>" alt="<%= @entry.photo_alt(I18n.locale) %>" decoding="async" fetchpriority="high">
+    </figure>
+  <% end %>
+
+  <% about = @entry.about(I18n.locale) %>
+  <% if about.any? %>
+    <section class="block about" aria-labelledby="about">
+      <h2 id="about"><%= t("entry.about") %></h2>
+      <% about.each do |paragraph| %><p><%= paragraph %></p><% end %>
+    </section>
+  <% end %>
 
   <% if @entry.stack.any? %>
     <section class="block" aria-label="<%= t("entry.stack") %>">
@@ -45,6 +61,19 @@
         <% @entry.sources.each do |source| %>
           <li><a href="<%= source.url %>" target="_blank" rel="noopener"><%= channel_icon(source.icon) %><span class="channel-text"><strong><%= source.label %></strong><% if source.detail %><span class="mono"><%= source.detail %></span><% end %></span> <span aria-hidden="true">↗</span></a></li>
         <% end %>
+      </ul>
+    </section>
+  <% end %>
+
+  <% related = Content::Store.entries.reject { |e| e.id == @entry.id || e.route.present? }.sort_by { |e| [ e.folder == @entry.folder ? 0 : 1, e.order ] }.first(4) %>
+  <% if related.any? %>
+    <section class="block" aria-labelledby="related">
+      <h2 id="related" class="mono"><%= t("entry.related") %></h2>
+      <ul class="related">
+        <% related.each do |other| %>
+          <li><a href="<%= entry_path(folder: other.folder, slug: other.id) %>"><%= other.title(I18n.locale) %></a></li>
+        <% end %>
+        <li><a href="<%= evidence_path %>"><%= t("nav.evidence") %></a></li>
       </ul>
     </section>
   <% end %>

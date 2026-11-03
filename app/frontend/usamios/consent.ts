@@ -20,6 +20,21 @@ export const setConsent = (choice: Consent) => {
   document.cookie = `${COOKIE}=${choice}; Max-Age=${MAX_AGE}; Path=/; SameSite=Lax${secure}`
   document.querySelector<HTMLElement>("[data-consent-banner]")?.setAttribute("hidden", "")
   window.dispatchEvent(new Event(EVENT))
+  syncAnalytics()
+}
+
+/**
+ * Cloudflare Web Analytics (cookieless page-view counts). The pages are static files that cannot know the visitor's
+ * choice, so the beacon is added here, and only when a site token was configured at build time AND the visitor chose "all".
+ */
+export const syncAnalytics = () => {
+  const token = document.getElementById("usamios")?.dataset.analyticsToken
+  if (!token || getConsent() !== "all" || document.querySelector('script[src*="static.cloudflareinsights.com"]')) return
+  const script = document.createElement("script")
+  script.type = "module" // as in the snippet Cloudflare gives for sites it does not proxy
+  script.src = "https://static.cloudflareinsights.com/beacon.min.js"
+  script.setAttribute("data-cf-beacon", JSON.stringify({ token }))
+  document.head.append(script)
 }
 
 const subscribe = (notify: () => void) => {
@@ -31,6 +46,7 @@ export const useConsent = (): Consent => useSyncExternalStore(subscribe, getCons
 
 /** The pages are static files, so they cannot know the visitor's choice: the page reads the cookie and adjusts itself. */
 const syncWithCookie = () => {
+  syncAnalytics()
   if (!hasChosen()) return
   document.querySelector<HTMLElement>("[data-consent-banner]")?.setAttribute("hidden", "")
   const note = document.querySelector<HTMLElement>("[data-consent-current]")

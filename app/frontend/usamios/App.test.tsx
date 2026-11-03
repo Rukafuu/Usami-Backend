@@ -271,6 +271,14 @@ describe("desktop", () => {
     expect(within(tm).getByText(`1 / ${APP_IDS.length}`)).toBeInTheDocument()
   })
 
+  it("shows the founder's portrait and his own about-me text in the file explorer", () => {
+    renderOS({ folder: "empresa", slug: "lucas" })
+    const files = screen.getByRole("dialog", { name: "Arquivos" })
+    expect(within(files).getByRole("img", { name: "Lucas, de cabelo rosa" })).toHaveAttribute("src", "/media/lucas-400.jpg")
+    expect(within(files).getByRole("heading", { name: "Sobre mim" })).toBeInTheDocument()
+    expect(within(files).getByText("Na USAMI, quero transformar ideias em produtos.")).toBeInTheDocument()
+  })
+
   it("opens Usami Code Studio from the file explorer, explores real commits/PRs, and edits in the blank Scratchpad", async () => {
     renderOS({ folder: "sistemas", slug: "hane" })
     await userEvent.click(screen.getByRole("button", { name: "Abrir no Code Studio" }))

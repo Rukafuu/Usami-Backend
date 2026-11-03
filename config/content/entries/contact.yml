@@ -3,6 +3,11 @@ folder: empresa
 order: 3
 filename: contato.msg
 status: info
+title:
+  pt: "Contato — falar com Lucas Frischeisen"
+  en: "Contact — reach Lucas Frischeisen"
+  es: "Contacto — hablar con Lucas Frischeisen"
+  ja: "連絡先 — Lucas Frischeisenへ"
 stack: []
 description:
   pt: "Fale com Lucas Frischeisen (Reskyume) por qualquer um destes canais. O e-mail e o WhatsApp são os mais diretos. Prazo de resposta: até 72 horas — ou depois de abrir uma latinha de Monster ⚡"

@@ -134,6 +134,16 @@ function Preview({ entry, data }: { entry: Entry; data: OsData }) {
       <h2>{entry.filename}</h2>
       <p>{entry.description}</p>
 
+      {entry.photo && (
+        <img className="os-portrait" src={entry.photo.small} srcSet={`${entry.photo.small} 400w, ${entry.photo.src} 800w`} sizes="150px" width={entry.photo.width} height={entry.photo.height} alt={entry.photo.alt} />
+      )}
+      {entry.about && entry.about.length > 0 && (
+        <section className="os-about-me" aria-label={ui.entry.about}>
+          <h3>{ui.entry.about}</h3>
+          {entry.about.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
+        </section>
+      )}
+
       {entry.stack.length > 0 && (
         <ul className="os-chips" aria-label={ui.entry.stack}>
           {entry.stack.map((item) => (

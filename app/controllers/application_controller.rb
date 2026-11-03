@@ -20,6 +20,8 @@ class ApplicationController < ActionController::Base
   def localized_site(key) = Content.localize(site[key], I18n.locale).value
 
   def render_not_found
-    render "errors/not_found", status: :not_found, formats: :html
+    @code = 404
+    @config = ErrorsController::ERROR_CONFIGS[404]
+    render "errors/show", status: :not_found, formats: :html
   end
 end

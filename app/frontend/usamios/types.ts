@@ -14,6 +14,9 @@ export type Entry = {
   planned: string[]
   listsTranslated: boolean
   sources: Source[]
+  /** The founder's own about-me text (paragraphs) and portrait; only his entry has them. */
+  about?: string[]
+  photo?: { src: string; small: string; width: number; height: number; alt: string } | null
 }
 
 export type LedgerItem = { claim: string; source: string; url: string | null; verifiedOn: string }
@@ -257,7 +260,7 @@ export type Ui = {
     about_responses: string
     about_measured: string
   }
-  entry: { proven: string; planned: string; stack: string; sources: string; translation_pending: string }
+  entry: { proven: string; planned: string; stack: string; sources: string; translation_pending: string; about: string }
   status: Record<string, string>
   folders: Record<string, string>
   evidence: { title: string; claim: string; source: string; verified: string }

@@ -69,6 +69,26 @@ es:
     source: "Fuente"
     verified: "Verificado el"
   errors:
+    badge: "Error HTTP %{code}"
+    home_btn: "Volver al Inicio"
+    shell_btn: "Abrir Fuwarch Linux"
+    evidence_btn: "Ver Evidencias"
+    status_404:
+      title: "Página no encontrada"
+      body: "Buscamos incluso entre las estrellas del observatorio, pero no hallamos evidencia de que esta página exista."
+      scene: "Usami en el observatorio estelar con telescopio y mapa celestial"
+    status_403:
+      title: "Acceso restringido"
+      body: "¡Jaque mate! Esta área requiere permisos elevados que tu sesión no posee actualmente."
+      scene: "Usami y Fuwarch analizando el tablero de ajedrez"
+    status_402:
+      title: "Pago requerido"
+      body: "Esta operación requiere créditos, autorización o confirmación de suscripción para continuar."
+      scene: "Usami en el estudio Fuwarch con auriculares y vinilo"
+    status_500:
+      title: "Error interno del servidor"
+      body: "¡Vaya! Parece que se derramó café en el servidor. El equipo ya está revisando los registros para restaurarlo."
+      scene: "Usami tomando café en el escritorio de código de madrugada"
     not_found_title: "Página no encontrada"
     not_found_body: "No tenemos evidencia de que esta página exista. Vuelve al inicio."
   shell:

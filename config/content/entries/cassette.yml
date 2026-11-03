@@ -3,6 +3,11 @@ folder: laboratorio
 order: 4
 filename: portfolio-ab.tape
 status: experimental
+title:
+  pt: "Portfólio em toca-fitas — software e música"
+  en: "Cassette-tape portfolio — software and music"
+  es: "Portafolio en casete — software y música"
+  ja: "カセットテープ型ポートフォリオ — ソフトウェアと音楽"
 stack: [TypeScript, Vite]
 description:
   pt: "Portfólio interativo em forma de toca-fitas, que mistura software, música eletrônica original e experimentos."

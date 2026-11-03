@@ -3,6 +3,11 @@ folder: contribuicoes
 order: 2
 filename: jaeger-genai.pr
 status: live
+title:
+  pt: "Jaeger UI — contribuição aceita (atributos de GenAI)"
+  en: "Jaeger UI — accepted contribution (GenAI attributes)"
+  es: "Jaeger UI — contribución aceptada (atributos de GenAI)"
+  ja: "Jaeger UI — 採用された貢献(GenAI属性)"
 stack: [Jaeger UI, TypeScript]
 description:
   pt: "PR aceita no Jaeger UI (#4419): expande automaticamente os atributos de GenAI quando são a única seção disponível no span."

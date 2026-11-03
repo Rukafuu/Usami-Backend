@@ -84,7 +84,15 @@ export function BrowserApp({ data }: { data: OsData }) {
         {page === "about_me" && founder && (
           <>
             <h2>{labels.about_me}</h2>
+            {founder.photo && (
+              <img className="os-portrait" src={founder.photo.small} srcSet={`${founder.photo.small} 400w, ${founder.photo.src} 800w`} sizes="150px" width={founder.photo.width} height={founder.photo.height} alt={founder.photo.alt} />
+            )}
             <p>{founder.description}</p>
+            {founder.about && founder.about.length > 0 && (
+              <div className="os-about-me">
+                {founder.about.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
+              </div>
+            )}
             {founder.sources.map((s) =>
               s.url ? <p key={s.url}><a href={s.url} target="_blank" rel="noopener">{s.label} ↗</a></p> : null,
             )}

@@ -231,3 +231,115 @@ button.button { font: inherit; font-weight: 500; cursor: pointer; }
 .faq-item { padding-top: 20px; border-top: 1px solid var(--line-2); }
 .faq-item h2 { margin: 0 0 8px; font: 400 clamp(1.2rem, 2.2vw, 1.5rem) / 1.25 var(--serif); color: var(--fg); }
 .faq-item p { margin: 0; color: var(--mute); max-width: var(--measure); }
+
+.related { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 10px 0 0; padding: 0; list-style: none; }
+
+/* The founder: portrait on his own page (floats beside the text on wide screens) and a short card on the home page. */
+.portrait { margin: 20px 0 0; max-width: 320px; }
+.portrait img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line-2); }
+.about p { max-width: var(--measure); }
+@media (min-width: 900px) { .entry:has(.portrait) .portrait { float: right; margin: 0 0 20px 32px; } }
+.founder-card { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; align-items: start; }
+.founder-card img { width: 120px; height: auto; border-radius: 12px; border: 1px solid var(--line-2); }
+.founder-card p { margin: 6px 0; }
+@media (max-width: 520px) { .founder-card { grid-template-columns: 88px minmax(0, 1fr); gap: 14px; } .founder-card img { width: 88px; } }
+.about p { margin: 0 0 1em; }
+
+/* Channel icons: the image is chosen by class (no inline styles, because the CSP forbids them). */
+.ch-icon--email { --ch: url(/brand/channels/email.svg); }
+.ch-icon--whatsapp { --ch: url(/brand/channels/whatsapp.svg); }
+.ch-icon--linkedin { --ch: url(/brand/channels/linkedin.svg); }
+.ch-icon--github { --ch: url(/brand/channels/github.svg); }
+.ch-icon--soundcloud { --ch: url(/brand/channels/soundcloud.svg); }
+
+/* Error Pages — USAMI® Coffee & Cream aesthetic with scene art */
+.error-page {
+  padding-top: clamp(24px, 4vw, 48px);
+}
+.error-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+.error-art-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 280px;
+  background: var(--bg);
+  overflow: hidden;
+}
+.error-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s var(--ease);
+}
+.error-card:hover .error-art {
+  transform: scale(1.02);
+}
+.error-art-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(16, 13, 12, 0.1) 0%, rgba(16, 13, 12, 0.6) 100%);
+}
+.error-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(16, 13, 12, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--accent);
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+.error-content {
+  padding: clamp(24px, 4vw, 40px);
+}
+.error-scene-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mute);
+  margin-bottom: 8px;
+}
+.error-content h1 {
+  font: 400 clamp(1.8rem, 3.5vw, 2.6rem) / 1.15 var(--serif);
+  letter-spacing: -0.015em;
+  color: var(--fg);
+  margin: 0 0 12px;
+}
+.error-content .lead {
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  color: var(--text);
+  line-height: 1.55;
+  margin-bottom: 24px;
+}
+.error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+@media (max-width: 820px) {
+  .error-card {
+    grid-template-columns: 1fr;
+  }
+  .error-art-wrap {
+    aspect-ratio: 16 / 9;
+  }
+}

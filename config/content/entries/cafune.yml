@@ -3,6 +3,11 @@ folder: laboratorio
 order: 1
 filename: cafune.lab
 status: experimental
+title:
+  pt: "Cafuné — motor de linguagem experimental"
+  en: "Cafuné — an experimental language engine"
+  es: "Cafuné — motor de lenguaje experimental"
+  ja: "Cafuné — 実験的な言語エンジン"
 stack: [Julia, Python]
 description:
   pt: "Motor de linguagem experimental que combina difusão mascarada bidirecional com dinâmica de redes neurais de spikes (SNN)."

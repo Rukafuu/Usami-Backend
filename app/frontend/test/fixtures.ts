@@ -212,7 +212,8 @@ export const data: OsData = {
       about_responses: "Respostas do modelo",
       about_measured: "Medido em",
     },
-    entry: { proven: "Provado", planned: "Planejado", stack: "Stack", sources: "Fontes", translation_pending: "Listas em inglês." },
+    entry: { proven: "Provado", planned: "Planejado", stack: "Stack", sources: "Fontes", about: "Sobre mim",
+      translation_pending: "Listas em inglês." },
     status: { live: "Público", in_development: "Em desenvolvimento", info: "Informação" },
     folders: { sistemas: "Sistemas", empresa: "Empresa" },
     evidence: { title: "Evidências", claim: "Afirmação", source: "Fonte", verified: "Verificado" },
@@ -267,6 +268,8 @@ export const data: OsData = {
       id: "lucas", folder: "empresa", filename: "lucas.txt", status: "info", route: null,
       stack: [], description: "Lucas Frischeisen (Reskyume, Rukafuu).", proven: [], planned: [], listsTranslated: true,
       sources: [{ label: "github.com/Rukafuu", url: "https://github.com/Rukafuu" }],
+      about: ["Sou engenheiro de software e IA.", "Na USAMI, quero transformar ideias em produtos."],
+      photo: { src: "/media/lucas-800.jpg", small: "/media/lucas-400.jpg", width: 800, height: 1200, alt: "Lucas, de cabelo rosa" },
     },
     {
       id: "ledger", folder: "empresa", filename: "evidencias.ledger", status: "info", route: "evidencias",

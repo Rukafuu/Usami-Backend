@@ -3,6 +3,11 @@ folder: contribuicoes
 order: 1
 filename: laya-eval.pr
 status: live
+title:
+  pt: "Laya — contribuições de avaliação de modelos"
+  en: "Laya — model evaluation contributions"
+  es: "Laya — contribuciones de evaluación de modelos"
+  ja: "Laya — モデル評価への貢献"
 stack: [Python, research/eval, Apache-2.0 (upstream)]
 description:
   pt: "Laya é um motor de decisão não autoregressivo de terceiros (NandhaKishorM). Lucas enviou duas PRs de avaliação aceitas: robustez à ordem das opções (#269) e diagnóstico de confusão por orçamento de tokens (#706). Nenhuma altera o runtime do modelo."
