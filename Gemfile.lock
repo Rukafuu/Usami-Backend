@@ -144,6 +144,8 @@ GEM
     nio4r (2.7.5)
     nokogiri (1.19.7-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.19.7-x86_64-linux-gnu)
+      racc (~> 1.4)
     parallel (2.3.0)
     parser (3.3.13.0)
       ast (~> 2.4.1)
@@ -249,8 +251,10 @@ GEM
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
     sqlite3 (2.10.2-x64-mingw-ucrt)
+    sqlite3 (2.10.2-x86_64-linux-gnu)
     thor (1.5.0)
-    thruster (0.1.27)
+    thruster (0.1.28)
+    thruster (0.1.28-x86_64-linux)
     timeout (0.6.1)
     tsort (0.2.0)
     tzinfo (2.0.6)
@@ -283,6 +287,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
